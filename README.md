@@ -1,73 +1,73 @@
-# AI Blog Writing & SEO Optimization Skill for Claude Code (`claude-blog`)
+# Skill de Escrita de Blog com IA e Otimização de SEO para o Claude Code (`claude-blog`)
 
 <p align="center">
-  <img src="assets/cover-blog.svg" alt="Claude Blog cover: AI blog writing, SEO optimization, AI citation readiness, and a 5-gate delivery contract for Claude Code" width="100%">
+  <img src="assets/cover-blog.svg" alt="Capa do Claude Blog: escrita de blog com IA, otimização de SEO, prontidão para citação por IA e um contrato de entrega de 5 portões para o Claude Code" width="100%">
 </p>
 
 <p align="center">
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent%20Skills-Compatible-blue" alt="Agent Skill"></a>
-  <a href="https://github.com/AgriciDaniel/claude-blog/releases"><img src="https://img.shields.io/github/v/release/AgriciDaniel/claude-blog?label=public%20release" alt="Version"></a>
+  <a href="https://github.com/AgriciDaniel/claude-blog/releases"><img src="https://img.shields.io/github/v/release/AgriciDaniel/claude-blog?label=public%20release" alt="Versão"></a>
   <a href="https://github.com/AgriciDaniel/claude-blog/actions"><img src="https://img.shields.io/github/actions/workflow/status/AgriciDaniel/claude-blog/ci.yml?branch=main&label=public%20CI" alt="CI"></a>
-  <a href="https://github.com/AgriciDaniel/claude-blog/stargazers"><img src="https://img.shields.io/github/stars/AgriciDaniel/claude-blog?style=social" alt="GitHub stars"></a>
+  <a href="https://github.com/AgriciDaniel/claude-blog/stargazers"><img src="https://img.shields.io/github/stars/AgriciDaniel/claude-blog?style=social" alt="Estrelas no GitHub"></a>
   <a href="https://github.com/AgriciDaniel/claude-blog/discussions"><img src="https://img.shields.io/badge/Community-GitHub%20Discussions-blue" alt="GitHub Discussions"></a>
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License: MIT">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="Licença: MIT">
   <img src="https://img.shields.io/badge/Python-3.11%2B-blue" alt="Python 3.11+">
-  <img src="https://img.shields.io/badge/Skill%20Dirs-32-orange" alt="Skill directories: 32">
+  <img src="https://img.shields.io/badge/Skill%20Dirs-32-orange" alt="Diretórios de skill: 32">
   <img src="https://img.shields.io/badge/Sub--Skills-31-orange" alt="Sub-skills: 31">
-  <img src="https://img.shields.io/badge/Commands-30-blueviolet" alt="User-facing commands: 30">
-  <img src="https://img.shields.io/badge/Tests-250%2B%20passing-brightgreen" alt="Tests: more than 250 passing">
+  <img src="https://img.shields.io/badge/Commands-30-blueviolet" alt="Comandos voltados ao usuário: 30">
+  <img src="https://img.shields.io/badge/Tests-250%2B%20passing-brightgreen" alt="Testes: mais de 250 passando">
 </p>
 
-**claude-blog is a Claude Code skill suite that writes, optimizes, audits, localizes, and refreshes blog content at scale.** Every article is evaluated for Google-aligned usefulness and internal AI citation readiness heuristics. Version 2.1.1 was prepared on 2026-07-23.
+**O claude-blog é um conjunto de skills do Claude Code que escreve, otimiza, audita, localiza e atualiza conteúdo de blog em escala.** Cada artigo é avaliado quanto à utilidade alinhada ao Google e a heurísticas internas de prontidão para citação por IA. A versão 2.1.1 foi preparada em 2026-07-23.
 
-The core promise is simple: the user is never the first reviewer. A 5-gate Blog Delivery Contract scores every draft against a 100-point rubric, blocks delivery below 90, verifies artifacts and links, and iterates up to 3 times before escalation.
+A promessa central é simples: você nunca é o primeiro revisor. Um Blog Delivery Contract de 5 portões pontua cada rascunho contra uma rubrica de 100 pontos, bloqueia a entrega abaixo de 90, verifica artefatos e links, e itera até 3 vezes antes de escalar.
 
-This is the public, MIT-licensed distribution at
+Esta é a distribuição pública, sob licença MIT, em
 [`AgriciDaniel/claude-blog`](https://github.com/AgriciDaniel/claude-blog).
-The publishing workflow is documented in
+O fluxo de publicação está documentado em
 [`docs/PUBLISHING.md`](docs/PUBLISHING.md).
 
-**Blog:** [See how claude-blog works](https://agricidaniel.com/blog/claude-code-blog-writer)
+**Blog:** [Veja como o claude-blog funciona](https://agricidaniel.com/blog/claude-code-blog-writer)
 
 <p align="center">
-  <strong><a href="https://youtu.be/7Q4GaSgUFHo">Watch video on YouTube</a></strong>
+  <strong><a href="https://youtu.be/7Q4GaSgUFHo">Assistir ao vídeo no YouTube</a></strong>
 </p>
 
-## Demo
+## Demonstração
 
 <p align="center">
-  <img src="assets/blog-command-demo.gif" alt="claude-blog command demo: routing /blog subcommands through the orchestrator" width="100%">
+  <img src="assets/blog-command-demo.gif" alt="Demonstração de comandos do claude-blog: roteamento dos subcomandos /blog pelo orquestrador" width="100%">
 </p>
 
 <p align="center">
-  <img src="assets/blog-write-demo.gif" alt="claude-blog /blog write demo: end-to-end article generation with the 5-gate Delivery Contract" width="100%">
+  <img src="assets/blog-write-demo.gif" alt="Demonstração do /blog write: geração de artigo de ponta a ponta com o contrato de entrega de 5 portões" width="100%">
 </p>
 
-[Watch the original demo on YouTube](https://www.youtube.com/watch?v=AeLC4iutG8w).
+[Assista à demonstração original no YouTube](https://www.youtube.com/watch?v=AeLC4iutG8w).
 
-## What It Is
+## O que é
 
-claude-blog is a full-lifecycle blog engine for strategy, briefs, outlines, writing, rewriting, analysis, schema, AI citation readiness, site audits, topic clusters, multilingual publishing, audio narration, and content decay detection.
+O claude-blog é um motor de blog de ciclo completo para estratégia, briefings, roteiros, escrita, reescrita, análise, schema, prontidão para citação por IA, auditoria de site, clusters de temas, publicação multilíngue, narração em áudio e detecção de decaimento de conteúdo.
 
-Current v2.1.1 shape: **32 skill directories = 1 orchestrator + 31 sub-skills; 30 user-facing /blog commands (`blog-chart` is internal, not a command).** It also includes 5 specialized agents, repository consistency and public-release validators, 22 core references, 12 templates, a 250+ test suite, and the bundled Claude Blog Brain at `./brain`.
+Formato atual da v2.1.1: **32 diretórios de skill = 1 orquestrador + 31 sub-skills; 30 comandos /blog voltados ao usuário (o `blog-chart` é interno, não é comando).** Inclui também 5 agentes especializados, validadores de consistência do repositório e de release pública, 22 referências centrais, 12 templates, uma suíte com mais de 250 testes e o Claude Blog Brain empacotado em `./brain`.
 
-Every draft ships as an artifact folder with the markdown source, rendered HTML, PDF, real `hero.<ext>`, 3 viewport screenshots, `review.md`, and `preflight-report.json`. The renderer uses XSS-safe JSON-LD handling, dark-mode-aware CSS, and the same source for every output format.
+Todo rascunho é entregue como pasta de artefatos, com o fonte markdown, o HTML renderizado, o PDF, um `hero.<ext>` real, 3 capturas em diferentes larguras, `review.md` e `preflight-report.json`. O renderizador usa tratamento de JSON-LD à prova de XSS, CSS ciente de modo escuro e a mesma origem para todo formato de saída.
 
-## Who It Is For
+## Para quem é
 
-**Solo bloggers and creators** can ship high-quality posts without spending hours on SEO, schema, source checks, and internal linking.
+**Blogueiros e criadores solo** conseguem publicar posts de alta qualidade sem gastar horas com SEO, schema, checagem de fontes e links internos.
 
-**Marketing teams and agencies** can run consistent multi-post workflows across brands, languages, authors, and platforms with `/blog cluster`, `/blog multilingual`, `/blog persona`, `/blog brand`, and `/blog discourse`.
+**Times de marketing e agências** conseguem rodar fluxos consistentes de múltiplos posts entre marcas, idiomas, autores e plataformas com `/blog cluster`, `/blog multilingual`, `/blog persona`, `/blog brand` e `/blog discourse`.
 
-**Claude Code skill builders** can study a Tier 4 Agent Skills reference architecture with orchestrator routing, sub-skill dispatch, agent handoffs, code-enforced delivery gates, installer hardening, and CI coherence checks.
+**Quem constrói skills para o Claude Code** encontra aqui uma arquitetura de referência Tier 4 do Agent Skills, com roteamento por orquestrador, despacho de sub-skills, repasse a agentes, portões de entrega impostos por código, endurecimento do instalador e checagens de coerência na CI.
 
-## Where Should a Claude Code Skill Plugin Install Itself?
+## Onde um plugin de skill do Claude Code deve se instalar?
 
-Most user-installable Claude Code skill plugins should ship to `~/.claude/skills/<name>/` for skill content, `~/.claude/agents/<name>.md` for agents, and `~/.claude/scripts/<helper>.py` for Python helpers.
+A maioria dos plugins de skill do Claude Code instaláveis pelo usuário deve ir para `~/.claude/skills/<nome>/` no caso do conteúdo da skill, `~/.claude/agents/<nome>.md` no caso de agentes, e `~/.claude/scripts/<auxiliar>.py` no caso de auxiliares Python.
 
-This answer is intentionally kept in the README because it demonstrates the GEO and SEO writing pattern claude-blog produces: answer-first summary, explicit paths, source-ready structure, and a compact FAQ-ready section that AI systems can quote without extra context.
+Esta resposta foi mantida de propósito no README porque demonstra o padrão de escrita para GEO e SEO que o claude-blog produz: resumo com resposta antecipada, caminhos explícitos, estrutura pronta para citação e uma seção compacta em formato de pergunta que sistemas de IA conseguem citar sem contexto extra.
 
-A condensed specimen of a generated article:
+Um espécime condensado de artigo gerado:
 
 ```markdown
 ---
@@ -92,174 +92,174 @@ should ship to `~/.claude/skills/<name>/` for skill content,
 - The full article includes sourced citations, FAQ, and schema JSON-LD.
 ```
 
-## Architecture
+## Arquitetura
 
 <p align="center">
-  <img src="assets/diagrams/01-architecture-B.svg" alt="claude-blog system architecture: user command through orchestrator routing, sub-skill execution, agent dispatch, scripts, and 5-gate delivery contract" width="100%">
+  <img src="assets/diagrams/01-architecture-B.svg" alt="Arquitetura do claude-blog: comando do usuário passando por roteamento no orquestrador, execução de sub-skill, despacho de agentes, scripts e contrato de entrega de 5 portões" width="100%">
 </p>
 
-The orchestrator in `skills/blog/SKILL.md` parses `/blog` input, detects the target platform, loads only the references it needs, routes to a sub-skill, and coordinates agents plus scripts through the delivery contract.
+O orquestrador em `skills/blog/SKILL.md` interpreta a entrada `/blog`, detecta a plataforma alvo, carrega apenas as referências necessárias, roteia para uma sub-skill e coordena agentes e scripts por meio do contrato de entrega.
 
-| Layer | Count | Where |
+| Camada | Quantidade | Onde |
 |---|---:|---|
-| Skill directories | 32 | `skills/blog` plus `skills/blog-*` |
-| Orchestrator | 1 | `skills/blog/SKILL.md` |
+| Diretórios de skill | 32 | `skills/blog` mais `skills/blog-*` |
+| Orquestrador | 1 | `skills/blog/SKILL.md` |
 | Sub-skills | 31 | `skills/blog-*/SKILL.md` |
-| User-facing `/blog` commands | 30 | `skills/blog/SKILL.md` routing table |
-| Internal-only sub-skill | 1 | `skills/blog-chart/SKILL.md` |
-| Specialized agents | 5 | `agents/blog-*.md` |
-| Root scripts | 14 | `scripts/*.py` |
-| References | 22 | `skills/blog/references/*.md` |
+| Comandos `/blog` voltados ao usuário | 30 | tabela de roteamento em `skills/blog/SKILL.md` |
+| Sub-skill somente interna | 1 | `skills/blog-chart/SKILL.md` |
+| Agentes especializados | 5 | `agents/blog-*.md` |
+| Scripts na raiz | 14 | `scripts/*.py` |
+| Referências | 22 | `skills/blog/references/*.md` |
 | Templates | 12 | `skills/blog/templates/*.md` |
-| Tests | 252 | `tests/` |
+| Testes | 252 | `tests/` |
 
-More architecture detail lives in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Mais detalhes de arquitetura em [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-## 5-Gate Delivery Contract
+## Contrato de entrega de 5 portões
 
 <p align="center">
-  <img src="assets/diagrams/02-pipeline-B.svg" alt="5-gate Blog Delivery Contract pipeline: Capability Discovery, Format Completeness, Visual Verification, Content Review, Asset and Link Integrity, then user delivery" width="100%">
+  <img src="assets/diagrams/02-pipeline-B.svg" alt="Pipeline do contrato de entrega de 5 portões: descoberta de capacidades, completude de formato, verificação visual, revisão de conteúdo, integridade de ativos e links, e então entrega ao usuário" width="100%">
 </p>
 
-Every `/blog write` and `/blog rewrite` result must pass the delivery contract before it is shown to the user.
+Todo resultado de `/blog write` e `/blog rewrite` precisa passar pelo contrato de entrega antes de ser mostrado ao usuário.
 
-| Gate | Enforces | Implementation |
+| Portão | O que exige | Implementação |
 |---|---|---|
-| 1. Capability Discovery | Required tools, agents, env vars, and optional dependencies are known before writing | `scripts/blog_preflight.py --gate 1` |
-| 2. Format Completeness | `.md`, `.html`, `.pdf`, and a real hero image exist | `scripts/blog_render.py`, `scripts/generate_hero.py` |
-| 3. Visual Verification | Screenshots render at 375, 768, and 1280 widths, JSON-LD is valid, dark mode holds, SVGs do not overflow | `patchright` or `playwright` |
-| 4. Content Review | `blog-reviewer` score is 90+ with zero P0 issues | `agents/blog-reviewer.md` |
-| 5. Asset and Link Integrity | Images resolve, `og:image` exists, links return 200, word count matches schema within 5% | `scripts/blog_preflight.py --gate 5` |
+| 1. Descoberta de capacidades | Ferramentas, agentes, variáveis de ambiente e dependências opcionais são conhecidos antes da escrita | `scripts/blog_preflight.py --gate 1` |
+| 2. Completude de formato | Existem `.md`, `.html`, `.pdf` e uma imagem principal real | `scripts/blog_render.py`, `scripts/generate_hero.py` |
+| 3. Verificação visual | As capturas renderizam a 375, 768 e 1280 de largura, o JSON-LD é válido, o modo escuro se sustenta e os SVGs não transbordam | `patchright` ou `playwright` |
+| 4. Revisão de conteúdo | A nota do `blog-reviewer` é 90 ou mais, com zero problemas P0 | `agents/blog-reviewer.md` |
+| 5. Integridade de ativos e links | As imagens resolvem, existe `og:image`, os links devolvem 200, a contagem de palavras bate com o schema dentro de 5% | `scripts/blog_preflight.py --gate 5` |
 
-Hero image ladder: Banana MCP, direct Gemini API, premium stock APIs, then Openverse. First working source wins. Full spec: [`skills/blog/references/blog-delivery-contract.md`](skills/blog/references/blog-delivery-contract.md).
+Escada da imagem principal: Banana MCP, API direta do Gemini, APIs premium de banco de imagens, depois Openverse. A primeira fonte que funcionar vence. Especificação completa: [`skills/blog/references/blog-delivery-contract.md`](skills/blog/references/blog-delivery-contract.md).
 
-## Sub-Skill Ecosystem
+## Ecossistema de sub-skills
 
 <p align="center">
-  <img src="assets/diagrams/03-sub-skill-map-A.svg" alt="claude-blog sub-skill ecosystem: one orchestrator, 31 sub-skills, 30 user-facing commands, and internal blog-chart support grouped by writing, quality, search, media, multilingual, and distribution workflows" width="100%">
+  <img src="assets/diagrams/03-sub-skill-map-A.svg" alt="Ecossistema de sub-skills do claude-blog: um orquestrador, 31 sub-skills, 30 comandos voltados ao usuário e o apoio interno do blog-chart, agrupados por fluxos de escrita, qualidade, busca, mídia, multilíngue e distribuição" width="100%">
 </p>
 
-The ecosystem is intentionally modular. Most commands are user-facing sub-skills. `blog-chart` is internal-only, and `blog-image` can be called both by the user and internally by write and rewrite workflows.
+O ecossistema é modular de propósito. A maioria dos comandos são sub-skills voltadas ao usuário. O `blog-chart` é somente interno, e o `blog-image` pode ser chamado tanto pelo usuário quanto internamente pelos fluxos de escrita e reescrita.
 
-## Commands
+## Comandos
 
-First run: `/blog strategy <niche>` to scope the site, `/blog write <topic>` to generate a gated article, and `/blog analyze <file-or-url>` to score an existing post.
+Primeira execução: `/blog strategy <nicho>` para delimitar o site, `/blog write <tema>` para gerar um artigo com portões, e `/blog analyze <arquivo-ou-url>` para pontuar um post existente.
 
-| Command | What it does |
+| Comando | O que faz |
 |---|---|
-| `/blog write <topic>` | Write a new blog post from scratch |
-| `/blog rewrite <file>` | Rewrite/optimize an existing blog post |
-| `/blog analyze <file-or-url>` | Audit blog quality with 0-100 score |
-| `/blog brief <topic>` | Generate a detailed content brief |
-| `/blog calendar [monthly\|quarterly]` | Generate an editorial calendar |
-| `/blog strategy <niche>` | Blog strategy and topic ideation |
-| `/blog outline <topic>` | Generate SERP-informed content outline |
-| `/blog seo-check <file>` | Post-writing SEO validation checklist |
-| `/blog schema <file>` | Generate JSON-LD schema markup |
-| `/blog repurpose <file>` | Repurpose content for other platforms |
-| `/blog geo <file>` | AI citation readiness audit |
-| `/blog audit [directory]` | Full-site blog health assessment |
-| `/blog cannibalization [dir]` | Detect keyword cannibalization across posts |
-| `/blog factcheck <file>` | Verify statistics against cited sources |
-| `/blog image [generate\|edit\|setup]` | AI image generation and editing via Gemini |
-| `/blog persona [create\|list\|use\|show]` | Manage writing personas and voice profiles |
-| `/blog brand [init\|show\|update]` | Generate BRAND.md + VOICE.md context files auto-loaded by all sub-skills |
-| `/blog discourse <topic>` | Research what people are actually saying about a topic in last 30 days; produces DISCOURSE.md (v1.8.0, API-free) |
-| `/blog taxonomy [suggest\|sync\|audit]` | Tag/category management across CMS platforms |
-| `/blog notebooklm <question>` | Query NotebookLM for source-grounded research |
-| `/blog audio [generate\|voices\|setup]` | Generate audio narration of blog posts |
-| `/blog google [command] [args]` | Google API data: PSI, CrUX, GSC, GA4, NLP, YouTube, Keywords |
-| `/blog update <file>` | Update existing post with fresh stats (routes to rewrite) |
-| `/blog cluster [plan\|execute] <seed-or-plan>` | Semantic topic-cluster planning + execution (hub and spoke) |
-| `/blog multilingual <topic> --languages <codes>` | Write + translate + localize + emit hreflang in one command |
-| `/blog translate <file> --to <codes>` | SEO-optimized translation with format preservation |
-| `/blog localize <file> --locale <code>` | Cultural deep-adaptation (DACH, FR, ES, JA, custom) |
-| `/blog locale-audit <directory>` | Multilingual content QA (completeness, hreflang, parity, freshness) |
-| `/blog flow [find\|optimize\|win\|prompts\|sync]` | FLOW framework prompts (evidence-led, 30 blog-applicable) |
-| `/blog style learn <paths>` | Learn author voice profile from 5-10 posts (feeds blog-write and blog-persona) |
-| `/blog decay <current-gsc> <previous-gsc>` | Detect content decay: flag 20%+ QoQ traffic decline from GSC exports |
+| `/blog write <tema>` | Escreve um post novo do zero |
+| `/blog rewrite <arquivo>` | Reescreve e otimiza um post existente |
+| `/blog analyze <arquivo-ou-url>` | Audita a qualidade do post com nota de 0 a 100 |
+| `/blog brief <tema>` | Gera um briefing de conteúdo detalhado |
+| `/blog calendar [monthly\|quarterly]` | Gera um calendário editorial |
+| `/blog strategy <nicho>` | Estratégia de blog e geração de temas |
+| `/blog outline <tema>` | Gera roteiro de conteúdo informado por resultados de busca |
+| `/blog seo-check <arquivo>` | Lista de verificação de SEO após a escrita |
+| `/blog schema <arquivo>` | Gera marcação de schema JSON-LD |
+| `/blog repurpose <arquivo>` | Reaproveita o conteúdo para outras plataformas |
+| `/blog geo <arquivo>` | Auditoria de prontidão para citação por IA |
+| `/blog audit [diretório]` | Avaliação de saúde do blog inteiro |
+| `/blog cannibalization [dir]` | Detecta canibalização de palavra-chave entre posts |
+| `/blog factcheck <arquivo>` | Verifica estatísticas contra as fontes citadas |
+| `/blog image [generate\|edit\|setup]` | Geração e edição de imagem por IA via Gemini |
+| `/blog persona [create\|list\|use\|show]` | Gerencia personas de escrita e perfis de voz |
+| `/blog brand [init\|show\|update]` | Gera os arquivos de contexto BRAND.md + VOICE.md, carregados automaticamente por todas as sub-skills |
+| `/blog discourse <tema>` | Pesquisa o que as pessoas estão de fato dizendo sobre um tema nos últimos 30 dias; produz DISCOURSE.md (v1.8.0, sem API) |
+| `/blog taxonomy [suggest\|sync\|audit]` | Gestão de tags e categorias entre plataformas de CMS |
+| `/blog notebooklm <pergunta>` | Consulta o NotebookLM para pesquisa ancorada em fonte |
+| `/blog audio [generate\|voices\|setup]` | Gera narração em áudio dos posts |
+| `/blog google [comando] [args]` | Dados de API do Google: PSI, CrUX, GSC, GA4, NLP, YouTube, palavras-chave |
+| `/blog update <arquivo>` | Atualiza um post existente com dados novos (roteia para rewrite) |
+| `/blog cluster [plan\|execute] <semente-ou-plano>` | Planejamento e execução de cluster semântico de temas (eixo e raios) |
+| `/blog multilingual <tema> --languages <códigos>` | Escreve, traduz, localiza e emite hreflang num comando só |
+| `/blog translate <arquivo> --to <códigos>` | Tradução otimizada para SEO com preservação de formato |
+| `/blog localize <arquivo> --locale <código>` | Adaptação cultural profunda (DACH, FR, ES, JA, personalizada) |
+| `/blog locale-audit <diretório>` | QA de conteúdo multilíngue (completude, hreflang, paridade, atualidade) |
+| `/blog flow [find\|optimize\|win\|prompts\|sync]` | Prompts do framework FLOW (guiados por evidência, 30 aplicáveis a blog) |
+| `/blog style learn <caminhos>` | Aprende o perfil de voz do autor a partir de 5 a 10 posts (alimenta blog-write e blog-persona) |
+| `/blog decay <gsc-atual> <gsc-anterior>` | Detecta decaimento de conteúdo: sinaliza queda de 20%+ de tráfego no trimestre a partir de exportações do GSC |
 
-`/blog update` is a freshness alias routed to `blog-rewrite`; the project count remains 30 user-facing `/blog` commands. `blog-chart` remains internal-only.
+O `/blog update` é um apelido de atualização roteado para o `blog-rewrite`; a contagem do projeto continua em 30 comandos `/blog` voltados ao usuário. O `blog-chart` segue somente interno.
 
-Full reference: [`docs/COMMANDS.md`](docs/COMMANDS.md).
+Referência completa: [`docs/COMMANDS.md`](docs/COMMANDS.md).
 
-## FLOW Framework
+## Framework FLOW
 
 <p align="center">
-  <img src="assets/diagrams/04-framework-B.svg" alt="FLOW framework radial wheel: Find, Leverage, Optimize, Win, with claude-blog command surfaces for Find, Optimize, Win and prompt support for Leverage" width="100%">
+  <img src="assets/diagrams/04-framework-B.svg" alt="Roda radial do framework FLOW: Find, Leverage, Optimize, Win, com as superfícies de comando do claude-blog para Find, Optimize e Win, e apoio por prompts para Leverage" width="100%">
 </p>
 
-claude-blog integrates the FLOW framework from [`AgriciDaniel/flow`](https://github.com/AgriciDaniel/flow) (CC BY 4.0). FLOW means **Find, Leverage, Optimize, Win**. The skill surfaces Find, Optimize, and Win as `/blog flow` commands; Leverage is available as a prompt family through `/blog flow prompts` and is applied inside drafting, repurposing, and distribution workflows.
+O claude-blog integra o framework FLOW de [`AgriciDaniel/flow`](https://github.com/AgriciDaniel/flow) (CC BY 4.0). FLOW significa **Find, Leverage, Optimize, Win**. A skill expõe Find, Optimize e Win como comandos `/blog flow`; Leverage está disponível como família de prompts por `/blog flow prompts` e é aplicado dentro dos fluxos de redação, reaproveitamento e distribuição.
 
-## Features
+## Recursos
 
-### v1.10 and v1.11 Highlights
+### Destaques das v1.10 e v1.11
 
-- **5-gate Delivery Contract**: code-enforced pre-presentation gates for format, visuals, review, assets, and links.
-- **AI Citation Readiness Heuristic**: `scripts/ai_citation_score.py` produces non-calibrated 0-100 editorial-readiness views for AI Overview, Perplexity, and ChatGPT and feeds `/blog geo`.
-- **Writing style learning**: `/blog style learn <paths>` builds an author voice profile from 5 to 10 posts.
-- **Content decay detection**: `/blog decay <current-gsc> <previous-gsc>` flags 20%+ quarter-over-quarter GSC traffic drops and suggests refresh, consolidate, or prune actions.
-- **Pre-commit quality gate**: `scripts/quality_gate.py` and `.pre-commit-config.yaml` block blog posts below score 70 before commit.
-- **Brand and discourse context**: `/blog brand` writes `BRAND.md` and `VOICE.md`; `/blog discourse` writes `DISCOURSE.md`. The orchestrator loads them through fenced, nonce-bound untrusted-data handling.
-- **Multilingual and topic clusters**: `/blog multilingual`, `/blog translate`, `/blog localize`, `/blog locale-audit`, and `/blog cluster` support international hub-and-spoke publishing.
-- **Deterministic blog hygiene**: `scripts/blog_hygiene.py` can add lazy image loading and a table of contents without replacing human review.
+- **Contrato de entrega de 5 portões**: portões impostos por código antes da apresentação, cobrindo formato, visuais, revisão, ativos e links.
+- **Heurística de prontidão para citação por IA**: `scripts/ai_citation_score.py` produz visões editoriais não calibradas de 0 a 100 para AI Overview, Perplexity e ChatGPT, e alimenta o `/blog geo`.
+- **Aprendizado de estilo de escrita**: `/blog style learn <caminhos>` constrói um perfil de voz do autor a partir de 5 a 10 posts.
+- **Detecção de decaimento de conteúdo**: `/blog decay <gsc-atual> <gsc-anterior>` sinaliza quedas de 20%+ de tráfego no trimestre e sugere ações de atualizar, consolidar ou podar.
+- **Portão de qualidade em pre-commit**: `scripts/quality_gate.py` e `.pre-commit-config.yaml` barram posts com nota abaixo de 70 antes do commit.
+- **Contexto de marca e de discurso**: `/blog brand` escreve `BRAND.md` e `VOICE.md`; `/blog discourse` escreve `DISCOURSE.md`. O orquestrador os carrega por tratamento de dado não confiável, com cerca e vínculo por nonce.
+- **Multilíngue e clusters de temas**: `/blog multilingual`, `/blog translate`, `/blog localize`, `/blog locale-audit` e `/blog cluster` sustentam publicação internacional em eixo e raios.
+- **Higiene determinística de blog**: `scripts/blog_hygiene.py` pode acrescentar carregamento tardio de imagens e um sumário, sem substituir a revisão humana.
 
-### 12 Content Templates
+### 12 templates de conteúdo
 
-Auto-selected by topic and intent: how-to guide, listicle, case study, comparison, pillar page, product review, thought leadership, roundup, tutorial, news analysis, data research, and FAQ knowledge base.
+Selecionados automaticamente por tema e intenção: guia prático, lista, estudo de caso, comparação, página pilar, análise de produto, artigo de opinião, compilação de especialistas, tutorial, análise de notícia, pesquisa de dados e base de conhecimento em perguntas frequentes.
 
-### 5-Category Quality Scoring
+### Pontuação de qualidade em 5 categorias
 
-| Category | Points | Focus |
+| Categoria | Pontos | Foco |
 |---|---:|---|
-| Content Quality | 30 | Depth, readability, originality, engagement |
-| SEO Optimization | 25 | Headings, title, keywords, links, meta |
-| E-E-A-T Signals | 15 | Author, citations, trust, evidence basis |
-| Technical Elements | 15 | Schema, images, speed, mobile, OG tags |
-| AI Citation Readiness | 15 | Evidence-backed citability, purpose fit, entity clarity |
+| Qualidade de conteúdo | 30 | Profundidade, legibilidade, originalidade, engajamento |
+| Otimização de SEO | 25 | Títulos de seção, título, palavras-chave, links, meta |
+| Sinais de E-E-A-T | 15 | Autor, citações, confiança, base de evidência |
+| Elementos técnicos | 15 | Schema, imagens, velocidade, mobile, tags OG |
+| Prontidão para citação por IA | 15 | Citabilidade apoiada em evidência, aderência ao propósito, clareza de entidade |
 
-Scoring bands: Exceptional (90-100), Strong (80-89), Acceptable (70-79), Below Standard (60-69), Rewrite (<60). The delivery contract blocks delivery below 90.
+Faixas de pontuação: Excepcional (90-100), Forte (80-89), Aceitável (70-79), Abaixo do padrão (60-69), Refazer (menos de 60). O contrato de entrega bloqueia a entrega abaixo de 90.
 
-### More Capabilities
+### Mais capacidades
 
-- Advisory editorial style diagnostics for sentence-length variation, configured phrase lists, and vocabulary sampling; these never infer authorship or affect scoring.
-- Persona-driven writing with NNGroup tone dimensions, readability bands, and style enforcement.
-- `/blog factcheck` source verification with exact match, paraphrase, and not-found confidence scoring.
-- `/blog cannibalization` keyword overlap detection with merge or differentiate recommendations.
-- CMS taxonomy management for WordPress, Shopify, Ghost, Strapi, and Sanity.
-- Dual Google and AI-citation optimization, including evidence-backed explanations, intent-matched structure, optional visible Q&A, internal links, schema, and substantive maintenance.
-- Visual media through Gemini image generation, verified stock sourcing, SVG charts, YouTube embeds, and alt text requirements.
-- Google API integration across PageSpeed Insights, CrUX, Search Console, GA4, NLP, YouTube, URL Inspection, and Keyword Planner. Indexing API use is scoped to JobPosting or livestream URLs only.
-- NotebookLM research for source-grounded answers from user-uploaded documents.
-- Gemini TTS audio narration in summary, full-article, and two-speaker dialogue modes.
-- Platform support for Next.js MDX, Astro, Hugo, Jekyll, WordPress, Ghost, 11ty, Gatsby, and static HTML.
+- Diagnósticos editoriais consultivos de variação de tamanho de frase, listas de expressões configuradas e amostragem de vocabulário; eles nunca inferem autoria nem afetam a nota.
+- Escrita guiada por persona, com dimensões de tom do NNGroup, faixas de legibilidade e aplicação de estilo.
+- Verificação de fontes no `/blog factcheck`, com pontuação de confiança em correspondência exata, paráfrase e não encontrado.
+- Detecção de sobreposição de palavra-chave no `/blog cannibalization`, com recomendação de fundir ou diferenciar.
+- Gestão de taxonomia de CMS para WordPress, Shopify, Ghost, Strapi e Sanity.
+- Dupla otimização para Google e citação por IA, incluindo explicações apoiadas em evidência, estrutura alinhada à intenção, perguntas visíveis opcionais, links internos, schema e manutenção substantiva.
+- Mídia visual por geração de imagem no Gemini, curadoria verificada de banco de imagens, gráficos SVG, incorporação de YouTube e exigência de texto alternativo.
+- Integração com APIs do Google em PageSpeed Insights, CrUX, Search Console, GA4, NLP, YouTube, inspeção de URL e Planejador de Palavras-chave. O uso da Indexing API se restringe a URLs de JobPosting ou de transmissão ao vivo.
+- Pesquisa no NotebookLM para respostas ancoradas nos documentos que você enviou.
+- Narração em áudio por Gemini TTS, nos modos resumo, artigo completo e diálogo entre dois locutores.
+- Suporte de plataforma a Next.js MDX, Astro, Hugo, Jekyll, WordPress, Ghost, 11ty, Gatsby e HTML estático.
 
-### Methodology References
+### Referências de metodologia
 
-| Reference | Purpose |
+| Referência | Finalidade |
 |---|---|
-| `ai-slop-detection.md` | Two-tier advisory editorial pattern review; never an authorship classifier or scoring input |
-| `editorial-heuristics.md` | Nielsen-adapted 0-4 scoring with P0-P3 severity |
-| `cognitive-load.md` | Per-section concept-density scoring |
-| `research-quality.md` | Source-tier, freshness, and synthesis quality checks |
-| `synthesis-contract.md` | Research synthesis LAWs for citation-safe output |
+| `ai-slop-detection.md` | Revisão consultiva de padrão editorial em dois níveis; nunca um classificador de autoria nem entrada de pontuação |
+| `editorial-heuristics.md` | Pontuação de 0 a 4 adaptada de Nielsen, com severidade P0 a P3 |
+| `cognitive-load.md` | Pontuação de densidade de conceitos por seção |
+| `research-quality.md` | Checagens de nível de fonte, atualidade e qualidade de síntese |
+| `synthesis-contract.md` | LEIS de síntese de pesquisa para saída segura quanto a citações |
 
-Adapted attribution lives in [`CONTRIBUTORS.md`](docs/CONTRIBUTORS.md).
+A atribuição das adaptações está em [`CONTRIBUTORS.md`](docs/CONTRIBUTORS.md).
 
-## Brain Provenance
+## Procedência do Brain
 
-The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gated Obsidian brain. It is not part of the plugin payload; all skill tooling remains scoped to `skills/`. Brain-derived updates land through reviewed reference, script, and documentation changes.
+O Claude Blog Brain é vendorizado em `./brain` como um brain Obsidian autocontido e com evidência exigida. Ele não faz parte do payload do plugin; todo o ferramental de skill segue restrito a `skills/`. As atualizações derivadas do brain chegam por mudanças revisadas de referência, script e documentação.
 
-## Install
+## Instalação
 
-Plugin install for Claude Code 1.0.33+:
+Instalação como plugin para o Claude Code 1.0.33 ou superior:
 
 ```bash
 /plugin marketplace add AgriciDaniel/claude-blog
 /plugin install claude-blog@agricidaniel-blog
 ```
 
-Recommended clone, verify, then install flow:
+Fluxo recomendado de clonar, verificar e instalar:
 
 ```bash
 git clone https://github.com/AgriciDaniel/claude-blog.git
@@ -269,13 +269,13 @@ chmod +x install.sh
 ./install.sh
 ```
 
-One-command install on Unix and macOS:
+Instalação em um comando no Unix e no macOS:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.sh | CLAUDE_BLOG_REF=v2.1.1 bash
 ```
 
-One-command install on Windows PowerShell:
+Instalação em um comando no PowerShell do Windows:
 
 ```powershell
 $env:CLAUDE_BLOG_REF = "v2.1.1"
@@ -283,7 +283,7 @@ irm https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.ps1 
 pwsh -File ./install.ps1
 ```
 
-Verify installer integrity before running:
+Verifique a integridade do instalador antes de executar:
 
 ```bash
 curl -fsSL -o install.sh https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.sh
@@ -291,44 +291,44 @@ echo "b4fcd5aa6767529bc8d11017699bd8211519c93b0d6c28c5cf032f76ada98381  install.
 CLAUDE_BLOG_REF=v2.1.1 bash install.sh
 ```
 
-The SHA-256 above is for the current `install.sh` at HEAD on `main`; `CLAUDE_BLOG_REF` pins the repository clone performed by the installer. Verify against [the canonical file](https://github.com/AgriciDaniel/claude-blog/blob/main/install.sh) before running. The `install.ps1` companion hash is `9532d3014aa24468d8dd309e19acb5557c9cc7e4edab718381c26515aab48a79`.
+O SHA-256 acima corresponde ao `install.sh` atual no HEAD da `main`; o `CLAUDE_BLOG_REF` fixa o clone do repositório feito pelo instalador. Confira contra [o arquivo canônico](https://github.com/AgriciDaniel/claude-blog/blob/main/install.sh) antes de executar. O hash correspondente do `install.ps1` é `9532d3014aa24468d8dd309e19acb5557c9cc7e4edab718381c26515aab48a79`.
 
-Restart Claude Code after installation to activate.
+Reinicie o Claude Code após a instalação para ativar.
 
-Uninstall on Unix and macOS:
+Desinstalação no Unix e no macOS:
 
 ```bash
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
-Uninstall on Windows PowerShell:
+Desinstalação no PowerShell do Windows:
 
 ```powershell
 .\uninstall.ps1
 ```
 
-Installation details: [`docs/INSTALLATION.md`](docs/INSTALLATION.md).
+Detalhes de instalação: [`docs/INSTALLATION.md`](docs/INSTALLATION.md).
 
-## Requirements
+## Requisitos
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed and configured.
-- Python 3.11+ for quality scoring, the delivery contract runners, renderers, and lint.
-- Optional: `pip install -r requirements.txt` for advanced analysis, readability scoring, schema detection, and media workflows.
+- CLI do [Claude Code](https://docs.anthropic.com/en/docs/claude-code) instalada e configurada.
+- Python 3.11+ para a pontuação de qualidade, os executores do contrato de entrega, os renderizadores e o lint.
+- Opcional: `pip install -r requirements.txt` para análise avançada, pontuação de legibilidade, detecção de schema e fluxos de mídia.
 
-### Automated CI Quality Gates
+### Portões automatizados de qualidade na CI
 
-1. **pytest**: the complete security, behavioral, regression, installer, and delivery-contract suite.
-2. **Plugin validation**: `claude plugin validate .` plus manifest, marketplace, and frontmatter checks.
-3. **Stale-path lint**: catches drift in `references/`, `templates/`, command docs, and installer payloads.
-4. **Prose hygiene**: `scripts/lint_prose.py` enforces no em dash, no en dash, and no ASCII double-hyphen prose.
-5. **Version coherence**: canonical version surfaces must all match the release version.
-6. **Command coherence**: `skills/blog/SKILL.md` and [`docs/COMMANDS.md`](docs/COMMANDS.md) must declare the same command set.
-7. **Repository consistency**: validates local reference targets, FLOW prompt locks, and reports orphaned resources without blocking.
-8. **Hash-locked dependency smoke**: installs the audio and NotebookLM locks with `--require-hashes`, then initializes google-genai, Patchright, and preflight without API calls or a browser launch.
-9. **Brain validation**: changes under `brain/**` run its pytest suite, vault lint, and report-only audit.
+1. **pytest**: a suíte completa de segurança, comportamento, regressão, instalador e contrato de entrega.
+2. **Validação do plugin**: `claude plugin validate .` mais checagens de manifesto, marketplace e frontmatter.
+3. **Lint de caminho defasado**: pega desvios em `references/`, `templates/`, documentação de comandos e payloads do instalador.
+4. **Higiene de prosa**: `scripts/lint_prose.py` impede travessão, meia-risca e hífen duplo ASCII na prosa.
+5. **Coerência de versão**: todas as superfícies canônicas de versão precisam bater com a versão da release.
+6. **Coerência de comandos**: `skills/blog/SKILL.md` e [`docs/COMMANDS.md`](docs/COMMANDS.md) precisam declarar o mesmo conjunto de comandos.
+7. **Consistência do repositório**: valida alvos de referência locais, travas de prompt do FLOW e reporta recursos órfãos sem bloquear.
+8. **Teste de fumaça de dependências travadas por hash**: instala as travas de áudio e do NotebookLM com `--require-hashes` e então inicializa google-genai, Patchright e o preflight, sem chamadas de API nem abertura de navegador.
+9. **Validação do brain**: mudanças em `brain/**` rodam a suíte pytest dele, o lint do vault e uma auditoria apenas informativa.
 
-Run locally before pushing:
+Rode localmente antes de enviar:
 
 ```bash
 python3 -m pytest tests/
@@ -336,78 +336,78 @@ python3 scripts/lint_prose.py
 claude plugin validate .
 ```
 
-## How Does claude-blog Compare?
+## Como o claude-blog se compara?
 
-claude-blog is a structured pipeline. Direct LLM prompting is a one-shot. Hosted SaaS tools are closed-source. The tradeoffs are:
+O claude-blog é um pipeline estruturado. Prompt direto num LLM é tiro único. Ferramentas SaaS hospedadas são de código fechado. Os trade-offs são:
 
-| Capability | claude-blog | Direct Claude or ChatGPT prompt | Copy.ai or Jasper | Build it yourself |
+| Capacidade | claude-blog | Prompt direto no Claude ou ChatGPT | Copy.ai ou Jasper | Construir do zero |
 |---|:---:|:---:|:---:|:---:|
-| Full article in one command with iteration loop | Yes | One-shot | Yes | No |
-| Sourced statistics with verification | Yes | No | No | Manual |
-| AI citation optimization (GEO / AEO) | Yes | No | No | Partial |
-| Blocking content review with score 90+ | Yes | No | No | No |
-| Multilingual plus hreflang in one command | Yes | Partial | Partial | No |
-| Topic-cluster planning | Yes | No | Partial | No |
-| Audio narration | Yes | No | No | No |
-| Hero image generation ladder | Yes | No | Stock only | Partial |
-| Persistent brand and voice context | Yes | Per-prompt | Limited | No |
-| Open-source, MIT, no SaaS subscription | Yes | No | No | Yes |
+| Artigo completo em um comando, com laço de iteração | Sim | Tiro único | Sim | Não |
+| Estatísticas com fonte e verificação | Sim | Não | Não | Manual |
+| Otimização para citação por IA (GEO / AEO) | Sim | Não | Não | Parcial |
+| Revisão de conteúdo bloqueante com nota 90 ou mais | Sim | Não | Não | Não |
+| Multilíngue com hreflang num comando só | Sim | Parcial | Parcial | Não |
+| Planejamento de cluster de temas | Sim | Não | Parcial | Não |
+| Narração em áudio | Sim | Não | Não | Não |
+| Escada de geração da imagem principal | Sim | Não | Só banco de imagens | Parcial |
+| Contexto persistente de marca e voz | Sim | Por prompt | Limitado | Não |
+| Código aberto, MIT, sem assinatura SaaS | Sim | Não | Não | Sim |
 
-claude-blog is not better at everything. Direct prompting is faster for a single throwaway draft. Hosted SaaS is easier for non-developers. DIY is more flexible for unique pipelines. claude-blog fits when you want production-grade content at scale without a SaaS subscription.
+O claude-blog não é melhor em tudo. Prompt direto é mais rápido para um rascunho descartável. SaaS hospedado é mais fácil para quem não programa. Construir do zero é mais flexível para pipelines singulares. O claude-blog serve quando você quer conteúdo de nível de produção em escala, sem assinatura de SaaS.
 
-## Frequently Asked Questions
+## Perguntas frequentes
 
-### What is claude-blog?
+### O que é o claude-blog?
 
-claude-blog is a Claude Code skill suite for writing, optimizing, and auditing blog content. It runs 32 skill directories through a 5-gate delivery contract so every article meets a 90/100 quality bar before it reaches you.
+O claude-blog é um conjunto de skills do Claude Code para escrever, otimizar e auditar conteúdo de blog. Ele roda 32 diretórios de skill através de um contrato de entrega de 5 portões, de modo que todo artigo atinja a régua de 90/100 antes de chegar até você.
 
-### How is claude-blog different from prompting Claude or ChatGPT directly?
+### Como o claude-blog difere de fazer prompt direto no Claude ou no ChatGPT?
 
-Direct prompting gives you one draft from one prompt. claude-blog gives you a structured pipeline: research with sourced statistics, outline approval, draft generation, multi-pass quality scoring, advisory editorial pattern review, fact verification, schema injection, and a blocking review that iterates up to 3 times before delivery.
+Prompt direto entrega um rascunho a partir de um prompt. O claude-blog entrega um pipeline estruturado: pesquisa com estatísticas com fonte, aprovação de roteiro, geração de rascunho, pontuação de qualidade em várias passagens, revisão consultiva de padrão editorial, verificação de fatos, injeção de schema e uma revisão bloqueante que itera até 3 vezes antes da entrega.
 
-### Is claude-blog free and open source?
+### O claude-blog é gratuito e de código aberto?
 
-Yes. [`AgriciDaniel/claude-blog`](https://github.com/AgriciDaniel/claude-blog)
-is MIT-licensed and available to anyone using Claude Code.
+Sim. [`AgriciDaniel/claude-blog`](https://github.com/AgriciDaniel/claude-blog)
+é licenciado sob MIT e está disponível a qualquer pessoa que use o Claude Code.
 
-### What blog platforms does claude-blog support?
+### Que plataformas de blog o claude-blog suporta?
 
-Next.js MDX, Astro, Hugo, Jekyll, WordPress, Ghost, 11ty, Gatsby, and static HTML. The orchestrator auto-detects the platform and adjusts frontmatter, image embedding, and schema injection.
+Next.js MDX, Astro, Hugo, Jekyll, WordPress, Ghost, 11ty, Gatsby e HTML estático. O orquestrador detecta a plataforma automaticamente e ajusta frontmatter, incorporação de imagem e injeção de schema.
 
-### Does claude-blog hallucinate statistics?
+### O claude-blog alucina estatísticas?
 
-The workflow is designed to block invented numbers. `/blog factcheck` fetches cited source URLs and scores each claim as exact match, paraphrase, or not found. `blog-reviewer` blocks publication when citations cannot be verified.
+O fluxo foi desenhado para barrar números inventados. O `/blog factcheck` busca as URLs das fontes citadas e pontua cada afirmação como correspondência exata, paráfrase ou não encontrada. O `blog-reviewer` bloqueia a publicação quando as citações não podem ser verificadas.
 
-### What is the 5-gate Blog Delivery Contract?
+### O que é o Blog Delivery Contract de 5 portões?
 
-It is a pre-presentation pipeline for Capability Discovery, Format Completeness, Visual Verification, Content Review, and Asset and Link Integrity. The orchestrator iterates the writer up to 3 times on any gate failure before escalating to you. Full spec: [`skills/blog/references/blog-delivery-contract.md`](skills/blog/references/blog-delivery-contract.md).
+É um pipeline anterior à apresentação, cobrindo descoberta de capacidades, completude de formato, verificação visual, revisão de conteúdo e integridade de ativos e links. O orquestrador itera o redator até 3 vezes em qualquer falha de portão antes de escalar para você. Especificação completa: [`skills/blog/references/blog-delivery-contract.md`](skills/blog/references/blog-delivery-contract.md).
 
-### Can I use claude-blog in multiple languages?
+### Posso usar o claude-blog em vários idiomas?
 
-Yes. `/blog multilingual <topic> --languages <codes>` writes the post, translates it while preserving frontmatter and schema, runs cultural adaptation per locale, and emits hreflang tags plus a CMS-ready language map.
+Sim. `/blog multilingual <tema> --languages <códigos>` escreve o post, traduz preservando frontmatter e schema, roda adaptação cultural por localidade e emite tags hreflang mais um mapa de idiomas pronto para CMS.
 
-### How do I cite claude-blog in academic work?
+### Como cito o claude-blog em trabalho acadêmico?
 
-See [How To Cite](#how-to-cite) or [`CITATION.cff`](CITATION.cff). GitHub also surfaces the citation through the public mirror.
+Veja [Como citar](#como-citar) ou o [`CITATION.cff`](CITATION.cff). O GitHub também expõe a citação pelo espelho público.
 
-### Is claude-blog secure to install?
+### É seguro instalar o claude-blog?
 
-The recommended flow downloads the installer as a file so you can inspect it before execution. v2.1.1 uses pinned refs, allowlisted recursive payload copies, manifest-backed uninstall, prose lint, version coherence checks, repository consistency checks, and installer regression tests. See [`SECURITY.md`](.github/SECURITY.md).
+O fluxo recomendado baixa o instalador como arquivo, para você inspecioná-lo antes de executar. A v2.1.1 usa referências fixadas, cópias recursivas de payload com lista permitida, desinstalação apoiada em manifesto, lint de prosa, checagens de coerência de versão, checagens de consistência do repositório e testes de regressão do instalador. Veja [`SECURITY.md`](.github/SECURITY.md).
 
-## Documentation Index
+## Índice da documentação
 
-- [Installation Guide](docs/INSTALLATION.md): Unix, macOS, Windows, manual install, and reproducible `uv` setup.
-- [Command Reference](docs/COMMANDS.md): Full command reference with examples.
-- [Architecture](docs/ARCHITECTURE.md): System design and component overview.
-- [Publishing Workflow](docs/PUBLISHING.md): Private-to-public release flow.
-- [Templates](docs/TEMPLATES.md): Template reference and customization.
-- [Troubleshooting](docs/TROUBLESHOOTING.md): Common issues and fixes.
-- [MCP Integration](docs/MCP-INTEGRATION.md): Optional MCP server setup.
-- [Demo](docs/DEMO.md): Worked end-to-end example.
+- [Guia de instalação](docs/INSTALLATION.md): Unix, macOS, Windows, instalação manual e configuração reproduzível com `uv`.
+- [Referência de comandos](docs/COMMANDS.md): referência completa com exemplos.
+- [Arquitetura](docs/ARCHITECTURE.md): desenho do sistema e visão geral dos componentes.
+- [Fluxo de publicação](docs/PUBLISHING.md): fluxo de release do privado ao público.
+- [Templates](docs/TEMPLATES.md): referência e personalização de templates.
+- [Solução de problemas](docs/TROUBLESHOOTING.md): problemas comuns e correções.
+- [Integração MCP](docs/MCP-INTEGRATION.md): configuração opcional de servidor MCP.
+- [Demonstração](docs/DEMO.md): exemplo completo de ponta a ponta.
 
-## How To Cite
+## Como citar
 
-If you use claude-blog in research or production, please cite the project:
+Se você usa o claude-blog em pesquisa ou em produção, cite o projeto:
 
 ```bibtex
 @software{Agrici_claude_blog_2026,
@@ -420,38 +420,38 @@ If you use claude-blog in research or production, please cite the project:
 }
 ```
 
-GitHub also surfaces the structured [`CITATION.cff`](CITATION.cff) file via "Cite this repository" on the public mirror page.
+O GitHub também expõe o arquivo estruturado [`CITATION.cff`](CITATION.cff) pelo botão "Cite this repository" na página do espelho público.
 
-## Security & Code of Conduct
+## Segurança e código de conduta
 
-- **Security policy and threat model**: [`SECURITY.md`](.github/SECURITY.md). To report a vulnerability privately, follow the disclosure procedure there.
-- **Code of Conduct**: [`CODE_OF_CONDUCT.md`](.github/CODE_OF_CONDUCT.md). Contributor Covenant.
+- **Política de segurança e modelo de ameaças**: [`SECURITY.md`](.github/SECURITY.md). Para relatar uma vulnerabilidade em caráter privado, siga o procedimento de divulgação descrito lá.
+- **Código de conduta**: [`CODE_OF_CONDUCT.md`](.github/CODE_OF_CONDUCT.md). Contributor Covenant.
 
-## Contributing
+## Como contribuir
 
-Contributions are welcome. See [`CONTRIBUTING.md`](.github/CONTRIBUTING.md) for guidelines. Before opening a PR:
+Contribuições são bem-vindas. Veja [`CONTRIBUTING.md`](.github/CONTRIBUTING.md) para as diretrizes. Antes de abrir um PR:
 
-1. Run `python3 -m pytest tests/` and confirm the full suite passes.
-2. Run `python3 scripts/lint_prose.py` and confirm zero violations.
-3. Run `claude plugin validate .`.
-4. Bump versions coherently if you touch user-visible counts or behavior.
+1. Rode `python3 -m pytest tests/` e confirme que a suíte completa passa.
+2. Rode `python3 scripts/lint_prose.py` e confirme zero violações.
+3. Rode `claude plugin validate .`.
+4. Suba as versões de forma coerente se você mexer em contagens ou comportamentos visíveis ao usuário.
 
-## License
+## Licença
 
-MIT License. See [`LICENSE`](LICENSE).
+Licença MIT. Veja [`LICENSE`](LICENSE).
 
-## Related Projects
+## Projetos relacionados
 
-- **[Rankenstein](https://rankenstein.pro)**: GUI-based content publishing workflow.
-- **[FLOW framework](https://github.com/AgriciDaniel/flow)**: Evidence-led Find, Leverage, Optimize, Win prompts (CC BY 4.0).
-- **[Claude Ads](https://github.com/AgriciDaniel/claude-ads)** and **[Claude SEO](https://github.com/AgriciDaniel/claude-seo)**: sibling Claude Code skills.
-- **[AI Marketing Hub](https://www.skool.com/ai-marketing-hub)**: Free community for AI-powered marketing.
+- **[Rankenstein](https://rankenstein.pro)**: fluxo de publicação de conteúdo com interface gráfica.
+- **[Framework FLOW](https://github.com/AgriciDaniel/flow)**: prompts Find, Leverage, Optimize, Win guiados por evidência (CC BY 4.0).
+- **[Claude Ads](https://github.com/AgriciDaniel/claude-ads)** e **[Claude SEO](https://github.com/AgriciDaniel/claude-seo)**: skills irmãs do Claude Code.
+- **[AI Marketing Hub](https://www.skool.com/ai-marketing-hub)**: comunidade gratuita de marketing com IA.
 
-## Author
+## Autor
 
-Built by [Daniel Agrici](https://agricidaniel.com/about), AI Workflow Architect, with Claude Code.
+Construído por [Daniel Agrici](https://agricidaniel.com/about), AI Workflow Architect, com o Claude Code.
 
-- [Blog](https://agricidaniel.com/blog): Deep dives on AI marketing automation.
-- [YouTube](https://www.youtube.com/@AgriciDaniel): Tutorials and demos.
-- [All open-source tools](https://github.com/AgriciDaniel): Other Claude Code skills.
-- [AI Marketing Hub](https://www.skool.com/ai-marketing-hub): Free community for AI-powered marketing.
+- [Blog](https://agricidaniel.com/blog): aprofundamentos em automação de marketing com IA.
+- [YouTube](https://www.youtube.com/@AgriciDaniel): tutoriais e demonstrações.
+- [Todas as ferramentas de código aberto](https://github.com/AgriciDaniel): outras skills do Claude Code.
+- [AI Marketing Hub](https://www.skool.com/ai-marketing-hub): comunidade gratuita de marketing com IA.
