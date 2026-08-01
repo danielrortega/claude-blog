@@ -1,334 +1,335 @@
-# Template: Comparison (X vs Y)
+# Template: Comparação (X versus Y)
 
-**Template Name:** Comparison (X vs Y Analysis)
-**Target Word Count:** 1,500-2,000 words
-**Description:** A structured, fair, category-by-category comparison of two (or occasionally three) competing products, tools, strategies, or approaches. Each category section is framed as a question the reader is actually asking, with a clear winner declared per category and an overall verdict. Designed to rank for "[A] vs [B]" queries, capture decision-stage traffic, and earn featured snippets for direct comparison questions.
+**Nome do template:** Comparação (análise X versus Y)
+**Extensão alvo:** 1.500 a 2.000 palavras
+**Descrição:** Comparação estruturada e justa, categoria por categoria, entre dois (às vezes três) produtos, ferramentas, estratégias ou abordagens concorrentes. Cada seção de categoria é formulada como uma pergunta que o leitor realmente faz, com vencedor declarado por categoria e um veredito geral. Feita para ranquear em consultas do tipo "[A] versus [B]", capturar tráfego de decisão e conquistar destaques de resultado em perguntas comparativas diretas.
 
-## When to Use This Template
+## Quando usar este template
 
-- **Content Goals:** Capture high-intent "[A] vs [B]" search traffic, help readers make confident purchase/adoption decisions, build authority as a fair evaluator, rank in "People Also Ask" boxes
-- **Search Intent:** Commercial investigation: the reader has narrowed their options to 2-3 choices and needs help making the final decision
-- **Best For:** Software comparisons, tool evaluations, framework decisions, platform migrations, methodology debates, service provider comparisons
-- **Avoid When:** The two options aren't genuinely comparable (different categories), one option is clearly obsolete, or you need to evaluate more than 3 options (use the Listicle template instead)
-
----
-
-## Section-by-Section Structure
+- **Objetivos de conteúdo:** capturar tráfego de alta intenção do tipo "[A] versus [B]", ajudar o leitor a decidir com segurança, construir autoridade como avaliador justo, aparecer em "As pessoas também perguntam"
+- **Intenção de busca:** investigação comercial: o leitor já reduziu as opções a 2 ou 3 e precisa de ajuda para a decisão final
+- **Melhor para:** comparação de softwares, avaliação de ferramentas, decisão de framework, migração de plataforma, debate de metodologias, comparação de prestadores
+- **Evite quando:** as duas opções não são de fato comparáveis (categorias diferentes), uma delas está claramente obsoleta, ou você precisa avaliar mais de 3 opções (use o template de Lista)
 
 ---
 
-### Title (H1)
-
-**Format:** "[Product A] vs [Product B]: [Key Differentiator] Compared ([Year])"
-
-**Examples:**
-- "Next.js vs Astro: Performance and DX Compared (2026)"
-- "PostgreSQL vs MySQL: Which Database Fits Your Stack? (2026)"
-- "Tailwind CSS vs Styled Components: Styling Approaches Compared (2026)"
-
-**Rules:**
-- Put the more popular/searched product first (higher search volume = first position)
-- Include a differentiating phrase that signals what the comparison covers
-- Include the year for freshness signals
-- Keep under 65 characters if possible
-- Never use "Which is Better?": be more specific about the dimension of comparison
+## Estrutura seção a seção
 
 ---
 
-### TL;DR Box (concise; length follows the material)
+### Título (H1)
 
-[ANSWER-FIRST] Deliver the verdict immediately. The reader should be able to stop here and have a useful answer.
+**Formato:** "[Produto A] versus [Produto B]: [Diferencial Central] Comparados ([Ano])"
 
-**Format:** A visually distinct callout box placed immediately after the title.
+**Exemplos:**
+- "Next.js versus Astro: Desempenho e Experiência de Desenvolvimento Comparados (2026)"
+- "PostgreSQL versus MySQL: Qual Banco Combina com Sua Stack? (2026)"
+- "Tailwind CSS versus Styled Components: Abordagens de Estilo Comparadas (2026)"
 
-**Structure:**
-1. **Quick verdict** (1 sentence): Name the overall winner and the single strongest reason.
-2. **Exception** (1 sentence): Name the specific use case where the other option wins.
-3. **Decision rule** (1 sentence): "Choose [A] if [X]. Choose [B] if [Y]."
-
-**Example:**
-> **TL;DR:** Astro wins for content-heavy sites: it's faster out of the box and ships zero JS by default. Next.js wins for interactive web applications where you need server-side rendering, API routes, and a mature ecosystem. Choose Astro if your site is mostly content. Choose Next.js if your site is mostly application.
-
----
-
-### Introduction (100-150 words)
-
-[ANSWER-FIRST] Open with the specific market context that makes this comparison relevant *right now*. What changed recently that makes people search for this?
-
-**Structure:**
-1. **Timeliness hook** (1-2 sentences): What happened recently (release, trend, shift) that makes this comparison urgent?
-2. **The core tension** (1-2 sentences): What is the fundamental trade-off between these two options? Frame it as a genuine dilemma, not a strawman.
-3. **Scope statement** (1 sentence): What specific dimensions will this comparison cover?
-4. **Credibility anchor** (1 sentence): What qualifies you to make this comparison? (testing methodology, experience with both, etc.)
-
-[STAT: Market context statistic: adoption rates, npm downloads, GitHub stars, survey data that frames both options]
-
-[INFO-GAIN: hands-on experience] Include only when the author supplies what was
-built, the test period, scale, methodology, evidence, and results. Otherwise
-state that the comparison is research-only.
-
-[INTERNAL-LINK] Link to individual deep-dive posts on each product: "For standalone reviews, see our [Product A Guide] and [Product B Guide]."
+**Regras:**
+- Coloque primeiro o produto mais buscado (maior volume de busca vem antes)
+- Inclua uma expressão diferenciadora sinalizando o que a comparação cobre
+- Inclua o ano como sinal de atualidade
+- Fique abaixo de 65 caracteres sempre que possível
+- Nunca use "Qual é melhor?": seja mais específico sobre a dimensão comparada
 
 ---
 
-### Quick Comparison Table (H2)
+### Caixa de resumo (concisa; a extensão acompanha o material)
+
+[ANSWER-FIRST] Entregue o veredito de imediato. O leitor precisa poder parar aqui com uma resposta útil.
+
+**Formato:** caixa de destaque visualmente distinta, logo depois do título.
+
+**Estrutura:**
+1. **Veredito rápido** (1 frase): nomeie o vencedor geral e a razão mais forte.
+2. **Exceção** (1 frase): nomeie o caso de uso específico em que a outra opção vence.
+3. **Regra de decisão** (1 frase): "Escolha [A] se [X]. Escolha [B] se [Y]."
+
+**Exemplo:**
+> **Em resumo:** o Astro vence em sites pesados de conteúdo: é mais rápido de saída e entrega zero JS por padrão. O Next.js vence em aplicações web interativas, onde você precisa de renderização no servidor, rotas de API e um ecossistema maduro. Escolha Astro se seu site é majoritariamente conteúdo. Escolha Next.js se seu site é majoritariamente aplicação.
+
+---
+
+### Introdução (100 a 150 palavras)
+
+[ANSWER-FIRST] Abra com o contexto de mercado específico que torna essa comparação relevante *agora*. O que mudou recentemente para as pessoas buscarem isso?
+
+**Estrutura:**
+1. **Gancho de atualidade** (1 a 2 frases): o que aconteceu recentemente (lançamento, tendência, virada) que torna a comparação urgente?
+2. **A tensão central** (1 a 2 frases): qual o trade-off fundamental entre as duas opções? Formule como dilema real, não como espantalho.
+3. **Declaração de escopo** (1 frase): que dimensões específicas a comparação vai cobrir?
+4. **Âncora de credibilidade** (1 frase): o que qualifica você para fazer essa comparação? (metodologia de teste, experiência com ambos)
+
+[STAT: estatística de contexto de mercado: taxas de adoção, downloads no npm, estrelas no GitHub, dados de pesquisa que enquadrem as duas opções]
+
+[INFO-GAIN: experiência prática] Inclua apenas quando o autor fornecer o que foi
+construído, o período de teste, a escala, a metodologia, a evidência e os
+resultados. Caso contrário, declare que a comparação é apenas documental.
+
+[INTERNAL-LINK] Link para posts aprofundados de cada produto: "Para análises individuais, veja nosso [Guia do Produto A] e o [Guia do Produto B]."
+
+---
+
+### Tabela comparativa rápida (H2)
 
 [VISUAL: comparison-table]
 
-**Format:** A comprehensive feature matrix as a markdown table, placed early in the post for scanners.
+**Formato:** matriz de funcionalidades como tabela markdown, colocada cedo no post para quem só passa os olhos.
 
-**Required rows (adapt to your category):**
+**Linhas obrigatórias (adapte à sua categoria):**
 
-| Category | [Product A] | [Product B] |
-|----------|-------------|-------------|
-| **Best For** | [Primary use case] | [Primary use case] |
-| **Pricing** | [Specific tiers] | [Specific tiers] |
-| **Learning Curve** | [Specific assessment] | [Specific assessment] |
-| **[Key Metric 1]** | [Specific value] | [Specific value] |
-| **[Key Metric 2]** | [Specific value] | [Specific value] |
-| **[Key Metric 3]** | [Specific value] | [Specific value] |
-| **[Key Metric 4]** | [Specific value] | [Specific value] |
-| **Community / Ecosystem** | [Specific data point] | [Specific data point] |
-| **Our Verdict** | [Win/Lose/Tie per row] | [Win/Lose/Tie per row] |
+| Categoria | [Produto A] | [Produto B] |
+|-----------|-------------|-------------|
+| **Melhor para** | [Caso de uso principal] | [Caso de uso principal] |
+| **Preço** | [Faixas específicas] | [Faixas específicas] |
+| **Curva de aprendizado** | [Avaliação específica] | [Avaliação específica] |
+| **[Métrica 1]** | [Valor específico] | [Valor específico] |
+| **[Métrica 2]** | [Valor específico] | [Valor específico] |
+| **[Métrica 3]** | [Valor específico] | [Valor específico] |
+| **[Métrica 4]** | [Valor específico] | [Valor específico] |
+| **Comunidade / ecossistema** | [Dado específico] | [Dado específico] |
+| **Nosso veredito** | [Vence/Perde/Empata por linha] | [Vence/Perde/Empata por linha] |
 
-**Rules:**
-- Use specific, measurable values: never "Good" or "Fast"
-- Bold the winner in each row
-- Include a "Best For" row at the top and "Our Verdict" row at the bottom
-- Keep to 8-12 rows: enough to be comprehensive, not so many that it's overwhelming
+**Regras:**
+- Use valores específicos e mensuráveis: nunca "Bom" ou "Rápido"
+- Destaque em negrito o vencedor de cada linha
+- Inclua a linha "Melhor para" no topo e "Nosso veredito" no fim
+- Fique entre 8 e 12 linhas: abrangente sem ser esmagador
 
-[STAT: Include a benchmark only when its source or supplied test methodology,
-evidence, and results are available]
+[STAT: inclua benchmark apenas quando a fonte, ou a metodologia de teste
+fornecida com evidência e resultados, estiver disponível]
 
-[INFO-GAIN: original benchmark] If you ran your own performance tests, note the methodology in a footnote below the table.
+[INFO-GAIN: benchmark próprio] Se você rodou os próprios testes de desempenho, registre a metodologia em nota abaixo da tabela.
 
-**Benchmark data sourcing.** Every material statistic must be traceable to a
-source or supplied test record that supports it. Record dates, methodology,
-limitations, and retrieval details when they affect interpretation. Do not
-force one citation format.
+**Origem dos dados de benchmark.** Toda estatística relevante precisa ser
+rastreável até uma fonte ou até um registro de teste fornecido que a sustente.
+Registre datas, metodologia, limitações e detalhes de consulta quando afetarem a
+interpretação. Não force um único formato de citação.
 
 ---
 
-### Category 1: Which Has Better [Core Feature]? (150-200 words)
+### Categoria 1: Qual tem a melhor [funcionalidade central]? (150 a 200 palavras)
 
-[ANSWER-FIRST] Open by naming the winner of this category and the single strongest reason in the first sentence.
+[ANSWER-FIRST] Abra nomeando o vencedor da categoria e a razão mais forte, já na primeira frase.
 
-**H2 format:** Use a clear question or declarative category heading according to
-reader intent, such as `## Performance comparison`.
+**Formato do H2:** use pergunta clara ou título declarativo de categoria conforme
+a intenção do leitor, como `## Comparação de desempenho`.
 
-**Structure for EVERY category section:**
-1. **Winner declaration** (1 sentence): "[Product A/B] wins on [category] because [specific reason]."
-2. **Product A evaluation** (2-3 sentences): How Product A performs in this category with specific details, metrics, or examples.
-3. **Product B evaluation** (2-3 sentences): How Product B performs in this category with specific details, metrics, or examples.
-4. **Nuance** (1-2 sentences): When does the losing product actually come close or even win in a sub-scenario?
-5. **Verdict** (bold, 1 sentence): Restate the winner with a qualifier.
+**Estrutura para TODA seção de categoria:**
+1. **Declaração do vencedor** (1 frase): "[Produto A/B] vence em [categoria] porque [razão específica]."
+2. **Avaliação do Produto A** (2 a 3 frases): como ele se sai nessa categoria, com detalhes, métricas ou exemplos específicos.
+3. **Avaliação do Produto B** (2 a 3 frases): como ele se sai nessa categoria, com detalhes, métricas ou exemplos específicos.
+4. **Nuance** (1 a 2 frases): quando o produto perdedor chega perto ou até vence num subcenário?
+5. **Veredito** (negrito, 1 frase): retome o vencedor com uma ressalva.
 
-[STAT: Specific metric comparing both products in this category]
+[STAT: métrica específica comparando os dois produtos nessa categoria]
 
-[IMAGE] Side-by-side screenshot, benchmark result, or visual comparison showing the difference in this category.
+[IMAGE] Captura lado a lado, resultado de benchmark ou comparação visual mostrando a diferença nessa categoria.
 
-**Example:**
-> ## Which Has Better Build Performance?
+**Exemplo:**
+> ## Qual tem o melhor desempenho de build?
 >
-> **[PRODUCT] leads in [DEFINED TEST CONDITION]**, based on [SUPPLIED TEST
-> RECORD OR VERIFIED SOURCE].
+> **[PRODUTO] lidera em [CONDIÇÃO DE TESTE DEFINIDA]**, com base em [REGISTRO DE
+> TESTE FORNECIDO OU FONTE VERIFICADA].
 >
-> Describe the environment, versions, sample, repetitions, measurement method,
-> and result. If no hands-on record exists, attribute each benchmark to its
-> original source and label the comparison research-only.
+> Descreva ambiente, versões, amostra, repetições, método de medição e resultado.
+> Se não existir registro prático, atribua cada benchmark à fonte original e
+> rotule a comparação como apenas documental.
 >
-> **Verdict: [CONDITIONAL DECISION BASED ON THE VERIFIED EVIDENCE].**
+> **Veredito: [DECISÃO CONDICIONAL BASEADA NA EVIDÊNCIA VERIFICADA].**
 
 ---
 
-### Category 2: Which Has Better [Second Feature]? (150-200 words)
+### Categoria 2: Qual tem a melhor [segunda funcionalidade]? (150 a 200 palavras)
 
-[Follow the same structure as Category 1]
+[Siga a mesma estrutura da Categoria 1]
 
-[STAT: Comparative metric for this category]
+[STAT: métrica comparativa desta categoria]
 
-[INFO-GAIN: real-world observation] Include only a supplied, documented usage
-observation. Otherwise use a sourced comparison or omit it.
-
----
-
-### Category 3: Which Has Better [Third Feature]? (150-200 words)
-
-[Follow the same structure as Category 1]
-
-[STAT: Comparative metric for this category]
-
-[IMAGE] Visual comparison for this category.
+[INFO-GAIN: observação de uso real] Inclua apenas observação de uso fornecida e
+documentada. Caso contrário, use comparação com fonte ou omita.
 
 ---
 
-### Category 4: Which Has Better [Fourth Feature]? (150-200 words)
+### Categoria 3: Qual tem a melhor [terceira funcionalidade]? (150 a 200 palavras)
 
-[Follow the same structure as Category 1]
+[Siga a mesma estrutura da Categoria 1]
 
-[STAT: Comparative metric for this category]
+[STAT: métrica comparativa desta categoria]
 
-[INFO-GAIN: ecosystem or community insight] Use documented first-hand evidence
-when supplied; otherwise attribute the observation to current public sources.
-
----
-
-### Category 5: Which Has Better [Fifth Feature]? (150-200 words)
-
-[Follow the same structure as Category 1]
-
-[STAT: Comparative metric for this category]
+[IMAGE] Comparação visual desta categoria.
 
 ---
 
-### Categories 6-7: [Additional categories as needed] (150-200 words each)
+### Categoria 4: Qual tem a melhor [quarta funcionalidade]? (150 a 200 palavras)
 
-[Follow the same structure. Use 5-7 categories total. Common categories include:]
-- Performance / Speed
-- Developer Experience / Learning Curve
-- Ecosystem / Plugins / Integrations
-- Documentation / Community Support
-- Scalability
-- Security
-- Customization / Flexibility
-- Pricing / Value
+[Siga a mesma estrutura da Categoria 1]
 
-**Note:** Choose categories based on what your audience actually cares about, not what's easiest to compare. Survey your readers or check "People Also Ask" boxes for guidance.
+[STAT: métrica comparativa desta categoria]
+
+[INFO-GAIN: percepção de ecossistema ou comunidade] Use evidência documentada de
+primeira mão quando fornecida; caso contrário, atribua a observação a fontes
+públicas atuais.
 
 ---
 
-### Pricing Comparison (150-200 words)
+### Categoria 5: Qual tem a melhor [quinta funcionalidade]? (150 a 200 palavras)
 
-[ANSWER-FIRST] Open with the bottom line: "For [typical use case], [Product A] costs [X] and [Product B] costs [Y]."
+[Siga a mesma estrutura da Categoria 1]
 
-**Structure:**
-1. **Direct cost comparison** (2-3 sentences): Side-by-side pricing for the most common tier or usage pattern.
-2. **Free tier analysis** (1-2 sentences): What's actually usable in each free tier? What are the real limits?
-3. **Scaling costs** (2-3 sentences): How does pricing change as usage grows? Where are the inflection points?
-4. **Hidden costs** (1-2 sentences): Any costs not immediately obvious: migration effort, required add-ons, lock-in implications.
-5. **Value verdict** (bold, 1 sentence): Which provides better value and for whom.
-
-[VISUAL: pricing-comparison-table] A simple table showing pricing tiers side by side.
-
-| Tier | [Product A] | [Product B] |
-|------|-------------|-------------|
-| Free | [Details] | [Details] |
-| Starter / Pro | [Price + details] | [Price + details] |
-| Enterprise | [Price + details] | [Price + details] |
-
-[STAT: Total cost of ownership for a specific scenario (e.g., "For a 10-person team with 100K monthly users")]
-
-[INFO-GAIN: hidden cost insight] Use a supplied billing record or verified
-source. Do not imply discovery through actual usage without evidence.
+[STAT: métrica comparativa desta categoria]
 
 ---
 
-### Who Should Choose What (100-150 words)
+### Categorias 6 e 7: [categorias adicionais conforme a necessidade] (150 a 200 palavras cada)
 
-[ANSWER-FIRST] Open with the simplest possible decision rule: "If [condition], choose [Product]. If [condition], choose [Product]."
+[Siga a mesma estrutura. Use de 5 a 7 categorias no total. Categorias comuns incluem:]
+- Desempenho e velocidade
+- Experiência de desenvolvimento e curva de aprendizado
+- Ecossistema, plugins e integrações
+- Documentação e suporte da comunidade
+- Escalabilidade
+- Segurança
+- Personalização e flexibilidade
+- Preço e custo-benefício
 
-**Format:** 2-4 reader profiles, each as a bolded persona with a 1-2 sentence recommendation.
+**Observação:** escolha as categorias pelo que seu público de fato valoriza, não pelo que é mais fácil de comparar. Consulte seus leitores ou verifique as caixas de "As pessoas também perguntam".
 
-**Structure:**
-1. **Persona 1** (bold): "[Profile description]" -> Recommendation + reason
-2. **Persona 2** (bold): "[Profile description]" -> Recommendation + reason
-3. **Persona 3** (bold): "[Profile description]" -> Recommendation + reason
-4. **Edge case** (1 sentence): When neither option is right and what to consider instead.
+---
 
-[INTERNAL-LINK] Link to a detailed guide for each recommended product: "Getting started with [Product A]? Read our [Setup Guide]."
+### Comparação de preços (150 a 200 palavras)
 
-**Example:**
-> **Solo developers building content sites:** Choose Astro. You'll ship faster, spend less time configuring, and get better performance out of the box.
+[ANSWER-FIRST] Abra pelo resultado prático: "Para [caso de uso típico], o [Produto A] custa [X] e o [Produto B] custa [Y]."
+
+**Estrutura:**
+1. **Comparação direta de custo** (2 a 3 frases): preços lado a lado na faixa ou no padrão de uso mais comum.
+2. **Análise da camada gratuita** (1 a 2 frases): o que é realmente utilizável em cada plano gratuito? Quais os limites reais?
+3. **Custo de escala** (2 a 3 frases): como o preço muda conforme o uso cresce? Onde ficam os pontos de virada?
+4. **Custos ocultos** (1 a 2 frases): custos não óbvios: esforço de migração, complementos obrigatórios, implicações de aprisionamento.
+5. **Veredito de valor** (negrito, 1 frase): qual entrega melhor custo-benefício e para quem.
+
+[VISUAL: pricing-comparison-table] Uma tabela simples com as faixas de preço lado a lado.
+
+| Faixa | [Produto A] | [Produto B] |
+|-------|-------------|-------------|
+| Gratuito | [Detalhes] | [Detalhes] |
+| Inicial / Pro | [Preço e detalhes] | [Preço e detalhes] |
+| Corporativo | [Preço e detalhes] | [Preço e detalhes] |
+
+[STAT: custo total de propriedade num cenário específico (por exemplo, "Para uma equipe de 10 pessoas com 100 mil usuários mensais")]
+
+[INFO-GAIN: percepção de custo oculto] Use registro de cobrança fornecido ou
+fonte verificada. Não sugira descoberta por uso real sem evidência.
+
+---
+
+### Quem deve escolher o quê (100 a 150 palavras)
+
+[ANSWER-FIRST] Abra com a regra de decisão mais simples possível: "Se [condição], escolha [Produto]. Se [condição], escolha [Produto]."
+
+**Formato:** 2 a 4 perfis de leitor, cada um como persona em negrito com recomendação de 1 a 2 frases.
+
+**Estrutura:**
+1. **Persona 1** (negrito): "[Descrição do perfil]" -> recomendação e razão
+2. **Persona 2** (negrito): "[Descrição do perfil]" -> recomendação e razão
+3. **Persona 3** (negrito): "[Descrição do perfil]" -> recomendação e razão
+4. **Caso limite** (1 frase): quando nenhuma das opções serve e o que considerar no lugar.
+
+[INTERNAL-LINK] Link para um guia detalhado de cada produto recomendado: "Começando com o [Produto A]? Leia nosso [Guia de Instalação]."
+
+**Exemplo:**
+> **Desenvolvedores solo construindo sites de conteúdo:** escolha Astro. Você publica mais rápido, gasta menos tempo configurando e obtém melhor desempenho de saída.
 >
-> **Teams building SaaS applications:** Choose Next.js. The API routes, authentication patterns, and middleware ecosystem will save you months.
+> **Times construindo aplicações SaaS:** escolha Next.js. As rotas de API, os padrões de autenticação e o ecossistema de middleware economizam meses.
 >
-> **Agencies managing multiple client sites:** Choose Astro for marketing/content sites, Next.js for web applications. Most agencies end up using both.
+> **Agências gerenciando vários sites de clientes:** escolha Astro para sites de marketing e conteúdo, Next.js para aplicações web. A maioria das agências acaba usando os dois.
 >
-> If neither fits: you need a full-stack framework with batteries included: look at Remix or SvelteKit.
+> Se nenhum servir: você precisa de um framework full-stack completo; olhe Remix ou SvelteKit.
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
 
 [FAQ]
 
-**Format:** Each question as an H3, answer in 2-4 sentences.
+**Formato:** cada pergunta como H3, resposta em 2 a 4 frases.
 
-**Question selection criteria:**
-1. "Is [Product A] better than [Product B]?" (Restate verdict with nuance)
-2. "Can I migrate from [A] to [B]?" (Address switching costs and feasibility)
-3. "Can I use [A] and [B] together?" (Address hybrid approaches if applicable)
-4. "[Specific feature] question" (Address the most searched feature-specific question)
-5. "Is [Product] still worth using in [Year]?" (Address relevance and future trajectory)
+**Critérios de seleção das perguntas:**
+1. "O [Produto A] é melhor que o [Produto B]?" (retome o veredito com nuance)
+2. "Consigo migrar de [A] para [B]?" (trate custo e viabilidade da troca)
+3. "Posso usar [A] e [B] juntos?" (trate abordagens híbridas, se aplicável)
+4. "Pergunta sobre [funcionalidade específica]" (trate a dúvida de funcionalidade mais buscada)
+5. "O [Produto] ainda vale a pena em [Ano]?" (trate relevância e trajetória futura)
 
-[STAT when useful: a verified metric that materially improves an FAQ answer]
+[STAT quando útil: uma métrica verificada que melhore de fato a resposta]
 
-**Example:**
+**Exemplo:**
 
-#### Is Next.js better than Astro?
+#### O Next.js é melhor que o Astro?
 
-[2-4 sentence answer reframing as "it depends on your use case" with specific criteria.]
+[Resposta de 2 a 4 frases reformulando como "depende do seu caso de uso", com critérios específicos.]
 
-#### Can I migrate from Next.js to Astro?
+#### Consigo migrar do Next.js para o Astro?
 
-[2-4 sentence answer with migration feasibility, estimated effort, and key considerations.]
+[Resposta de 2 a 4 frases com viabilidade da migração, esforço estimado e considerações centrais.]
 
-#### Can I use Next.js and Astro together?
+#### Posso usar Next.js e Astro juntos?
 
-[2-4 sentence answer addressing monorepo setups or hybrid architectures if applicable.]
+[Resposta de 2 a 4 frases tratando configurações de monorepo ou arquiteturas híbridas, se aplicável.]
 
-#### Which has better SEO?
+#### Qual tem melhor SEO?
 
-[2-4 sentence answer with specific SEO-relevant differences and metrics.]
+[Resposta de 2 a 4 frases com as diferenças e métricas relevantes de SEO.]
 
-#### Is [Product] still relevant in 2026?
+#### O [Produto] ainda é relevante em 2026?
 
-[2-4 sentence answer addressing trajectory, recent releases, and community momentum.]
-
----
-
-### Verdict with Category Winners (50-100 words)
-
-**Format:** A summary table followed by an overall recommendation.
-
-| Category | Winner |
-|----------|--------|
-| [Category 1] | [Product] |
-| [Category 2] | [Product] |
-| [Category 3] | [Product] |
-| [Category 4] | [Product] |
-| [Category 5] | [Product] |
-| **Pricing** | [Product] |
-| **Overall** | **[Product] (for [specific use case])** |
-
-**Overall verdict** (2-3 sentences): Restate the decision rule from the TL;DR with any additional nuance earned through the detailed analysis.
-
-**CTA** (1 sentence): "Disagree? Share your experience in the comments" or "Subscribe for more head-to-head comparisons."
-
-[INTERNAL-LINK] Link to 2-3 related posts: getting-started guides for the winner, alternative comparisons, or the listicle that includes both products.
+[Resposta de 2 a 4 frases tratando trajetória, lançamentos recentes e força da comunidade.]
 
 ---
 
-## Template Checklist
+### Veredito com vencedores por categoria (50 a 100 palavras)
 
-Before publishing, verify:
+**Formato:** uma tabela de resumo seguida de recomendação geral.
 
-- [ ] Title includes both product names, a differentiator, and the current year
-- [ ] TL;DR box delivers a clear verdict in under 60 words
-- [ ] Introduction establishes timeliness: why this comparison matters *now*
-- [ ] Quick comparison table uses specific metrics, not vague ratings
-- [ ] Every category section opens by naming the winner (answer-first)
-- [ ] Every category section evaluates both products with comparable depth and fairness
-- [ ] Every category section includes a nuance statement (when the loser might win)
-- [ ] 5-7 categories cover the dimensions that matter most to the target audience
-- [ ] Pricing comparison includes free tiers, scaling costs, and hidden costs
-- [ ] "Who Should Choose What" provides clear persona-based recommendations
-- [ ] Any [INFO-GAIN] elements contain supported testing data or observations
-- [ ] Statistics are optional, material to the decision, and verified when used
-- [ ] At least 2 [IMAGE] markers with side-by-side visual comparisons
-- [ ] FAQ addresses migration, hybrid use, and product relevance
-- [ ] Verdict table summarizes category winners clearly
-- [ ] All [INTERNAL-LINK] zones have contextual links to related content
-- [ ] Coverage is complete for the comparison intent without padding
-- [ ] Both products are treated fairly: no strawman arguments
-- [ ] Meta description accurately summarizes the visible comparison
+| Categoria | Vencedor |
+|-----------|----------|
+| [Categoria 1] | [Produto] |
+| [Categoria 2] | [Produto] |
+| [Categoria 3] | [Produto] |
+| [Categoria 4] | [Produto] |
+| [Categoria 5] | [Produto] |
+| **Preço** | [Produto] |
+| **Geral** | **[Produto] (para [caso de uso específico])** |
+
+**Veredito geral** (2 a 3 frases): retome a regra de decisão do resumo, com a nuance adicional conquistada na análise detalhada.
+
+**Chamada para ação** (1 frase): "Discorda? Conte sua experiência nos comentários" ou "Assine para mais comparativos diretos."
+
+[INTERNAL-LINK] Link para 2 ou 3 posts relacionados: guias de início do vencedor, comparações alternativas ou a lista que inclui os dois produtos.
+
+---
+
+## Lista de verificação do template
+
+Antes de publicar, confirme:
+
+- [ ] O título traz os dois nomes de produto, um diferencial e o ano atual
+- [ ] A caixa de resumo entrega veredito claro em menos de 60 palavras
+- [ ] A introdução estabelece a atualidade: por que essa comparação importa *agora*
+- [ ] A tabela comparativa rápida usa métricas específicas, não notas vagas
+- [ ] Toda seção de categoria abre nomeando o vencedor (resposta antecipada)
+- [ ] Toda seção de categoria avalia os dois produtos com profundidade e justiça equivalentes
+- [ ] Toda seção de categoria traz uma frase de nuance (quando o perdedor pode vencer)
+- [ ] De 5 a 7 categorias cobrem as dimensões que mais importam ao público-alvo
+- [ ] A comparação de preços inclui camadas gratuitas, custo de escala e custos ocultos
+- [ ] "Quem deve escolher o quê" oferece recomendações claras por persona
+- [ ] Os elementos [INFO-GAIN] contêm dados ou observações de teste comprovados
+- [ ] As estatísticas são opcionais, relevantes à decisão e verificadas quando usadas
+- [ ] Ao menos 2 marcadores [IMAGE] com comparações visuais lado a lado
+- [ ] As perguntas frequentes tratam migração, uso híbrido e relevância do produto
+- [ ] A tabela de veredito resume os vencedores por categoria com clareza
+- [ ] Todas as zonas [INTERNAL-LINK] têm links contextuais para conteúdo relacionado
+- [ ] A cobertura atende à intenção comparativa sem encher linguiça
+- [ ] Os dois produtos são tratados com justiça: sem argumentos de espantalho
+- [ ] A meta description resume com precisão a comparação visível
