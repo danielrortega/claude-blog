@@ -161,7 +161,10 @@ def test_first_hand_and_retrieval_guidance_remains_evidence_conditional() -> Non
     ).read_text(encoding="utf-8")
 
     assert "only when the user supplies supporting methodology" in brief
-    assert "markers alone earn no credit" in reviewer
+    # Localizable prose; the rule is that info-gain markers never score by themselves.
+    assert re.search(
+        r"markers alone earn no credit|marcadores sozinhos n[aã]o pontuam", reviewer
+    ), "blog-reviewer.md must keep info-gain markers non-scoring on their own"
     assert "retrieval notes required by FLOW" not in synthesis
     assert "retrieval notes required by FLOW" not in research
 
@@ -196,7 +199,13 @@ def test_active_templates_do_not_require_faq_counts_or_market_stat_openers() -> 
 
     listicle = (template_dir / "listicle.md").read_text(encoding="utf-8")
     assert "Open with the single most important market statistic" not in listicle
-    assert "a market statistic only when it is material and sourced" in listicle
+    # The guidance is prose and may be localized; what matters is that the
+    # market statistic stays conditional on materiality plus a source.
+    assert re.search(
+        r"a market statistic only when it is material and sourced"
+        r"|estat[ií]stica de mercado apenas quando for relevante e com fonte",
+        listicle,
+    ), "listicle.md must keep the market statistic conditional on materiality and sourcing"
 
 
 def test_length_experience_and_style_diagnostics_are_conditional() -> None:

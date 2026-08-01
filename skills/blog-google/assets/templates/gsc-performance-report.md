@@ -1,44 +1,44 @@
-# Google Search Console Performance Report
+# Relatório de desempenho do Google Search Console
 
-**Property:** {property}
-**Date Range:** {start_date} - {end_date}
-**Search Type:** {search_type}
+**Propriedade:** {property}
+**Período:** {start_date} - {end_date}
+**Tipo de busca:** {search_type}
 
-## Summary
+## Resumo
 
-| Metric | Value |
-|--------|-------|
-| Total Clicks | {total_clicks} |
-| Total Impressions | {total_impressions} |
-| Average CTR | {avg_ctr}% |
-| Average Position | {avg_position} |
+| Métrica | Valor |
+|---------|-------|
+| Total de cliques | {total_clicks} |
+| Total de impressões | {total_impressions} |
+| CTR médio | {avg_ctr}% |
+| Posição média | {avg_position} |
 
-## Top Queries
+## Principais consultas
 
-| # | Query | Clicks | Impressions | CTR | Position |
-|---|-------|--------|-------------|-----|----------|
+| # | Consulta | Cliques | Impressões | CTR | Posição |
+|---|----------|---------|------------|-----|---------|
 {queries_table}
 
-## Top Pages
+## Principais páginas
 
-| # | Page | Clicks | Impressions | CTR | Position |
-|---|------|--------|-------------|-----|----------|
+| # | Página | Cliques | Impressões | CTR | Posição |
+|---|--------|---------|------------|-----|---------|
 {pages_table}
 
-## Quick Wins (Position 4-10, High Impressions)
+## Ganhos rápidos (posições 4 a 10, com muitas impressões)
 
-These queries rank on page 1 but below position 3. A small ranking improvement could yield significant traffic gains.
+Estas consultas aparecem na primeira página, mas abaixo da terceira posição. Uma melhora pequena de ranqueamento pode render um ganho expressivo de tráfego.
 
-| Query | Position | Impressions | Clicks | CTR | Opportunity |
-|-------|----------|-------------|--------|-----|-------------|
+| Consulta | Posição | Impressões | Cliques | CTR | Oportunidade |
+|----------|---------|------------|---------|-----|--------------|
 {quick_wins_table}
 
-## Device Breakdown
+## Divisão por dispositivo
 
-| Device | Clicks | Impressions | CTR | Position |
-|--------|--------|-------------|-----|----------|
+| Dispositivo | Cliques | Impressões | CTR | Posição |
+|-------------|---------|------------|-----|---------|
 {device_table}
 
 ---
-*Data freshness: Search Analytics has a 2-3 day lag. Data available for ~16 months.*
-*Generated {timestamp} via Google Search Console API.*
+*Atualidade dos dados: o Search Analytics tem defasagem de 2 a 3 dias. O histórico cobre cerca de 16 meses.*
+*Gerado em {timestamp} pela API do Google Search Console.*

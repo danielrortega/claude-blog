@@ -1,43 +1,43 @@
-# URL Indexation Status Report
+# Relatório de status de indexação de URLs
 
-**Property:** {property}
-**URLs Inspected:** {total_urls}
+**Propriedade:** {property}
+**URLs inspecionadas:** {total_urls}
 
-## Summary
+## Resumo
 
-| Status | Count | Percentage |
-|--------|-------|-----------|
-| Indexed (PASS) | {pass_count} | {pass_pct}% |
-| Not Indexed (FAIL) | {fail_count} | {fail_pct}% |
-| Neutral | {neutral_count} | {neutral_pct}% |
-| Errors | {error_count} | {error_pct}% |
+| Situação | Quantidade | Percentual |
+|----------|------------|-----------|
+| Indexadas (PASS) | {pass_count} | {pass_pct}% |
+| Não indexadas (FAIL) | {fail_count} | {fail_pct}% |
+| Neutras | {neutral_count} | {neutral_pct}% |
+| Erros | {error_count} | {error_pct}% |
 
-## Detailed Results
+## Resultados detalhados
 
-| URL | Verdict | Coverage State | Fetch State | Google Canonical | Last Crawl |
-|-----|---------|---------------|-------------|-----------------|------------|
+| URL | Veredito | Estado de cobertura | Estado de fetch | Canônica do Google | Último rastreio |
+|-----|----------|---------------------|-----------------|--------------------|-----------------|
 {results_table}
 
-## Canonical Mismatches
+## Divergências de canônica
 
-URLs where Google selected a different canonical than declared:
+URLs em que o Google escolheu uma canônica diferente da declarada:
 
-| URL | User Canonical | Google Canonical |
-|-----|---------------|-----------------|
+| URL | Canônica declarada | Canônica do Google |
+|-----|--------------------|--------------------|
 {canonical_mismatches_table}
 
-## Common Issues
+## Problemas recorrentes
 
-| Issue | Count | Priority | Action |
-|-------|-------|----------|--------|
+| Problema | Quantidade | Prioridade | Ação |
+|----------|------------|------------|------|
 {issues_table}
 
-## Rich Results Detected
+## Rich results detectados
 
-| URL | Rich Result Type | Status |
-|-----|-----------------|--------|
+| URL | Tipo de rich result | Situação |
+|-----|---------------------|----------|
 {rich_results_table}
 
 ---
-*URL Inspection API: 2,000 inspections/day per site, 600/min.*
-*Generated {timestamp} via Google Search Console URL Inspection API.*
+*API de inspeção de URL: 2.000 inspeções por dia por site, 600 por minuto.*
+*Gerado em {timestamp} pela API de inspeção de URL do Google Search Console.*
