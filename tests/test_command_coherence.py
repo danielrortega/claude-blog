@@ -35,8 +35,11 @@ def _extract_commands_md_commands() -> set[str]:
     text = (ROOT / "docs" / "COMMANDS.md").read_text(encoding="utf-8")
     # The overview table sits between the "## Command Overview" heading
     # and the next "---" separator. Match table rows in that block.
+    # The heading is prose and may be localized; the table rows it introduces
+    # are what this test actually reads. Command names inside the backticks
+    # stay English because they are the routing identifiers.
     block = re.search(
-        r"## Command Overview.*?^---",
+        r"## (?:Command Overview|Vis[aã]o geral dos comandos).*?^---",
         text, re.DOTALL | re.MULTILINE,
     )
     assert block is not None, "Command Overview section missing from COMMANDS.md"
