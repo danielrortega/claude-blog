@@ -1119,9 +1119,14 @@ def analyze_ai_citation_readiness(content: str, headings_info: dict[str, Any],
     # Entity clarity: detect defined terms (bold terms followed by explanations)
     entity_definitions = len(re.findall(r'\*\*[^*]+\*\*\s*(?:is|are|refers to|means)', content))
 
-    # Extraction-friendly structures
+    # Extraction-friendly structures.
+    # The label list is language specific: the pt-BR templates and blog-writer
+    # emit "Principais Conclusoes" and its persona variants, which the English
+    # pattern alone would miss, silently costing the post this sub-score.
     has_tldr = bool(re.search(
-        r'(?i)(?:TL;?DR|key takeaway|the bottom line|what you.ll learn|at a glance|in brief)',
+        r'(?i)(?:TL;?DR|key takeaway|the bottom line|what you.ll learn|at a glance|in brief'
+        r'|principais conclus[oõ]es|em resumo|resumo r[aá]pido|o essencial'
+        r'|o que voc[eê] vai aprender|em s[ií]ntese)',
         content))
     table_count = len(re.findall(r'^\|.+\|$', content, re.MULTILINE))
     list_count = len(re.findall(r'^[\s]*[-*+]\s', content, re.MULTILINE))
