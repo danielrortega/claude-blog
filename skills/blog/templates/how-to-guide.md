@@ -1,267 +1,268 @@
-# Template: How-To Guide
+# Template: Guia Prático
 
-**Template Name:** How-To Guide (Step-by-Step Tutorial)
-**Target Word Count:** 2,000-2,500 words
-**Description:** A structured, actionable tutorial that walks readers through a specific process from start to finish. Each step is concrete, visual, and builds on the previous one. Designed to rank for "how to" queries and earn featured snippets.
+**Nome do template:** Guia prático (tutorial passo a passo)
+**Extensão alvo:** 2.000 a 2.500 palavras
+**Descrição:** Tutorial estruturado e acionável que conduz o leitor por um processo específico do início ao fim. Cada passo é concreto, visual e se apoia no anterior. Feito para ranquear em consultas do tipo "como fazer" e conquistar destaques de resultado.
 
-## When to Use This Template
+## Quando usar este template
 
-- **Content Goals:** Drive organic traffic from instructional queries, establish topical authority, earn featured snippets for step-based queries
-- **Search Intent:** Informational / Transactional hybrid: the reader has a specific problem and wants a clear solution *right now*
-- **Best For:** Process explanations, software tutorials, setup guides, configuration walkthroughs, skill-building content
-- **Avoid When:** The topic lacks a clear sequential process or has fewer than 3 meaningful steps
-
----
-
-## Section-by-Section Structure
+- **Objetivos de conteúdo:** gerar tráfego orgânico de consultas instrucionais, firmar autoridade no tema, conquistar destaques de resultado em consultas baseadas em passos
+- **Intenção de busca:** híbrida entre informacional e transacional: o leitor tem um problema específico e quer uma solução clara *agora*
+- **Melhor para:** explicação de processos, tutoriais de software, guias de instalação, passo a passo de configuração, conteúdo de formação de habilidade
+- **Evite quando:** o tema não tem um processo sequencial claro ou tem menos de 3 passos significativos
 
 ---
 
-### Title (H1)
-
-**Format:** "How to [Achieve X]: A [Year] Step-by-Step Guide"
-
-**Examples:**
-- "How to Set Up a CI/CD Pipeline: A 2026 Step-by-Step Guide"
-- "How to Migrate from WordPress to Next.js: A 2026 Step-by-Step Guide"
-
-**Rules:**
-- Include the primary keyword naturally
-- Include the year for freshness signals
-- Keep under 60 characters if possible
+## Estrutura seção a seção
 
 ---
 
-### Introduction (150-200 words)
+### Título (H1)
 
-[ANSWER-FIRST] Open with the single most compelling statistic or fact that validates *why* this process matters. Not a vague claim: a specific number.
+**Formato:** "Como [Alcançar X]: Guia Passo a Passo [Ano]"
 
-**Structure:**
-1. **Problem statement** (1-2 sentences): What pain point does the reader have?
-2. **Agitation** (1-2 sentences): What happens if they don't solve it? What's the cost of inaction?
-3. **Promise** (1 sentence): What will they be able to do after following this guide?
-4. **Credibility anchor** (1 sentence): Why should they trust this guide specifically?
+**Exemplos:**
+- "Como Montar um Pipeline de CI/CD: Guia Passo a Passo 2026"
+- "Como Migrar do WordPress para o Next.js: Guia Passo a Passo 2026"
 
-[STAT: Industry statistic that quantifies the problem this guide solves]
-
-[INFO-GAIN: personal experience] Include an anecdote only when the author
-supplies what happened, the context, and supporting evidence. Otherwise use a
-sourced problem example without first-person framing.
-
-**Example opening:**
-> "[VERIFIED PROBLEM EVIDENCE]. This guide explains [PROCESS] for [AUDIENCE]
-> and shows how to verify [SUCCESS CONDITION]. Add first-hand results only when
-> the author supplies the methodology, evidence, and outcome."
-
-[INTERNAL-LINK] Link to a related foundational concept post (e.g., "If you're new to [topic], start with our [Beginner's Guide to X]").
+**Regras:**
+- Inclua a palavra-chave principal com naturalidade
+- Inclua o ano como sinal de atualidade
+- Fique abaixo de 60 caracteres sempre que possível
 
 ---
 
-### Prerequisites / Before You Begin (100-150 words)
+### Introdução (150 a 200 palavras)
 
-**Format:** Bulleted checklist under an H2 heading.
+[ANSWER-FIRST] Abra com a estatística ou o fato mais forte que valide *por que* esse processo importa. Nada de afirmação vaga: um número específico.
 
-**Include:**
-- Required tools/software (with versions)
-- Required accounts or access
-- Assumed knowledge level (be specific: "You should be comfortable with [X]")
-- Estimated time to complete
-- Difficulty level (Beginner / Intermediate / Advanced)
+**Estrutura:**
+1. **Enunciado do problema** (1 a 2 frases): que dor o leitor tem?
+2. **Agravamento** (1 a 2 frases): o que acontece se ele não resolver? Qual o custo da inércia?
+3. **Promessa** (1 frase): o que ele vai conseguir fazer depois de seguir o guia?
+4. **Âncora de credibilidade** (1 frase): por que confiar justamente neste guia?
 
-[IMAGE] Screenshot or diagram showing the tools/environment the reader should have ready before starting.
+[STAT: estatística do setor que quantifique o problema resolvido pelo guia]
 
-**Example:**
-> **What you'll need:**
-> - Current active LTS version of Node.js installed ([how to install](/link))
-> - A GitHub account with repo access
-> - Basic familiarity with the terminal
-> - **Time:** ~45 minutes
-> - **Difficulty:** Intermediate
+[INFO-GAIN: experiência própria] Inclua um relato apenas quando o autor fornecer
+o que aconteceu, o contexto e a evidência de apoio. Caso contrário, use um
+exemplo de problema com fonte, sem narrativa em primeira pessoa.
 
----
+**Exemplo de abertura:**
+> "[EVIDÊNCIA VERIFICADA DO PROBLEMA]. Este guia explica [PROCESSO] para
+> [PÚBLICO] e mostra como verificar [CONDIÇÃO DE SUCESSO]. Só acrescente
+> resultados próprios quando o autor fornecer metodologia, evidência e desfecho."
 
-### Step 1: [Action Verb] + [Specific Object] (200-300 words)
-
-[ANSWER-FIRST] Open with what the reader will have accomplished by the end of this step: the micro-outcome.
-
-**Structure for EVERY step section:**
-1. **Micro-outcome statement** (1 sentence): "By the end of this step, you'll have [specific result]."
-2. **Context** (1-2 sentences): Why this step matters in the overall process.
-3. **Instructions** (numbered sub-steps): Concrete actions. Use code blocks, exact UI paths, or specific settings.
-4. **Verification** (1-2 sentences): How the reader confirms this step worked.
-
-[IMAGE] Screenshot showing the expected state after completing this step.
-
-[INFO-GAIN: specific configuration or setting] Share a verified non-obvious
-detail from supplied evidence or a cited source. Do not invent undocumented
-behavior.
-
-**Formatting rules:**
-- Use H2 for the step heading: `## Step 1: Install and Configure the CLI`
-- Use numbered sub-lists for individual actions within the step
-- Use code blocks for any commands, file contents, or configuration
-- Bold the single most important instruction in each step
+[INTERNAL-LINK] Link para um post de conceito relacionado (por exemplo, "Se você é novo em [tema], comece pelo nosso [Guia para Iniciantes em X]").
 
 ---
 
-### Step 2: [Action Verb] + [Specific Object] (200-300 words)
+### Pré-requisitos / Antes de começar (100 a 150 palavras)
 
-[Follow the same structure as Step 1]
+**Formato:** lista de verificação com marcadores sob um título H2.
 
-[IMAGE] Screenshot of expected state after this step.
+**Inclua:**
+- Ferramentas e softwares necessários (com versões)
+- Contas ou acessos necessários
+- Nível de conhecimento pressuposto (seja específico: "Você deve estar confortável com [X]")
+- Tempo estimado de execução
+- Nível de dificuldade (Iniciante / Intermediário / Avançado)
 
-[STAT: Performance or efficiency metric related to this step, if applicable]
+[IMAGE] Captura de tela ou diagrama mostrando as ferramentas e o ambiente que o leitor deve ter prontos antes de começar.
 
----
-
-### Step 3: [Action Verb] + [Specific Object] (200-300 words)
-
-[Follow the same structure as Step 1]
-
-[IMAGE] Screenshot of expected state after this step.
-
-[VISUAL: flowchart] If the process branches or has decision points at this stage, include a flowchart showing the paths.
-
----
-
-### Step 4: [Action Verb] + [Specific Object] (200-300 words)
-
-[Follow the same structure as Step 1]
-
-[IMAGE] Screenshot of expected state after this step.
-
-[INFO-GAIN: troubleshooting tip] Use a supplied first-hand problem and solution
-only when evidence is available; otherwise provide a sourced troubleshooting
-case without personal framing.
+**Exemplo:**
+> **O que você vai precisar:**
+> - Versão LTS ativa e atual do Node.js instalada ([como instalar](/link))
+> - Conta no GitHub com acesso ao repositório
+> - Familiaridade básica com o terminal
+> - **Tempo:** cerca de 45 minutos
+> - **Dificuldade:** intermediária
 
 ---
 
-### Step 5: [Action Verb] + [Specific Object] (200-300 words)
+### Passo 1: [Verbo de ação] + [Objeto específico] (200 a 300 palavras)
 
-[Follow the same structure as Step 1]
+[ANSWER-FIRST] Abra com o que o leitor terá realizado ao fim deste passo: o microdesfecho.
 
-[IMAGE] Screenshot of expected state after this step.
+**Estrutura para TODA seção de passo:**
+1. **Enunciado do microdesfecho** (1 frase): "Ao fim deste passo, você terá [resultado específico]."
+2. **Contexto** (1 a 2 frases): por que este passo importa no processo geral.
+3. **Instruções** (subpassos numerados): ações concretas. Use blocos de código, caminhos exatos de interface ou configurações específicas.
+4. **Verificação** (1 a 2 frases): como o leitor confirma que o passo funcionou.
 
----
+[IMAGE] Captura mostrando o estado esperado ao concluir este passo.
 
-### Step 6: [Action Verb] + [Specific Object] (200-300 words)
+[INFO-GAIN: configuração ou ajuste específico] Compartilhe um detalhe verificado e
+não óbvio, vindo de evidência fornecida ou de fonte citada. Não invente
+comportamento não documentado.
 
-[Follow the same structure as Step 1]
-
-[IMAGE] Screenshot showing the final completed state.
-
-[VISUAL: before-after] Side-by-side comparison showing before (Step 1) and after (Step 6) state.
-
-**Note:** Not every guide needs exactly 6 steps. Use 4-8 steps depending on the complexity of the process. Each step should represent a meaningful, testable milestone: not a trivial action.
-
----
-
-### Common Mistakes to Avoid (150-200 words)
-
-[ANSWER-FIRST] Open with a verified frequent mistake and its consequence. Use a
-statistic only when supplied by a source that supports the specific claim.
-
-**Format:** 3-5 mistakes, each as a bolded sub-heading with 2-3 sentences of explanation.
-
-**Structure for each mistake:**
-1. **The mistake** (bold): What people do wrong
-2. **Why it happens** (1 sentence): The underlying cause or misconception
-3. **The fix** (1 sentence): What to do instead
-
-[INFO-GAIN: original observation] Include a direct-experience mistake only
-when the author supplies the context, evidence, and result. Otherwise use a
-verified source or omit the marker.
-
-[STAT: Failure rate or error frequency for the most common mistake]
-
-**Example:**
-> **1. Skipping environment variable validation**
-> [VERIFIED DESCRIPTION OF THE FAILURE MODE]. Explain the validation step and
-> expected result using the actual environment and source evidence. Do not add a
-> percentage or "in our experience" claim unless supplied and documented.
+**Regras de formatação:**
+- Use H2 no título do passo: `## Passo 1: Instale e Configure a CLI`
+- Use sublistas numeradas para as ações individuais dentro do passo
+- Use blocos de código para comandos, conteúdo de arquivo ou configuração
+- Destaque em negrito a instrução mais importante de cada passo
 
 ---
 
-### Results / What Success Looks Like (100-150 words)
+### Passo 2: [Verbo de ação] + [Objeto específico] (200 a 300 palavras)
 
-[ANSWER-FIRST] Open with the specific, measurable outcome: "If everything went correctly, you should now see [X]."
+[Siga a mesma estrutura do Passo 1]
 
-**Include:**
-- What the reader should see/have now (concrete, verifiable)
-- Key metrics that indicate success (load time, response code, test pass rate, etc.)
-- One "stretch goal" or next-level enhancement they can pursue
+[IMAGE] Captura do estado esperado após este passo.
 
-[IMAGE] Screenshot of the final successful result.
-
-[VISUAL: metrics-dashboard] If applicable, show a performance or status dashboard screenshot.
-
-[INTERNAL-LINK] Link to an advanced guide or next-step post: "Now that you've set up [X], learn how to [optimize/scale/extend it]."
+[STAT: métrica de desempenho ou eficiência ligada a este passo, se couber]
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### Passo 3: [Verbo de ação] + [Objeto específico] (200 a 300 palavras)
 
-[FAQ: Include this section only when genuine reader questions add material not
-already covered by the steps.]
+[Siga a mesma estrutura do Passo 1]
 
-**Format:** Each question as an H3 with a complete, direct answer. Let
-complexity determine answer length.
+[IMAGE] Captura do estado esperado após este passo.
 
-**Question selection criteria:** Use only questions supported by reader
-research, such as a meaningful alternative, unresolved troubleshooting case,
-scaling concern, cost, time, or prerequisite.
-
-[STAT when useful: include a verified statistic only when it materially
-improves an answer.]
-
-**Example:**
-
-#### How long does it take to set up a CI/CD pipeline?
-
-[2-4 sentence answer with a specific time range and what variables affect it.]
-
-#### Can I use [Alternative Tool] instead?
-
-[2-4 sentence answer comparing the alternative, with a clear recommendation.]
-
-#### What should I do if Step [N] fails?
-
-[2-4 sentence answer with specific troubleshooting steps.]
-
-#### How do I scale this for a larger team?
-
-[2-4 sentence answer with concrete next steps.]
-
-#### Is [Tool/Service] free?
-
-[2-4 sentence answer with pricing details and free tier limitations.]
+[VISUAL: flowchart] Se o processo se ramifica ou tem pontos de decisão nesta etapa, inclua um fluxograma mostrando os caminhos.
 
 ---
 
-### Conclusion with CTA (50-100 words)
+### Passo 4: [Verbo de ação] + [Objeto específico] (200 a 300 palavras)
 
-**Structure:**
-1. **Recap** (1 sentence): Summarize what they accomplished.
-2. **Reinforce value** (1 sentence): Restate the benefit with the key metric.
-3. **CTA** (1-2 sentences): Clear next action: share the post, subscribe, try a related guide, leave a comment with their results.
+[Siga a mesma estrutura do Passo 1]
 
-[INTERNAL-LINK] Link to 2-3 related posts for continued reading.
+[IMAGE] Captura do estado esperado após este passo.
+
+[INFO-GAIN: dica de solução de problema] Use um problema e uma solução vividos
+apenas quando houver evidência disponível; caso contrário, ofereça um caso de
+solução de problema com fonte, sem narrativa pessoal.
 
 ---
 
-## Template Checklist
+### Passo 5: [Verbo de ação] + [Objeto específico] (200 a 300 palavras)
 
-Before publishing, verify:
+[Siga a mesma estrutura do Passo 1]
 
-- [ ] Title includes primary keyword and current year
-- [ ] Introduction establishes the reader task; any statistic is material and verified
-- [ ] Every step has a clear micro-outcome, numbered sub-steps, and verification
-- [ ] Every step has a supporting screenshot or visual
-- [ ] Any [INFO-GAIN] elements contain supported original experience or data
-- [ ] Any [STAT] markers are filled with material, verified statistics
-- [ ] Any original observations include supplied methodology, evidence, and results
-- [ ] Optional FAQ answers genuine reader questions directly
-- [ ] All [INTERNAL-LINK] zones have contextual links to related content
-- [ ] Length is sufficient for the task without padding; planning ranges are optional
-- [ ] All code blocks are syntax-highlighted and tested
-- [ ] Meta description is accurate, page-specific, and consistent with visible content
+[IMAGE] Captura do estado esperado após este passo.
+
+---
+
+### Passo 6: [Verbo de ação] + [Objeto específico] (200 a 300 palavras)
+
+[Siga a mesma estrutura do Passo 1]
+
+[IMAGE] Captura mostrando o estado final concluído.
+
+[VISUAL: before-after] Comparação lado a lado entre o estado inicial (Passo 1) e o final (Passo 6).
+
+**Observação:** nem todo guia precisa de exatamente 6 passos. Use de 4 a 8, conforme a complexidade do processo. Cada passo deve representar um marco significativo e testável, nunca uma ação trivial.
+
+---
+
+### Erros comuns a evitar (150 a 200 palavras)
+
+[ANSWER-FIRST] Abra com um erro frequente verificado e sua consequência. Use
+estatística apenas quando vier de fonte que sustente aquela afirmação específica.
+
+**Formato:** 3 a 5 erros, cada um como subtítulo em negrito com 2 a 3 frases de explicação.
+
+**Estrutura de cada erro:**
+1. **O erro** (negrito): o que as pessoas fazem de errado
+2. **Por que acontece** (1 frase): a causa de fundo ou o equívoco
+3. **A correção** (1 frase): o que fazer no lugar
+
+[INFO-GAIN: observação própria] Inclua um erro de experiência direta apenas
+quando o autor fornecer contexto, evidência e resultado. Caso contrário, use
+fonte verificada ou omita o marcador.
+
+[STAT: taxa de falha ou frequência de erro para o engano mais comum]
+
+**Exemplo:**
+> **1. Pular a validação das variáveis de ambiente**
+> [DESCRIÇÃO VERIFICADA DO MODO DE FALHA]. Explique o passo de validação e o
+> resultado esperado usando o ambiente real e evidência de fonte. Não acrescente
+> percentual nem afirmação do tipo "na nossa experiência" sem que seja fornecida
+> e documentada.
+
+---
+
+### Resultados / Como é o sucesso (100 a 150 palavras)
+
+[ANSWER-FIRST] Abra com o desfecho específico e mensurável: "Se tudo deu certo, você deve estar vendo [X] agora."
+
+**Inclua:**
+- O que o leitor deve estar vendo ou tendo agora (concreto, verificável)
+- Métricas-chave que indicam sucesso (tempo de carga, código de resposta, taxa de teste aprovado)
+- Um objetivo extra ou aprimoramento de nível seguinte que ele pode perseguir
+
+[IMAGE] Captura do resultado final bem-sucedido.
+
+[VISUAL: metrics-dashboard] Se couber, mostre uma captura de painel de desempenho ou de status.
+
+[INTERNAL-LINK] Link para um guia avançado ou post de próximo passo: "Agora que você configurou [X], aprenda a [otimizar/escalar/estender]."
+
+---
+
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
+
+[FAQ: inclua esta seção apenas quando dúvidas reais de leitor acrescentarem
+material que os passos ainda não cobriram.]
+
+**Formato:** cada pergunta como H3, com resposta completa e direta. Deixe a
+complexidade determinar o tamanho da resposta.
+
+**Critérios de seleção das perguntas:** use apenas perguntas apoiadas em pesquisa
+com leitores, como uma alternativa significativa, um caso de solução de problema
+não resolvido, uma preocupação de escala, custo, tempo ou pré-requisito.
+
+[STAT quando útil: inclua estatística verificada apenas quando ela melhorar de
+fato a resposta.]
+
+**Exemplo:**
+
+#### Quanto tempo leva para montar um pipeline de CI/CD?
+
+[Resposta de 2 a 4 frases com faixa de tempo específica e as variáveis que a afetam.]
+
+#### Posso usar [Ferramenta Alternativa] em vez dessa?
+
+[Resposta de 2 a 4 frases comparando a alternativa, com recomendação clara.]
+
+#### O que faço se o Passo [N] falhar?
+
+[Resposta de 2 a 4 frases com passos específicos de solução de problema.]
+
+#### Como escalo isso para uma equipe maior?
+
+[Resposta de 2 a 4 frases com próximos passos concretos.]
+
+#### A [Ferramenta/Serviço] é gratuita?
+
+[Resposta de 2 a 4 frases com detalhes de preço e limitações da camada gratuita.]
+
+---
+
+### Conclusão com chamada para ação (50 a 100 palavras)
+
+**Estrutura:**
+1. **Retomada** (1 frase): resuma o que o leitor realizou.
+2. **Reforço de valor** (1 frase): retome o benefício com a métrica-chave.
+3. **Chamada para ação** (1 a 2 frases): próxima ação clara: compartilhar o post, assinar, tentar um guia relacionado, comentar os resultados.
+
+[INTERNAL-LINK] Link para 2 ou 3 posts relacionados para leitura continuada.
+
+---
+
+## Lista de verificação do template
+
+Antes de publicar, confirme:
+
+- [ ] O título traz a palavra-chave principal e o ano atual
+- [ ] A introdução estabelece a tarefa do leitor; qualquer estatística é relevante e verificada
+- [ ] Todo passo tem microdesfecho claro, subpassos numerados e verificação
+- [ ] Todo passo tem captura de tela ou visual de apoio
+- [ ] Os elementos [INFO-GAIN] contêm experiência ou dado original comprovado
+- [ ] Os marcadores [STAT] estão preenchidos com estatísticas relevantes e verificadas
+- [ ] As observações próprias trazem metodologia, evidência e resultados fornecidos
+- [ ] As perguntas frequentes opcionais respondem dúvidas reais de forma direta
+- [ ] Todas as zonas [INTERNAL-LINK] têm links contextuais para conteúdo relacionado
+- [ ] A extensão atende à tarefa sem encher linguiça; as faixas de planejamento são opcionais
+- [ ] Todos os blocos de código têm destaque de sintaxe e foram testados
+- [ ] A meta description é precisa, específica da página e coerente com o conteúdo visível
