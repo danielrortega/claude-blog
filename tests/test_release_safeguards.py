@@ -228,7 +228,11 @@ def test_length_experience_and_style_diagnostics_are_conditional() -> None:
     for path in instruction_paths:
         instructions = path.read_text(encoding="utf-8")
         assert "with AI detection" not in instructions
-        assert "not authorship detection" in instructions
+        # Localizable prose; the rule is that `/blog analyze` is framed as style
+        # diagnostics and never as an authorship verdict.
+        assert re.search(
+            r"not authorship detection|n[aã]o detec[cç][aã]o de autoria", instructions
+        ), f"{path} must frame analyze as style diagnostics, not authorship detection"
 
 
 def test_evidence_guidance_has_no_placement_or_source_count_quotas() -> None:
