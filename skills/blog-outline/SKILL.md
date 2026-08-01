@@ -11,6 +11,7 @@ description: >
   consume. Use when user says "outline", "blog outline", "content outline",
   "structure blog", "plan sections", "article skeleton", "heading structure",
   "SERP analysis", "competitive outline", "plan article".
+  Acionável também em português, quando a pessoa disser "roteiro do post", "estrutura do artigo", "esqueleto do post".
 user-invokable: true
 argument-hint: "<topic>"
 license: MIT

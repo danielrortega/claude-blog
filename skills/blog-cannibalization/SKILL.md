@@ -8,6 +8,7 @@ description: >
   severity-scored report with merge or differentiate recommendations. Use when
   user says "cannibalization", "keyword overlap", "competing pages", "duplicate
   keywords", "cannibalize".
+  Acionável também em português, quando a pessoa disser "canibalização", "sobreposição de palavra-chave", "posts concorrendo".
 user-invokable: true
 argument-hint: "[directory] [--api]"
 license: MIT

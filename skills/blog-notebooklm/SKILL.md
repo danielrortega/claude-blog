@@ -9,6 +9,7 @@ description: >
   Use when user says "notebooklm", "notebook", "query notebook",
   "ask notebook", "notebook research", "source grounded research",
   "document query", "notebook library".
+  Acionável também em português, quando a pessoa disser "consultar notebooklm", "pesquisar no caderno", "fonte do notebooklm".
 user-invokable: true
 argument-hint: "[ask|discover|library|setup|status|cleanup] [question-or-url]"
 license: MIT

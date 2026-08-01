@@ -9,6 +9,7 @@ description: >
   through original research and first-hand experience.
   Use when user says "blog strategy", "content strategy", "blog positioning",
   "what should I blog about", "blog topics", "content pillars", "blog ideation".
+  Acionável também em português, quando a pessoa disser "estratégia de blog", "estratégia de conteúdo", "posicionamento do blog".
 user-invokable: true
 argument-hint: "<niche>"
 license: MIT

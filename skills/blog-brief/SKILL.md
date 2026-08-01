@@ -9,6 +9,7 @@ description: >
   Briefs are optimized for Google rankings and AI citation visibility as part of SEO. Use
   when user says "content brief", "blog brief", "write brief", "SEO brief",
   "article brief", or "content requirements".
+  Acionável também em português, quando a pessoa disser "briefing de conteúdo", "brief do post", "resumo executivo do artigo".
 user-invokable: true
 argument-hint: "<topic>"
 license: MIT

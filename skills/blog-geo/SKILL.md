@@ -11,6 +11,7 @@ description: >
   0-100 AI Citation Readiness score. Use when user says "geo", "ai
   citation", "ai optimization", "citation audit", "aeo", "perplexity
   optimization", "chatgpt citation".
+  Acionável também em português, quando a pessoa disser "otimizar para IA", "citação por IA", "auditoria de GEO".
 user-invokable: true
 argument-hint: "<file-path>"
 license: MIT

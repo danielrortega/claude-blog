@@ -10,6 +10,7 @@ description: >
   says "google data", "page speed", "core web vitals", "search console",
   "indexation", "GA4", "keyword research", "nlp entities", "blog performance",
   "youtube search", "google api setup".
+  Acionável também em português, quando a pessoa disser "dados do google", "search console", "analytics do blog", "pagespeed".
 user-invokable: true
 argument-hint: "[setup|pagespeed|crux|crux-history|gsc|inspect|index|ga4|nlp|youtube|keywords|report|quotas] [url|property|query]"
 license: MIT

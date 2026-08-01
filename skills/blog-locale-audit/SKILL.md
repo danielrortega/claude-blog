@@ -8,6 +8,7 @@ description: >
   Use when user says "locale audit", "blog locale-audit", "check translations",
   "multilingual audit", "translation check", "hreflang check",
   "Uebersetzungen pruefen".
+  Acionável também em português, quando a pessoa disser "auditar traduções", "checar versões por idioma", "qa multilíngue".
 user-invokable: true
 argument-hint: "<directory>"
 license: MIT

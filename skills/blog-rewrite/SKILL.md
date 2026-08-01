@@ -8,6 +8,7 @@ description: >
   adds images, generates SVG charts, and updates freshness signals. Works
   with any blog format (MDX, markdown, HTML). Use when user says "rewrite
   blog", "optimize blog", "update blog", "improve blog", "fix blog".
+  Acionável também em português, quando a pessoa disser "reescrever post", "otimizar post", "melhorar artigo", "atualizar post".
 user-invokable: true
 argument-hint: "<file-path>"
 license: MIT

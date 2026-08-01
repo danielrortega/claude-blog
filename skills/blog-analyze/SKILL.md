@@ -11,6 +11,7 @@ description: >
   markdown, HTML, URL). Use when user says "analyze blog", "audit blog",
   "blog score", "check blog quality", "blog review", "rate this blog",
   "blog health check".
+  Acionável também em português, quando a pessoa disser "analisar post", "nota do post", "avaliar qualidade do blog", "revisar post".
 user-invokable: true
 argument-hint: "<file-path>"
 license: MIT

@@ -8,6 +8,7 @@ description: >
   Google rankings, E-E-A-T, and AI citations. Supports any platform. Use when
   user says "blog", "blog post", "blog audit", "topic cluster",
   "multilingual blog", or any /blog subcommand.
+  Acionável também em português, quando a pessoa disser "escrever blog", "otimizar blog", "post de blog", "artigo para o blog".
 license: MIT
 compatibility: Requires Claude Code and Python 3.11+ for quality scoring
 metadata:

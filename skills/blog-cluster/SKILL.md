@@ -11,6 +11,7 @@ description: >
   Use when user says "blog cluster", "topic cluster", "content cluster",
   "cluster plan", "cluster execute", "pillar content", "hub and spoke",
   "content ecosystem", "cluster map".
+  Acionável também em português, quando a pessoa disser "cluster de temas", "cluster de conteúdo", "planejar cluster".
 license: MIT
 compatibility: Requires Claude Code and claude-blog (provides blog-write, blog-chart, blog-image)
 metadata:

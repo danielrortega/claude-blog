@@ -9,6 +9,7 @@ description: >
   Use when user says "multilingual blog", "blog multilingual", "write in
   multiple languages", "international blog", "mehrsprachiger Blog", "blog
   multilingue", "blog multilingue", "create blog in German and French".
+  Acionável também em português, quando a pessoa disser "blog multilíngue", "publicar em vários idiomas", "versões por idioma".
 user-invokable: true
 argument-hint: "<topic> --languages <comma-separated-codes>"
 license: MIT

@@ -8,6 +8,7 @@ description: >
   DACH, Francophone, Hispanic, and Japanese markets.
   Use when user says "localize blog", "blog localize", "cultural adaptation",
   "adapt for Germany", "lokalisieren", "localiser", "adaptar".
+  Acionável também em português, quando a pessoa disser "localizar post", "adaptação cultural", "adaptar para o mercado".
 user-invokable: true
 argument-hint: "<file> --locale <locale-code>"
 license: MIT

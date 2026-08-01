@@ -1,6 +1,6 @@
 ---
 name: blog-style
-description: Learn author writing style from 5 to 10 existing blog posts and generate a voice profile for /blog style learn, VOICE.md, blog-persona, and blog-write when users ask to infer tone, analyze author voice, learn style, or build a writing baseline.
+description: Learn author writing style from 5 to 10 existing blog posts and generate a voice profile for /blog style learn, VOICE.md, blog-persona, and blog-write when users ask to infer tone, analyze author voice, learn style, or build a writing baseline. Acionável também em português, quando a pessoa disser "aprender meu estilo", "perfil de voz", "analisar minha escrita".
 argument-hint: "learn <paths>"
 user-invokable: true
 license: MIT

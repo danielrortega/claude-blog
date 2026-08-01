@@ -8,6 +8,7 @@ description: >
   source attribution, and transparent backgrounds. Use when user says "blog
   chart", "generate chart", "data visualization", "svg chart", "blog graph",
   or "visualize data".
+  Acionável também em português, quando a pessoa disser "gráfico para o post", "gráfico svg", "visualização de dados no artigo".
 user-invokable: false
 license: MIT
 ---

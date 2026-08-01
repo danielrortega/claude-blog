@@ -12,6 +12,7 @@ description: >
   Use when user says "translate blog", "blog translate", "uebersetzen",
   "traduire", "traducir", "translate post", "blog auf Deutsch", "blog en
   espanol".
+  Acionável também em português, quando a pessoa disser "traduzir post", "traduzir artigo", "versão em outro idioma".
 user-invokable: true
 argument-hint: "<file> --to <comma-separated-codes>"
 license: MIT
