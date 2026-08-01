@@ -255,7 +255,13 @@ def test_pillar_and_quality_gate_source_only_material_numeric_claims() -> None:
     )
 
     assert "Include at least one data point per core section" not in pillar
-    assert "only when\nit materially improves the section" in pillar
+    # Localizable prose; the rule is that the per-section data point stays
+    # conditional on materiality rather than being a quota.
+    assert re.search(
+        r"only when\nit materially improves the section"
+        r"|apenas quando\nele melhorar de fato a se[cç][aã]o",
+        pillar,
+    ), "pillar-page.md must keep the per-section data point conditional on materiality"
     assert "Every number must have a named source" not in orchestrator
     assert "Source material factual statistics, measurements" in orchestrator
     assert "do not need redundant inline sourcing" in orchestrator
