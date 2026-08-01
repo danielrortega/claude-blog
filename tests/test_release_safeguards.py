@@ -245,7 +245,14 @@ def test_evidence_guidance_has_no_placement_or_source_count_quotas() -> None:
 
     assert "must be in the FIRST paragraph" not in troubleshooting
     assert "**Incorrect pattern** (stat buried)" not in troubleshooting
-    assert "where it best supports\ncomprehension" in troubleshooting
+    # Localizable prose; the rule is that evidence placement stays free rather
+    # than being pinned to a specific paragraph. Whitespace-tolerant so the
+    # sentence may wrap anywhere.
+    assert re.search(
+        r"where it best supports\s+comprehension"
+        r"|onde ela\s+melhor sustenta a compreens[aã]o",
+        troubleshooting,
+    ), "TROUBLESHOOTING.md must keep evidence placement free of a paragraph quota"
     assert "at least three unique tier 1 or tier 2 citations" not in scorer
     assert "source count and diversity only when the topic" in scorer
 
