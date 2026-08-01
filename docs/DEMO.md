@@ -1,124 +1,125 @@
-# claude-blog v2.1.1: Demo Runbook
+# claude-blog v2.1.1: Roteiro de Demonstração
 
-End-to-end demo flow that exercises every wired integration: YouTube
-embedding (blog-google), keyword research (DataForSEO MCP), AI image
-generation (banana / blog-image via nanobanana-mcp), inline SVG charts
-(blog-chart), animated SVGs (svg-animate).
+Fluxo de demonstração de ponta a ponta que exercita todas as integrações
+conectadas: incorporação do YouTube (blog-google), pesquisa de palavras-chave
+(DataForSEO MCP), geração de imagem por IA (banana / blog-image via
+nanobanana-mcp), gráficos SVG inline (blog-chart) e SVGs animados (svg-animate).
 
-> **Security note**: this demo uses the env-expansion + sourceable-
-> credentials pattern that closes audit VULN-001/003. `.mcp.json` and
-> `.env.local` are both `chmod 0600` and gitignored. Per-skill
-> credentials live in `~/.config/claude-seo/google-api.json` (also
-> mode 0600). See [SECURITY.md](../.github/SECURITY.md) for the full hardening
-> checklist.
+> **Nota de segurança**: esta demonstração usa o padrão de expansão de variáveis
+> de ambiente mais credenciais carregáveis por `source`, que fecha as auditorias
+> VULN-001 e VULN-003. `.mcp.json` e `.env.local` estão ambos em `chmod 0600` e no
+> gitignore. As credenciais por skill ficam em
+> `~/.config/claude-seo/google-api.json` (também em modo 0600). A lista completa
+> de endurecimento está em [SECURITY.md](../.github/SECURITY.md).
 
 ---
 
-## Pre-flight (run once per shell session)
+## Pré-voo (rode uma vez por sessão de shell)
 
-The MCP servers in `.mcp.json` reference shell env vars. They are
-populated by sourcing the gitignored `.env.local`. Restart Claude Code
-after sourcing so the MCP subprocess inherits the values.
+Os servidores MCP em `.mcp.json` referenciam variáveis de ambiente do shell. Elas
+são preenchidas fazendo `source` do `.env.local`, que está no gitignore. Reinicie
+o Claude Code depois do `source`, para o subprocesso MCP herdar os valores.
 
 ```bash
 cd ~/claude-blog
 source .env.local
-echo "GOOGLE_AI_API_KEY length: ${#GOOGLE_AI_API_KEY}"     # should print 39
-echo "DATAFORSEO_USERNAME set:  ${DATAFORSEO_USERNAME:+yes}"  # should print yes
-# Then restart Claude Code so MCP servers pick up the env
+echo "GOOGLE_AI_API_KEY length: ${#GOOGLE_AI_API_KEY}"     # deve imprimir 39
+echo "DATAFORSEO_USERNAME set:  ${DATAFORSEO_USERNAME:+yes}"  # deve imprimir yes
+# Depois reinicie o Claude Code para os servidores MCP pegarem as variáveis
 ```
 
-For a persistent setup (across shell sessions), add the same `export`
-lines to `~/.bashrc` instead: but be aware they will be visible to
-every program you launch from that shell.
+Para uma configuração persistente entre sessões de shell, acrescente as mesmas
+linhas `export` ao `~/.bashrc`. Mas atenção: elas ficarão visíveis a todo programa
+que você iniciar a partir daquele shell.
 
 ---
 
-## What's wired (verified clean)
+## O que está conectado (verificado)
 
-| Component | Skill / Script | Status |
+| Componente | Skill / Script | Situação |
 |---|---|---|
-| Google Search Console + URL Inspection | `blog-google google_auth --check` | Tier 1 detected |
-| PageSpeed Insights + CrUX + CrUX History | `blog-google pagespeed_check / crux_history` | Tier 1 detected |
-| YouTube search + video deep-dive | `blog-google youtube_search` | API key live |
-| GA4 organic traffic | `blog-google ga4_report` | Needs `ga4_property_id` in google-api.json |
-| nanobanana image gen (Creative Director) | `/banana` skill, `/blog image` | MCP wired, restart needed |
-| DataForSEO live SERP, keywords, backlinks, AI visibility | `seo-dataforseo` skill (in claude-seo) | MCP wired, restart needed |
-| Inline SVG charts (dark-mode) | `blog-chart` internal capability + `/svg-chart` skill | Pure Python, works now |
-| Animated SVGs (SMIL) | `/svg-animate` skill | Pure SVG, works now |
-| Topic-cluster execution | `/blog cluster` | Hub-and-spoke pattern |
-| Multilingual publishing | `/blog multilingual --languages de,fr,es` | Spawns translator agent |
+| Google Search Console + inspeção de URL | `blog-google google_auth --check` | Nível 1 detectado |
+| PageSpeed Insights + CrUX + histórico do CrUX | `blog-google pagespeed_check / crux_history` | Nível 1 detectado |
+| Busca no YouTube + aprofundamento de vídeo | `blog-google youtube_search` | Chave de API ativa |
+| Tráfego orgânico no GA4 | `blog-google ga4_report` | Exige `ga4_property_id` em google-api.json |
+| Geração de imagem nanobanana (Diretor de Criação) | Skill `/banana`, `/blog image` | MCP conectado, precisa reiniciar |
+| DataForSEO: resultados ao vivo, palavras-chave, backlinks, visibilidade em IA | Skill `seo-dataforseo` (no claude-seo) | MCP conectado, precisa reiniciar |
+| Gráficos SVG inline (modo escuro) | Capacidade interna `blog-chart` + skill `/svg-chart` | Python puro, já funciona |
+| SVGs animados (SMIL) | Skill `/svg-animate` | SVG puro, já funciona |
+| Execução de cluster de temas | `/blog cluster` | Padrão eixo e raios |
+| Publicação multilíngue | `/blog multilingual --languages de,fr,es` | Dispara o agente tradutor |
 
 ---
 
-## Verification (no API calls, runnable now)
+## Verificação (sem chamadas de API, executável agora)
 
 ```bash
-# 1. nanobanana structural validation (8/8 should pass)
+# 1. Validação estrutural do nanobanana (8/8 devem passar)
 python3 skills/blog-image/scripts/validate_image_setup.py
 
-# 2. Google API tier detection
+# 2. Detecção de nível da API do Google
 python3 skills/blog-google/scripts/google_auth.py --tier --json
 
-# 3. Plugin validate
+# 3. Validação do plugin
 claude plugin validate .
 
-# 4. Full test suite
+# 4. Suíte completa de testes
 python -m pytest tests/ -q
 
-# 5. Sample local SVG chart
+# 5. Gráfico SVG local de amostra
 ls -la demo-output/demo-chart.svg demo-output/demo-animated.svg
 ```
 
 ---
 
-## Demo Flow A: full blog post with all features (recommended)
+## Fluxo A: post completo com todos os recursos (recomendado)
 
-Use this in a live session to exercise every wired integration.
-Each step is one slash command. Estimated total time: 8-12 min.
+Use numa sessão ao vivo para exercitar todas as integrações conectadas.
+Cada passo é um comando de barra. Tempo total estimado: 8 a 12 minutos.
 
 ```
-1. /blog brief "AI search citations: how to win in ChatGPT and Perplexity"
-   -> Generates a brief with audience, intent, competitive angles.
-      (No external API yet; pure LLM work.)
+1. /blog brief "Citações em busca por IA: como se destacar no ChatGPT e no Perplexity"
+   -> Gera um briefing com público, intenção e ângulos competitivos.
+      (Ainda sem API externa; trabalho puro de LLM.)
 
-2. /seo dataforseo keywords "AI search citations" --limit 30
-   -> Live keyword data (volume, difficulty, intent).
-      Costs DataForSEO credits.
+2. /seo dataforseo keywords "citações em busca por IA" --limit 30
+   -> Dados de palavra-chave ao vivo (volume, dificuldade, intenção).
+      Consome créditos do DataForSEO.
 
-3. /seo dataforseo serp "how to get cited in ChatGPT"
-   -> Live SERP including AI Overviews.
-      Costs DataForSEO credits.
+3. /seo dataforseo serp "como ser citado no ChatGPT"
+   -> Resultados de busca ao vivo, incluindo AI Overviews.
+      Consome créditos do DataForSEO.
 
 4. /blog google youtube search "AI search citations 2025" --max-results 5
-   -> Candidate YouTube videos with editorial suitability data.
-      Use a video only when it is relevant, accurate, useful, and eligible.
-      Free quota.
+   -> Vídeos candidatos do YouTube com dados de adequação editorial.
+      Use um vídeo apenas quando for relevante, correto, útil e elegível.
+      Cota gratuita.
 
-5. /blog write "AI search citations" --brief
-   -> Writes the full post. During the write, it will:
-      - invoke the internal blog-chart capability to generate SVG charts inline
-      - call /blog image (nanobanana) to generate the cover + hero
-      - embed YouTube videos via srcdoc lazy-load (~5KB)
-      - add content-consistent JSON-LD; FAQPage only when visible questions warrant it
-      - strengthen evidence-backed explanations and supported original material
+5. /blog write "citações em busca por IA" --brief
+   -> Escreve o post completo. Durante a escrita, ele vai:
+      - invocar a capacidade interna blog-chart para gerar gráficos SVG inline
+      - chamar /blog image (nanobanana) para gerar a capa e a imagem principal
+      - embutir vídeos do YouTube via carregamento tardio com srcdoc (cerca de 5KB)
+      - acrescentar JSON-LD coerente com o conteúdo; FAQPage apenas quando as
+        perguntas visíveis justificarem
+      - reforçar as explicações apoiadas em evidência e o material original comprovado
 
-6. /blog seo-check <output_path>
-   -> Validates title, meta, headings, schema, alt text.
+6. /blog seo-check <caminho_de_saida>
+   -> Valida título, meta, títulos de seção, schema e texto alternativo.
 
-7. /blog geo <output_path>
-   -> AI citation readiness audit (passage citability, year anchors,
-      source tier weighting).
+7. /blog geo <caminho_de_saida>
+   -> Auditoria de prontidão para citação por IA (citabilidade dos trechos,
+      âncoras de ano, ponderação por nível de fonte).
 
-8. /blog analyze <output_path>
-   -> 5-category 100-point quality score.
+8. /blog analyze <caminho_de_saida>
+   -> Nota de qualidade de 100 pontos em 5 categorias.
 ```
 
 ---
 
-## Demo Flow B: single-feature demos (when you want to highlight one thing)
+## Fluxo B: demonstrações de recurso único (quando você quer destacar uma coisa só)
 
-### B1. "Cover image from a topic"
+### B1. "Imagem de capa a partir de um tema"
 
 ```
 /banana generate "a clean editorial header for a blog post about
@@ -127,16 +128,16 @@ Each step is one slash command. Estimated total time: 8-12 min.
                   Open Graph image"
 ```
 
-Output: file path under `~/Documents/nanobanana_generated/`. Banana
-acts as Creative Director and constructs the 5-component prompt;
-the skill auto-loads `references/gemini-models.md` and
-`references/prompt-engineering.md` per its MANDATORY rule.
+Saída: caminho de arquivo em `~/Documents/nanobanana_generated/`. O Banana atua
+como Diretor de Criação e constrói o prompt de 5 componentes; a skill carrega
+automaticamente `references/gemini-models.md` e `references/prompt-engineering.md`,
+conforme sua regra OBRIGATÓRIA.
 
-### B2. "Inline SVG chart from data"
+### B2. "Gráfico SVG inline a partir de dados"
 
 ```
 /svg-chart bar from-data
-[paste data]
+[cole os dados]
 ChatGPT,35
 Claude,22
 Perplexity,18
@@ -144,10 +145,10 @@ Gemini,15
 Copilot,10
 ```
 
-Within `/blog write` or `/blog rewrite`, the same data can be rendered by the
-internal `blog-chart` capability.
+Dentro de `/blog write` ou `/blog rewrite`, os mesmos dados podem ser renderizados
+pela capacidade interna `blog-chart`.
 
-### B3. "Animated SVG explaining a concept"
+### B3. "SVG animado explicando um conceito"
 
 ```
 /svg-animate "loading spinner for a topic-cluster build with
@@ -155,7 +156,7 @@ internal `blog-chart` capability.
               dark mode"
 ```
 
-### B4. "Live SERP for a query"
+### B4. "Resultados de busca ao vivo para uma consulta"
 
 ```
 /seo dataforseo serp-youtube "claude code skill"
@@ -163,7 +164,7 @@ internal `blog-chart` capability.
 /seo dataforseo intent "best ai citation tool"
 ```
 
-### B5. "Backlink intelligence"
+### B5. "Inteligência de backlinks"
 
 ```
 /seo dataforseo backlinks ahrefs.com --limit 50
@@ -172,62 +173,62 @@ internal `blog-chart` capability.
 
 ---
 
-## Troubleshooting
+## Solução de problemas
 
-| Symptom | Cause | Fix |
+| Sintoma | Causa | Correção |
 |---|---|---|
-| `${GOOGLE_AI_API_KEY}` shows as literal in MCP env | Claude Code launched before `source .env.local` | `source .env.local` then restart Claude Code |
-| `dataforseo` MCP tools not available | Same as above OR npm package needs to be downloaded | Wait 30s on first call (npx fetches the package) |
-| "MCP not configured" from `/blog image` | MCP didn't load this session | Check `.mcp.json` exists, then restart Claude Code |
-| `pagespeed_check` says "API key invalid" | Key revoked OR rate limit | Check the key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
-| DataForSEO returns 401 | Wrong username/password OR account inactive | Check the credentials at [app.dataforseo.com](https://app.dataforseo.com) |
-| YouTube search returns empty | Free YouTube Data API quota exhausted | Wait until quota reset (midnight Pacific) |
+| `${GOOGLE_AI_API_KEY}` aparece literal no ambiente MCP | O Claude Code foi iniciado antes do `source .env.local` | Rode `source .env.local` e reinicie o Claude Code |
+| Ferramentas MCP do `dataforseo` indisponíveis | O mesmo caso acima, ou o pacote npm precisa ser baixado | Aguarde 30s na primeira chamada (o npx baixa o pacote) |
+| "MCP not configured" vindo de `/blog image` | O MCP não carregou nesta sessão | Verifique se `.mcp.json` existe e reinicie o Claude Code |
+| `pagespeed_check` diz "API key invalid" | Chave revogada ou limite de taxa | Confira a chave em [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
+| DataForSEO devolve 401 | Usuário ou senha errados, ou conta inativa | Confira as credenciais em [app.dataforseo.com](https://app.dataforseo.com) |
+| A busca no YouTube volta vazia | Cota gratuita da YouTube Data API esgotada | Aguarde a renovação da cota (meia-noite no Pacífico) |
 
 ---
 
-## Rotating credentials
+## Rotação de credenciais
 
 ```bash
-# 1. Edit .env.local with the new values
+# 1. Edite o .env.local com os novos valores
 $EDITOR .env.local
 
-# 2. Re-source + restart Claude Code
-source .env.local && exec claude code   # or however you launch it
+# 2. Refaça o source e reinicie o Claude Code
+source .env.local && exec claude code   # ou como você costuma iniciar
 
-# 3. For per-skill Google config (used by blog-google scripts directly):
-$EDITOR ~/.config/claude-seo/google-api.json    # mode 0600
+# 3. Para a config do Google por skill (usada direto pelos scripts do blog-google):
+$EDITOR ~/.config/claude-seo/google-api.json    # modo 0600
 
-# 4. For permanent rotation (across all shells):
-# remove the old `export GOOGLE_AI_API_KEY=...` from ~/.bashrc
-# add the new one
+# 4. Para rotação permanente (em todos os shells):
+# remova o antigo `export GOOGLE_AI_API_KEY=...` do ~/.bashrc
+# e acrescente o novo
 ```
 
-To remove the credentials entirely:
+Para remover as credenciais por completo:
 
 ```bash
-shred -u .env.local                              # secure delete
+shred -u .env.local                              # exclusão segura
 shred -u ~/.config/claude-seo/google-api.json
-# .mcp.json itself only has env-expansion placeholders, nothing to shred
+# o próprio .mcp.json só tem marcadores de expansão de variável, nada a destruir
 ```
 
-The `uninstall.{sh,ps1}` scripts (post-audit fix VULN-805) also purge
-`~/.config/claude-seo/{oauth-token,google-api}.json` automatically.
+Os scripts `uninstall.{sh,ps1}` (correção pós-auditoria VULN-805) também apagam
+`~/.config/claude-seo/{oauth-token,google-api}.json` automaticamente.
 
 ---
 
-## What was wired in this session
+## O que foi conectado nesta sessão
 
-- `.mcp.json` (mode 0600, gitignored): added `dataforseo` server
-  alongside existing `nanobanana-mcp`. Both pinned (`@1.1.1` and
-  `@2.8.10`). Both env-expansion only, no literal keys.
-- `.env.local` (mode 0600, gitignored): the literal credentials live
-  here. Source it before launching Claude Code.
-- `~/.config/claude-seo/google-api.json` (mode 0600, user-private):
-  contains the `api_key` for blog-google's scripts (which read it
-  directly, not via MCP).
-- `demo-output/demo-chart.svg`: sample static SVG bar chart.
-- `demo-output/demo-animated.svg`: sample animated SVG (SMIL).
-- `.gitignore`: added `demo-output/` so demo artifacts don't pollute
-  git status.
+- `.mcp.json` (modo 0600, no gitignore): acrescentado o servidor `dataforseo`
+  ao lado do `nanobanana-mcp` existente. Ambos fixados (`@1.1.1` e
+  `@2.8.10`). Ambos apenas com expansão de variável, sem chave literal.
+- `.env.local` (modo 0600, no gitignore): as credenciais literais ficam aqui.
+  Faça `source` antes de iniciar o Claude Code.
+- `~/.config/claude-seo/google-api.json` (modo 0600, privado do usuário):
+  contém a `api_key` para os scripts do blog-google, que a leem diretamente,
+  não via MCP.
+- `demo-output/demo-chart.svg`: gráfico de barras SVG estático de amostra.
+- `demo-output/demo-animated.svg`: SVG animado de amostra (SMIL).
+- `.gitignore`: acrescentado `demo-output/`, para os artefatos da demonstração
+  não poluírem o `git status`.
 
-No tracked files modified. No commits. The demo stays local.
+Nenhum arquivo versionado foi alterado. Nenhum commit. A demonstração fica local.
