@@ -1,267 +1,267 @@
-# Template: Roundup
+# Template: Compilação de Especialistas
 
-**Description:** Curated collection of expert quotes, insights, and strategies organized around a specific topic. Roundup posts leverage external authority, provide diverse perspectives, and are highly shareable because each featured expert has an incentive to promote the piece. They also build relationships with industry leaders.
+**Descrição:** Coletânea curada de falas, percepções e estratégias de especialistas, organizada em torno de um tema específico. Esse formato se apoia na autoridade externa, oferece perspectivas diversas e é altamente compartilhável, porque cada especialista citado tem incentivo para divulgar a peça. Também constrói relacionamento com referências do setor.
 
-**Target Word Count:** 1,500-2,000 words
-
----
-
-## When to Use This Template
-
-- **Content Goal:** Aggregate diverse expert perspectives to create a uniquely valuable resource, build relationships with industry leaders, and earn social shares and backlinks
-- **Search Intent:** Informational (users want curated, authoritative advice on a topic)
-- **Funnel Stage:** Top-of-funnel awareness and trust-building
-- **Use When:**
-  - You want to cover a topic where multiple perspectives add genuine value
-  - You have access to (or can reach out to) 5-8 credible experts
-  - The topic benefits from diverse viewpoints rather than a single authoritative voice
-  - You want content that is inherently shareable (each expert shares it with their audience)
-  - You want to build relationships with industry figures for future collaboration
+**Extensão alvo:** 1.500 a 2.000 palavras
 
 ---
 
-## Section-by-Section Structure
+## Quando usar este template
+
+- **Objetivo de conteúdo:** reunir perspectivas diversas para criar um recurso singularmente valioso, construir relacionamento com referências do setor e conquistar compartilhamentos e links
+- **Intenção de busca:** informacional (o leitor quer conselho curado e confiável sobre um tema)
+- **Etapa do funil:** topo de funil, consciência e construção de confiança
+- **Use quando:**
+  - O tema é daqueles em que várias perspectivas agregam valor real
+  - Você tem acesso (ou consegue chegar) a 5 a 8 especialistas com credibilidade
+  - O assunto se beneficia de pontos de vista diversos, e não de uma única voz autoritativa
+  - Você quer conteúdo naturalmente compartilhável (cada especialista divulga para o próprio público)
+  - Você quer construir relacionamento com figuras do setor para colaborações futuras
 
 ---
 
-### Title
-
-**Format:** "[N] Experts Share Their [Topic] Strategies for [Year]"
-
-**Alternative formats:**
-- "[N] [Industry] Leaders on the Future of [Topic]"
-- "We Asked [N] [Role] About [Topic]. Here's What They Said."
-- "[N] [Topic] Strategies From the People Who Know Best ([Year])"
-
-**Guidelines:**
-- Include the exact number of experts (specificity builds credibility)
-- Name the topic clearly so the reader knows what advice to expect
-- The year signals that insights are current
-- Keep under 65 characters for full SERP display
-
-```
-# [N] Experts Share Their [Topic] Strategies for [Year]
-```
-
-[IMAGE] Collage or grid of expert headshots, or a branded graphic with the article title and expert count. Alt text: "[N] experts featured in [Topic] roundup - headshots and names."
+## Estrutura seção a seção
 
 ---
 
-### Introduction (100-150 words)
+### Título
 
-[ANSWER-FIRST] State the key consensus finding or most surprising insight from the experts in the first sentence. Do not begin with "We reached out to experts..." - lead with the value.
+**Formato:** "[N] Especialistas Revelam Suas Estratégias de [Tema] para [Ano]"
 
-**Structure:**
-1. **Key finding** (1-2 sentences): The single most important takeaway from across all expert responses - what is the through-line?
-   - [STAT: supporting data point that frames why this topic matters now]
-2. **Why expert perspectives matter** (1-2 sentences): What do these practitioners know that generalist articles miss?
-3. **Preview of diversity** (1-2 sentences): Highlight the range of perspectives - "From [context A] to [context B], these experts bring [X years] of combined experience"
-4. **What the reader will get** (1 sentence): Set expectations for actionable takeaways
+**Formatos alternativos:**
+- "[N] Líderes de [Setor] Sobre o Futuro de [Tema]"
+- "Perguntamos a [N] [Cargo] Sobre [Tema]. Veja o Que Responderam."
+- "[N] Estratégias de [Tema] de Quem Entende do Assunto ([Ano])"
 
-[INFO-GAIN: unique analysis] Your editorial synthesis is what makes this more than a list of quotes. Signal early that you have analyzed and organized these perspectives into actionable themes.
+**Diretrizes:**
+- Inclua o número exato de especialistas (especificidade gera credibilidade)
+- Nomeie o tema com clareza, para o leitor saber que conselho esperar
+- O ano sinaliza que as percepções são atuais
+- Fique abaixo de 65 caracteres para exibição completa no resultado de busca
 
-[INTERNAL-LINK] Link to your pillar page or foundational article on this topic to give readers who need background a place to start.
+```
+# [N] Especialistas Revelam Suas Estratégias de [Tema] para [Ano]
+```
+
+[IMAGE] Mosaico ou grade com as fotos dos especialistas, ou um gráfico com a marca, o título do artigo e a quantidade de especialistas. Texto alternativo: "[N] especialistas participantes da compilação sobre [Tema]: fotos e nomes."
 
 ---
 
-### Expert Sections (5-8 experts, 150-200 words each)
+### Introdução (100 a 150 palavras)
 
-Each expert gets their own H2 section. Order experts strategically - lead with the most recognizable name or the most compelling insight, not alphabetically.
+[ANSWER-FIRST] Declare na primeira frase o principal ponto de consenso ou a percepção mais surpreendente. Não comece com "Procuramos especialistas...": comece pelo valor.
 
-**For each expert section, use this structure:**
+**Estrutura:**
+1. **Achado principal** (1 a 2 frases): a conclusão mais importante que atravessa todas as respostas. Qual é o fio condutor?
+   - [STAT: dado de apoio que enquadre por que o tema importa agora]
+2. **Por que a visão de quem pratica importa** (1 a 2 frases): o que esses profissionais sabem que artigos generalistas não captam?
+3. **Prévia da diversidade** (1 a 2 frases): destaque a amplitude das perspectivas: "De [contexto A] a [contexto B], estes especialistas somam [X anos] de experiência"
+4. **O que o leitor vai levar** (1 frase): estabeleça a expectativa de conclusões acionáveis
 
-```
-## [Expert Full Name], [Title] at [Company/Organization]
-```
+[INFO-GAIN: análise própria] Sua síntese editorial é o que transforma isso em algo além de uma lista de falas. Sinalize cedo que você analisou e organizou essas perspectivas em temas acionáveis.
 
-[IMAGE] Expert headshot (with permission). Alt text: "[Expert Name], [Title] at [Company]."
-
-**Structure per section:**
-
-1. **Expert context** (1 sentence): Brief credential or context that establishes why this person's perspective matters for this specific topic. Do not copy their full bio - focus on the relevant qualification.
-
-2. **Key insight** (direct quote, 2-4 sentences): The expert's core advice or perspective in their own words. Direct quotes are strongly preferred over paraphrasing.
-
-```
-> "[Direct quote from the expert providing their key insight or strategy.]"
-```
-
-3. **Your analysis** (3-5 sentences): This is where YOU add value. Do not just present the quote - analyze it:
-   - What makes this advice noteworthy or different from conventional wisdom?
-   - How does this connect to or contrast with what other experts in this roundup said?
-   - What is the practical implication for the reader?
-   - When might this advice be especially relevant (or not apply)?
-
-[INFO-GAIN: unique analysis] Your editorial analysis between quotes is what differentiates a valuable roundup from a lazy quote dump. Each analysis paragraph should contain at least one original observation.
-
-[STAT: supporting data] Where possible, include a statistic that supports or contextualizes the expert's claim.
-
-[INTERNAL-LINK] Link to relevant how-to guides, tools, or articles that help the reader implement the expert's advice.
-
-**Repeat this structure for each of the 5-8 expert sections.**
+[INTERNAL-LINK] Link para sua página pilar ou artigo base sobre o tema, dando um ponto de partida a quem precisa de contexto.
 
 ---
 
-### Synthesis: What the Experts Agree On (200-300 words)
+### Seções dos especialistas (5 a 8 especialistas, 150 a 200 palavras cada)
 
-[ANSWER-FIRST] State the strongest area of consensus in the first sentence. This section is where your editorial voice matters most.
+Cada especialista ganha sua própria seção H2. Ordene de forma estratégica: comece pelo nome mais reconhecido ou pela percepção mais forte, nunca em ordem alfabética.
 
-**Structure:**
-1. **Common themes** (100-150 words): Identify 3-4 themes that emerged across multiple expert responses. For each theme:
-   - Name the theme (H3 or bold)
-   - Note which experts align on this theme
-   - Explain why this consensus matters
+**Para cada seção, use esta estrutura:**
 
 ```
-**Theme 1: [Theme Name]**
-[Expert A], [Expert B], and [Expert C] all emphasized [specific commonality]. This suggests that [insight about why this consensus exists and what it means for practitioners].
-
-**Theme 2: [Theme Name]**
-[Describe the second area of agreement and its implications.]
-
-**Theme 3: [Theme Name]**
-[Describe the third area of agreement and its implications.]
+## [Nome Completo], [Cargo] na [Empresa/Organização]
 ```
 
-2. **Contrasting opinions** (50-75 words): Where did experts disagree? Highlight 1-2 areas of divergence and explain what accounts for the different perspectives (different contexts, industries, experience levels, etc.)
+[IMAGE] Foto do especialista (com autorização). Texto alternativo: "[Nome], [Cargo] na [Empresa]."
 
-3. **What consensus tells us** (50-75 words): Step back and offer a meta-observation - what does the overall pattern of agreement and disagreement reveal about the current state of this topic?
-   - [STAT: data point that supports the consensus finding]
+**Estrutura por seção:**
 
-[INFO-GAIN: unique analysis] The synthesis is your original contribution. Anyone can collect quotes - your ability to identify patterns and draw non-obvious conclusions is the information gain.
+1. **Contexto do especialista** (1 frase): credencial breve que estabeleça por que a perspectiva dessa pessoa importa neste tema específico. Não copie a biografia inteira: foque na qualificação relevante.
 
-[VISUAL: chart-type] Consider a simple visualization of expert consensus - a matrix showing which experts agree on which themes, a spectrum chart showing the range of opinions, or a Venn diagram of overlapping advice.
+2. **Percepção central** (citação direta, 2 a 4 frases): o conselho ou a visão central nas palavras da própria pessoa. Citação direta é fortemente preferível à paráfrase.
+
+```
+> "[Citação direta do especialista trazendo sua percepção ou estratégia central.]"
+```
+
+3. **Sua análise** (3 a 5 frases): é aqui que VOCÊ agrega valor. Não apresente só a citação: analise.
+   - O que torna esse conselho notável ou diferente do senso comum?
+   - Como isso conversa ou contrasta com o que os outros especialistas disseram?
+   - Qual a implicação prática para o leitor?
+   - Quando esse conselho é especialmente relevante (ou quando não se aplica)?
+
+[INFO-GAIN: análise própria] Sua análise editorial entre as citações é o que separa uma compilação valiosa de um amontoado preguiçoso de falas. Cada parágrafo de análise deve conter ao menos uma observação própria.
+
+[STAT: dado de apoio] Quando possível, inclua uma estatística que sustente ou contextualize a afirmação do especialista.
+
+[INTERNAL-LINK] Link para guias práticos, ferramentas ou artigos que ajudem o leitor a colocar o conselho em prática.
+
+**Repita esta estrutura em cada uma das 5 a 8 seções.**
 
 ---
 
-### Actionable Takeaways (150-200 words)
+### Síntese: em que os especialistas concordam (200 a 300 palavras)
 
-[ANSWER-FIRST] Start with the single most actionable piece of advice from the roundup in the first sentence.
+[ANSWER-FIRST] Declare na primeira frase a área de maior consenso. É nesta seção que sua voz editorial mais importa.
 
-**Structure:**
-Present 5-7 bullet points combining the best advice from across all experts. Each takeaway should be:
-- Specific and actionable (not vague platitudes)
-- Attributed to the expert(s) who inspired it
-- Framed as an action the reader can take
+**Estrutura:**
+1. **Temas comuns** (100 a 150 palavras): identifique 3 ou 4 temas que emergiram em várias respostas. Para cada tema:
+   - Nomeie o tema (H3 ou negrito)
+   - Indique quais especialistas convergem nele
+   - Explique por que esse consenso importa
 
 ```
-1. **[Action verb] [specific advice]** - Based on [Expert Name]'s insight about [topic]. [One sentence expanding on how to implement this.]
+**Tema 1: [Nome do tema]**
+[Especialista A], [Especialista B] e [Especialista C] enfatizaram [ponto em comum]. Isso sugere que [percepção sobre por que esse consenso existe e o que significa na prática].
 
-2. **[Action verb] [specific advice]** - [Expert Name] and [Expert Name] both emphasized this. [One sentence on implementation.]
+**Tema 2: [Nome do tema]**
+[Descreva a segunda área de concordância e suas implicações.]
 
-3. **[Action verb] [specific advice]** - [Expert Name] recommends this because [brief reason]. [One sentence on getting started.]
-
-4. **[Action verb] [specific advice]** - This emerged as a common theme across [N] experts. [One sentence on why it matters.]
-
-5. **[Action verb] [specific advice]** - [Expert Name]'s contrarian take suggests [brief insight]. [One sentence on when to apply this.]
-
-6. **[Action verb] [specific advice]** - [Attribution and brief context.]
-
-7. **[Action verb] [specific advice]** - [Attribution and brief context.]
+**Tema 3: [Nome do tema]**
+[Descreva a terceira área de concordância e suas implicações.]
 ```
 
-[INTERNAL-LINK] Link each takeaway to relevant supporting content (how-to guides, tool reviews, etc.) that helps the reader implement it.
+2. **Opiniões divergentes** (50 a 75 palavras): onde os especialistas discordaram? Destaque 1 ou 2 pontos de divergência e explique o que justifica as diferenças (contextos, setores, níveis de experiência).
+
+3. **O que o consenso nos diz** (50 a 75 palavras): dê um passo atrás e ofereça uma meta-observação: o que o padrão geral de concordância e discordância revela sobre o estado atual do tema?
+   - [STAT: dado que sustente o achado de consenso]
+
+[INFO-GAIN: análise própria] A síntese é sua contribuição original. Qualquer um coleta citações; sua capacidade de identificar padrões e tirar conclusões não óbvias é o ganho de informação.
+
+[VISUAL: chart-type] Considere uma visualização simples do consenso: uma matriz mostrando quais especialistas concordam com quais temas, um gráfico de espectro com a amplitude das opiniões ou um diagrama de sobreposição dos conselhos.
 
 ---
 
-### Resources (100-150 words)
+### Conclusões acionáveis (150 a 200 palavras)
 
-[ANSWER-FIRST] Name the single most recommended resource in the first sentence.
+[ANSWER-FIRST] Comece pelo conselho mais acionável de toda a compilação, já na primeira frase.
 
-**Structure:**
-Organize resources into 2-3 categories based on what experts mentioned or recommended:
+**Estrutura:**
+Apresente de 5 a 7 marcadores combinando os melhores conselhos de todos os especialistas. Cada conclusão deve ser:
+- Específica e acionável (nada de lugar-comum vago)
+- Atribuída ao especialista ou especialistas que a inspiraram
+- Formulada como uma ação que o leitor pode tomar
 
 ```
-**Tools:**
-- [Tool Name] - [One-line description]. Recommended by [Expert Name].
-- [Tool Name] - [One-line description]. Mentioned by [Expert Name] and [Expert Name].
+1. **[Verbo de ação] [conselho específico]** - Baseado na percepção de [Nome] sobre [tema]. [Uma frase sobre como implementar.]
 
-**Books & Courses:**
-- [Resource Name] by [Author] - [One-line description]. Recommended by [Expert Name].
-- [Resource Name] - [One-line description].
+2. **[Verbo de ação] [conselho específico]** - [Nome] e [Nome] enfatizaram isso. [Uma frase sobre implementação.]
 
-**Communities & Further Reading:**
-- [Resource Name] - [One-line description].
-- [Resource Name] - [One-line description].
+3. **[Verbo de ação] [conselho específico]** - [Nome] recomenda porque [razão breve]. [Uma frase sobre como começar.]
+
+4. **[Verbo de ação] [conselho específico]** - Emergiu como tema comum entre [N] especialistas. [Uma frase sobre por que importa.]
+
+5. **[Verbo de ação] [conselho específico]** - A visão contrária de [Nome] sugere [percepção breve]. [Uma frase sobre quando aplicar.]
+
+6. **[Verbo de ação] [conselho específico]** - [Atribuição e contexto breve.]
+
+7. **[Verbo de ação] [conselho específico]** - [Atribuição e contexto breve.]
 ```
 
-**Guidelines:**
-- Only include resources that were actually mentioned by experts or directly support their advice
-- Include a mix of free and paid resources
-- Link to resources where appropriate (use affiliate links with disclosure if applicable)
-
-[INTERNAL-LINK] Link to your own tool reviews or resource guides where relevant.
+[INTERNAL-LINK] Ligue cada conclusão ao conteúdo de apoio relevante (guias práticos, análises de ferramenta) que ajude o leitor a implementá-la.
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### Recursos (100 a 150 palavras)
 
-[FAQ] Source questions from the types of follow-up questions readers would have after reading expert advice.
+[ANSWER-FIRST] Nomeie o recurso mais recomendado já na primeira frase.
 
-**Guidelines:**
-- Focus on implementation questions ("How do I start?") and clarification questions ("Does this apply to [my situation]?")
-- Each answer should be complete and lead with a direct answer; no fixed word band
-- Reference specific experts when relevant
+**Estrutura:**
+Organize os recursos em 2 ou 3 categorias, conforme o que os especialistas mencionaram ou recomendaram:
 
 ```
-### How do I choose which expert advice to follow first?
+**Ferramentas:**
+- [Nome] - [Descrição em uma linha]. Recomendada por [Nome do especialista].
+- [Nome] - [Descrição em uma linha]. Mencionada por [Nome] e [Nome].
 
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences on prioritization criteria based on the reader's context - team size, budget, experience level, etc.]
+**Livros e cursos:**
+- [Nome] de [Autor] - [Descrição em uma linha]. Recomendado por [Nome do especialista].
+- [Nome] - [Descrição em uma linha].
 
-### Does this advice apply to [specific industry/size/context]?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences noting which expert perspectives are most relevant for different contexts.]
-
-### What if [expert advice A] contradicts [expert advice B]?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences explaining the context behind the disagreement and how to decide which applies to the reader.]
-
-### How often should I revisit these strategies?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences on the pace of change in this topic area.] [STAT: relevant data on how quickly this field evolves.]
-
-### Where can I learn more about [specific sub-topic mentioned by experts]?
-
-[ANSWER-FIRST] [Direct 1-sentence answer with resource recommendation.] [2-3 sentences on next steps.]
+**Comunidades e leitura adicional:**
+- [Nome] - [Descrição em uma linha].
+- [Nome] - [Descrição em uma linha].
 ```
 
-[INTERNAL-LINK] Link FAQ answers to relevant supporting articles, pillar pages, or tool guides.
+**Diretrizes:**
+- Inclua apenas recursos de fato mencionados pelos especialistas ou que sustentem diretamente o conselho deles
+- Misture recursos gratuitos e pagos
+- Linke os recursos quando fizer sentido (use links de afiliado com aviso, quando aplicável)
+
+[INTERNAL-LINK] Link para suas próprias análises de ferramenta ou guias de recursos, quando pertinente.
 
 ---
 
-### Methodology (100 words)
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
 
-[ANSWER-FIRST] State the expert selection criteria in the first sentence to establish the roundup's credibility.
+[FAQ] Puxe as perguntas do tipo de dúvida que o leitor teria depois de ler conselhos de especialistas.
 
-**Structure:**
-1. **Selection criteria** (1-2 sentences): How and why these specific experts were chosen (e.g., minimum years of experience, specific domain expertise, practitioner vs. theorist, diversity of perspective)
-2. **Outreach method** (1 sentence): How experts were contacted (email interviews, video calls, published statements, conference talks)
-3. **Response handling** (1 sentence): Were quotes edited for clarity? Were responses reviewed by experts before publication?
-4. **Transparency** (1 sentence): Note any experts who were invited but declined, or any potential conflicts of interest
+**Diretrizes:**
+- Foque em perguntas de implementação ("Por onde começo?") e de esclarecimento ("Isso vale para [minha situação]?")
+- Cada resposta deve ser completa e começar por uma resposta direta; sem faixa fixa de palavras
+- Cite especialistas específicos quando for pertinente
 
-**Guidelines:**
-- This section builds trust - be transparent about your process
-- If you sourced quotes from published materials (conference talks, podcasts, articles) rather than direct outreach, say so
-- Keep it factual and brief - this is not the place for editorial commentary
+```
+### Como escolho qual conselho seguir primeiro?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases sobre critérios de priorização conforme o contexto do leitor: tamanho de equipe, orçamento, nível de experiência.]
+
+### Esse conselho vale para [setor/porte/contexto específico]?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases indicando quais perspectivas são mais relevantes em cada contexto.]
+
+### E se o [conselho A] contradiz o [conselho B]?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases explicando o contexto da divergência e como decidir qual se aplica ao leitor.]
+
+### Com que frequência devo revisitar essas estratégias?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases sobre o ritmo de mudança nessa área.] [STAT: dado relevante sobre a velocidade de evolução do campo.]
+
+### Onde aprendo mais sobre [subtema citado pelos especialistas]?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase com recomendação de recurso.] [2 a 3 frases sobre os próximos passos.]
+```
+
+[INTERNAL-LINK] Ligue as respostas a artigos de apoio, páginas pilar ou guias de ferramenta relevantes.
 
 ---
 
-## Pre-Publish Checklist
+### Metodologia (100 palavras)
 
-- [ ] Coverage is complete for the roundup intent without padding
-- [ ] All [ANSWER-FIRST] prompts have been fulfilled - every section leads with the answer
-- [ ] All [STAT] markers replaced with real, cited statistics (with source and year)
-- [ ] All [IMAGE] markers replaced with actual expert headshots (with permission) or branded graphics
-- [ ] All [VISUAL] markers replaced with actual charts or diagrams
-- [ ] All [INFO-GAIN] markers replaced with original editorial analysis (not just quote presentation)
-- [ ] All [INTERNAL-LINK] zones populated with real links to supporting content
-- [ ] All [FAQ] answers are complete and lead with a direct answer
-- [ ] 5-8 experts are featured with proper attribution (name, title, company)
-- [ ] All expert quotes are accurate and used with permission
-- [ ] Each expert section includes YOUR analysis, not just the quote
-- [ ] Synthesis section identifies genuine themes (not forced patterns)
-- [ ] Actionable takeaways are specific and attributed to experts
-- [ ] Methodology section is honest about sourcing and selection
-- [ ] Experts have been notified of publication (for sharing)
-- [ ] Meta title includes the number of experts and topic
-- [ ] Meta description accurately summarizes the visible findings
+[ANSWER-FIRST] Declare na primeira frase os critérios de seleção dos especialistas, estabelecendo a credibilidade da compilação.
+
+**Estrutura:**
+1. **Critérios de seleção** (1 a 2 frases): como e por que esses especialistas foram escolhidos (anos mínimos de experiência, domínio específico, prático versus teórico, diversidade de perspectiva)
+2. **Método de contato** (1 frase): como os especialistas foram abordados (entrevista por e-mail, videochamada, declarações publicadas, palestras)
+3. **Tratamento das respostas** (1 frase): as citações foram editadas para clareza? As respostas foram revisadas pelos especialistas antes da publicação?
+4. **Transparência** (1 frase): registre especialistas convidados que recusaram e eventuais conflitos de interesse
+
+**Diretrizes:**
+- Esta seção constrói confiança: seja transparente sobre seu processo
+- Se as citações vieram de material publicado (palestras, podcasts, artigos) e não de contato direto, diga isso
+- Mantenha factual e breve: não é lugar para comentário editorial
+
+---
+
+## Lista de verificação antes de publicar
+
+- [ ] A cobertura atende à intenção da compilação sem encher linguiça
+- [ ] Todos os pedidos [ANSWER-FIRST] foram cumpridos: toda seção começa pela resposta
+- [ ] Todos os marcadores [STAT] foram substituídos por estatísticas reais e citadas (com fonte e ano)
+- [ ] Todos os marcadores [IMAGE] foram substituídos por fotos reais dos especialistas (com autorização) ou gráficos da marca
+- [ ] Todos os marcadores [VISUAL] foram substituídos por gráficos ou diagramas reais
+- [ ] Todos os marcadores [INFO-GAIN] foram substituídos por análise editorial própria, não apenas apresentação de citação
+- [ ] Todas as zonas [INTERNAL-LINK] foram preenchidas com links reais para conteúdo de apoio
+- [ ] Todas as respostas de [FAQ] são completas e começam por uma resposta direta
+- [ ] De 5 a 8 especialistas estão presentes com atribuição correta (nome, cargo, empresa)
+- [ ] Todas as citações são fiéis e usadas com autorização
+- [ ] Cada seção de especialista inclui SUA análise, não apenas a citação
+- [ ] A síntese identifica temas reais, não padrões forçados
+- [ ] As conclusões acionáveis são específicas e atribuídas aos especialistas
+- [ ] A seção de metodologia é honesta sobre origem e seleção
+- [ ] Os especialistas foram avisados da publicação (para compartilhar)
+- [ ] O meta title inclui a quantidade de especialistas e o tema
+- [ ] A meta description resume com precisão os achados visíveis
