@@ -1,42 +1,42 @@
-# Architecture
+# Arquitetura
 
-System design documentation for `claude-blog`, covering component types,
-data flow, scoring methodology, file conventions, and extension points.
+Documentação de desenho do sistema do `claude-blog`, cobrindo tipos de componente,
+fluxo de dados, metodologia de pontuação, convenções de arquivo e pontos de extensão.
 
-The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gated Obsidian brain. It is not part of the plugin payload; all skill tooling remains scoped to `skills/`.
+O Claude Blog Brain é vendorizado em `./brain` como um brain Obsidian autocontido e com evidência exigida. Ele não faz parte do payload do plugin; todo o ferramental de skill segue restrito a `skills/`.
 
 ---
 
-## System Overview
+## Visão geral do sistema
 
 ```
                         +-----------------------------+
-                        |         User Input          |
-                        |   /blog <command> [args]    |
+                        |      Entrada do usuário     |
+                        |   /blog <comando> [args]    |
                         +-------------+---------------+
                                       |
                                       v
                         +-----------------------------+
-                        |    Main Orchestrator        |
+                        |    Orquestrador principal   |
                         |      skills/blog/SKILL.md          |
                         |                             |
-                        |  - Command parsing          |
-                        |  - Platform detection       |
-                        |  - Sub-skill routing        |
-                        |  - Quality gate enforcement |
+                        |  - Interpretação de comando |
+                        |  - Detecção de plataforma   |
+                        |  - Roteamento de sub-skill  |
+                        |  - Imposição dos portões    |
                         +------+----------+-----------+
                                |          |
               +----------------+          +----------------+
               |                                            |
               v                                            v
 +----------------------------+            +---------------------------+
-|   32 Skill Directories     |            |    On-Demand References   |
-|  1 orchestrator + 31       |            |  skills/blog/references/*.md     |
+|  32 diretórios de skill    |            |  Referências sob demanda  |
+|  1 orquestrador + 31       |            |  skills/blog/references/*.md     |
 |  sub-skills                |            |  skills/blog/templates/*.md      |
 |  write    rewrite          |            |                           |
-|  analyze  brief            |            |  22 references loaded     |
-|  calendar strategy         |            |  on demand (RAG pattern)  |
-|  outline  seo-check        |            |  12 content templates     |
+|  analyze  brief            |            |  22 referências carregadas|
+|  calendar strategy         |            |  sob demanda (padrão RAG) |
+|  outline  seo-check        |            |  12 templates de conteúdo |
 |  schema   repurpose        |            +---------------------------+
 |  geo      audit            |
 |  image    cannibalization  |
@@ -48,12 +48,12 @@ The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gat
 |  localize locale-audit     |
 |  brand    discourse        |
 |  style    decay            |
-|  chart (internal)          |
+|  chart (interno)           |
 +------+----------+----------+
        |          |
        v          v
 +------------------+  +------------------------+
-|  5 Subagents     |  |  17 root-level Scripts  |
+|  5 subagentes    |  |  17 scripts na raiz    |
 |  agents/*.md     |  |  scripts/*.py          |
 |                  |  |                        |
 |  blog-researcher |  |  analyze_blog          |
@@ -76,230 +76,233 @@ The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gat
 
 ---
 
-## Component Types
+## Tipos de componente
 
-### 1. Main Orchestrator
+### 1. Orquestrador principal
 
-**File**: `skills/blog/SKILL.md`
+**Arquivo**: `skills/blog/SKILL.md`
 
-The entry point for all `/blog` commands. Responsibilities:
+O ponto de entrada de todos os comandos `/blog`. Responsabilidades:
 
-- Parse user input to identify the sub-command and arguments
-- Detect the blog platform from project structure (MDX, Hugo, Jekyll, etc.)
-- Route to the appropriate sub-skill
-- Enforce quality gates (hard rules that never ship content violating them)
-- Load reference files on demand
+- Interpretar a entrada do usuário para identificar o subcomando e os argumentos
+- Detectar a plataforma de blog pela estrutura do projeto (MDX, Hugo, Jekyll etc.)
+- Rotear para a sub-skill adequada
+- Impor os portões de qualidade (regras duras que nunca deixam passar conteúdo que as viole)
+- Carregar arquivos de referência sob demanda
 
-The orchestrator is a Claude Code skill with YAML frontmatter defining its
-name, description, trigger phrases, and allowed tools.
+O orquestrador é uma skill do Claude Code com frontmatter YAML definindo nome,
+descrição, expressões de acionamento e ferramentas permitidas.
 
-### 2. Skill Directories (32 total: 1 orchestrator + 31 sub-skills; 30 user-facing commands)
+### 2. Diretórios de skill (32 no total: 1 orquestrador + 31 sub-skills; 30 comandos voltados ao usuário)
 
-**Location**: `skills/blog-*/SKILL.md` (and `skills/blog/SKILL.md` for the orchestrator)
+**Local**: `skills/blog-*/SKILL.md` (e `skills/blog/SKILL.md` no caso do orquestrador)
 
-Each sub-skill is a standalone Claude Code skill with its own:
+Cada sub-skill é uma skill autônoma do Claude Code, com seus próprios:
 
-- YAML frontmatter (name, description, user-invokable, argument-hint, metadata.version)
-- Detailed workflow (step-by-step instructions)
-- Input/output specifications
-- Quality checks
+- Frontmatter YAML (name, description, user-invokable, argument-hint, metadata.version)
+- Fluxo detalhado (instruções passo a passo)
+- Especificações de entrada e saída
+- Checagens de qualidade
 
-| Sub-Skill | Responsibility | Introduced |
-|-----------|----------------|------------|
-| blog-write | New article generation with full optimization (v1.9.0: iterates through 5-gate delivery contract until score >= 90 and zero P0, max 3 iterations) | v1.0.0 |
-| blog-rewrite | Existing post optimization preserving author voice (v1.9.0: same delivery contract) | v1.0.0 |
-| blog-analyze | Quality audit with 5-category 100-point scoring | v1.0.0 |
-| blog-brief | Content brief generation with research | v1.0.0 |
-| blog-calendar | Editorial calendar planning | v1.0.0 |
-| blog-strategy | Blog positioning and content architecture | v1.0.0 |
-| blog-outline | SERP-informed outline generation | v1.0.0 |
-| blog-seo-check | Post-writing SEO validation | v1.0.0 |
-| blog-schema | JSON-LD schema markup generation | v1.0.0 |
-| blog-repurpose | Cross-platform content repurposing | v1.0.0 |
-| blog-geo | AI citation optimization audit | v1.0.0 |
-| blog-audit | Full-site blog health assessment | v1.0.0 |
-| blog-chart | Inline SVG charts (internal-only, invoked by write/rewrite) | v1.0.0 |
-| blog-image | AI image generation via Gemini (nanobanana-mcp) | v1.4.0 |
-| blog-cannibalization | Keyword overlap detection across posts | v1.4.x |
-| blog-factcheck | Statistics verification against cited sources | v1.4.x |
-| blog-persona | Writing persona / voice profile management | v1.4.x |
-| blog-taxonomy | CMS tag / category management (WordPress, Shopify, Ghost, Strapi, Sanity) | v1.4.x |
-| blog-notebooklm | Source-grounded research via NotebookLM | v1.5.0 |
-| blog-audio | Audio narration via Gemini TTS (30 voices, 80+ languages) | v1.6.0 |
-| blog-google | Google API integration (PSI, CrUX, GSC, GA4, NLP, YouTube, Ads) | v1.6.5 |
-| blog-cluster | Semantic topic-cluster planning + execution (hub-and-spoke) | v1.7.0 |
-| blog-flow | FLOW framework prompts (find / optimize / win / prompts / sync) | v1.7.0 |
-| blog-multilingual | One-command multilingual write + translate + localize + hreflang | v1.7.0 |
-| blog-translate | SEO-optimized translation with format preservation | v1.7.0 |
-| blog-localize | Cultural deep-adaptation per locale | v1.7.0 |
-| blog-locale-audit | Multilingual content QA (completeness, hreflang, parity, freshness) | v1.7.0 |
-| blog-brand | Generate BRAND.md + VOICE.md context auto-loaded by all sub-skills | v1.8.0 |
-| blog-discourse | API-free last-30-days discourse research (Reddit, X, YouTube, etc.) | v1.8.0 |
-| blog-style | Learn author voice profiles from existing posts | v1.10.0 |
-| blog-decay | Detect GSC content decay and prioritize refresh candidates | v1.10.0 |
+| Sub-skill | Responsabilidade | Introduzida |
+|-----------|------------------|-------------|
+| blog-write | Geração de artigo novo com otimização completa (v1.9.0: itera pelo contrato de entrega de 5 portões até a nota atingir 90 ou mais com zero P0, no máximo 3 iterações) | v1.0.0 |
+| blog-rewrite | Otimização de post existente preservando a voz do autor (v1.9.0: mesmo contrato de entrega) | v1.0.0 |
+| blog-analyze | Auditoria de qualidade com pontuação de 100 pontos em 5 categorias | v1.0.0 |
+| blog-brief | Geração de briefing de conteúdo com pesquisa | v1.0.0 |
+| blog-calendar | Planejamento de calendário editorial | v1.0.0 |
+| blog-strategy | Posicionamento do blog e arquitetura de conteúdo | v1.0.0 |
+| blog-outline | Geração de roteiro informado por resultados de busca | v1.0.0 |
+| blog-seo-check | Validação de SEO após a escrita | v1.0.0 |
+| blog-schema | Geração de marcação de schema JSON-LD | v1.0.0 |
+| blog-repurpose | Reaproveitamento de conteúdo entre plataformas | v1.0.0 |
+| blog-geo | Auditoria de otimização para citação por IA | v1.0.0 |
+| blog-audit | Avaliação de saúde do blog inteiro | v1.0.0 |
+| blog-chart | Gráficos SVG inline (somente interno, invocado por write e rewrite) | v1.0.0 |
+| blog-image | Geração de imagem por IA via Gemini (nanobanana-mcp) | v1.4.0 |
+| blog-cannibalization | Detecção de sobreposição de palavra-chave entre posts | v1.4.x |
+| blog-factcheck | Verificação de estatísticas contra as fontes citadas | v1.4.x |
+| blog-persona | Gestão de persona de escrita e perfil de voz | v1.4.x |
+| blog-taxonomy | Gestão de tags e categorias no CMS (WordPress, Shopify, Ghost, Strapi, Sanity) | v1.4.x |
+| blog-notebooklm | Pesquisa ancorada em fonte via NotebookLM | v1.5.0 |
+| blog-audio | Narração em áudio via Gemini TTS (30 vozes, mais de 80 idiomas) | v1.6.0 |
+| blog-google | Integração com APIs do Google (PSI, CrUX, GSC, GA4, NLP, YouTube, Ads) | v1.6.5 |
+| blog-cluster | Planejamento e execução de cluster semântico de temas (eixo e raios) | v1.7.0 |
+| blog-flow | Prompts do framework FLOW (find / optimize / win / prompts / sync) | v1.7.0 |
+| blog-multilingual | Escrita, tradução, localização e hreflang multilíngues num comando só | v1.7.0 |
+| blog-translate | Tradução otimizada para SEO com preservação de formato | v1.7.0 |
+| blog-localize | Adaptação cultural profunda por localidade | v1.7.0 |
+| blog-locale-audit | QA de conteúdo multilíngue (completude, hreflang, paridade, atualidade) | v1.7.0 |
+| blog-brand | Gera o contexto BRAND.md + VOICE.md carregado automaticamente por todas as sub-skills | v1.8.0 |
+| blog-discourse | Pesquisa de discurso dos últimos 30 dias sem API (Reddit, X, YouTube etc.) | v1.8.0 |
+| blog-style | Aprende perfis de voz do autor a partir de posts existentes | v1.10.0 |
+| blog-decay | Detecta decaimento de conteúdo no GSC e prioriza candidatos a atualização | v1.10.0 |
 
-### 3. Subagents (5)
+### 3. Subagentes (5)
 
-**Location**: `agents/blog-*.md`
+**Local**: `agents/blog-*.md`
 
-Specialized agents spawned by sub-skills via Claude Code's `Task` tool.
-Each agent has a focused role with a restricted tool set. None of the
-agents have Bash access; the v1.7.0 hardening removed Bash from the
-agent frontmatter to bound blast radius (see `agents/blog-reviewer.md`
-and `agents/blog-translator.md`).
+Agentes especializados disparados pelas sub-skills por meio da ferramenta `Task`
+do Claude Code. Cada agente tem um papel focado e um conjunto restrito de
+ferramentas. Nenhum deles tem acesso a Bash; o endurecimento da v1.7.0 removeu o
+Bash do frontmatter dos agentes para limitar o raio de alcance (veja
+`agents/blog-reviewer.md` e `agents/blog-translator.md`).
 
-| Agent | Tools | Role |
-|-------|-------|------|
-| blog-researcher | WebSearch, WebFetch, Read, Grep, Glob | Find statistics, images, competitive data |
-| blog-writer | Read, Write, Edit, Grep, Glob | Write and rewrite optimized content |
-| blog-seo | Read, Grep, Glob | Technical SEO analysis and validation |
-| blog-reviewer | Read, Grep, Glob | Quality review and scoring; **BLOCKING in v1.9.0** (emits `BLOCKING: true\|false (reason)` line parsed by `scripts/blog_preflight.py` Gate 4) |
-| blog-translator | Read, Write, Edit, Grep, Glob | Multilingual translation (v1.7.0; no Bash for blast-radius safety) |
+| Agente | Ferramentas | Papel |
+|--------|-------------|-------|
+| blog-researcher | WebSearch, WebFetch, Read, Grep, Glob | Encontra estatísticas, imagens e dados da concorrência |
+| blog-writer | Read, Write, Edit, Grep, Glob | Escreve e reescreve conteúdo otimizado |
+| blog-seo | Read, Grep, Glob | Análise e validação técnica de SEO |
+| blog-reviewer | Read, Grep, Glob | Revisão e pontuação de qualidade; **BLOQUEANTE na v1.9.0** (emite a linha `BLOCKING: true\|false (motivo)`, lida pelo Gate 4 do `scripts/blog_preflight.py`) |
+| blog-translator | Read, Write, Edit, Grep, Glob | Tradução multilíngue (v1.7.0; sem Bash, por segurança de raio de alcance) |
 
-Agents are defined as markdown files with YAML frontmatter specifying their
-name, description, and available tools.
+Os agentes são definidos como arquivos markdown com frontmatter YAML
+especificando nome, descrição e ferramentas disponíveis.
 
-### 4. Reference Files (22)
+### 4. Arquivos de referência (22)
 
-**Location**: `skills/blog/references/*.md`
+**Local**: `skills/blog/references/*.md`
 
-Knowledge documents loaded on demand (RAG-style; not preloaded into context).
-22 references in `skills/blog/references/` cover SEO landscape, GEO/AEO,
-content rules, visual media, schema, E-E-A-T, platform guides, distribution,
-internal linking, FLOW prompts, video embeds, AI-slop detection, editorial
-heuristics, cognitive load, research quality, synthesis contract, and the
-v1.9.0 blog-delivery-contract spec.
+Documentos de conhecimento carregados sob demanda (estilo RAG, não pré-carregados
+no contexto). São 22 reference docs em `skills/blog/references/` cobrindo cenário
+de SEO, GEO/AEO, regras de conteúdo, mídia visual, schema, E-E-A-T, guias de
+plataforma, distribuição, links internos, prompts do FLOW, incorporação de vídeo,
+detecção de conteúdo genérico de IA, heurísticas editoriais, carga cognitiva,
+qualidade de pesquisa, contrato de síntese e a especificação do contrato de
+entrega da v1.9.0.
 
-To list the current set:
+Para listar o conjunto atual:
 
 ```bash
 ls skills/blog/references/*.md
 ```
 
-The exact list is intentionally not enumerated here so this doc doesn't drift
-behind file-system reality. The `test_reference_count_coherence` pytest
-asserts the count claimed in `skills/blog/SKILL.md` matches the actual file
-count, so every documented count auto-syncs.
+A lista exata não é enumerada aqui de propósito, para este documento não ficar
+defasado frente à realidade do sistema de arquivos. O teste
+`test_reference_count_coherence` verifica que a contagem declarada em
+`skills/blog/SKILL.md` bate com a quantidade real de arquivos, de modo que toda
+contagem documentada se sincroniza sozinha.
 
-### 5. Content Templates (12)
+### 5. Templates de conteúdo (12)
 
-**Location**: `skills/blog/templates/*.md`
+**Local**: `skills/blog/templates/*.md`
 
-Structural templates for different content types. Each template defines
-section structure, word count targets, and format-specific guidance.
-See [TEMPLATES.md](TEMPLATES.md) for the full reference.
+Templates estruturais para diferentes tipos de conteúdo. Cada um define a
+estrutura de seções, as metas de extensão e a orientação específica de formato.
+Veja [TEMPLATES.md](TEMPLATES.md) para a referência completa.
 
-### 6. Root-Level Python Scripts (14)
+### 6. Scripts Python na raiz (14)
 
-**Location**: `scripts/*.py`
+**Local**: `scripts/*.py`
 
-Standalone CLIs that the orchestrator calls via Bash. Each has argparse,
-docstring, JSON output, and stdlib-only or narrowly-pinned dependencies.
+CLIs autônomas que o orquestrador chama via Bash. Cada uma tem argparse,
+docstring, saída JSON e dependências apenas da biblioteca padrão ou fixadas de
+forma restrita.
 
-| Script | Purpose | Introduced |
+| Script | Finalidade | Introduzido |
 |---|---|---|
-| `analyze_blog.py` | 5-category 100-point quality scoring; batch mode; JSON/markdown/table output | v1.0.0 |
-| `ai_citation_score.py` | Non-calibrated AI citation readiness heuristic, 0-100 per post | v1.10.0 |
-| `blog_hygiene.py` | Optional deterministic hygiene: lazy-load images and auto-TOC | v1.11.0 |
-| `blog_preflight.py` | Runs 5-gate Blog Delivery Contract (Gates 1, 2, 3, 5; reads Gate 4 output) | v1.9.0 |
-| `blog_render.py` | md -> html -> pdf renderer; XSS-safe JSON-LD via `</`->`<\/`; O_NOFOLLOW symlink refusal; frontmatter validation | v1.9.0 |
-| `cognitive_load.py` | Per-section concept-density analyzer (entities, numerics, jargon, forward refs, clause depth) | v1.8.0 |
-| `content_decay.py` | GSC content-decay detector: 20%+ QoQ decline | v1.10.0 |
-| `discourse_research.py` | Discourse-brief synthesis from SERP JSON; depth-bounded parsing; path-traversal guards | v1.8.0 |
-| `generate_hero.py` | Hero image ladder: Banana MCP -> Gemini API -> Unsplash/Pexels/Pixabay -> Openverse | v1.9.0 |
-| `load_untrusted_root.py` | Code-enforced BRAND/VOICE/DISCOURSE fencing with CSPRNG nonces; O_NOFOLLOW + size cap | v1.8.3 |
-| `lint_prose.py` | Fence-aware prose-hygiene linter (no em-dash, en-dash, ` -- `); CI-enforced | v1.8.4 |
-| `quality_gate.py` | Pre-commit gate: block posts scoring < 70 | v1.10.0 |
-| `style_learn.py` | Author voice-profile learner from sample posts | v1.10.0 |
-| `sync_flow.py` | Pulls FLOW reference prompts from upstream; sandboxed; stdlib-only | v1.7.0 |
+| `analyze_blog.py` | Pontuação de qualidade de 100 pontos em 5 categorias; modo em lote; saída JSON, markdown ou tabela | v1.0.0 |
+| `ai_citation_score.py` | Heurística não calibrada de prontidão para citação por IA, 0 a 100 por post | v1.10.0 |
+| `blog_hygiene.py` | Higiene determinística opcional: carregamento tardio de imagens e sumário automático | v1.11.0 |
+| `blog_preflight.py` | Roda o contrato de entrega de 5 portões (portões 1, 2, 3 e 5; lê a saída do 4) | v1.9.0 |
+| `blog_render.py` | Renderizador md -> html -> pdf; JSON-LD à prova de XSS via `</`->`<\/`; recusa de symlink com O_NOFOLLOW; validação de frontmatter | v1.9.0 |
+| `cognitive_load.py` | Analisador de densidade de conceitos por seção (entidades, números, jargão, referências adiante, profundidade de oração) | v1.8.0 |
+| `content_decay.py` | Detector de decaimento de conteúdo via GSC: queda de 20%+ no trimestre | v1.10.0 |
+| `discourse_research.py` | Síntese de briefing de discurso a partir de JSON de busca; parsing com profundidade limitada; proteção contra travessia de caminho | v1.8.0 |
+| `generate_hero.py` | Escada de imagem principal: Banana MCP -> API do Gemini -> Unsplash/Pexels/Pixabay -> Openverse | v1.9.0 |
+| `load_untrusted_root.py` | Cerca imposta por código para BRAND/VOICE/DISCOURSE com nonces CSPRNG; O_NOFOLLOW e limite de tamanho | v1.8.3 |
+| `lint_prose.py` | Linter de higiene de prosa ciente de cercas (sem travessão, meia-risca ou ` -- `); imposto pela CI | v1.8.4 |
+| `quality_gate.py` | Portão de pre-commit: barra posts com nota abaixo de 70 | v1.10.0 |
+| `style_learn.py` | Aprendiz de perfil de voz do autor a partir de posts de amostra | v1.10.0 |
+| `sync_flow.py` | Puxa os prompts de referência do FLOW da origem; em caixa de areia; só biblioteca padrão | v1.7.0 |
 
 ---
 
-## Data Flow
+## Fluxo de dados
 
-### Write Flow
-
-```
-/blog write "topic"
-      |
-      v
-  Orchestrator (skills/blog/SKILL.md)
-      |
-      +-- Loads: references/content-rules.md
-      |         references/visual-media.md
-      |         templates/[auto-selected].md
-      |
-      +-- Spawns: blog-researcher agent
-      |   |
-      |   +-- WebSearch: finds 8-12 statistics
-      |   +-- WebSearch: finds 3-5 Pixabay/Unsplash images
-      |   +-- WebFetch: verifies sources and URLs
-      |   +-- Returns: structured research data
-      |
-      +-- Presents outline for user approval
-      |
-      +-- Invokes: blog-chart (2-4 charts, built-in)
-      |
-      +-- Spawns: blog-writer agent
-      |   |
-      |   +-- Writes full article with:
-      |   |   - Answer-first formatting
-      |   |   - Sourced statistics
-      |   |   - Image embeds
-      |   |   - Chart embeds
-      |   |   - FAQ section
-      |   +-- Returns: complete article
-      |
-      +-- Quality verification (5 categories, 100 points)
-      |
-      +-- v1.9.0: 5-gate Blog Delivery Contract (blog_preflight.py)
-      |     Gate 1 Capability Discovery -> capabilities.json
-      |     Gate 2 Format Completeness  -> .md + .html + .pdf + hero.<ext>
-      |     Gate 3 Visual Verification  -> patchright/playwright 3 viewports
-      |     Gate 4 Content Review       -> blog-reviewer agent (BLOCKING)
-      |     Gate 5 Asset + Link         -> imgs, links, schema, wordCount
-      |     If any gate BLOCKS: iterate up to 3x then escalate to user
-      |
-      +-- Writes file to user's project
-      |
-      v
-  Delivery summary (8 artifacts: md, html, pdf, hero, 4 viewport screenshots, review.md, preflight-report.json)
-```
-
-### Analyze Flow
+### Fluxo de escrita
 
 ```
-/blog analyze "file.md"
+/blog write "tema"
       |
       v
-  Orchestrator --> blog-analyze sub-skill
+  Orquestrador (skills/blog/SKILL.md)
       |
-      +-- Reads target file
+      +-- Carrega: references/content-rules.md
+      |            references/visual-media.md
+      |            templates/[selecionado automaticamente].md
       |
-      +-- Loads: references/quality-scoring.md
-      |
-      +-- Runs: analyze_blog.py (if Python available)
+      +-- Dispara: agente blog-researcher
       |   |
-      |   +-- Returns: JSON metrics
+      |   +-- WebSearch: encontra 8 a 12 estatísticas
+      |   +-- WebSearch: encontra 3 a 5 imagens do Pixabay/Unsplash
+      |   +-- WebFetch: verifica fontes e URLs
+      |   +-- Devolve: dados estruturados de pesquisa
       |
-      +-- Manual scoring (5 categories, 100 points)
+      +-- Apresenta o roteiro para aprovação do usuário
       |
-      +-- Generates prioritized recommendations
+      +-- Invoca: blog-chart (2 a 4 gráficos, embutido)
+      |
+      +-- Dispara: agente blog-writer
+      |   |
+      |   +-- Escreve o artigo completo com:
+      |   |   - Formatação de resposta antecipada
+      |   |   - Estatísticas com fonte
+      |   |   - Imagens embutidas
+      |   |   - Gráficos embutidos
+      |   |   - Seção de perguntas frequentes
+      |   +-- Devolve: artigo completo
+      |
+      +-- Verificação de qualidade (5 categorias, 100 pontos)
+      |
+      +-- v1.9.0: contrato de entrega de 5 portões (blog_preflight.py)
+      |     Portão 1 Descoberta de capacidades -> capabilities.json
+      |     Portão 2 Completude de formato     -> .md + .html + .pdf + hero.<ext>
+      |     Portão 3 Verificação visual        -> patchright/playwright, 3 larguras
+      |     Portão 4 Revisão de conteúdo       -> agente blog-reviewer (BLOQUEANTE)
+      |     Portão 5 Ativos e links            -> imagens, links, schema, contagem
+      |     Se algum portão BLOQUEAR: itera até 3 vezes e então escala ao usuário
+      |
+      +-- Grava o arquivo no projeto do usuário
       |
       v
-  Quality report with score and action items
+  Resumo de entrega (8 artefatos: md, html, pdf, hero, 4 capturas por largura, review.md, preflight-report.json)
+```
+
+### Fluxo de análise
+
+```
+/blog analyze "arquivo.md"
+      |
+      v
+  Orquestrador --> sub-skill blog-analyze
+      |
+      +-- Lê o arquivo alvo
+      |
+      +-- Carrega: references/quality-scoring.md
+      |
+      +-- Roda: analyze_blog.py (se houver Python disponível)
+      |   |
+      |   +-- Devolve: métricas em JSON
+      |
+      +-- Pontuação manual (5 categorias, 100 pontos)
+      |
+      +-- Gera recomendações priorizadas
+      |
+      v
+  Relatório de qualidade com nota e itens de ação
 ```
 
 ---
 
-## On-Demand Reference Loading (RAG Pattern)
+## Carregamento de referências sob demanda (padrão RAG)
 
-Reference files are NOT preloaded into context. The orchestrator and sub-skills
-load them selectively based on the current task:
+Os arquivos de referência NÃO são pré-carregados no contexto. O orquestrador e as
+sub-skills os carregam seletivamente conforme a tarefa em curso:
 
 ```
-Task                    References Loaded
-----                    -----------------
+Tarefa                  Referências carregadas
+------                  ----------------------
 /blog write             content-rules, visual-media, quality-scoring
 /blog rewrite           content-rules, quality-scoring
 /blog analyze           quality-scoring
@@ -310,134 +313,133 @@ Task                    References Loaded
 /blog seo-check         google-landscape-2026, schema-stack
 ```
 
-This pattern keeps context usage efficient. Only the knowledge relevant to
-the current operation is loaded.
+Esse padrão mantém o uso de contexto eficiente. Só é carregado o conhecimento
+relevante à operação atual.
 
 ---
 
-## Scoring Methodology
+## Metodologia de pontuação
 
-Blog quality is measured across 5 categories totaling 100 points. The
-`analyze_blog.py` script and the `blog-analyze` sub-skill both use this
-framework.
+A qualidade do blog é medida em 5 categorias que somam 100 pontos. Tanto o script
+`analyze_blog.py` quanto a sub-skill `blog-analyze` usam este arcabouço.
 
-### Category Weights
+### Pesos por categoria
 
 ```
-Content Quality (30 pts)  ############################--
-SEO Signals (25 pts)      #########################-----
-E-E-A-T (15 pts)          ###############---------------
-Technical (15 pts)        ###############---------------
-AI Citation (15 pts)      ###############---------------
-                          |    |    |    |    |    |
-                          0   20   40   60   80  100
+Qualidade de conteúdo (30) ############################--
+Sinais de SEO (25)         #########################-----
+E-E-A-T (15)               ###############---------------
+Técnico (15)               ###############---------------
+Citação por IA (15)        ###############---------------
+                           |    |    |    |    |    |
+                           0   20   40   60   80  100
 ```
 
-### Scoring Bands
+### Faixas de pontuação
 
-| Score | Rating | Action |
-|-------|--------|--------|
-| 90-100 | Exceptional | Publish as-is (v1.9.0 contract delivers GREEN) |
-| 80-89 | Strong | Minor tweaks; orchestrator iterates if Gate 4 wants 90+ |
-| 70-79 | Acceptable | Notable gaps; iterate |
-| 60-69 | Below Standard | Significant improvements required |
-| < 60 | Rewrite | Full rewrite recommended |
+| Nota | Classificação | Ação |
+|------|---------------|------|
+| 90-100 | Excepcional | Publicar como está (o contrato da v1.9.0 entrega VERDE) |
+| 80-89 | Forte | Ajustes menores; o orquestrador itera se o Gate 4 exigir 90 ou mais |
+| 70-79 | Aceitável | Lacunas relevantes; iterar |
+| 60-69 | Abaixo do padrão | Melhorias significativas necessárias |
+| Menos de 60 | Refazer | Reescrita completa recomendada |
 
-The Blog Delivery Contract uses the configured quality threshold of 70.
-Advisory style and length observations do not block delivery or infer
-authorship. Integrity and safety failures remain blocking.
+O contrato de entrega usa a nota mínima configurada de 70. Observações
+consultivas de estilo e de extensão não bloqueiam a entrega nem inferem autoria.
+Falhas de integridade e de segurança seguem bloqueantes.
 
-### Quality Gates (Hard Rules)
+### Portões de qualidade (regras duras)
 
-These are non-negotiable. Content violating any of these must not be published:
+Estes são inegociáveis. Conteúdo que viole qualquer um deles não pode ser publicado:
 
-| Gate | Threshold |
-|------|-----------|
-| Fabricated statistics | Zero tolerance |
-| Paragraph clarity | Review in context; no fixed length gate |
-| Heading hierarchy | Never skip levels (H1 > H2 > H3) |
-| Source tier | Tier 1-3 only |
-| Image alt text | Required on all images |
-| Self-promotion | Max 1 brand mention |
-| Chart diversity | No duplicate chart types per post |
-
----
-
-## Platform Detection
-
-The orchestrator auto-detects the blog platform from project signals:
-
-| Signal | Platform | Output Format |
-|--------|----------|---------------|
-| `.mdx` files + `next.config` | Next.js/MDX | JSX-compatible markdown |
-| `.md` files + `hugo.toml` | Hugo | Standard markdown |
-| `.md` files + `_config.yml` | Jekyll | Markdown with YAML front matter |
-| `.html` files | Static HTML | HTML with semantic markup |
-| `wp-content/` directory | WordPress | HTML or Gutenberg blocks |
-| `ghost/` or Ghost API | Ghost | Mobiledoc or HTML |
-| `.astro` files | Astro | MDX or markdown |
-| No signals detected | Default | Standard markdown |
-
-Platform detection affects:
-
-- Frontmatter format and field names
-- Image embedding syntax (markdown vs `<Image>` component)
-- Chart embedding format (HTML SVG vs JSX SVG with camelCase)
-- Schema injection method
+| Portão | Limite |
+|--------|--------|
+| Estatística inventada | Tolerância zero |
+| Clareza de parágrafo | Avaliar em contexto; sem portão fixo de extensão |
+| Hierarquia de títulos | Nunca pular níveis (H1 > H2 > H3) |
+| Nível da fonte | Somente níveis 1 a 3 |
+| Texto alternativo de imagem | Obrigatório em todas as imagens |
+| Autopromoção | No máximo 1 menção à marca |
+| Diversidade de gráficos | Sem tipos de gráfico repetidos no mesmo post |
 
 ---
 
-## File Naming Conventions
+## Detecção de plataforma
 
-| Component | Location | Naming |
-|-----------|----------|--------|
-| Main skill | `skills/blog/SKILL.md` | Fixed name |
-| Sub-skills | `skills/blog-<command>/SKILL.md` | Prefix `blog-` + command name |
-| Agents | `agents/blog-<role>.md` | Prefix `blog-` + role name |
-| References | `skills/blog/references/<topic>.md` | Kebab-case topic name |
-| Templates | `skills/blog/templates/<type>.md` | Kebab-case content type |
-| Scripts | `scripts/<name>.py` | Snake-case script name |
+O orquestrador detecta automaticamente a plataforma de blog a partir de sinais do projeto:
 
----
+| Sinal | Plataforma | Formato de saída |
+|-------|------------|------------------|
+| Arquivos `.mdx` + `next.config` | Next.js/MDX | Markdown compatível com JSX |
+| Arquivos `.md` + `hugo.toml` | Hugo | Markdown padrão |
+| Arquivos `.md` + `_config.yml` | Jekyll | Markdown com frontmatter YAML |
+| Arquivos `.html` | HTML estático | HTML com marcação semântica |
+| Diretório `wp-content/` | WordPress | HTML ou blocos Gutenberg |
+| `ghost/` ou API do Ghost | Ghost | Mobiledoc ou HTML |
+| Arquivos `.astro` | Astro | MDX ou markdown |
+| Nenhum sinal detectado | Padrão | Markdown padrão |
 
-## Extension Points
+A detecção de plataforma afeta:
 
-### Adding a New Command
-
-1. Create `skills/blog-<name>/SKILL.md` with YAML frontmatter
-2. Add routing logic to `skills/blog/SKILL.md` orchestrator
-3. Update `install.sh` and `install.ps1` to copy the new sub-skill
-4. Update `uninstall.sh` to remove it
-
-### Adding a New Agent
-
-1. Create `agents/blog-<role>.md` with YAML frontmatter
-2. Define the tool set (keep it minimal for the role)
-3. Reference the agent from sub-skills that need it
-
-### Adding a New Reference
-
-1. Create `skills/blog/references/<topic>.md`
-2. Document when to load it in the orchestrator
-3. Update `install.sh` to copy the new reference file
-
-### Adding a New Template
-
-1. Create `skills/blog/templates/<type>.md`
-2. Define section structure, markers, and word count targets
-3. Add template selection logic to `blog-write`
+- Formato e nomes de campo do frontmatter
+- Sintaxe de incorporação de imagem (markdown versus componente `<Image>`)
+- Formato de incorporação de gráfico (SVG em HTML versus SVG em JSX com camelCase)
+- Método de injeção de schema
 
 ---
 
-## Installed Directory Tree
+## Convenções de nomenclatura de arquivos
 
-After installation, `claude-blog` occupies this structure inside `~/.claude/`:
+| Componente | Local | Nomenclatura |
+|------------|-------|--------------|
+| Skill principal | `skills/blog/SKILL.md` | Nome fixo |
+| Sub-skills | `skills/blog-<comando>/SKILL.md` | Prefixo `blog-` mais o nome do comando |
+| Agentes | `agents/blog-<papel>.md` | Prefixo `blog-` mais o nome do papel |
+| Referências | `skills/blog/references/<tema>.md` | Nome do tema em kebab-case |
+| Templates | `skills/blog/templates/<tipo>.md` | Tipo de conteúdo em kebab-case |
+| Scripts | `scripts/<nome>.py` | Nome do script em snake-case |
+
+---
+
+## Pontos de extensão
+
+### Acrescentar um comando novo
+
+1. Crie `skills/blog-<nome>/SKILL.md` com frontmatter YAML
+2. Acrescente a lógica de roteamento ao orquestrador `skills/blog/SKILL.md`
+3. Atualize `install.sh` e `install.ps1` para copiar a nova sub-skill
+4. Atualize `uninstall.sh` para removê-la
+
+### Acrescentar um agente novo
+
+1. Crie `agents/blog-<papel>.md` com frontmatter YAML
+2. Defina o conjunto de ferramentas (mantenha mínimo para o papel)
+3. Referencie o agente a partir das sub-skills que precisam dele
+
+### Acrescentar uma referência nova
+
+1. Crie `skills/blog/references/<tema>.md`
+2. Documente quando carregá-la no orquestrador
+3. Atualize `install.sh` para copiar o novo arquivo de referência
+
+### Acrescentar um template novo
+
+1. Crie `skills/blog/templates/<tipo>.md`
+2. Defina estrutura de seções, marcadores e metas de extensão
+3. Acrescente a lógica de seleção de template ao `blog-write`
+
+---
+
+## Árvore de diretórios instalada
+
+Depois da instalação, o `claude-blog` ocupa esta estrutura dentro de `~/.claude/`:
 
 ```
 ~/.claude/
 ├── skills/
 │   ├── blog/
-│   │   ├── SKILL.md                    # Main orchestrator
+│   │   ├── SKILL.md                    # Orquestrador principal
 │   │   ├── references/
 │   │   │   ├── ai-crawler-guide.md
 │   │   │   ├── content-rules.md
@@ -478,7 +480,7 @@ After installation, `claude-blog` occupies this structure inside `~/.claude/`:
 │   ├── blog-repurpose/SKILL.md
 │   ├── blog-geo/SKILL.md
 │   ├── blog-audit/SKILL.md
-│   ├── blog-chart/SKILL.md             # internal-only (SVG generation)
+│   ├── blog-chart/SKILL.md             # somente interno (geração de SVG)
 │   ├── blog-image/SKILL.md             # v1.4.0
 │   ├── blog-cannibalization/SKILL.md
 │   ├── blog-factcheck/SKILL.md
@@ -505,22 +507,24 @@ After installation, `claude-blog` occupies this structure inside `~/.claude/`:
     └── blog-translator.md              # v1.7.0
 ```
 
-**Component counts (v2.1.1)**: 32 skill directories (1 orchestrator + 31
-sub-skills); 30 user-facing commands, 5 agents (blog-researcher, blog-writer, blog-seo, blog-reviewer,
-blog-translator), 22 references in `skills/blog/references/` (plus per-sub-skill
-references and 30 synced FLOW prompts under `skills/blog-flow/references/`),
-12 content templates, 17 root-level scripts (`scripts/analyze_blog.py`,
-`ai_citation_score.py`, `blog_hygiene.py`, `blog_preflight.py`,
-`blog_render.py`, `cognitive_load.py`, `content_decay.py`,
-`discourse_research.py`, `generate_hero.py`, `load_untrusted_root.py`,
-`lint_prose.py`, `quality_gate.py`, `style_learn.py`, `sync_flow.py`,
-`consistency_check.py`, `dependency_smoke.py`, `validate_public_release.py`) plus per-sub-skill scripts under
-`blog-google/`, `blog-notebooklm/`, `blog-audio/`, `blog-image/`.
-v1.8.0+ adds three project-root context files (BRAND.md / VOICE.md /
-DISCOURSE.md, auto-loaded via `scripts/load_untrusted_root.py` with
-CSPRNG nonce fencing). v1.8.4+ enforces prose hygiene and version
-coherence via CI (see `scripts/lint_prose.py`, `tests/test_version_coherence.py`).
-v1.9.0 adds the 5-gate Blog Delivery Contract (see
-`skills/blog/references/blog-delivery-contract.md`) and a 250+ test pytest
-suite including mutation-test-verified XSS, symlink, and frontmatter
-regression coverage.
+**Contagem de componentes (v2.1.1)**: 32 diretórios de skill (1 orquestrador +
+31 sub-skills); 30 comandos voltados ao usuário, 5 agentes (blog-researcher,
+blog-writer, blog-seo, blog-reviewer, blog-translator),
+22 references in `skills/blog/references/` (mais as referências por sub-skill e
+os 30 prompts do FLOW sincronizados em `skills/blog-flow/references/`),
+12 templates de conteúdo,
+17 scripts na raiz (`scripts/analyze_blog.py`, `ai_citation_score.py`,
+`blog_hygiene.py`, `blog_preflight.py`, `blog_render.py`, `cognitive_load.py`,
+`content_decay.py`, `discourse_research.py`, `generate_hero.py`,
+`load_untrusted_root.py`, `lint_prose.py`, `quality_gate.py`, `style_learn.py`,
+`sync_flow.py`, `consistency_check.py`, `dependency_smoke.py`,
+`validate_public_release.py`) mais os scripts por sub-skill em `blog-google/`,
+`blog-notebooklm/`, `blog-audio/`, `blog-image/`.
+A v1.8.0 em diante acrescenta três arquivos de contexto na raiz do projeto
+(BRAND.md / VOICE.md / DISCOURSE.md, carregados automaticamente por
+`scripts/load_untrusted_root.py` com cerca de nonce CSPRNG). A v1.8.4 em diante
+impõe higiene de prosa e coerência de versão pela CI (veja `scripts/lint_prose.py`
+e `tests/test_version_coherence.py`). A v1.9.0 acrescenta o contrato de entrega de
+5 portões (veja `skills/blog/references/blog-delivery-contract.md`) e uma suíte
+pytest com mais de 250 testes, incluindo cobertura de regressão para XSS, symlink
+e frontmatter verificada por teste de mutação.
