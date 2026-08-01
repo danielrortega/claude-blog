@@ -89,10 +89,16 @@ def _print_dependency_notice() -> None:
 
 
 # ---------------------------------------------------------------------------
-# Editorial style diagnostic phrases
+# Editorial style diagnostic phrases (per language)
 # ---------------------------------------------------------------------------
+#
+# Every list below is language specific. Before this change the English lists
+# were module constants applied to any input, so a Portuguese draft matched
+# zero phrases and scored a free pass on the editorial diagnostics, while the
+# readability metrics were computed with English syllable rules. See
+# LANGUAGE_PROFILES and configure_language() below.
 
-AI_PHRASES = [
+_EN_AI_PHRASES = [
     "in today's digital landscape", "it's important to note", "in conclusion",
     "dive into", "game-changer", "navigate the landscape", "revolutionize",
     "leverage", "comprehensive guide", "in the ever-evolving", "seamlessly",
@@ -101,7 +107,7 @@ AI_PHRASES = [
 ]
 
 # Configurable editorial terms to flag for manual review.
-AI_TRIGGER_WORDS = [
+_EN_AI_TRIGGER_WORDS = [
     "delve", "tapestry", "multifaceted", "testament", "pivotal", "robust",
     "cutting-edge", "furthermore", "indeed", "moreover", "utilize", "leverage",
     "comprehensive", "landscape", "crucial", "foster", "illuminate", "underscore",
@@ -110,7 +116,7 @@ AI_TRIGGER_WORDS = [
 ]
 
 # Transition words/phrases for readability scoring
-TRANSITION_WORDS = [
+_EN_TRANSITION_WORDS = [
     "however", "therefore", "furthermore", "moreover", "additionally",
     "consequently", "nevertheless", "meanwhile", "similarly", "likewise",
     "nonetheless", "accordingly", "subsequently", "hence", "thus",
@@ -119,6 +125,162 @@ TRANSITION_WORDS = [
     "in particular", "specifically", "alternatively", "conversely",
     "in fact", "notably", "importantly", "significantly",
 ]
+
+# Brazilian Portuguese equivalents. These are the recurring openers and
+# filler constructions of generated / low-effort pt-BR marketing prose, not a
+# blocklist of bad writing. As upstream states in ai-slop-detection.md, a
+# phrase hit is a review signal, not an authorship verdict.
+_PT_AI_PHRASES = [
+    "no mundo de hoje", "no cenário atual", "no mundo digital de hoje",
+    "em um mundo cada vez mais", "é importante ressaltar", "vale ressaltar",
+    "vale lembrar que", "em conclusão", "em suma", "por fim, mas não menos importante",
+    "mergulhe no", "mergulhar no universo", "divisor de águas", "guia completo",
+    "guia definitivo", "desvendar o potencial", "todo o potencial",
+    "eleve o seu", "transforme a sua", "revolucionar a forma",
+    "quando se trata de", "não é à toa que", "sem sombra de dúvidas",
+    "de forma eficaz e eficiente", "solução ideal para", "tecnologia de ponta",
+    "o céu é o limite", "peça-chave", "papel fundamental",
+]
+
+_PT_AI_TRIGGER_WORDS = [
+    "ademais", "outrossim", "destarte", "robusto", "crucial", "primordial",
+    "abrangente", "multifacetado", "inovador", "otimizar", "potencializar",
+    "alavancar", "empoderar", "holístico", "sinergia", "cenário", "jornada",
+    "aprofundar", "desvendar", "meticuloso", "intrincado", "paradigma",
+    "impactante", "disruptivo", "aliado",
+]
+
+_PT_TRANSITION_WORDS = [
+    "no entanto", "entretanto", "contudo", "todavia", "portanto", "logo",
+    "assim", "dessa forma", "desse modo", "além disso", "ademais",
+    "por outro lado", "em contrapartida", "por exemplo", "por isso",
+    "consequentemente", "em seguida", "da mesma forma", "igualmente",
+    "ainda assim", "mesmo assim", "ou seja", "isto é", "na prática",
+    "em particular", "especificamente", "na verdade", "de fato",
+    "sobretudo", "principalmente", "enquanto isso", "em resumo",
+]
+
+# Readability: why a plain set_lang() is not enough
+# ---------------------------------------------------------------------------
+#
+# textstat.set_lang("pt") does NOT switch to a Portuguese-calibrated formula.
+# Inspecting textstat 0.7.x, the pt language config carries the English Flesch
+# coefficients verbatim:
+#
+#   en: fre_base 206.835, fre_sentence_length 1.015, fre_syll_per_word 84.6
+#   pt: fre_base 206.835, fre_sentence_length 1.015, fre_syll_per_word 84.6
+#   es: fre_base 206.84,  fre_sentence_length 1.02,  fre_syll_per_word 60.0
+#
+# Spanish has a real adaptation (Fernandez Huerta). Portuguese inherits the
+# English defaults, so set_lang only fixes the syllable dictionary. Portuguese
+# words carry markedly more syllables than English ones (measured on sample
+# pt-BR blog prose: ~1.9 vs ~1.6 syllables per word), and the English 84.6
+# penalty per syllable then drags every Portuguese text down by roughly 40
+# points. Untouched, ordinary well-written pt-BR prose lands near 30 on a scale
+# whose "ideal" band starts at 60.
+#
+# FRE_PT_OFFSET applies the Martins et al. (1996) Brazilian adaptation, which
+# keeps the English coefficients and raises the base constant from 206.835 to
+# 248.835. That adaptation is designed to be read on the original Flesch scale,
+# which is why the pt band below stays close to the English one.
+#
+# Measured after the offset: conversational prose ~113, informative consumer
+# blog prose ~80, dense journalistic prose ~17, technical abstract ~-38.
+#
+# This is a defensible calibration, not a validated one. Run the analyser over
+# a dozen of your own published posts, read the raw flesch_reading_ease values,
+# and tighten the band to match what you actually consider good.
+FRE_PT_OFFSET = 42.0
+
+# (ideal, good, acceptable) Flesch Reading Ease ranges feeding the 7/5/3/1
+# point ladder in score_content(). The English band is upstream's original.
+READABILITY_BANDS: dict[str, dict[str, tuple[float, float]]] = {
+    'en': {'ideal': (60, 70), 'good': (55, 75), 'acceptable': (45, 80)},
+    'pt': {'ideal': (50, 80), 'good': (40, 90), 'acceptable': (25, 100)},
+}
+
+# flesch_kincaid_grade and gunning_fog have no Portuguese adaptation here, so
+# they are suppressed rather than reported as if they meant something. They do
+# not feed the score; they only appear in the markdown report.
+GRADE_METRIC_LANGS = ('en',)
+
+LANGUAGE_PROFILES: dict[str, dict[str, Any]] = {
+    'en': {
+        'textstat_lang': 'en',
+        'fre_offset': 0.0,
+        'ai_phrases': _EN_AI_PHRASES,
+        'ai_trigger_words': _EN_AI_TRIGGER_WORDS,
+        'transition_words': _EN_TRANSITION_WORDS,
+    },
+    'pt': {
+        'textstat_lang': 'pt',
+        'fre_offset': FRE_PT_OFFSET,
+        'ai_phrases': _PT_AI_PHRASES,
+        'ai_trigger_words': _PT_AI_TRIGGER_WORDS,
+        'transition_words': _PT_TRANSITION_WORDS,
+    },
+}
+
+SUPPORTED_LANGS = tuple(LANGUAGE_PROFILES)
+
+# Active language. Defaults to English so behaviour is unchanged for every
+# existing caller and for the upstream test suite.
+ACTIVE_LANG = 'en'
+AI_PHRASES = _EN_AI_PHRASES
+AI_TRIGGER_WORDS = _EN_AI_TRIGGER_WORDS
+TRANSITION_WORDS = _EN_TRANSITION_WORDS
+
+# When True, each analysed file resolves its own language. Set to False by
+# an explicit --lang so the operator's choice is never silently overridden.
+AUTO_DETECT_LANG = True
+
+# Frequent function words used only to guess the language when --lang auto.
+_LANG_MARKERS: dict[str, tuple[str, ...]] = {
+    'pt': (' de ', ' que ', ' não ', ' para ', ' com ', ' uma ', ' dos ',
+           ' das ', ' pelo ', ' você ', ' são ', ' está ', ' mais '),
+    'en': (' the ', ' and ', ' that ', ' with ', ' for ', ' this ', ' from ',
+           ' you ', ' are ', ' is ', ' of ', ' to '),
+}
+
+
+def detect_language(text: str) -> str:
+    """Guess the document language from function-word frequency.
+
+    Deliberately crude: it only has to separate the languages in
+    LANGUAGE_PROFILES, and it falls back to English on a tie. Pass --lang
+    explicitly when the document is short or mixed.
+    """
+    sample = f" {text.lower()[:20000]} "
+    scores = {
+        lang: sum(sample.count(marker) for marker in markers)
+        for lang, markers in _LANG_MARKERS.items()
+    }
+    best = max(scores, key=lambda lang: scores[lang])
+    return best if scores[best] > 0 else 'en'
+
+
+def configure_language(lang: str) -> str:
+    """Select the active language profile and rebind the diagnostic lists.
+
+    Returns the language actually applied. Unknown codes fall back to English
+    with a stderr notice rather than failing the run.
+    """
+    global ACTIVE_LANG, AI_PHRASES, AI_TRIGGER_WORDS, TRANSITION_WORDS
+
+    if lang not in LANGUAGE_PROFILES:
+        print(
+            f"Note: unsupported --lang '{lang}'. Supported: "
+            f"{', '.join(SUPPORTED_LANGS)}. Falling back to English.",
+            file=sys.stderr,
+        )
+        lang = 'en'
+
+    profile = LANGUAGE_PROFILES[lang]
+    ACTIVE_LANG = lang
+    AI_PHRASES = profile['ai_phrases']
+    AI_TRIGGER_WORDS = profile['ai_trigger_words']
+    TRANSITION_WORDS = profile['transition_words']
+    return lang
 
 # ---------------------------------------------------------------------------
 # Content type word-count benchmarks
@@ -526,8 +688,31 @@ def analyze_self_promotion(content: str, brand_name: str = '') -> dict[str, Any]
 # ---------------------------------------------------------------------------
 
 
-def analyze_readability(text: str) -> dict[str, Any]:
-    """Compute readability metrics using textstat if available, else estimate."""
+def _apply_textstat_language(lang: str) -> bool:
+    """Point textstat at the active language. Returns True if it took effect.
+
+    textstat.set_lang() is global state and only exists on newer releases, so
+    both the missing-attribute and the unsupported-language cases degrade to
+    textstat's default (English) rather than raising.
+    """
+    code = LANGUAGE_PROFILES.get(lang, LANGUAGE_PROFILES['en'])['textstat_lang']
+    setter = getattr(textstat, 'set_lang', None)
+    if setter is None:
+        return code == 'en'
+    try:
+        setter(code)
+        return True
+    except Exception:
+        return code == 'en'
+
+
+def analyze_readability(text: str, lang: str | None = None) -> dict[str, Any]:
+    """Compute readability metrics using textstat if available, else estimate.
+
+    `lang` selects the syllable and coefficient set. Note that Flesch scores
+    are NOT comparable across languages; see READABILITY_BANDS.
+    """
+    lang = lang or ACTIVE_LANG
     words = text.split()
     word_count = len(words)
     sentences = re.findall(r'[.!?]+', text)
@@ -535,21 +720,29 @@ def analyze_readability(text: str) -> dict[str, Any]:
     avg_sentence_len = word_count / sentence_count
 
     if HAS_TEXTSTAT:
-        fre = textstat.flesch_reading_ease(text)
-        fkg = textstat.flesch_kincaid_grade(text)
-        fog = textstat.gunning_fog(text)
+        applied = _apply_textstat_language(lang)
+        offset = LANGUAGE_PROFILES.get(lang, LANGUAGE_PROFILES['en'])['fre_offset']
+        # The offset only makes sense once the language-correct syllable
+        # dictionary is in play. Without it the raw figure is already English.
+        fre = textstat.flesch_reading_ease(text) + (offset if applied else 0.0)
         try:
             reading_time = round(textstat.reading_time(text, ms_per_char=14.69) / 60, 1)
         except Exception:
             reading_time = round(word_count / 238, 1)
-        return {
+        result: dict[str, Any] = {
             'flesch_reading_ease': round(fre, 1),
-            'flesch_kincaid_grade': round(fkg, 1),
-            'gunning_fog': round(fog, 1),
             'reading_time_minutes': reading_time,
             'avg_sentence_length': round(avg_sentence_len, 1),
             'estimated': False,
+            'language': lang,
+            # False means the metrics above were computed with English rules
+            # despite `language`. Treat the score as indicative only.
+            'language_applied': applied,
         }
+        if lang in GRADE_METRIC_LANGS:
+            result['flesch_kincaid_grade'] = round(textstat.flesch_kincaid_grade(text), 1)
+            result['gunning_fog'] = round(textstat.gunning_fog(text), 1)
+        return result
     else:
         # Rough Flesch estimate: 206.835 - 1.015*(words/sentences) - 84.6*(syllables/words)
         avg_word_len = len(text) / max(word_count, 1)
@@ -560,6 +753,10 @@ def analyze_readability(text: str) -> dict[str, Any]:
             'reading_time_minutes': round(word_count / 238, 1),
             'avg_sentence_length': round(avg_sentence_len, 1),
             'estimated': True,
+            'language': lang,
+            # The crude fallback uses English coefficients whatever the
+            # language. Install textstat for a language-aware figure.
+            'language_applied': lang == 'en',
         }
 
 
@@ -1099,16 +1296,28 @@ def calculate_score(analysis: dict[str, Any]) -> dict[str, Any]:
     readability = analysis['readability']
     fre = readability.get('flesch_reading_ease', 50)
     fkg = readability.get('flesch_kincaid_grade', 8)
-    if 60 <= fre <= 70:
+    read_lang = readability.get('language', ACTIVE_LANG)
+    bands = READABILITY_BANDS.get(read_lang, READABILITY_BANDS['en'])
+    ideal_lo, ideal_hi = bands['ideal']
+    good_lo, good_hi = bands['good']
+    ok_lo, ok_hi = bands['acceptable']
+    if ideal_lo <= fre <= ideal_hi:
         read_score = 7
-    elif 55 <= fre <= 75:
+    elif good_lo <= fre <= good_hi:
         read_score = 5
-    elif 45 <= fre <= 80:
+    elif ok_lo <= fre <= ok_hi:
         read_score = 3
     else:
         read_score = 1
         issues.append({'category': 'content', 'severity': 'medium',
-                       'issue': f'Flesch reading ease ({fre}) outside acceptable range (55-75)'})
+                       'issue': f'Flesch reading ease ({fre}) outside acceptable range '
+                                f'({good_lo}-{good_hi}) for language "{read_lang}"'})
+    # A language mismatch means the number above came from English rules. Say
+    # so instead of letting a meaningless score drive a blocking decision.
+    if not readability.get('language_applied', True):
+        issues.append({'category': 'content', 'severity': 'low',
+                       'issue': f'Readability computed with English rules despite '
+                                f'language "{read_lang}"; treat the score as indicative'})
     cq += read_score
     cq_breakdown['readability'] = read_score
 
@@ -1647,6 +1856,16 @@ def analyze_file(file_path: str) -> dict[str, Any]:
     plain_text = re.sub(r'^#{1,6}\s+', '', plain_text, flags=re.MULTILINE)
     plain_text = re.sub(r'\n{3,}', '\n\n', plain_text).strip()
 
+    # Resolve the language BEFORE any language-sensitive analyser runs.
+    # Precedence: explicit --lang (AUTO_DETECT_LANG False) > frontmatter
+    # lang/language key > function-word detection. Done per file so batch runs
+    # over a mixed-language directory score each post on its own terms.
+    if AUTO_DETECT_LANG:
+        declared = str(frontmatter.get('lang') or frontmatter.get('language') or '').strip()
+        candidate = declared.replace('_', '-').split('-')[0].lower() if declared else ''
+        configure_language(candidate if candidate in LANGUAGE_PROFILES
+                           else detect_language(plain_text))
+
     headings_info = analyze_headings(body)
     sentences_info = analyze_sentences(plain_text)
     faq_info = analyze_faq(body)
@@ -2039,8 +2258,17 @@ Optional dependencies (graceful degradation):
                              '(content, seo, eeat, technical, ai)')
     parser.add_argument('--fix', action='store_true',
                         help='Output prioritized list of specific fixes')
+    parser.add_argument('--lang', '-l', default='auto',
+                        help="Content language: 'auto' (default), "
+                             f"or one of: {', '.join(SUPPORTED_LANGS)}. "
+                             "Selects the editorial phrase lists, the textstat "
+                             "syllable rules, and the readability band.")
 
     args = parser.parse_args()
+
+    if args.lang != 'auto':
+        AUTO_DETECT_LANG = False
+        configure_language(args.lang)
 
     try:
         main(args)
