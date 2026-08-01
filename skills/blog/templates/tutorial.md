@@ -1,381 +1,381 @@
-# Template: Tutorial (Code/Tool Walkthrough)
+# Template: Tutorial (passo a passo de código ou ferramenta)
 
-**Template ID:** tutorial
-**Target Length:** 2,000-3,000 words
-**Content Type:** Technical walkthrough with step-by-step instructions
-**Primary Search Intent:** Informational / Transactional ("how to," "tutorial," "guide," "setup")
+**ID do template:** tutorial
+**Extensão alvo:** 2.000 a 3.000 palavras
+**Tipo de conteúdo:** passo a passo técnico com instruções detalhadas
+**Intenção de busca principal:** informacional / transacional ("como fazer", "tutorial", "guia", "configurar")
 
-## When to Use This Template
+## Quando usar este template
 
-Use this template when:
-- Teaching readers how to build, configure, or implement something specific
-- The outcome is a working piece of code, a configured tool, or a completed setup
-- The audience needs to follow along step by step
-- Search queries include "how to," "tutorial," "step by step," "setup," "install," "configure"
-- You have hands-on experience with the tool/technology and can share optimization tips
+Use quando:
+- Você vai ensinar a construir, configurar ou implementar algo específico
+- O resultado é um código funcionando, uma ferramenta configurada ou uma instalação concluída
+- O público precisa acompanhar passo a passo
+- As consultas de busca incluem "como fazer", "tutorial", "passo a passo", "configurar", "instalar"
+- Você tem prática com a ferramenta ou tecnologia e pode compartilhar dicas de otimização
 
-Do NOT use this template for:
-- High-level strategy or opinion pieces (use news-analysis or data-research)
-- Reference/FAQ content (use faq-knowledge)
-- Content without concrete, reproducible steps
+NÃO use para:
+- Peças de estratégia ou opinião de alto nível (use news-analysis ou data-research)
+- Conteúdo de referência ou perguntas frequentes (use faq-knowledge)
+- Conteúdo sem passos concretos e reproduzíveis
 
 ---
 
-## Title Format
+## Formato do título
 
 ```
-[Tool/Technology] Tutorial: [Specific Outcome] in [Year]
+Tutorial de [Ferramenta/Tecnologia]: [Resultado Específico] em [Ano]
 ```
 
-**Examples:**
-- "Claude Code Tutorial: Building a Blog Automation Pipeline in 2026"
-- "Next.js 15 Tutorial: Server Components API Route in 2026"
-- "Docker Compose Tutorial: Multi-Container Dev Environment in 2026"
+**Exemplos:**
+- "Tutorial de Claude Code: Construindo um Pipeline de Automação de Blog em 2026"
+- "Tutorial de Next.js 15: Rota de API com Server Components em 2026"
+- "Tutorial de Docker Compose: Ambiente de Desenvolvimento Multi-Contêiner em 2026"
 
-**Title Rules:**
-- Include the primary tool/technology name
-- State the specific outcome the reader will achieve
-- Include the current year for freshness signals
-- Keep under 60 characters for full SERP display when possible
-
----
-
-## Section-by-Section Structure
+**Regras do título:**
+- Inclua o nome da ferramenta ou tecnologia principal
+- Declare o resultado específico que o leitor vai alcançar
+- Inclua o ano atual como sinal de atualidade
+- Fique abaixo de 60 caracteres para exibição completa no resultado de busca, quando possível
 
 ---
 
-### TL;DR Box (concise; length follows the material)
+## Estrutura seção a seção
 
-[ANSWER-FIRST] Summarize what the reader will build or achieve in 2-3 sentences. State the end result, the primary tool, and the approximate time to complete. This box should be extractable as a standalone snippet.
+---
+
+### Caixa de resumo (concisa; a extensão acompanha o material)
+
+[ANSWER-FIRST] Resuma em 2 a 3 frases o que o leitor vai construir ou alcançar. Declare o resultado final, a ferramenta principal e o tempo aproximado. Esta caixa precisa funcionar como trecho autossuficiente.
 
 ```markdown
-> **TL;DR:** [What you'll build/achieve in one sentence]. Using [primary tool/technology],
-> you'll [specific outcome] in approximately [time estimate]. By the end, you'll have
-> [concrete deliverable]. No prior experience with [tool] is required beyond [minimum prerequisite].
+> **Em resumo:** [O que você vai construir, em uma frase]. Usando [ferramenta/tecnologia principal],
+> você vai [resultado específico] em cerca de [estimativa de tempo]. Ao final, você terá
+> [entregável concreto]. Não é preciso experiência prévia com [ferramenta] além de [pré-requisito mínimo].
 ```
 
-[INFO-GAIN: state what makes this tutorial different from existing ones - unique approach, updated method, or real-world context]
+[INFO-GAIN: diga o que torna este tutorial diferente dos existentes: abordagem própria, método atualizado ou contexto de uso real]
 
 ---
 
-### Prerequisites (100-150 words)
+### Pré-requisitos (100 a 150 palavras)
 
-[ANSWER-FIRST] State exactly what the reader needs before starting. Be specific about versions.
+[ANSWER-FIRST] Declare exatamente o que o leitor precisa antes de começar. Seja específico quanto às versões.
 
-**Include:**
-- Required tools with exact version numbers
-- Operating system compatibility notes
-- Prior knowledge level (beginner/intermediate/advanced)
-- Accounts or API keys needed
-- Estimated completion time
+**Inclua:**
+- Ferramentas necessárias com número exato de versão
+- Notas de compatibilidade com sistema operacional
+- Nível de conhecimento prévio (iniciante, intermediário, avançado)
+- Contas ou chaves de API necessárias
+- Tempo estimado de conclusão
 
 ```markdown
-**You'll need:**
-- [Tool 1] v[X.X] or later ([install link])
-- [Tool 2] v[X.X] or later ([install link])
-- [Account/API key] ([signup link])
-- Basic familiarity with [concept]
-- ~[N] minutes to complete
+**Você vai precisar de:**
+- [Ferramenta 1] v[X.X] ou superior ([link de instalação])
+- [Ferramenta 2] v[X.X] ou superior ([link de instalação])
+- [Conta/chave de API] ([link de cadastro])
+- Familiaridade básica com [conceito]
+- Cerca de [N] minutos
 
-**Tested on:** [OS/environment details]
+**Testado em:** [detalhes do sistema e do ambiente]
 ```
 
-[STAT: adoption rate or popularity metric for the primary tool to validate the tutorial's relevance]
+[STAT: taxa de adoção ou métrica de popularidade da ferramenta principal, validando a relevância do tutorial]
 
 ---
 
-### What We're Building (100-150 words)
+### O que vamos construir (100 a 150 palavras)
 
-[ANSWER-FIRST] Describe the end result in concrete terms. What does the finished product do? What does it look like?
+[ANSWER-FIRST] Descreva o resultado final em termos concretos. O que o produto pronto faz? Qual a aparência dele?
 
 ```markdown
-Here's what the finished [project] looks like:
+Veja como fica o [projeto] finalizado:
 
-[IMAGE: screenshot or demo of the completed project]
+[IMAGE: captura de tela ou demonstração do projeto concluído]
 
-**What it does:**
-- [Capability 1]
-- [Capability 2]
-- [Capability 3]
+**O que ele faz:**
+- [Capacidade 1]
+- [Capacidade 2]
+- [Capacidade 3]
 
-**Architecture overview:**
-[VISUAL: simple-diagram showing components/data flow]
+**Visão geral da arquitetura:**
+[VISUAL: simple-diagram mostrando componentes e fluxo de dados]
 ```
 
-[INTERNAL-LINK: link to any prerequisite tutorials or foundational concepts]
+[INTERNAL-LINK: link para tutoriais pré-requisito ou conceitos de base]
 
 ---
 
-### Setup (200-300 words)
+### Configuração inicial (200 a 300 palavras)
 
-[ANSWER-FIRST] State what the setup accomplishes and how long it takes.
+[ANSWER-FIRST] Diga o que a configuração realiza e quanto tempo leva.
 
-**Structure:**
-1. Environment setup (directory structure, project initialization)
-2. Installation of dependencies
-3. Configuration files
-4. Verification that setup is correct
+**Estrutura:**
+1. Preparação do ambiente (estrutura de diretórios, inicialização do projeto)
+2. Instalação das dependências
+3. Arquivos de configuração
+4. Verificação de que a configuração está correta
 
 ```markdown
-## Setting Up Your Environment
+## Preparando seu ambiente
 
-[ANSWER-FIRST] The setup takes approximately [N] minutes and gets your [tool/environment] ready for [the tutorial steps].
+[ANSWER-FIRST] A preparação leva cerca de [N] minutos e deixa seu [ambiente/ferramenta] pronto para [os passos do tutorial].
 
-### Step 1: [Initialize/Create/Clone]
+### Passo 1: [Inicializar/Criar/Clonar]
 
-[Brief explanation of what this does and why]
+[Explicação breve do que isso faz e por quê]
 
 \`\`\`bash
-# [Descriptive comment]
-[command 1]
-[command 2]
+# [Comentário descritivo]
+[comando 1]
+[comando 2]
 \`\`\`
 
-### Step 2: [Install Dependencies]
+### Passo 2: [Instalar dependências]
 
 \`\`\`bash
-# [Descriptive comment]
-[command]
+# [Comentário descritivo]
+[comando]
 \`\`\`
 
-### Step 3: [Configure]
+### Passo 3: [Configurar]
 
-\`\`\`[language]
-// [config filename]
+\`\`\`[linguagem]
+// [nome do arquivo de configuração]
 {
-  [configuration with inline comments]
+  [configuração com comentários inline]
 }
 \`\`\`
 
-[IMAGE: screenshot of setup completion / expected terminal output]
+[IMAGE: captura da configuração concluída / saída esperada no terminal]
 
-**Verify your setup:**
-
-\`\`\`bash
-[verification command]
-\`\`\`
-
-Expected output:
-\`\`\`
-[expected output]
-\`\`\`
-```
-
-**Common setup errors:**
-
-| Error | Cause | Fix |
-|-------|-------|-----|
-| [Error message] | [Why it happens] | [How to fix] |
-| [Error message] | [Why it happens] | [How to fix] |
-
----
-
-### Step-by-Step Sections (300-400 words each, 4-6 steps)
-
-Each step is an H2 heading. Follow this structure for every step:
-
-```markdown
-## Step [N]: [Action Verb] + [What You're Doing]
-
-[ANSWER-FIRST] In this step, you'll [what this step accomplishes] so that [why it matters for the final outcome].
-
-[Brief explanation of the concept behind this step - 2-3 sentences max]
-
-\`\`\`[language]
-// [filename where this code goes]
-
-[code block with detailed inline comments]
-
-// [Explain non-obvious lines]
-\`\`\`
-
-[IMAGE: screenshot showing the result of this step]
-
-**What just happened:** [1-2 sentence explanation of what the code does]
-
-**Expected output:**
-
-\`\`\`
-[terminal output or browser result]
-\`\`\`
-
-[INFO-GAIN: optimization tips from experience - what to tweak, performance considerations, or real-world adjustments you've discovered]
-
-> **Watch out:** [Common mistake at this step and how to avoid it]
-
-[INTERNAL-LINK: link to deeper explanation of key concepts used in this step]
-```
-
-**Rules for step sections:**
-- Each step should produce a visible, testable result
-- Code blocks must be complete and copy-pasteable (no ellipsis or "..." shortcuts)
-- Include the filename where code should be placed
-- Show expected output so readers can verify they're on track
-- Address the most common error for each step inline
-- Each step builds on the previous one - never skip dependencies
-
----
-
-### Testing/Verification (200-300 words)
-
-[ANSWER-FIRST] Describe how to verify the complete project works as expected.
-
-```markdown
-## Testing Your [Project]
-
-[ANSWER-FIRST] Run these [N] tests to verify everything works correctly.
-
-### Quick Smoke Test
+**Verifique sua configuração:**
 
 \`\`\`bash
-[single command that verifies basic functionality]
+[comando de verificação]
 \`\`\`
 
-Expected result:
+Saída esperada:
 \`\`\`
-[expected output]
+[saída esperada]
+\`\`\`
+```
+
+**Erros comuns de configuração:**
+
+| Erro | Causa | Correção |
+|------|-------|----------|
+| [Mensagem de erro] | [Por que acontece] | [Como corrigir] |
+| [Mensagem de erro] | [Por que acontece] | [Como corrigir] |
+
+---
+
+### Seções passo a passo (300 a 400 palavras cada, 4 a 6 passos)
+
+Cada passo é um título H2. Siga esta estrutura em todos:
+
+```markdown
+## Passo [N]: [Verbo de ação] + [O que você está fazendo]
+
+[ANSWER-FIRST] Neste passo você vai [o que ele realiza], para que [por que importa no resultado final].
+
+[Explicação breve do conceito por trás do passo, no máximo 2 a 3 frases]
+
+\`\`\`[linguagem]
+// [arquivo onde este código entra]
+
+[bloco de código com comentários inline detalhados]
+
+// [Explique as linhas não óbvias]
 \`\`\`
 
-### Full Test Suite
+[IMAGE: captura mostrando o resultado deste passo]
+
+**O que acabou de acontecer:** [explicação de 1 a 2 frases sobre o que o código faz]
+
+**Saída esperada:**
+
+\`\`\`
+[saída do terminal ou resultado no navegador]
+\`\`\`
+
+[INFO-GAIN: dicas de otimização vindas da prática: o que ajustar, considerações de desempenho ou adaptações de uso real que você descobriu]
+
+> **Atenção:** [Erro comum neste passo e como evitá-lo]
+
+[INTERNAL-LINK: link para explicação mais profunda dos conceitos-chave usados neste passo]
+```
+
+**Regras das seções de passo:**
+- Cada passo deve produzir um resultado visível e testável
+- Os blocos de código precisam ser completos e prontos para copiar e colar (sem reticências ou atalhos com "...")
+- Inclua o nome do arquivo onde o código deve ficar
+- Mostre a saída esperada, para o leitor confirmar que está no caminho
+- Trate o erro mais comum de cada passo ali mesmo
+- Cada passo se apoia no anterior: nunca pule dependências
+
+---
+
+### Teste e verificação (200 a 300 palavras)
+
+[ANSWER-FIRST] Descreva como verificar que o projeto completo funciona como esperado.
+
+```markdown
+## Testando seu [projeto]
+
+[ANSWER-FIRST] Rode estes [N] testes para confirmar que tudo funciona.
+
+### Teste rápido de fumaça
 
 \`\`\`bash
-[command to run all tests]
+[comando único que verifica a funcionalidade básica]
 \`\`\`
 
-[IMAGE: screenshot of passing tests]
+Resultado esperado:
+\`\`\`
+[saída esperada]
+\`\`\`
 
-### Manual Verification Checklist
+### Suíte completa de testes
 
-- [ ] [Check 1]: [How to verify]
-- [ ] [Check 2]: [How to verify]
-- [ ] [Check 3]: [How to verify]
+\`\`\`bash
+[comando para rodar todos os testes]
+\`\`\`
 
-[VISUAL: flowchart of the verification process if complex]
+[IMAGE: captura dos testes passando]
+
+### Lista de verificação manual
+
+- [ ] [Checagem 1]: [Como verificar]
+- [ ] [Checagem 2]: [Como verificar]
+- [ ] [Checagem 3]: [Como verificar]
+
+[VISUAL: fluxograma do processo de verificação, se for complexo]
 ```
 
 ---
 
-### Troubleshooting (200-300 words)
+### Solução de problemas (200 a 300 palavras)
 
-[ANSWER-FIRST] List the most common issues readers encounter and their solutions.
+[ANSWER-FIRST] Liste os problemas mais comuns e suas soluções.
 
 ```markdown
-## Troubleshooting
+## Solução de problemas
 
-[ANSWER-FIRST] Here are the [N] most common issues and how to fix them.
+[ANSWER-FIRST] Estes são os [N] problemas mais comuns e como resolvê-los.
 
-| Problem | Symptom | Solution |
-|---------|---------|----------|
-| [Issue 1] | [What you see] | [Exact fix with command] |
-| [Issue 2] | [What you see] | [Exact fix with command] |
-| [Issue 3] | [What you see] | [Exact fix with command] |
-| [Issue 4] | [What you see] | [Exact fix with command] |
-| [Issue 5] | [What you see] | [Exact fix with command] |
+| Problema | Sintoma | Solução |
+|----------|---------|---------|
+| [Problema 1] | [O que você vê] | [Correção exata, com comando] |
+| [Problema 2] | [O que você vê] | [Correção exata, com comando] |
+| [Problema 3] | [O que você vê] | [Correção exata, com comando] |
+| [Problema 4] | [O que você vê] | [Correção exata, com comando] |
+| [Problema 5] | [O que você vê] | [Correção exata, com comando] |
 
-[INFO-GAIN: edge cases or environment-specific issues discovered through real-world testing]
+[INFO-GAIN: casos extremos ou problemas específicos de ambiente descobertos em teste real]
 
-**Still stuck?** [Link to community, issue tracker, or support channel]
+**Ainda travado?** [Link para comunidade, rastreador de issues ou canal de suporte]
 ```
 
-[STAT: percentage of users who encounter each issue, if available from documentation or forums]
+[STAT: percentual de usuários que encontra cada problema, quando disponível na documentação ou em fóruns]
 
 ---
 
-### Next Steps (100-150 words)
+### Próximos passos (100 a 150 palavras)
 
-[ANSWER-FIRST] Tell the reader what to do next to extend or build on what they've learned.
+[ANSWER-FIRST] Diga ao leitor o que fazer em seguida para ampliar ou aproveitar o que aprendeu.
 
 ```markdown
-## Next Steps
+## Próximos passos
 
-[ANSWER-FIRST] Now that you have a working [project], here's how to take it further.
+[ANSWER-FIRST] Agora que você tem um [projeto] funcionando, veja como levá-lo adiante.
 
-**Extend this project:**
-- [Enhancement 1]: [Brief description] - [INTERNAL-LINK to related tutorial]
-- [Enhancement 2]: [Brief description] - [INTERNAL-LINK to related tutorial]
-- [Enhancement 3]: [Brief description]
+**Amplie este projeto:**
+- [Melhoria 1]: [Descrição breve] - [INTERNAL-LINK para tutorial relacionado]
+- [Melhoria 2]: [Descrição breve] - [INTERNAL-LINK para tutorial relacionado]
+- [Melhoria 3]: [Descrição breve]
 
-**Related tutorials:**
-- [INTERNAL-LINK: prerequisite or foundational tutorial]
-- [INTERNAL-LINK: advanced tutorial building on this one]
-- [INTERNAL-LINK: alternative approach or complementary tool]
+**Tutoriais relacionados:**
+- [INTERNAL-LINK: tutorial pré-requisito ou de base]
+- [INTERNAL-LINK: tutorial avançado que parte deste]
+- [INTERNAL-LINK: abordagem alternativa ou ferramenta complementar]
 
-**Official resources:**
-- [Link to official documentation]
-- [Link to GitHub repo or examples]
+**Recursos oficiais:**
+- [Link para a documentação oficial]
+- [Link para o repositório no GitHub ou exemplos]
 ```
 
 ---
 
-### Optional Technical Questions (count by reader need)
+### Perguntas técnicas, opcionais (quantidade conforme a necessidade)
 
-[ANSWER-FIRST] for each question. Each answer should be self-contained and extractable.
+[ANSWER-FIRST] em cada pergunta. Cada resposta precisa ser autossuficiente e extraível.
 
 ```markdown
-## Frequently Asked Questions
+## Perguntas frequentes
 
-### [Question 1 - phrased as users would search it]?
+### [Pergunta 1 - formulada como as pessoas buscariam]?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. [Supporting detail or example].
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. [Detalhe de apoio ou exemplo].
 
-[STAT: relevant data point if applicable]
+[STAT: dado relevante, se aplicável]
 
-### [Question 2]?
+### [Pergunta 2]?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. [Supporting detail or code snippet].
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. [Detalhe de apoio ou trecho de código].
 
-### [Question 3]?
+### [Pergunta 3]?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. [Comparison or recommendation].
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. [Comparação ou recomendação].
 
-[INTERNAL-LINK: link to content that covers this question in depth]
+[INTERNAL-LINK: link para conteúdo que trata a pergunta em profundidade]
 ```
 
-**FAQ Rules:**
-- Phrase questions exactly as users would type them into a search engine
-- Answer in the first sentence - no throat-clearing
-- Include code snippets in answers when relevant
-- Answer the question directly and completely; Google has no required answer length
+**Regras das perguntas frequentes:**
+- Formule as perguntas exatamente como as pessoas digitariam num buscador
+- Responda já na primeira frase, sem rodeios
+- Inclua trechos de código nas respostas quando for pertinente
+- Responda de forma direta e completa; o Google não exige extensão mínima
 
 ---
 
-### Full Source Code Reference
+### Referência do código-fonte completo
 
 ```markdown
-## Complete Source Code
+## Código-fonte completo
 
-[Expandable block or link to full source]
+[Bloco expansível ou link para o fonte completo]
 
 <details>
-<summary>Click to expand full source code</summary>
+<summary>Clique para expandir o código-fonte completo</summary>
 
-\`\`\`[language]
-[Complete, runnable source code with comments]
+\`\`\`[linguagem]
+[Código-fonte completo, executável e comentado]
 \`\`\`
 
 </details>
 
-**GitHub repository:** [link if applicable]
+**Repositório no GitHub:** [link, se aplicável]
 ```
 
 ---
 
-## Content Checklist
+## Lista de verificação de conteúdo
 
-Before publishing, verify:
+Antes de publicar, confirme:
 
-- [ ] Title includes tool name, specific outcome, and year
-- [ ] Optional TL;DR is concise, useful, and factually supported
-- [ ] All prerequisites are listed with exact versions
-- [ ] Every code block is complete and copy-pasteable
-- [ ] Every step produces a visible, testable result
-- [ ] Expected output is shown after each code block
-- [ ] At least 4 [IMAGE] markers placed at key visual moments
-- [ ] At least 2 [INFO-GAIN] sections with original tips/experience
-- [ ] Statistics are optional, material to the tutorial, and verified when used
-- [ ] At least 1 [VISUAL] marker for architecture or flow diagrams
-- [ ] Troubleshooting table has 5+ common errors
-- [ ] Optional FAQ reflects genuine reader questions
-- [ ] [INTERNAL-LINK] zones placed in Prerequisites, Steps, Next Steps, and FAQ
-- [ ] Full source code is included at the end
-- [ ] All code tested and verified before publishing
+- [ ] O título traz o nome da ferramenta, o resultado específico e o ano
+- [ ] O resumo opcional é conciso, útil e factualmente sustentado
+- [ ] Todos os pré-requisitos estão listados com versões exatas
+- [ ] Todo bloco de código é completo e pronto para copiar e colar
+- [ ] Todo passo produz um resultado visível e testável
+- [ ] A saída esperada aparece depois de cada bloco de código
+- [ ] Ao menos 4 marcadores [IMAGE] posicionados nos momentos visuais decisivos
+- [ ] Ao menos 2 seções [INFO-GAIN] com dicas ou experiência próprias
+- [ ] As estatísticas são opcionais, relevantes ao tutorial e verificadas quando usadas
+- [ ] Ao menos 1 marcador [VISUAL] para diagrama de arquitetura ou de fluxo
+- [ ] A tabela de solução de problemas tem 5 ou mais erros comuns
+- [ ] As perguntas frequentes opcionais refletem dúvidas reais de leitor
+- [ ] Zonas [INTERNAL-LINK] posicionadas em pré-requisitos, passos, próximos passos e perguntas frequentes
+- [ ] O código-fonte completo está incluído no fim
+- [ ] Todo o código foi testado e verificado antes da publicação

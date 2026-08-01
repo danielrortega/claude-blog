@@ -161,7 +161,9 @@ def test_reviewer_emits_blocking_line() -> None:
     text = REVIEWER.read_text(encoding="utf-8")
     assert "BLOCKING:" in text, \
         "agents/blog-reviewer.md must emit a `BLOCKING:` line in its scorecard"
-    assert "Blocking Decision" in text or "Blocking decision" in text, \
+    # The heading is prose and may be localized; the rules just have to be
+    # documented. The `BLOCKING:` token itself stays English (Gate 4 parses it).
+    assert re.search(r"Blocking [Dd]ecision|Decis[aã]o de bloqueio", text), \
         "agents/blog-reviewer.md must document the blocking decision rules"
 
 

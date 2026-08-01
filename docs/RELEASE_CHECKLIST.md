@@ -1,27 +1,27 @@
-# Release Checklist
+# Lista de Verificação de Release
 
-Use this before publishing a claude-blog release.
+Use esta lista antes de publicar uma release do claude-blog.
 
-## Versioning
-- [ ] Version is coherent in `.claude-plugin/plugin.json`, `pyproject.toml`, `README.md`, and `CHANGELOG.md`.
-- [ ] `CHANGELOG.md` has a dated section for the release.
-- [ ] README install examples point at the intended repo and release ref.
-- [ ] Installer hashes in README match the committed `install.sh` and `install.ps1`.
+## Versionamento
+- [ ] A versão está coerente em `.claude-plugin/plugin.json`, `pyproject.toml`, `README.md` e `CHANGELOG.md`.
+- [ ] O `CHANGELOG.md` tem uma seção datada para a release.
+- [ ] Os exemplos de instalação do README apontam para o repositório e a referência pretendidos.
+- [ ] Os hashes do instalador no README correspondem aos `install.sh` e `install.ps1` commitados.
 
-## Validation
-- [ ] `python3 scripts/lint_prose.py` passes.
-- [ ] `python3 -m pytest tests/ -q` passes when scripts or tests changed.
-- [ ] `claude plugin validate .` passes on a machine with Claude Code installed.
-- [ ] CI is green on the protected branch.
+## Validação
+- [ ] `python3 scripts/lint_prose.py` passa.
+- [ ] `python3 -m pytest tests/ -q` passa quando scripts ou testes mudaram.
+- [ ] `claude plugin validate .` passa numa máquina com o Claude Code instalado.
+- [ ] A CI está verde na branch protegida.
 
-## Installer Smoke Test
-- [ ] Unix installer works in a temporary `HOME`.
-- [ ] Windows installer works in a temporary profile.
-- [ ] Nested skill payloads are present after install, including FLOW prompt references and Google report templates.
-- [ ] Unix uninstall removes only paths from the claude-blog manifest or package allowlist.
-- [ ] Shared credentials under `~/.config/claude-seo` are not deleted by uninstall.
+## Teste de fumaça do instalador
+- [ ] O instalador Unix funciona num `HOME` temporário.
+- [ ] O instalador Windows funciona num perfil temporário.
+- [ ] Os payloads aninhados das skills estão presentes após a instalação, incluindo as referências de prompt do FLOW e os templates de relatório do Google.
+- [ ] A desinstalação no Unix remove apenas caminhos do manifesto do claude-blog ou da lista permitida do pacote.
+- [ ] As credenciais compartilhadas em `~/.config/claude-seo` não são apagadas pela desinstalação.
 
-## Publishing
-- [ ] Marketplace metadata points at the intended owner and repository.
-- [ ] Release notes include security or audit remediation highlights.
-- [ ] Create and push the release tag only after all checks pass.
+## Publicação
+- [ ] Os metadados do marketplace apontam para o proprietário e o repositório pretendidos.
+- [ ] As notas da release destacam correções de segurança ou de auditoria.
+- [ ] Crie e envie a tag da release somente depois que todas as checagens passarem.

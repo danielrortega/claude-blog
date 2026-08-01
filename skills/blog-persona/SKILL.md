@@ -7,6 +7,7 @@ description: >
   contraction frequency, and summary box label. Used by blog-write and blog-rewrite
   to enforce consistent voice. Use when user says "persona", "voice", "tone",
   "writing style", "brand voice", "create persona", "use persona".
+  Acionável também em português, quando a pessoa disser "persona de escrita", "voz do autor", "tom de voz".
 user-invokable: true
 argument-hint: "[create|list|use|show] [persona-name]"
 license: MIT

@@ -1,25 +1,26 @@
-# Installation Guide
+# Guia de Instalação
 
-This guide covers all installation methods for `claude-blog`, a Claude Code skill
-ecosystem for blog content creation, optimization, and management.
+Este guia cobre todos os métodos de instalação do `claude-blog`, um ecossistema de
+skills do Claude Code para criação, otimização e gestão de conteúdo de blog.
 
-## Prerequisites
+## Pré-requisitos
 
-| Requirement | Version | Purpose |
-|-------------|---------|---------|
-| [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) | Latest | Runtime for all `/blog` commands |
-| Python | 3.11+ | Quality scoring + 5-gate delivery contract runners (analyze_blog, blog_preflight, blog_render, generate_hero, lint_prose, ...) |
-| pip | Latest | Python dependency management |
+| Requisito | Versão | Finalidade |
+|-----------|--------|------------|
+| [CLI do Claude Code](https://docs.anthropic.com/en/docs/claude-code) | Mais recente | Runtime de todos os comandos `/blog` |
+| Python | 3.11+ | Pontuação de qualidade e executores do contrato de entrega de 5 portões (analyze_blog, blog_preflight, blog_render, generate_hero, lint_prose etc.) |
+| pip | Mais recente | Gestão de dependências Python |
 
-Claude Code must be installed and configured before installing `claude-blog`.
-Python 3.11+ is required for quality scoring and helper workflows including
-`analyze_blog.py`, `blog_preflight.py`, `blog_render.py`, `generate_hero.py`,
-`lint_prose.py`, and related script checks. Commands that do not invoke those
-helpers may still run without Python, but production installs should include it.
+O Claude Code precisa estar instalado e configurado antes de instalar o
+`claude-blog`. Python 3.11+ é obrigatório para a pontuação de qualidade e para os
+fluxos auxiliares, incluindo `analyze_blog.py`, `blog_preflight.py`,
+`blog_render.py`, `generate_hero.py`, `lint_prose.py` e checagens relacionadas.
+Comandos que não invocam esses auxiliares ainda funcionam sem Python, mas
+instalações de produção devem incluí-lo.
 
 ---
 
-## Quick Install (One Command)
+## Instalação rápida (um comando)
 
 ### Linux / macOS
 
@@ -34,14 +35,14 @@ irm https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.ps1 
 pwsh -File ./install.ps1
 ```
 
-> Downloading the script and running it as a file (rather than piping it straight into the shell) lets you inspect it first and avoids a heuristic antivirus false positive some scanners raise on `iex (irm ...)` one-liners. See [SECURITY.md](../.github/SECURITY.md#antivirus-false-positives).
+> Baixar o script e executá-lo como arquivo, em vez de canalizar direto para o shell, permite inspecioná-lo antes e evita um falso positivo heurístico de antivírus que alguns scanners levantam em linhas únicas do tipo `iex (irm ...)`. Veja [SECURITY.md](../.github/SECURITY.md#antivirus-false-positives).
 
-Both installers automatically copy all skills, agents, references, templates,
-and scripts to the correct Claude Code configuration directories.
+Os dois instaladores copiam automaticamente todas as skills, agentes, referências,
+templates e scripts para os diretórios corretos de configuração do Claude Code.
 
 ---
 
-## Standard Install (Git Clone)
+## Instalação padrão (clone do git)
 
 ```bash
 git clone https://github.com/AgriciDaniel/claude-blog.git
@@ -50,80 +51,82 @@ chmod +x install.sh
 ./install.sh
 ```
 
-### Install Python Dependencies
+### Instalar as dependências Python
 
-The installers try to install Python packages from `requirements.txt` when
-Python and pip are available. If dependency installation is skipped or fails,
-run this after the main install:
+Os instaladores tentam instalar os pacotes Python de `requirements.txt` quando
+Python e pip estão disponíveis. Se a instalação de dependências for pulada ou
+falhar, rode isto depois da instalação principal:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-#### Reproducible install via uv (v1.9.1+)
+#### Instalação reproduzível com uv (v1.9.1 em diante)
 
-For deterministic supply-chain hygiene, the repo ships `uv.lock` (142
-packages with SHA-256 hashes for every wheel). Reproduce the exact
-dev environment with:
+Para higiene determinística de cadeia de suprimentos, o repositório traz o
+`uv.lock` (142 pacotes com hashes SHA-256 para cada wheel). Reproduza o ambiente
+de desenvolvimento exato com:
 
 ```bash
-pip install uv          # one-time
-uv sync --frozen        # installs from uv.lock with hash verification
+pip install uv          # uma única vez
+uv sync --frozen        # instala a partir do uv.lock com verificação de hash
 ```
 
-This is the recommended path for CI, audit, and any context where
-"works on my machine" is not enough. The legacy `pip install -e ".[dev]"`
-flow still works; it just resolves transitives freshly each time.
+Este é o caminho recomendado para CI, auditoria e qualquer contexto em que
+"funciona na minha máquina" não basta. O fluxo antigo `pip install -e ".[dev]"`
+continua funcionando; ele apenas resolve as dependências transitivas do zero a
+cada vez.
 
-Regenerate `uv.lock` after editing `pyproject.toml` dependency bounds:
+Regenere o `uv.lock` depois de editar os limites de dependência no `pyproject.toml`:
 
 ```bash
 uv lock
 ```
 
-**Core dependencies:**
+**Dependências centrais:**
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| textstat | >=0.7.3 | Readability scoring (Flesch, Gunning Fog, SMOG) |
-| beautifulsoup4 | >=4.12.0 | HTML and schema parsing |
-| lxml | >=5.0.0 | XML/HTML parser backend |
-| jsonschema | >=4.20.0 | JSON-LD schema validation |
+| Pacote | Versão | Finalidade |
+|--------|--------|------------|
+| textstat | >=0.7.3 | Pontuação de legibilidade (Flesch, Gunning Fog, SMOG) |
+| beautifulsoup4 | >=4.12.0 | Parsing de HTML e de schema |
+| lxml | >=5.0.0 | Backend de parser XML/HTML |
+| jsonschema | >=4.20.0 | Validação de schema JSON-LD |
 
-**Optional dependencies** (unlock advanced features in `analyze_blog.py`):
+**Dependências opcionais** (liberam recursos avançados no `analyze_blog.py`):
 
 ```bash
-pip install spacy                  # NER, advanced NLP
+pip install spacy                  # Reconhecimento de entidades, PLN avançado
 python -m spacy download en_core_web_sm
-pip install sentence-transformers  # Semantic similarity / duplicate detection
-pip install scikit-learn           # Topic cannibalization clustering
-pip install language-tool-python   # Grammar and style checking (requires Java)
+pip install sentence-transformers  # Similaridade semântica e detecção de duplicatas
+pip install scikit-learn           # Agrupamento para canibalização de tema
+pip install language-tool-python   # Checagem de gramática e estilo (requer Java)
 ```
 
-The analysis script works without optional dependencies by falling back to
-basic mode automatically.
+O script de análise funciona sem as dependências opcionais, recorrendo
+automaticamente ao modo básico.
 
 ---
 
-## Manual Install (File by File)
+## Instalação manual (arquivo por arquivo)
 
-If you prefer not to run the installer, copy files to these paths manually.
-`~` refers to your home directory (`$HOME` on Unix, `%USERPROFILE%` on Windows).
+Se preferir não rodar o instalador, copie os arquivos manualmente para estes
+caminhos. O `~` se refere ao seu diretório pessoal (`$HOME` no Unix,
+`%USERPROFILE%` no Windows).
 
-### Directory Structure
+### Estrutura de diretórios
 
 ```
 ~/.claude/
 ├── skills/
 │   ├── blog/
-│   │   ├── SKILL.md                          # Main orchestrator
+│   │   ├── SKILL.md                          # Orquestrador principal
 │   │   ├── references/
 │   │   │   ├── content-rules.md
 │   │   │   ├── geo-optimization.md
 │   │   │   ├── google-landscape-2026.md
 │   │   │   ├── quality-scoring.md
 │   │   │   └── visual-media.md
-│   │   ├── templates/                        # 12 content type templates
+│   │   ├── templates/                        # 12 templates por tipo de conteúdo
 │   │   │   └── *.md
 │   │   └── scripts/
 │   │       └── analyze_blog.py
@@ -139,7 +142,7 @@ If you prefer not to run the installer, copy files to these paths manually.
 │   ├── blog-repurpose/SKILL.md
 │   ├── blog-geo/SKILL.md
 │   ├── blog-audit/SKILL.md
-│   ├── blog-chart/SKILL.md            # internal-only
+│   ├── blog-chart/SKILL.md            # somente interno
 │   ├── blog-image/SKILL.md            # v1.4.0
 │   ├── blog-cannibalization/SKILL.md
 │   ├── blog-factcheck/SKILL.md
@@ -166,12 +169,12 @@ If you prefer not to run the installer, copy files to these paths manually.
     └── blog-translator.md             # v1.7.0
 ```
 
-### Copy Commands (Unix)
+### Comandos de cópia (Unix)
 
 ```bash
-# Create directories. Auto-discover sub-skills via shell glob so we never
-# fall behind on the directory list (v1.8.6: replaces the hand-rolled
-# 14-skill mkdir from v1.4.0).
+# Cria os diretórios. As sub-skills são descobertas por glob do shell, para
+# nunca ficarmos defasados frente à lista de diretórios (v1.8.6: substitui o
+# mkdir manual de 14 skills da v1.4.0).
 mkdir -p ~/.claude/skills/blog/{references,templates,scripts}
 mkdir -p ~/.claude/scripts
 for d in skills/blog-*/; do
@@ -179,16 +182,16 @@ for d in skills/blog-*/; do
 done
 mkdir -p ~/.claude/agents
 
-# Main skill
+# Skill principal
 cp skills/blog/SKILL.md ~/.claude/skills/blog/SKILL.md
 
-# References
+# Referências
 cp -R skills/blog/references/. ~/.claude/skills/blog/references/
 
 # Templates
 cp -R skills/blog/templates/. ~/.claude/skills/blog/templates/
 
-# Sub-skills plus their payload directories
+# Sub-skills e seus diretórios de payload
 for d in skills/blog-*/; do
     name=$(basename "$d")
     cp "$d/SKILL.md" "${HOME}/.claude/skills/$name/SKILL.md"
@@ -203,10 +206,10 @@ for d in skills/blog-*/; do
     fi
 done
 
-# Agents
+# Agentes
 cp agents/*.md ~/.claude/agents/
 
-# Root scripts
+# Scripts da raiz
 for f in scripts/*.py; do
     name=$(basename "$f")
     cp "$f" "${HOME}/.claude/scripts/$name"
@@ -220,83 +223,84 @@ done
 
 ---
 
-## Optional: AI Image Generation
+## Opcional: geração de imagem por IA
 
-`claude-blog` can generate custom blog images via Gemini AI (hero images, inline
-illustrations, social cards). This requires the nanobanana-mcp server and a free
-Google AI API key.
+O `claude-blog` pode gerar imagens próprias por Gemini AI (imagens principais,
+ilustrações inline, cartões sociais). Isso exige o servidor nanobanana-mcp e uma
+chave gratuita de API do Google AI.
 
-### Setup
+### Configuração
 
 ```bash
-# Get your free API key at: https://aistudio.google.com/apikey
-python3 skills/blog-image/scripts/setup_image_mcp.py --key YOUR_KEY
+# Obtenha sua chave gratuita em: https://aistudio.google.com/apikey
+python3 skills/blog-image/scripts/setup_image_mcp.py --key SUA_CHAVE
 
-# Verify setup
+# Verifique a configuração
 python3 skills/blog-image/scripts/validate_image_setup.py
 ```
 
-### Requirements
+### Requisitos
 
-| Requirement | Version | Purpose |
-|-------------|---------|---------|
-| Node.js | 18+ | Runs `npx @ycse/nanobanana-mcp` |
-| Google AI API key | Free tier | Image generation via Gemini |
+| Requisito | Versão | Finalidade |
+|-----------|--------|------------|
+| Node.js | 18+ | Roda o `npx @ycse/nanobanana-mcp` |
+| Chave de API do Google AI | Camada gratuita | Geração de imagem via Gemini |
 
-Without this setup, all `/blog` commands work normally using stock photos from
-Pixabay/Unsplash/Pexels. AI image generation is an optional enhancement.
+Sem essa configuração, todos os comandos `/blog` funcionam normalmente usando
+fotos de banco do Pixabay, Unsplash e Pexels. A geração de imagem por IA é um
+acréscimo opcional.
 
 ---
 
-## Verification
+## Verificação
 
-After installation, verify everything is in place:
+Depois da instalação, confirme que está tudo no lugar:
 
-### 1. Check installed files
+### 1. Cheque os arquivos instalados
 
 ```bash
-# Main skill
+# Skill principal
 ls ~/.claude/skills/blog/SKILL.md
 
-# Blog-* directories should list 31; total is 32 skill directories (1 orchestrator + 31 sub-skills); 30 user-facing commands
+# Os diretórios blog-* devem somar 31; o total é 32 diretórios de skill (1 orquestrador + 31 sub-skills); 30 comandos voltados ao usuário
 ls ~/.claude/skills/blog-*/SKILL.md | wc -l
 
-# Agents (should list 5: blog-researcher, blog-writer, blog-seo, blog-reviewer, blog-translator)
+# Agentes (devem somar 5: blog-researcher, blog-writer, blog-seo, blog-reviewer, blog-translator)
 ls ~/.claude/agents/blog-*.md | wc -l
 
-# References (should list 22 .md files)
+# Referências (devem somar 22 arquivos .md)
 ls ~/.claude/skills/blog/references/*.md | wc -l
 
-# Python script
+# Script Python
 ls ~/.claude/skills/blog/scripts/analyze_blog.py
 ```
 
-### 2. Restart Claude Code
+### 2. Reinicie o Claude Code
 
-Close and reopen Claude Code (or restart the CLI) to load the new skills:
+Feche e reabra o Claude Code (ou reinicie a CLI) para carregar as skills novas:
 
 ```bash
-# If running in terminal, exit and relaunch
+# Se estiver rodando no terminal, saia e reinicie
 claude
 ```
 
-### 3. Test a command
+### 3. Teste um comando
 
 ```bash
-# Inside Claude Code, run:
-/blog strategy "home automation"
+# Dentro do Claude Code, rode:
+/blog strategy "automação residencial"
 ```
 
-You should see the orchestrator route to the `blog-strategy` sub-skill and
-begin gathering context about the niche.
+Você deve ver o orquestrador rotear para a sub-skill `blog-strategy` e começar a
+reunir contexto sobre o nicho.
 
-### 4. Test the Python analysis script
+### 4. Teste o script Python de análise
 
 ```bash
 python3 ~/.claude/skills/blog/scripts/analyze_blog.py --help
 ```
 
-Expected output:
+Saída esperada:
 
 ```
 usage: analyze_blog.py [-h] [--output OUTPUT] [--batch] input
@@ -315,9 +319,9 @@ options:
 
 ---
 
-## Updating
+## Atualização
 
-Pull the latest changes and re-run the installer:
+Puxe as mudanças mais recentes e rode o instalador de novo:
 
 ```bash
 cd claude-blog
@@ -325,62 +329,63 @@ git pull
 ./install.sh
 ```
 
-The installer overwrites existing files, so updates are safe to run
-at any time. Restart Claude Code after updating.
+O instalador sobrescreve os arquivos existentes, então atualizar é seguro a
+qualquer momento. Reinicie o Claude Code depois de atualizar.
 
 ---
 
-## Uninstall
+## Desinstalação
 
-### Automated Uninstall (Unix)
+### Desinstalação automatizada (Unix)
 
 ```bash
-# From the claude-blog repository
+# A partir do repositório claude-blog
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
-This removes:
+Isso remove:
 
-- `~/.claude/skills/blog/` and `~/.claude/skills/blog-*/` (32 skill directories: 1 orchestrator + 31 sub-skills; 30 user-facing commands; `blog-chart` is internal-only)
-- `~/.claude/scripts/` (17 root-level scripts: ai_citation_score, analyze_blog, blog_hygiene, blog_preflight, blog_render, cognitive_load, consistency_check, content_decay, dependency_smoke, discourse_research, generate_hero, lint_prose, load_untrusted_root, quality_gate, style_learn, sync_flow, validate_public_release)
-- `~/.claude/agents/blog-*.md` (all 5 agents: blog-researcher, blog-writer, blog-seo, blog-reviewer, blog-translator)
+- `~/.claude/skills/blog/` e `~/.claude/skills/blog-*/` (32 diretórios de skill: 1 orquestrador + 31 sub-skills; 30 comandos voltados ao usuário; o `blog-chart` é somente interno)
+- `~/.claude/scripts/` (17 scripts na raiz: ai_citation_score, analyze_blog, blog_hygiene, blog_preflight, blog_render, cognitive_load, consistency_check, content_decay, dependency_smoke, discourse_research, generate_hero, lint_prose, load_untrusted_root, quality_gate, style_learn, sync_flow, validate_public_release)
+- `~/.claude/agents/blog-*.md` (todos os 5 agentes: blog-researcher, blog-writer, blog-seo, blog-reviewer, blog-translator)
 
-Shared Google credentials under `~/.config/claude-seo/` are owned by the user
-and may be used by other skills. Both uninstallers leave them intact.
+As credenciais compartilhadas do Google em `~/.config/claude-seo/` pertencem ao
+usuário e podem ser usadas por outras skills. Os dois desinstaladores as deixam
+intactas.
 
-### Manual Uninstall
+### Desinstalação manual
 
 ```bash
-# Main skill + all blog-* skill directories (auto-discovers blog-* via glob)
+# Skill principal e todos os diretórios blog-* (descobre blog-* por glob)
 rm -rf ~/.claude/skills/blog
 rm -rf ~/.claude/skills/blog-*
 
-# All 5 agents
+# Todos os 5 agentes
 rm -f ~/.claude/agents/blog-{researcher,writer,seo,reviewer,translator}.md
 
-# All 17 root-level scripts (only if no other plugin uses ~/.claude/scripts/)
+# Todos os 17 scripts da raiz (somente se nenhum outro plugin usar ~/.claude/scripts/)
 rm -f ~/.claude/scripts/{ai_citation_score,analyze_blog,blog_hygiene,blog_preflight,blog_render,cognitive_load,consistency_check,content_decay,dependency_smoke,discourse_research,generate_hero,lint_prose,load_untrusted_root,quality_gate,style_learn,sync_flow,validate_public_release}.py
 ```
 
-### Clean Up Python Dependencies (Optional)
+### Limpar as dependências Python (opcional)
 
 ```bash
 pip uninstall textstat beautifulsoup4 lxml jsonschema
 ```
 
-Restart Claude Code after uninstalling to complete removal.
+Reinicie o Claude Code depois de desinstalar para concluir a remoção.
 
 ---
 
-## Troubleshooting Installation
+## Solução de problemas de instalação
 
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| `/blog` command not found | Claude Code not restarted | Close and reopen Claude Code |
-| `python3: command not found` | Python not installed or not in PATH | Install Python 3.11+ via your package manager |
-| `pip install` fails | Missing pip or wrong Python version | Run `python3 -m ensurepip --upgrade` |
-| Permission denied on `install.sh` | Script not executable | Run `chmod +x install.sh` |
-| Files not in `~/.claude/` | Wrong install location | Verify `$HOME` points to your home directory |
+| Sintoma | Causa | Correção |
+|---------|-------|----------|
+| Comando `/blog` não encontrado | Claude Code não foi reiniciado | Feche e reabra o Claude Code |
+| `python3: command not found` | Python não instalado ou fora do PATH | Instale o Python 3.11+ pelo seu gerenciador de pacotes |
+| `pip install` falha | pip ausente ou versão errada do Python | Rode `python3 -m ensurepip --upgrade` |
+| Permissão negada no `install.sh` | Script sem permissão de execução | Rode `chmod +x install.sh` |
+| Arquivos fora de `~/.claude/` | Local de instalação errado | Confirme que `$HOME` aponta para seu diretório pessoal |
 
-For additional issues, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+Para outros problemas, veja [TROUBLESHOOTING.md](TROUBLESHOOTING.md).

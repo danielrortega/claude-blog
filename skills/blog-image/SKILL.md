@@ -8,6 +8,7 @@ description: >
   blog-write and blog-rewrite; falls back gracefully when MCP is unavailable.
   Use when user says "blog image", "generate hero image", "blog illustration",
   "edit blog image", "OG image".
+  Acionável também em português, quando a pessoa disser "imagem do post", "gerar imagem de capa", "ilustração do artigo".
 user-invokable: true
 argument-hint: "[generate|edit|setup] [description-or-path]"
 license: MIT

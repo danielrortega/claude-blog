@@ -8,6 +8,7 @@ description: >
   evidence changes, and sustainable publishing capacity.
   Use when user says "editorial calendar", "content calendar", "blog calendar",
   "publishing schedule", "blog plan", "content plan", "what should I write".
+  Acionável também em português, quando a pessoa disser "calendário editorial", "calendário de conteúdo", "pauta do mês".
 user-invokable: true
 argument-hint: "[<niche>]"
 license: MIT

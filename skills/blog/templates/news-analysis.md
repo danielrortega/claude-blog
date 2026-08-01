@@ -1,294 +1,294 @@
-# Template: News Analysis (Timely Event Commentary)
+# Template: Análise de Notícia (comentário de evento recente)
 
-**Template ID:** news-analysis
-**Target Length:** 800-1,200 words
-**Content Type:** Timely event analysis with actionable implications
-**Primary Search Intent:** Informational / Navigational ("what happened," "what does X mean," "reaction to")
+**ID do template:** news-analysis
+**Extensão alvo:** 800 a 1.200 palavras
+**Tipo de conteúdo:** análise de evento recente com implicações acionáveis
+**Intenção de busca principal:** informacional / navegacional ("o que aconteceu", "o que significa X", "reação a")
 
-## When to Use This Template
+## Quando usar este template
 
-Use this template when:
-- A significant event, announcement, or release has just occurred
-- The audience needs fast, opinionated analysis (not just a summary)
-- You can publish within 2-4 hours of the event
-- Search queries will include the event name + "what it means," "implications," "analysis"
-- You have a clear perspective or expertise that adds value beyond the press release
+Use quando:
+- Um evento, anúncio ou lançamento relevante acabou de ocorrer
+- O público precisa de análise rápida e opinativa, não de um resumo
+- Você consegue publicar em 2 a 4 horas do evento
+- As consultas de busca vão combinar o nome do evento com "o que significa", "implicações", "análise"
+- Você tem uma perspectiva ou competência clara que agrega além do comunicado oficial
 
-Do NOT use this template for:
-- Evergreen how-to content (use tutorial)
-- Original research or data studies (use data-research)
-- Reference/FAQ content (use faq-knowledge)
-- Events more than 2 weeks old (the window for this format has passed)
+NÃO use para:
+- Conteúdo perene do tipo "como fazer" (use o tutorial)
+- Pesquisa própria ou estudo de dados (use data-research)
+- Conteúdo de referência ou perguntas frequentes (use faq-knowledge)
+- Eventos com mais de 2 semanas (a janela deste formato já passou)
 
-**Speed Priority:** This template prioritizes speed of publication over depth. Get it out fast, then update if needed.
+**Prioridade de velocidade:** este template privilegia rapidez de publicação sobre profundidade. Publique rápido e atualize depois, se necessário.
 
 ---
 
-## Title Format
+## Formato do título
 
 ```
-[Event/Announcement]: What It Means for [Audience]
+[Evento/Anúncio]: O Que Significa para [Público]
 ```
 
-**Examples:**
-- "OpenAI's GPT-5 Release: What It Means for AI Developers"
-- "Google's March 2026 Core Update: What It Means for Content Creators"
-- "React 20 Announcement: What It Means for Frontend Teams"
+**Exemplos:**
+- "Lançamento do GPT-5 da OpenAI: O Que Significa para Quem Desenvolve com IA"
+- "Core Update de Março de 2026 do Google: O Que Significa para Quem Cria Conteúdo"
+- "Anúncio do React 20: O Que Significa para Times de Frontend"
 
-**Title Rules:**
-- Name the event explicitly (people search for event names)
-- Specify the audience who should care
-- Keep under 60 characters for full SERP display when possible
-- Avoid clickbait - the event itself is the hook
+**Regras do título:**
+- Nomeie o evento explicitamente (as pessoas buscam pelo nome do evento)
+- Especifique o público que deveria se importar
+- Fique abaixo de 60 caracteres para exibição completa no resultado de busca, quando possível
+- Evite isca de clique: o próprio evento já é o gancho
 
-**Alternative Title Formats:**
-- "[N] Things [Audience] Should Know About [Event]"
-- "[Event] Explained: [Impact Statement]"
-- "Breaking Down [Event]: Implications for [Audience]"
-
----
-
-## Section-by-Section Structure
+**Formatos alternativos de título:**
+- "[N] Coisas Que [Público] Precisa Saber Sobre [Evento]"
+- "[Evento] Explicado: [Declaração de Impacto]"
+- "Destrinchando [Evento]: Implicações para [Público]"
 
 ---
 
-### TL;DR Box (concise; length follows the material)
+## Estrutura seção a seção
 
-[ANSWER-FIRST] Distill the key implications into 2-3 sentences. Focus on what the reader should know and do, not on rehashing the event.
+---
+
+### Caixa de resumo (concisa; a extensão acompanha o material)
+
+[ANSWER-FIRST] Condense as implicações centrais em 2 a 3 frases. Foque no que o leitor precisa saber e fazer, não em recontar o evento.
 
 ```markdown
-> **TL;DR:** [Event name] [what happened in one clause]. The biggest implications for
-> [audience] are [implication 1] and [implication 2]. [One-sentence recommendation
-> or prediction]. [Action to take now].
+> **Em resumo:** [Nome do evento] [o que aconteceu, em uma oração]. As maiores
+> implicações para [público] são [implicação 1] e [implicação 2]. [Recomendação
+> ou previsão em uma frase]. [Ação a tomar agora].
 ```
 
-**Rules:**
-- Assume the reader already saw the headline - don't just restate the news
-- Lead with implications, not with what happened
-- Include one actionable recommendation
+**Regras:**
+- Presuma que o leitor já viu a manchete: não repita a notícia
+- Comece pelas implicações, não pelo que aconteceu
+- Inclua uma recomendação acionável
 
 ---
 
-### What Happened (100-150 words)
+### O que aconteceu (100 a 150 palavras)
 
-[ANSWER-FIRST] State the facts of the event concisely. This is the objective section - save opinion for later.
+[ANSWER-FIRST] Exponha os fatos do evento com concisão. Esta é a seção objetiva: guarde a opinião para depois.
 
 ```markdown
-## What Happened
+## O que aconteceu
 
-[ANSWER-FIRST] On [date], [organization/person] [announced/released/changed] [specific thing].
-[1-2 sentences of factual detail].
+[ANSWER-FIRST] Em [data], [organização/pessoa] [anunciou/lançou/alterou] [algo específico].
+[1 a 2 frases de detalhe factual].
 
-**Key facts:**
-- [Fact 1 with source attribution]
-- [Fact 2 with source attribution]
-- [Fact 3 with source attribution]
+**Fatos principais:**
+- [Fato 1 com atribuição de fonte]
+- [Fato 2 com atribuição de fonte]
+- [Fato 3 com atribuição de fonte]
 
-> "[Direct quote from announcement or key figure]" - [Attribution]
+> "[Citação direta do anúncio ou de figura central]" - [Atribuição]
 
-[STAT: one data point that establishes scale or significance - user count, market size, adoption rate]
+[STAT: um dado que estabeleça escala ou relevância: número de usuários, tamanho de mercado, taxa de adoção]
 ```
 
-**Rules:**
-- Cite sources for every factual claim
-- Include at least one direct quote from a primary source
-- Keep this section objective - no analysis yet
-- Include dates and specific version numbers
+**Regras:**
+- Cite fonte para toda afirmação factual
+- Inclua ao menos uma citação direta de fonte primária
+- Mantenha a seção objetiva: ainda sem análise
+- Inclua datas e números de versão específicos
 
 ---
 
-### Why This Matters (200-300 words)
+### Por que isso importa (200 a 300 palavras)
 
-[ANSWER-FIRST] Open with a clear statement of why this event is significant - not just what it is, but why the reader should care right now.
+[ANSWER-FIRST] Abra com uma declaração clara de por que o evento é relevante: não apenas o que é, mas por que o leitor deve se importar agora.
 
 ```markdown
-## Why This Matters
+## Por que isso importa
 
-[ANSWER-FIRST] [Event] matters because [core reason - be specific and opinionated].
+[ANSWER-FIRST] [Evento] importa porque [razão central, específica e opinativa].
 
-[2-3 paragraphs of analysis covering:]
+[2 a 3 parágrafos de análise cobrindo:]
 
-**Context:** How does this compare to previous events in this space? What pattern does it fit into or break?
+**Contexto:** como isso se compara a eventos anteriores nessa área? Que padrão ele confirma ou rompe?
 
-[STAT: relevant market data, adoption metrics, or trend data that puts the event in context]
+[STAT: dado de mercado, métrica de adoção ou tendência que contextualize o evento]
 
-**Significance:** What makes this different from routine updates or announcements? What threshold does it cross?
+**Relevância:** o que diferencia isso de atualizações e anúncios de rotina? Que limiar foi cruzado?
 
-[INFO-GAIN: your expert analysis or prediction - this is where you earn the reader's attention over generic coverage]
+[INFO-GAIN: sua análise ou previsão especializada; é aqui que você conquista a atenção do leitor frente à cobertura genérica]
 
-**Comparison:**
-| Before [Event] | After [Event] |
-|-----------------|---------------|
-| [Previous state] | [New state] |
-| [Previous state] | [New state] |
-| [Previous state] | [New state] |
+**Comparação:**
+| Antes de [Evento] | Depois de [Evento] |
+|-------------------|--------------------|
+| [Estado anterior] | [Novo estado] |
+| [Estado anterior] | [Novo estado] |
+| [Estado anterior] | [Novo estado] |
 ```
 
-**Rules:**
-- Be opinionated - "this matters because" not "this might matter"
-- Compare to a previous event or baseline so readers understand scale
-- Include at least one data point for context
-- The [INFO-GAIN] here is your unique perspective - make it count
+**Regras:**
+- Seja opinativo: "isso importa porque", não "isso talvez importe"
+- Compare a um evento anterior ou a uma linha de base, para o leitor entender a escala
+- Inclua ao menos um dado de contexto
+- O [INFO-GAIN] aqui é sua perspectiva própria: faça valer
 
 ---
 
-### What This Means for [Audience] (200-300 words)
+### O que isso significa para [Público] (200 a 300 palavras)
 
-[ANSWER-FIRST] Translate the event into specific implications for the target audience. Be concrete about what changes for them.
+[ANSWER-FIRST] Traduza o evento em implicações específicas para o público-alvo. Seja concreto sobre o que muda para ele.
 
 ```markdown
-## What This Means for [Audience]
+## O que isso significa para [Público]
 
-[ANSWER-FIRST] For [audience], the immediate impact is [specific change]. Here's how this affects your work.
+[ANSWER-FIRST] Para [público], o impacto imediato é [mudança específica]. Veja como isso afeta seu trabalho.
 
-### Impact 1: [Specific Change]
+### Impacto 1: [Mudança específica]
 
-[2-3 sentences explaining the implication with concrete examples]
+[2 a 3 frases explicando a implicação com exemplos concretos]
 
-### Impact 2: [Specific Change]
+### Impacto 2: [Mudança específica]
 
-[2-3 sentences explaining the implication with concrete examples]
+[2 a 3 frases explicando a implicação com exemplos concretos]
 
-### Impact 3: [Specific Change]
+### Impacto 3: [Mudança específica]
 
-[2-3 sentences explaining the implication with concrete examples]
+[2 a 3 frases explicando a implicação com exemplos concretos]
 
-[INFO-GAIN: prediction or non-obvious implication based on expertise - "What most coverage is missing is..."]
+[INFO-GAIN: previsão ou implicação não óbvia baseada em competência própria: "O que a maior parte da cobertura está deixando passar é..."]
 
-[INTERNAL-LINK: link to your existing content that helps readers understand the underlying concepts]
+[INTERNAL-LINK: link para conteúdo seu que ajude o leitor a entender os conceitos de base]
 ```
 
-**Rules:**
-- Use the actual audience name in the heading (e.g., "What This Means for Frontend Developers")
-- Each impact should be a concrete change, not a vague observation
-- Include at least one non-obvious implication (this is your differentiation)
-- Link to your existing content where it provides deeper context
+**Regras:**
+- Use o nome real do público no título (por exemplo, "O que isso significa para times de frontend")
+- Cada impacto deve ser uma mudança concreta, não observação vaga
+- Inclua ao menos uma implicação não óbvia: é o seu diferencial
+- Linke seu conteúdo existente onde ele oferecer contexto mais profundo
 
 ---
 
-### What to Do Now (150-200 words)
+### O que fazer agora (150 a 200 palavras)
 
-[ANSWER-FIRST] Give the reader 3-5 concrete action steps, ordered by priority (most urgent first).
+[ANSWER-FIRST] Dê ao leitor de 3 a 5 passos concretos, ordenados por prioridade, do mais urgente ao menos.
 
 ```markdown
-## What to Do Now
+## O que fazer agora
 
-[ANSWER-FIRST] Here are [N] steps to take in response to [event], ordered by urgency.
+[ANSWER-FIRST] Estes são [N] passos a tomar em resposta a [evento], ordenados por urgência.
 
-1. **[Immediate - today/this week]:** [Specific action with brief explanation]
-2. **[Short-term - this month]:** [Specific action with brief explanation]
-3. **[Medium-term - this quarter]:** [Specific action with brief explanation]
-4. **[If applicable]:** [Specific action with brief explanation]
-5. **[If applicable]:** [Specific action with brief explanation]
+1. **[Imediato: hoje ou esta semana]:** [Ação específica com explicação breve]
+2. **[Curto prazo: este mês]:** [Ação específica com explicação breve]
+3. **[Médio prazo: este trimestre]:** [Ação específica com explicação breve]
+4. **[Se aplicável]:** [Ação específica com explicação breve]
+5. **[Se aplicável]:** [Ação específica com explicação breve]
 
-**Do NOT:**
-- [Common overreaction to avoid]
-- [Premature action to avoid]
+**NÃO faça:**
+- [Reação exagerada comum a evitar]
+- [Ação precipitada a evitar]
 
-[INTERNAL-LINK: link to tutorial or guide that helps with the recommended actions]
+[INTERNAL-LINK: link para tutorial ou guia que ajude nas ações recomendadas]
 ```
 
-**Rules:**
-- Order by urgency - what should they do today vs. this quarter?
-- Be specific enough that the reader can act without further research
-- Include "do NOT" items to prevent overreaction (shows credibility)
-- Link to your own content that helps them take action
+**Regras:**
+- Ordene por urgência: o que fazer hoje contra o que fazer neste trimestre?
+- Seja específico o bastante para o leitor agir sem pesquisar mais
+- Inclua itens de "NÃO faça" para evitar reação exagerada (isso demonstra credibilidade)
+- Linke seu próprio conteúdo que ajude a agir
 
 ---
 
-### The Bigger Picture (100-150 words)
+### O quadro maior (100 a 150 palavras)
 
-[ANSWER-FIRST] Zoom out. Place this event in the context of broader industry trends.
+[ANSWER-FIRST] Afaste a lente. Situe o evento no contexto de tendências mais amplas do setor.
 
 ```markdown
-## The Bigger Picture
+## O quadro maior
 
-[ANSWER-FIRST] [Event] is part of a larger trend toward [broader pattern].
+[ANSWER-FIRST] [Evento] faz parte de um movimento maior rumo a [padrão mais amplo].
 
-[1-2 paragraphs connecting this event to:]
-- Industry direction or macro trends
-- Previous events that form a pattern
-- What this signals about the future
+[1 a 2 parágrafos conectando o evento a:]
+- Direção do setor ou tendências macro
+- Eventos anteriores que formam um padrão
+- O que isso sinaliza sobre o futuro
 
-[INTERNAL-LINK: link to your strategy or trend-analysis content that covers the broader context]
+[INTERNAL-LINK: link para seu conteúdo de estratégia ou análise de tendência que cubra o contexto mais amplo]
 
-[VISUAL: timeline showing this event in context of related events, if applicable]
+[VISUAL: linha do tempo situando este evento entre eventos relacionados, se aplicável]
 ```
 
-**Rules:**
-- This section is where you demonstrate strategic thinking
-- Connect to 1-2 broader trends maximum - don't overextend
-- End with a forward-looking statement (prediction or question to watch)
+**Regras:**
+- Esta seção é onde você demonstra pensamento estratégico
+- Conecte a no máximo 1 ou 2 tendências mais amplas: não estique demais
+- Termine com uma afirmação de futuro (previsão ou pergunta a acompanhar)
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
 
-[ANSWER-FIRST] for each question. Optimize for the exact queries people will search in the hours/days after the event.
+[ANSWER-FIRST] em cada pergunta. Otimize para as consultas exatas que as pessoas farão nas horas e dias seguintes ao evento.
 
 ```markdown
-## Frequently Asked Questions
+## Perguntas frequentes
 
-### [Question 1 - the most obvious question about the event]?
+### [Pergunta 1 - a dúvida mais óbvia sobre o evento]?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. [Brief supporting detail].
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. [Detalhe breve de apoio].
 
-### [Question 2 - practical question about what to do]?
+### [Pergunta 2 - dúvida prática sobre o que fazer]?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. [Brief supporting detail].
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. [Detalhe breve de apoio].
 
-[INTERNAL-LINK: link to detailed how-to content if relevant]
+[INTERNAL-LINK: link para conteúdo detalhado de como fazer, se pertinente]
 
-### [Question 3 - forward-looking question about what happens next]?
+### [Pergunta 3 - dúvida de futuro sobre o que vem a seguir]?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. [Brief supporting detail].
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. [Detalhe breve de apoio].
 
-[STAT: data point that supports the answer]
+[STAT: dado que sustente a resposta]
 ```
 
-**FAQ Rules:**
-- Use questions people are actually searching for right now
-- Answers must be self-contained and extractable for search snippets and AI citations
-- Keep answers concise and complete; Google has no required answer length
-- Include only questions that add useful material; count follows reader need
+**Regras das perguntas frequentes:**
+- Use perguntas que as pessoas estão de fato buscando agora
+- As respostas precisam ser autossuficientes e extraíveis para destaques de busca e citações por IA
+- Mantenha as respostas concisas e completas; o Google não exige extensão mínima
+- Inclua apenas perguntas que acrescentem material útil; a quantidade segue a necessidade do leitor
 
 ---
 
-### References and Retrieval Notes
+### Referências e notas de consulta
 
 ```markdown
-## References and Retrieval Notes
+## Referências e notas de consulta
 
-- [Source 1 title]([URL]) - [Organization], [Date], retrieved YYYY-MM-DD
-- [Source 2 title]([URL]) - [Organization], [Date], retrieved YYYY-MM-DD
-- [Source 3 title]([URL]) - [Organization], [Date], retrieved YYYY-MM-DD
-- [Source 4 title]([URL]) - [Organization], [Date], retrieved YYYY-MM-DD
+- [Título da fonte 1]([URL]) - [Organização], [Data], consultado em AAAA-MM-DD
+- [Título da fonte 2]([URL]) - [Organização], [Data], consultado em AAAA-MM-DD
+- [Título da fonte 3]([URL]) - [Organização], [Data], consultado em AAAA-MM-DD
+- [Título da fonte 4]([URL]) - [Organização], [Data], consultado em AAAA-MM-DD
 ```
 
-**Rules:**
-- Every factual claim in the article must have an inline citation
-- Retrieval notes provide provenance and must not duplicate inline citations as a raw source dump
-- Use primary sources (official announcements, press releases) over secondary coverage
-- Include the date of each source
-- Aim for 4-8 sources minimum
+**Regras:**
+- Toda afirmação factual do artigo precisa de citação inline
+- As notas de consulta dão procedência e não devem duplicar as citações inline como despejo bruto de fontes
+- Prefira fontes primárias (anúncios oficiais, comunicados) à cobertura secundária
+- Inclua a data de cada fonte
+- Mire em no mínimo 4 a 8 fontes
 
 ---
 
-## Content Checklist
+## Lista de verificação de conteúdo
 
-Before publishing, verify:
+Antes de publicar, confirme:
 
-- [ ] Published within 2-4 hours of the event
-- [ ] Title names the event explicitly and specifies the audience
-- [ ] TL;DR focuses on implications, not just restating the news
-- [ ] "What Happened" section is purely factual with source citations
-- [ ] At least one direct quote from a primary source
-- [ ] Statistics appear only when material to the analysis and are verified
-- [ ] At least 2 [INFO-GAIN] sections with original analysis or predictions
-- [ ] "What to Do Now" has 3-5 concrete, prioritized action steps
-- [ ] At least 3 [INTERNAL-LINK] zones connecting to existing content
-- [ ] FAQ questions match actual search queries about the event
-- [ ] All sources listed with URLs and dates
-- [ ] Analysis is opinionated and differentiated from generic coverage
-- [ ] "Do NOT" section included to prevent overreaction
-- [ ] Content is under 1,200 words (resist the urge to over-explain)
+- [ ] Publicado em 2 a 4 horas do evento
+- [ ] O título nomeia o evento explicitamente e especifica o público
+- [ ] O resumo foca nas implicações, não em repetir a notícia
+- [ ] A seção "O que aconteceu" é puramente factual, com citação de fontes
+- [ ] Há ao menos uma citação direta de fonte primária
+- [ ] As estatísticas aparecem apenas quando relevantes à análise e estão verificadas
+- [ ] Ao menos 2 seções [INFO-GAIN] com análise ou previsão próprias
+- [ ] "O que fazer agora" traz de 3 a 5 passos concretos e priorizados
+- [ ] Ao menos 3 zonas [INTERNAL-LINK] conectando a conteúdo existente
+- [ ] As perguntas frequentes correspondem a consultas reais sobre o evento
+- [ ] Todas as fontes listadas com URL e data
+- [ ] A análise é opinativa e se diferencia da cobertura genérica
+- [ ] A seção "NÃO faça" está incluída, para evitar reação exagerada
+- [ ] O conteúdo tem menos de 1.200 palavras (resista à vontade de explicar demais)

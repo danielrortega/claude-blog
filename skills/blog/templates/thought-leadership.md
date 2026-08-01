@@ -1,247 +1,244 @@
-# Template: Thought Leadership
+# Template: Artigo de Opinião
 
-**Description:** Opinion and analysis piece that challenges conventional wisdom with a data-backed contrarian angle. Thought leadership content positions the author as an independent thinker, generates discussion and backlinks, and attracts an engaged audience that values original perspectives.
+**Descrição:** Peça de opinião e análise que confronta o senso comum com um ângulo contrário apoiado em dados. Esse tipo de conteúdo posiciona o autor como pensador independente, gera discussão e links, e atrai um público engajado que valoriza perspectivas próprias.
 
-**Target Word Count:** 1,500-2,500 words
-
----
-
-## When to Use This Template
-
-- **Content Goal:** Establish the author as an original thinker, spark industry conversation, and earn backlinks through a strong, defensible opinion
-- **Search Intent:** Informational with a navigational element (readers seek specific perspectives and analysis, not just facts)
-- **Funnel Stage:** Top-of-funnel awareness and brand-building
-- **Use When:**
-  - You have data or experience that contradicts a widely held belief
-  - The mainstream advice on a topic is outdated, oversimplified, or demonstrably wrong
-  - You can propose a specific, actionable alternative (not just criticism)
-  - You are prepared to defend your position with evidence, not just opinion
-  - The topic generates enough debate that a contrarian take will attract attention
+**Extensão alvo:** 1.500 a 2.500 palavras
 
 ---
 
-## Section-by-Section Structure
+## Quando usar este template
+
+- **Objetivo de conteúdo:** firmar o autor como pensador original, provocar conversa no setor e conquistar links por meio de uma opinião forte e defensável
+- **Intenção de busca:** informacional com componente navegacional (o leitor procura perspectivas e análises específicas, não apenas fatos)
+- **Etapa do funil:** topo de funil, consciência e construção de marca
+- **Use quando:**
+  - Você tem dados ou experiência que contradizem uma crença difundida
+  - O conselho dominante sobre o tema está desatualizado, simplificado demais ou comprovadamente errado
+  - Você consegue propor uma alternativa específica e acionável, não apenas crítica
+  - Você está preparado para defender sua posição com evidência, não só opinião
+  - O tema gera debate suficiente para que uma posição contrária chame atenção
 
 ---
 
-### Title
+## Estrutura seção a seção
 
-**Format:** "Why [Conventional Wisdom] Is Wrong (And What to Do Instead)"
+---
 
-**Alternative formats:**
-- "Stop [Common Practice]: [Reason] (Here's What Works Better)"
-- "The [Topic] Advice Everyone Gives Is [Problem]. Here's the Data."
-- "[Number] Reasons [Popular Belief] Is Holding You Back"
+### Título
 
-**Guidelines:**
-- The title must clearly signal a contrarian position - ambiguity kills click-through
-- Include the conventional wisdom being challenged so the reader knows the stakes
-- Parenthetical or colon structure works well to deliver both the problem and the promise
-- Keep under 65 characters for full SERP display (the parenthetical can extend slightly)
+**Formato:** "Por Que [Senso Comum] Está Errado (E o Que Fazer no Lugar)"
+
+**Formatos alternativos:**
+- "Pare de [Prática Comum]: [Razão] (Veja o Que Funciona Melhor)"
+- "O Conselho Sobre [Tema] Que Todo Mundo Dá É [Problema]. Veja os Dados."
+- "[Número] Razões Pelas Quais [Crença Popular] Está Travando Você"
+
+**Diretrizes:**
+- O título precisa sinalizar com clareza a posição contrária; ambiguidade mata o clique
+- Inclua o senso comum que está sendo confrontado, para o leitor entender o que está em jogo
+- Estrutura com parênteses ou dois-pontos funciona bem para entregar o problema e a promessa
+- Fique abaixo de 65 caracteres para exibição completa no resultado de busca (o trecho entre parênteses pode passar um pouco)
 
 ```
-# Why [Conventional Wisdom] Is Wrong (And What to Do Instead)
+# Por Que [Senso Comum] Está Errado (E o Que Fazer no Lugar)
 ```
 
-[IMAGE] Hero image that visually represents the tension between convention and your alternative. Consider a split-screen concept, a "myth vs. reality" graphic, or a bold typographic treatment of the contrarian claim.
+[IMAGE] Imagem principal que represente visualmente a tensão entre a convenção e sua alternativa. Considere um conceito de tela dividida, um gráfico de "mito versus realidade" ou um tratamento tipográfico marcante da afirmação contrária.
 
 ---
 
-### Hook (100-150 words)
+### Gancho (100 a 150 palavras)
 
-[ANSWER-FIRST] Open with your bold contrarian statement in the very first sentence. Do not build up to it - lead with the punch. The reader should know exactly what you are arguing within 10 seconds.
+[ANSWER-FIRST] Abra com sua afirmação contrária já na primeira frase. Não construa até chegar nela: comece pelo soco. O leitor precisa saber exatamente o que você defende em 10 segundos.
 
-**Structure:**
-1. **Bold contrarian statement** (1-2 sentences): State your position clearly and without hedging. Be specific about what you disagree with.
-   - [STAT: data point that supports your opening claim]
-2. **Stakes** (1-2 sentences): Why does this matter? What is the cost of following the conventional wisdom?
-3. **Credibility hook** (1-2 sentences): Why should the reader listen to you? Cite your experience, data source, or unique vantage point.
-4. **Preview** (1 sentence): What will you cover in this piece and what will the reader be able to do differently afterward?
+**Estrutura:**
+1. **Afirmação contrária e direta** (1 a 2 frases): declare sua posição com clareza e sem meias-palavras. Seja específico sobre do que você discorda.
+   - [STAT: dado que sustente sua afirmação de abertura]
+2. **O que está em jogo** (1 a 2 frases): por que isso importa? Qual o custo de seguir o senso comum?
+3. **Gancho de credibilidade** (1 a 2 frases): por que o leitor deve ouvir você? Cite sua experiência, sua fonte de dados ou seu ponto de observação particular.
+4. **Prévia** (1 frase): o que você vai cobrir e o que o leitor vai conseguir fazer diferente depois.
 
-[INFO-GAIN: unique analysis] The opening statistic or claim should be something not commonly cited. If you are using the same data point everyone else uses, you are not yet differentiated.
-
----
-
-### The Conventional View (200-300 words)
-
-[ANSWER-FIRST] Fairly and accurately summarize the mainstream position in the first two sentences. Do not strawman - the stronger you present the opposing view, the more credible your critique will be.
-
-**Structure:**
-1. **The mainstream position** (2-3 sentences): State what most experts, articles, or practitioners recommend. Cite specific sources if possible.
-   - [STAT: data or source supporting the conventional view]
-2. **Why it is popular** (2-3 sentences): Explain the logic behind the conventional wisdom - there are usually good historical reasons it became dominant
-3. **Where it comes from** (2-3 sentences): Trace the origins - is it based on outdated research, a specific context that has changed, or a misinterpretation of data?
-4. **Who advocates for it** (1-2 sentences): Name specific thought leaders, publications, or institutions associated with this view (respectfully)
-
-[INFO-GAIN: unique analysis] Demonstrate that you understand the conventional position deeply. Your critique is only as strong as your representation of what you are critiquing.
-
-[INTERNAL-LINK] If you have previously written content aligned with the conventional view (or a neutral explainer), link to it here for context.
+[INFO-GAIN: análise própria] A estatística ou afirmação de abertura deve ser algo pouco citado. Se você usa o mesmo dado que todo mundo usa, ainda não se diferenciou.
 
 ---
 
-### Why This Is Wrong (300-400 words)
+### A visão convencional (200 a 300 palavras)
 
-[ANSWER-FIRST] State the core problem with the conventional view in the first sentence. Then systematically dismantle it with 2-3 specific, evidence-based arguments.
+[ANSWER-FIRST] Resuma a posição dominante com justiça e precisão nas duas primeiras frases. Não construa espantalho: quanto mais forte você apresentar a visão oposta, mais credível fica sua crítica.
 
-**Structure:**
-1. **Core problem statement** (1-2 sentences): The fundamental flaw in the conventional view
-2. **Problem 1** (75-100 words):
-   - **Claim** (1 sentence): State the specific problem
-   - **Evidence** (2-3 sentences): Data, case study, or logical argument supporting your claim
-   - [STAT: supporting data point]
-3. **Problem 2** (75-100 words):
-   - **Claim** (1 sentence): State the second specific problem
-   - **Evidence** (2-3 sentences): Different type of evidence than Problem 1 (e.g., if Problem 1 used quantitative data, use a qualitative example here)
-   - [STAT: supporting data point]
-4. **Problem 3** (75-100 words):
-   - **Claim** (1 sentence): State the third specific problem
-   - **Evidence** (2-3 sentences): The most compelling evidence saved for last
-5. **Synthesis** (1-2 sentences): Tie the three problems together into a coherent critique
+**Estrutura:**
+1. **A posição dominante** (2 a 3 frases): declare o que a maioria dos especialistas, artigos ou profissionais recomenda. Cite fontes específicas quando possível.
+   - [STAT: dado ou fonte que sustente a visão convencional]
+2. **Por que ela é popular** (2 a 3 frases): explique a lógica por trás do senso comum; costuma haver boas razões históricas para ele ter se tornado dominante
+3. **De onde ela vem** (2 a 3 frases): rastreie a origem. Está baseada em pesquisa desatualizada, num contexto específico que mudou, ou numa leitura equivocada dos dados?
+4. **Quem defende** (1 a 2 frases): nomeie, com respeito, referências, publicações ou instituições associadas a essa visão
 
-[INFO-GAIN: unique analysis] Use original observation only when the author
-supplies methodology, evidence, and results. A research-only alternative may
-offer a distinctive, well-supported synthesis without pretending first-hand
-experience.
+[INFO-GAIN: análise própria] Demonstre que você entende a posição convencional a fundo. Sua crítica só é tão forte quanto sua representação daquilo que critica.
 
-[IMAGE] Include a visual that illustrates one of the problems - a failed example, a misleading chart corrected, or a before/after comparison.
+[INTERNAL-LINK] Se você já publicou conteúdo alinhado à visão convencional (ou um explicativo neutro), linke aqui como contexto.
 
 ---
 
-### What the Data Actually Shows (300-400 words)
+### Por que isso está errado (300 a 400 palavras)
 
-[ANSWER-FIRST] Present your alternative interpretation of the evidence in the first two sentences. Show the reader what changes when you look at the data differently.
+[ANSWER-FIRST] Declare o problema central da visão convencional na primeira frase. Depois desmonte-a sistematicamente com 2 a 3 argumentos específicos e apoiados em evidência.
 
-**Structure:**
-1. **Reframed data** (2-3 sentences): Present the same (or better) data with your alternative interpretation
-2. **Counter-examples** (100-150 words): 2-3 specific examples where the conventional approach failed or the alternative approach succeeded
-   - [INFO-GAIN: unique analysis] Include at least one example from your own experience or original research
-3. **Alternative framework** (100-150 words): Propose a new way of thinking about this topic - a mental model, framework, or decision tree that replaces the conventional one
-4. **Supporting evidence** (50-75 words): Additional data points that validate your framework
-   - [STAT: original or underreported statistic]
+**Estrutura:**
+1. **Enunciado do problema central** (1 a 2 frases): a falha fundamental da visão convencional
+2. **Problema 1** (75 a 100 palavras):
+   - **Afirmação** (1 frase): declare o problema específico
+   - **Evidência** (2 a 3 frases): dados, estudo de caso ou argumento lógico que a sustente
+   - [STAT: dado de apoio]
+3. **Problema 2** (75 a 100 palavras):
+   - **Afirmação** (1 frase): declare o segundo problema específico
+   - **Evidência** (2 a 3 frases): tipo de evidência diferente do Problema 1 (se lá você usou dado quantitativo, use aqui um exemplo qualitativo)
+   - [STAT: dado de apoio]
+4. **Problema 3** (75 a 100 palavras):
+   - **Afirmação** (1 frase): declare o terceiro problema específico
+   - **Evidência** (2 a 3 frases): a evidência mais forte, guardada para o final
+5. **Síntese** (1 a 2 frases): amarre os três problemas numa crítica coerente
 
-[VISUAL: chart-type] This is the most important visual in the piece. Include a chart, graph, or diagram that makes your case visually compelling. Options:
-- A chart showing data that contradicts the conventional view
-- A side-by-side comparison of outcomes using conventional vs. alternative approaches
-- A framework diagram illustrating your proposed mental model
+[INFO-GAIN: análise própria] Use observação original apenas quando o autor
+fornecer metodologia, evidência e resultados. Uma alternativa apenas documental
+pode oferecer síntese distintiva e bem sustentada, sem fingir experiência direta.
 
-[INTERNAL-LINK] Link to any supporting data, case studies, or research that deepens the reader's understanding of your alternative view.
-
----
-
-### The Better Approach (200-300 words)
-
-[ANSWER-FIRST] Name your alternative approach in the first sentence and state the core principle that makes it different.
-
-**Structure:**
-1. **The alternative** (1-2 sentences): Clear statement of what to do instead - be prescriptive, not vague
-2. **Core principles** (3-5 bullet points): The key tenets of your approach, each in 1-2 sentences
-3. **Why it works** (2-3 sentences): Connect the principles back to the evidence presented in the previous section
-4. **Proof point** (2-3 sentences): A specific result achieved using this approach - ideally your own
-   - [STAT: result or outcome metric]
-
-[INFO-GAIN: unique analysis] The alternative approach should be original - not just the inverse of the conventional wisdom but a genuinely different way of thinking about the problem.
-
-[INTERNAL-LINK] Link to how-to guides or tutorials that walk the reader through implementing your approach.
+[IMAGE] Inclua um visual que ilustre um dos problemas: um exemplo fracassado, um gráfico enganoso corrigido ou uma comparação antes e depois.
 
 ---
 
-### How to Apply This (200-300 words)
+### O que os dados realmente mostram (300 a 400 palavras)
 
-[ANSWER-FIRST] Give the reader their first action step in the opening sentence. Transition from theory to practice immediately.
+[ANSWER-FIRST] Apresente sua interpretação alternativa da evidência nas duas primeiras frases. Mostre ao leitor o que muda quando se olha o dado de outro jeito.
 
-**Structure:**
-1. **Immediate action** (1-2 sentences): What can the reader do today to start applying this thinking?
-2. **Step-by-step implementation** (numbered list, 3-5 steps):
-   - Each step should be specific and actionable (not "think differently about X")
-   - Include estimated time or effort for each step
-   - Note which steps are quick wins vs. longer-term shifts
-3. **Measurement** (1-2 sentences): How will the reader know if the new approach is working? What metrics should they track?
-4. **Timeline** (1 sentence): Set realistic expectations for when they will see results
+**Estrutura:**
+1. **Dados reenquadrados** (2 a 3 frases): apresente os mesmos dados (ou melhores) com sua interpretação alternativa
+2. **Contraexemplos** (100 a 150 palavras): 2 a 3 casos específicos em que a abordagem convencional falhou ou a alternativa deu certo
+   - [INFO-GAIN: análise própria] Inclua pelo menos um exemplo da sua própria experiência ou pesquisa
+3. **Framework alternativo** (100 a 150 palavras): proponha uma nova forma de pensar o tema: um modelo mental, framework ou árvore de decisão que substitua o convencional
+4. **Evidência de apoio** (50 a 75 palavras): dados adicionais que validem seu framework
+   - [STAT: estatística original ou pouco reportada]
 
-[INFO-GAIN: personal experience] Include an implementation detail only when the
-author supplies the method, evidence, and result. Otherwise provide a sourced
-implementation example labeled as research-only.
+[VISUAL: chart-type] Este é o visual mais importante da peça. Inclua um gráfico ou diagrama que torne seu argumento visualmente convincente. Opções:
+- Um gráfico com dados que contradigam a visão convencional
+- Uma comparação lado a lado de resultados usando a abordagem convencional e a alternativa
+- Um diagrama do framework ilustrando o modelo mental proposto
 
-[INTERNAL-LINK] Link to tactical how-to articles, tools, or templates that support implementation.
-
----
-
-### Caveats (100-150 words)
-
-[ANSWER-FIRST] Acknowledge the most significant limitation of your argument in the first sentence. Intellectual honesty strengthens, not weakens, your position.
-
-**Structure:**
-1. **Primary caveat** (1-2 sentences): The biggest exception or limitation to your argument
-2. **Context-dependency** (1-2 sentences): Situations where the conventional view may actually be correct
-3. **What you might be wrong about** (1-2 sentences): The weakest part of your argument, honestly stated
-4. **Nuance** (1 sentence): A bridging statement that acknowledges complexity without abandoning your core position
-
-**Guidelines:**
-- Do not hedge so much that your entire argument collapses - this section should be honest but bounded
-- Readers respect intellectual honesty more than false certainty
-- This section differentiates genuine thought leadership from clickbait hot takes
+[INTERNAL-LINK] Link para dados de apoio, estudos de caso ou pesquisas que aprofundem o entendimento da sua visão alternativa.
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### A abordagem melhor (200 a 300 palavras)
 
-[FAQ] Focus on the most likely objections and follow-up questions a skeptical reader would have.
+[ANSWER-FIRST] Nomeie sua abordagem alternativa na primeira frase e declare o princípio central que a torna diferente.
 
-**Guidelines:**
-- Frame questions as pushback: "But doesn't [counter-argument]?"
-- Answers should be complete, direct, and evidence-based; no fixed word band
-- This is your chance to address objections you did not cover in the main body
+**Estrutura:**
+1. **A alternativa** (1 a 2 frases): declaração clara do que fazer no lugar; seja prescritivo, não vago
+2. **Princípios centrais** (3 a 5 marcadores): os pilares da sua abordagem, cada um em 1 a 2 frases
+3. **Por que funciona** (2 a 3 frases): conecte os princípios de volta à evidência apresentada na seção anterior
+4. **Prova** (2 a 3 frases): um resultado específico obtido com essa abordagem, de preferência seu
+   - [STAT: métrica de resultado]
+
+[INFO-GAIN: análise própria] A abordagem alternativa precisa ser original: não apenas o inverso do senso comum, mas um jeito genuinamente diferente de pensar o problema.
+
+[INTERNAL-LINK] Link para guias práticos ou tutoriais que conduzam o leitor pela implementação da sua abordagem.
+
+---
+
+### Como aplicar (200 a 300 palavras)
+
+[ANSWER-FIRST] Dê ao leitor o primeiro passo de ação já na frase de abertura. Passe da teoria à prática de imediato.
+
+**Estrutura:**
+1. **Ação imediata** (1 a 2 frases): o que o leitor pode fazer hoje para começar a aplicar esse raciocínio?
+2. **Implementação passo a passo** (lista numerada, 3 a 5 passos):
+   - Cada passo deve ser específico e acionável (não "pense diferente sobre X")
+   - Inclua o tempo ou esforço estimado de cada passo
+   - Indique quais passos são ganhos rápidos e quais são mudanças de prazo mais longo
+3. **Medição** (1 a 2 frases): como o leitor vai saber se a nova abordagem está funcionando? Que métricas acompanhar?
+4. **Prazo** (1 frase): estabeleça expectativas realistas de quando os resultados aparecem
+
+[INFO-GAIN: experiência própria] Inclua um detalhe de implementação apenas quando
+o autor fornecer método, evidência e resultado. Caso contrário, ofereça um
+exemplo de implementação com fonte, rotulado como apenas documental.
+
+[INTERNAL-LINK] Link para artigos táticos, ferramentas ou modelos que apoiem a implementação.
+
+---
+
+### Ressalvas (100 a 150 palavras)
+
+[ANSWER-FIRST] Reconheça a limitação mais relevante do seu argumento na primeira frase. Honestidade intelectual fortalece, não enfraquece, sua posição.
+
+**Estrutura:**
+1. **Ressalva principal** (1 a 2 frases): a maior exceção ou limitação do seu argumento
+2. **Dependência de contexto** (1 a 2 frases): situações em que a visão convencional pode estar certa
+3. **Onde você pode estar errado** (1 a 2 frases): a parte mais frágil do seu argumento, dita com honestidade
+4. **Nuance** (1 frase): uma frase de ponte que reconheça a complexidade sem abandonar sua posição central
+
+**Diretrizes:**
+- Não relativize tanto a ponto de derrubar o próprio argumento: esta seção deve ser honesta, mas delimitada
+- Leitores respeitam mais honestidade intelectual que falsa certeza
+- É esta seção que separa opinião consistente de provocação para clique
+
+---
+
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
+
+[FAQ] Concentre-se nas objeções mais prováveis e nas perguntas de acompanhamento de um leitor cético.
+
+**Diretrizes:**
+- Formule as perguntas como contestação: "Mas [contra-argumento] não vale?"
+- As respostas devem ser completas, diretas e apoiadas em evidência; sem faixa fixa de palavras
+- É aqui que você trata as objeções não cobertas no corpo principal
 
 ```
-### But doesn't [conventional approach] work in [specific context]?
+### Mas a [abordagem convencional] não funciona em [contexto específico]?
 
-[ANSWER-FIRST] [Direct 1-sentence answer acknowledging the valid point.] [2-3 sentences explaining why your approach still applies or how to adapt it for this context.]
+[ANSWER-FIRST] [Resposta direta de 1 frase, reconhecendo o ponto válido.] [2 a 3 frases explicando por que sua abordagem ainda se aplica ou como adaptá-la a esse contexto.]
 
-### What if I've already invested in [conventional approach]?
+### E se eu já investi na [abordagem convencional]?
 
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences on how to transition without starting over.] [STAT: relevant transition data if applicable.]
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases sobre como fazer a transição sem começar do zero.] [STAT: dado relevante de transição, se couber.]
 
-### How do you respond to [specific expert or study] that supports the conventional view?
+### Como você responde a [especialista ou estudo específico] que apoia a visão convencional?
 
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences engaging specifically with that source and explaining the difference in interpretation or methodology.]
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases dialogando especificamente com aquela fonte e explicando a diferença de interpretação ou metodologia.]
 ```
 
-[INTERNAL-LINK] Link FAQ answers to supporting evidence, case studies, or expanded discussions of these objections.
+[INTERNAL-LINK] Ligue as respostas a evidências de apoio, estudos de caso ou discussões ampliadas dessas objeções.
 
 ---
 
-### Conclusion: Call for Industry Shift (100-150 words)
+### Conclusão: chamado por uma mudança no setor (100 a 150 palavras)
 
-[ANSWER-FIRST] Restate your core argument in one sentence, then look forward.
+[ANSWER-FIRST] Retome seu argumento central em uma frase e depois olhe para a frente.
 
-**Structure:**
-1. **Core argument restated** (1 sentence): The single most important takeaway, stated with conviction
-2. **What needs to change** (2-3 sentences): The broader shift you are calling for - not just individual behavior but industry or community norms
-3. **Vision of the future** (1-2 sentences): What does the world look like if your approach gains adoption?
-4. **Final call to action** (1 sentence): Invite discussion, sharing, or action - end with energy, not a whimper
+**Estrutura:**
+1. **Argumento central retomado** (1 frase): a conclusão mais importante, dita com convicção
+2. **O que precisa mudar** (2 a 3 frases): a mudança mais ampla que você defende, não só de comportamento individual, mas de norma do setor ou da comunidade
+3. **Visão de futuro** (1 a 2 frases): como fica o cenário se sua abordagem for adotada?
+4. **Chamada final** (1 frase): convide ao debate, ao compartilhamento ou à ação; termine com energia, não com suspiro
 
-[INTERNAL-LINK] Link to your most relevant related content - the piece you want this audience to read next.
+[INTERNAL-LINK] Link para seu conteúdo relacionado mais relevante: a peça que você quer que esse público leia em seguida.
 
 ---
 
-## Pre-Publish Checklist
+## Lista de verificação antes de publicar
 
-- [ ] Length is sufficient for the argument without padding; planning ranges are optional
-- [ ] All [ANSWER-FIRST] prompts have been fulfilled - every section leads with the answer
-- [ ] All [STAT] markers replaced with real, cited statistics (with source and year)
-- [ ] All [VISUAL] markers replaced with actual charts or diagrams (especially the "What the Data Shows" chart)
-- [ ] All [IMAGE] markers replaced with relevant visuals
-- [ ] All [INFO-GAIN] markers replaced with original data, experience, or insight
-- [ ] All [INTERNAL-LINK] zones populated with real links
-- [ ] All [FAQ] answers address likely objections directly
-- [ ] The conventional view is represented fairly (no strawman)
-- [ ] The contrarian position is supported by evidence, not just opinion
-- [ ] The caveats section is honest without undermining the core argument
-- [ ] The alternative approach is specific and actionable (not just "do the opposite")
-- [ ] The tone is confident but respectful - persuade, do not antagonize
-- [ ] Distinctive value comes from supported original material or a clearly
-      research-only synthesis; no first-hand experience is implied without
-      evidence
-- [ ] Meta title signals the contrarian angle and includes primary keyword
-- [ ] Meta description accurately and specifically summarizes the visible
-      argument
+- [ ] A extensão sustenta o argumento sem encher linguiça; as faixas de planejamento são opcionais
+- [ ] Todos os pedidos [ANSWER-FIRST] foram cumpridos: toda seção começa pela resposta
+- [ ] Todos os marcadores [STAT] foram substituídos por estatísticas reais e citadas (com fonte e ano)
+- [ ] Todos os marcadores [VISUAL] foram substituídos por gráficos ou diagramas reais (em especial o da seção de dados)
+- [ ] Todos os marcadores [IMAGE] foram substituídos por visuais relevantes
+- [ ] Todos os marcadores [INFO-GAIN] foram substituídos por dado, experiência ou percepção originais
+- [ ] Todas as zonas [INTERNAL-LINK] foram preenchidas com links reais
+- [ ] Todas as respostas de [FAQ] tratam objeções prováveis de forma direta
+- [ ] A visão convencional está representada com justiça (sem espantalho)
+- [ ] A posição contrária está apoiada em evidência, não só em opinião
+- [ ] A seção de ressalvas é honesta sem minar o argumento central
+- [ ] A abordagem alternativa é específica e acionável (não apenas "faça o oposto")
+- [ ] O tom é confiante mas respeitoso: persuada, não hostilize
+- [ ] O valor distintivo vem de material original comprovado ou de uma síntese
+      claramente documental; nenhuma experiência direta é sugerida sem evidência
+- [ ] O meta title sinaliza o ângulo contrário e traz a palavra-chave principal
+- [ ] A meta description resume o argumento visível com precisão e especificidade

@@ -1,15 +1,15 @@
-# Publishing Workflow
+# Fluxo de Publicação
 
-This guide is for maintainers publishing releases from the public
-[`AgriciDaniel/claude-blog`](https://github.com/AgriciDaniel/claude-blog)
-repository. Contributors should open a pull request rather than pushing
-directly to `main`.
+Este guia é para mantenedores que publicam releases a partir do repositório
+público
+[`AgriciDaniel/claude-blog`](https://github.com/AgriciDaniel/claude-blog).
+Quem contribui deve abrir um pull request em vez de enviar direto para a `main`.
 
-## Standard Release Flow
+## Fluxo padrão de release
 
-1. Prepare the release on a feature branch.
-2. Confirm that the version and dated changelog entry agree.
-3. Run the complete local validation set:
+1. Prepare a release numa branch de feature.
+2. Confirme que a versão e a entrada datada do changelog concordam.
+3. Rode o conjunto completo de validação local:
 
    ```bash
    python3 -m pytest tests/ -q
@@ -20,33 +20,33 @@ directly to `main`.
    git diff --check
    ```
 
-4. Open a pull request against `main` and wait for all CI checks to pass.
-5. Review the final diff for generated files, dependency locks, installer
-   hashes, canonical repository references, and release-version coherence.
-6. Merge the reviewed commit without bypassing failed checks.
-7. Create a signed annotated tag from the merged `main` commit.
-8. Publish the GitHub release from that existing tag.
+4. Abra um pull request contra a `main` e espere todas as checagens de CI passarem.
+5. Revise o diff final quanto a arquivos gerados, travas de dependência, hashes
+   do instalador, referências canônicas ao repositório e coerência da versão.
+6. Faça o merge do commit revisado sem ignorar checagens que falharam.
+7. Crie uma tag anotada e assinada a partir do commit da `main` já mesclado.
+8. Publique a release do GitHub a partir dessa tag existente.
 
-## Version And Changelog
+## Versão e changelog
 
-Keep the release version coherent across the canonical version surfaces:
+Mantenha a versão coerente em todas as superfícies canônicas:
 
 - `.claude-plugin/plugin.json`
 - `pyproject.toml`
-- `CITATION.cff`, including `date-released`
+- `CITATION.cff`, incluindo `date-released`
 - `skills/blog/SKILL.md`
-- Any sub-skill `metadata.version` values
+- Quaisquer valores `metadata.version` de sub-skills
 
-Move completed changes from `## [Unreleased]` into a dated
-`## [X.Y.Z] - YYYY-MM-DD` section. Release notes should describe user-visible
-behavior, compatibility, dependency changes, security fixes, and known
-limitations. Historical issue and pull-request links may remain when they help
-users trace a fix.
+Mova as mudanças concluídas de `## [Unreleased]` para uma seção datada
+`## [X.Y.Z] - AAAA-MM-DD`. As notas da release devem descrever comportamento
+visível ao usuário, compatibilidade, mudanças de dependência, correções de
+segurança e limitações conhecidas. Links históricos de issue e pull request
+podem permanecer quando ajudarem a rastrear uma correção.
 
-## Tag And GitHub Release
+## Tag e release do GitHub
 
-Run these commands only after the release pull request is merged and `main` is
-green:
+Rode estes comandos somente depois que o pull request da release for mesclado e
+a `main` estiver verde:
 
 ```bash
 git switch main
@@ -63,32 +63,34 @@ gh release create vX.Y.Z \
   --title "claude-blog vX.Y.Z"
 ```
 
-`--verify-tag` prevents GitHub CLI from silently creating a different tag.
-Never move or replace a published release tag. If a release needs correction,
-publish a new patch version.
+O `--verify-tag` impede que a CLI do GitHub crie silenciosamente uma tag
+diferente. Nunca mova nem substitua uma tag de release já publicada. Se uma
+release precisar de correção, publique uma nova versão de correção.
 
-## Public Release Review
+## Revisão de release pública
 
-Before tagging, confirm:
+Antes de criar a tag, confirme:
 
-- Installer commands, raw URLs, canonical repository metadata, and marketplace
-  instructions point to the public project.
-- Installer hashes match the committed installer files.
-- No credentials, local paths, audit workspaces, unpublished customer
-  information, or maintainer-only operational notes are tracked.
-- Dependency requirements agree with their hash-pinned locks.
-- The Google update ledger contains primary-source records only; unverified
-  observations cannot affect scoring.
-- Release notes describe AI citation scores as internal readiness heuristics,
-  not calibrated probabilities or inclusion guarantees.
+- Comandos do instalador, URLs brutas, metadados canônicos do repositório e
+  instruções do marketplace apontam para o projeto público.
+- Os hashes do instalador correspondem aos arquivos commitados.
+- Não há credenciais, caminhos locais, áreas de trabalho de auditoria,
+  informação de cliente não publicada nem notas operacionais restritas ao
+  mantenedor sob controle de versão.
+- Os requisitos de dependência concordam com suas travas fixadas por hash.
+- O registro de atualizações do Google contém apenas fontes primárias;
+  observações não verificadas não podem afetar a pontuação.
+- As notas da release descrevem as notas de citação por IA como heurísticas
+  internas de prontidão, não como probabilidades calibradas ou garantia de
+  inclusão.
 
-## Release Artifacts
+## Artefatos da release
 
-The source tag and GitHub release are the canonical release artifacts. Keep
-local audit output, temporary environments, generated screenshots, and
-project-specific `BRAND.md`, `VOICE.md`, or `DISCOURSE.md` files out of the
-release unless a documented workflow explicitly requires them.
+A tag de código e a release do GitHub são os artefatos canônicos. Mantenha fora
+da release a saída local de auditoria, ambientes temporários, capturas geradas e
+arquivos `BRAND.md`, `VOICE.md` ou `DISCOURSE.md` específicos de projeto, a menos
+que um fluxo documentado exija explicitamente.
 
-If publishing fails after the tag is pushed but before the GitHub release is
-created, investigate the failure before retrying. Do not retag a different
-commit with the same version.
+Se a publicação falhar depois que a tag foi enviada, mas antes de a release do
+GitHub ser criada, investigue a falha antes de tentar de novo. Não recrie a tag
+apontando para um commit diferente com a mesma versão.

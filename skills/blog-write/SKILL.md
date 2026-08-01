@@ -9,6 +9,7 @@ description: >
   and HTML output.
   Use when user says "write blog", "new blog post", "create article",
   "write about", "draft blog", "generate blog post".
+  Acionável também em português, quando a pessoa disser "escrever post", "novo artigo", "criar artigo", "escrever sobre", "redigir post".
 user-invokable: true
 argument-hint: "<topic>"
 license: MIT

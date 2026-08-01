@@ -1,80 +1,86 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todas as mudanças relevantes deste projeto são documentadas neste arquivo.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+O formato segue o [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+e o projeto adota o [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
+
+As entradas da v2.0.0 em diante estão em português. O histórico anterior
+permanece em inglês, por ser registro de releases já publicadas.
 
 ## [Unreleased]
 
-_No unreleased changes._
+_Nenhuma mudança não lançada._
 
 ## [2.1.1] - 2026-07-23
 
-Public distribution normalization and a collision-safe patch release.
+Normalização da distribuição pública e release de correção com tag livre de colisão.
 
 ### Changed
 
-- Normalized public repository, installer, marketplace, documentation, and
-  issue-routing surfaces to `AgriciDaniel/claude-blog`.
-- Bumped the public candidate to v2.1.1 so its release tag does not collide
-  with the separately prepared private v2.1.0 release.
+- Normalizadas as superfícies de repositório público, instalador, marketplace,
+  documentação e roteamento de issues para `AgriciDaniel/claude-blog`.
+- Candidata pública elevada para a v2.1.1, de modo que sua tag de release não
+  colida com a release privada v2.1.0, preparada em separado.
 
 ### Fixed
 
-- Replaced private Discussions, security-advisory, and documentation links in
-  the public issue template with their public canonical destinations.
-- Recomputed installer digests from canonical raw LF bytes while preserving
-  checkout-independent verification for PowerShell.
-- Declared Pillow for presentation workflows and completed the development
-  dependency set used by rendering, image, PageSpeed, and Search Console tests.
-- Made plugin validation deterministic on pull requests and protected branches
-  by installing an exact Claude Code CLI version in CI.
+- Substituídos os links privados de Discussions, aviso de segurança e
+  documentação no template público de issue pelos destinos canônicos públicos.
+- Recalculados os digests do instalador a partir dos bytes LF canônicos,
+  preservando a verificação independente de checkout no PowerShell.
+- Declarado o Pillow para os fluxos de apresentação e completado o conjunto de
+  dependências de desenvolvimento usado pelos testes de renderização, imagem,
+  PageSpeed e Search Console.
+- Validação de plugin tornada determinística em pull requests e branches
+  protegidas, pela instalação de uma versão exata da CLI do Claude Code na CI.
 
 ## [2.1.0] - 2026-07-23
 
-Google policy alignment, dependency maintenance, community-backlog fixes, and
-public release safeguards.
+Alinhamento à política do Google, manutenção de dependências, correções do
+backlog da comunidade e salvaguardas de release pública.
 
 ### Added
 
-- Added a primary-source Google update ledger, repository consistency checker,
-  and read-only public-release validator.
-- Added hash-locked, offline CI initialization checks for google-genai,
-  Patchright, and preflight capability discovery.
-- Added regression coverage for optional-module discovery, PageSpeed responses,
-  installer hashes, dependency locks, documentation safety, and release
-  payload completeness.
+- Acrescentados um registro de atualizações do Google baseado em fonte primária,
+  um verificador de consistência do repositório e um validador somente leitura
+  de release pública.
+- Acrescentadas checagens de inicialização offline na CI, com travas por hash,
+  para google-genai, Patchright e a descoberta de capacidades do preflight.
+- Acrescentada cobertura de regressão para descoberta de módulo opcional,
+  respostas do PageSpeed, hashes do instalador, travas de dependência, segurança
+  da documentação e completude do payload de release.
 
 ### Changed
 
-- Reframed AI citation scoring as an internal readiness heuristic and removed
-  fixed passage lengths, FAQ insertion, metadata-only freshness, and
-  purported AI-authorship signals as Google requirements.
-- Updated canonicalization, structured data, Search Console, Discover,
-  Googlebot, core-update recovery, and generative Search guidance from current
-  first-party sources.
-- Updated `google-genai` to the tested 2.14.0 release and Patchright to 1.61.2
-  with regenerated hash locks.
-- Updated installation and publishing documentation for public distribution,
-  corrected the marketplace slug, and shipped the Google update ledger in
-  standalone installs.
+- A pontuação de citação por IA passou a ser apresentada como heurística interna
+  de prontidão, e foram removidos, como se fossem exigências do Google, os
+  comprimentos fixos de trecho, a inserção de perguntas frequentes, a atualidade
+  apenas por metadado e os supostos sinais de autoria por IA.
+- Atualizada, a partir de fontes primárias atuais, a orientação sobre
+  canonicalização, dado estruturado, Search Console, Discover, Googlebot,
+  recuperação de core update e Busca generativa.
+- `google-genai` atualizado para a versão testada 2.14.0 e Patchright para
+  1.61.2, com travas de hash regeneradas.
+- Atualizada a documentação de instalação e publicação para a distribuição
+  pública, corrigido o slug do marketplace e passado a incluir o registro de
+  atualizações do Google nas instalações avulsas.
 
 ### Fixed
 
-- Hardened optional dotted-module discovery for missing parents and modules
-  whose import specification is unset.
-- Stopped the Windows uninstaller from deleting shared Google credentials
-  owned by the user or other skills.
-- Removed the remaining active PowerShell pipe-to-execution instruction and
-  synchronized installer digests with the release files.
+- Endurecida a descoberta de módulo opcional com nome pontuado, para pais
+  ausentes e para módulos cuja especificação de importação não está definida.
+- O desinstalador do Windows deixou de apagar credenciais compartilhadas do
+  Google pertencentes ao usuário ou a outras skills.
+- Removida a instrução ativa restante de canalizar PowerShell para execução, e
+  sincronizados os digests do instalador com os arquivos da release.
 
 ## [2.0.0] - 2026-07-15
 
-Version aligned to v2 to match the AI Marketing Hub skill family (Ads, SEO, Obsidian). No breaking changes; this carries the prompt-hygiene pass previously staged as 1.12.1.
+Versão alinhada ao v2 para acompanhar a família de skills do AI Marketing Hub (Ads, SEO, Obsidian). Sem mudanças incompatíveis; esta release carrega a passagem de higiene de prompt antes preparada como 1.12.1.
 
-- Removed CAPS emphasis words (MUST, NEVER, ALWAYS, CRITICAL) used as emphasis across skills and agents.
-- Trimmed five over-long skill descriptions.
+- Removidas as palavras de ênfase em caixa alta (MUST, NEVER, ALWAYS, CRITICAL) usadas como ênfase em skills e agentes.
+- Encurtadas cinco descrições de skill longas demais.
 
 ## [1.12.0] - 2026-07-10
 

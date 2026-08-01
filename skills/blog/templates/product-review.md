@@ -1,269 +1,269 @@
-# Template: Product Review
+# Template: Análise de Produto
 
-**Description:** First-hand product assessment based on real testing and hands-on experience. Product reviews build trust through transparency, detailed observations, and honest verdicts. They target high-intent commercial search queries where readers are close to a purchase decision.
+**Descrição:** Avaliação de produto em primeira mão, baseada em teste real e uso próprio. Análises de produto constroem confiança pela transparência, pela observação detalhada e pelo veredito honesto. Miram consultas comerciais de alta intenção, em que o leitor está perto da decisão de compra.
 
-**Target Word Count:** 1,500-2,000 words
-
----
-
-## When to Use This Template
-
-- **Content Goal:** Provide an honest, experience-based evaluation that helps readers make informed purchase decisions
-- **Search Intent:** Commercial investigation (users are evaluating options before buying)
-- **Funnel Stage:** Bottom-of-funnel decision-making
-- **Use When:**
-  - You have personally used or tested the product for a meaningful period
-  - The product has sufficient search volume to justify a dedicated review
-  - You can provide genuinely original observations beyond what the product's marketing materials say
-  - You want to rank for "[Product Name] review" queries
+**Extensão alvo:** 1.500 a 2.000 palavras
 
 ---
 
-## Section-by-Section Structure
+## Quando usar este template
+
+- **Objetivo de conteúdo:** oferecer avaliação honesta e baseada em experiência que ajude o leitor a decidir a compra com informação
+- **Intenção de busca:** investigação comercial (o leitor avalia opções antes de comprar)
+- **Etapa do funil:** fundo de funil, tomada de decisão
+- **Use quando:**
+  - Você usou ou testou o produto pessoalmente por um período significativo
+  - O produto tem volume de busca suficiente para justificar uma análise dedicada
+  - Você consegue oferecer observações genuinamente próprias, além do que diz o material de marketing
+  - Você quer ranquear para consultas do tipo "análise do [Nome do Produto]"
 
 ---
 
-### Title
+## Estrutura seção a seção
 
-**Format:** "[Product Name] Review ([Year]): [Key Verdict]"
+---
 
-**Guidelines:**
-- Lead with the exact product name (match how people search)
-- Year in parentheses signals freshness
-- Key verdict is a concise, opinionated summary (e.g., "Still the Best for Teams," "Great Value, Some Tradeoffs," "Not Worth the Hype")
-- Keep under 60 characters for full SERP display
+### Título
+
+**Formato:** "Análise do [Nome do Produto] ([Ano]): [Veredito Central]"
+
+**Diretrizes:**
+- Comece pelo nome exato do produto (do jeito que as pessoas buscam)
+- O ano entre parênteses sinaliza atualidade
+- O veredito central é um resumo conciso e opinativo (por exemplo, "Ainda o Melhor para Equipes", "Bom Custo-Benefício, com Ressalvas", "Não Faz Jus ao Hype")
+- Fique abaixo de 60 caracteres para exibição completa no resultado de busca
 
 ```
-# [Product Name] Review ([Year]): [Key Verdict]
+# Análise do [Nome do Produto] ([Ano]): [Veredito Central]
 ```
 
-[IMAGE] Hero image of the product in use (your own photo or screenshot, not a press image). Alt text: "[Product Name] - [brief description of what the image shows]."
+[IMAGE] Imagem principal do produto em uso (foto ou captura sua, nunca imagem de divulgação). Texto alternativo: "[Nome do Produto] - [breve descrição do que a imagem mostra]."
 
 ---
 
-### TL;DR Verdict Box
+### Caixa de veredito resumido
 
-[ANSWER-FIRST] Deliver the complete verdict upfront. A reader who only sees this box should know exactly whether this product is right for them.
+[ANSWER-FIRST] Entregue o veredito completo logo de cara. Quem ler apenas esta caixa precisa saber exatamente se o produto serve para o caso dele.
 
 ```
-> **Verdict:** [Score out of 10] / 10
+> **Veredito:** [Nota de 0 a 10] / 10
 >
-> **One-Line Summary:** [Single sentence capturing the overall assessment]
+> **Resumo em uma linha:** [Frase única capturando a avaliação geral]
 >
-> **Best For:** [Specific type of user or use case, e.g., "Small teams that need async video collaboration"]
+> **Melhor para:** [Tipo específico de usuário ou caso de uso, por exemplo "Equipes pequenas que precisam de colaboração assíncrona por vídeo"]
 >
-> **Not Ideal For:** [Who should look elsewhere, e.g., "Enterprise teams needing SSO and audit logs"]
+> **Não indicado para:** [Quem deve procurar outra coisa, por exemplo "Times corporativos que precisam de SSO e trilha de auditoria"]
 >
-> **Pricing:** [Starting price and billing model, e.g., "Free plan available. Paid plans from $12/user/month (billed annually)"]
+> **Preço:** [Preço inicial e modelo de cobrança, por exemplo "Plano gratuito disponível. Planos pagos a partir de US$ 12 por usuário/mês, cobrança anual"]
 >
-> [STAT: one key metric from your testing, e.g., "Reduced our meeting time by 35% over 3 months"]
+> [STAT: uma métrica-chave do seu teste, por exemplo "Reduziu nosso tempo de reunião em 35% ao longo de 3 meses"]
 ```
 
 ---
 
-### Introduction (100-150 words)
+### Introdução (100 a 150 palavras)
 
-[ANSWER-FIRST] State what the product does and your overall impression in the first two sentences. Do not start with the company's history.
+[ANSWER-FIRST] Diga o que o produto faz e qual sua impressão geral nas duas primeiras frases. Não comece pela história da empresa.
 
-**Structure:**
-1. **What the product does** (1-2 sentences): Clear, plain-language explanation of the product's core function
-2. **Why you are reviewing it** (1 sentence): What prompted the review - a common question, reader request, or personal need?
-3. **Testing context** (2-3 sentences): How long you used it, in what environment, and for what purpose
-4. **Preview of verdict** (1 sentence): A hint at your overall conclusion to keep the reader engaged
+**Estrutura:**
+1. **O que o produto faz** (1 a 2 frases): explicação clara, em linguagem simples, da função central
+2. **Por que você está analisando** (1 frase): o que motivou a análise: uma dúvida recorrente, um pedido de leitor, uma necessidade sua?
+3. **Contexto do teste** (2 a 3 frases): por quanto tempo usou, em que ambiente e com que finalidade
+4. **Prévia do veredito** (1 frase): uma pista da conclusão geral para manter o leitor engajado
 
-[INFO-GAIN: personal experience] Establish credibility by specifying your exact testing conditions - duration, use case, team size, comparison products, etc.
+[INFO-GAIN: experiência própria] Estabeleça credibilidade detalhando suas condições exatas de teste: duração, caso de uso, tamanho da equipe, produtos de comparação.
 
-[INTERNAL-LINK] If this product fits within a broader category you have covered (e.g., a roundup or pillar page), link to it here.
-
----
-
-### Pros & Cons Table
-
-A quick-scan visual reference before the reader dives into details. This section should be skimmable in under 10 seconds.
-
-```
-| Pros | Cons |
-|------|------|
-| [Pro 1 - specific, not generic] | [Con 1 - specific, not generic] |
-| [Pro 2] | [Con 2] |
-| [Pro 3] | [Con 3] |
-| [Pro 4] | [Con 4 (if applicable)] |
-| [Pro 5 (if applicable)] | |
-```
-
-**Guidelines:**
-- Be specific: "Loads dashboards in under 2 seconds" beats "Fast performance"
-- Be honest: Include meaningful cons, not just nitpicks
-- Limit to 4-5 items per column for readability
+[INTERNAL-LINK] Se o produto se encaixa numa categoria mais ampla que você já cobriu (uma compilação ou página pilar), linke aqui.
 
 ---
 
-### Testing Methodology (100-150 words)
+### Tabela de prós e contras
 
-[ANSWER-FIRST] State the testing duration and core methodology in the first sentence so the reader can immediately gauge the review's depth.
+Referência visual de leitura rápida antes de o leitor mergulhar nos detalhes. Esta seção precisa ser absorvida em menos de 10 segundos.
 
-**Structure:**
-1. **Testing duration** (1 sentence): How long you used the product (e.g., "I used [Product] daily for 6 weeks")
-2. **Testing environment** (1-2 sentences): Your setup - device, OS, team size, workflow context
-3. **What you tested** (2-3 sentences): Which features you focused on and why
-4. **Comparison baseline** (1 sentence): What you compared against (previous tool, competitor, manual process)
+```
+| Prós | Contras |
+|------|---------|
+| [Pró 1 - específico, não genérico] | [Contra 1 - específico, não genérico] |
+| [Pró 2] | [Contra 2] |
+| [Pró 3] | [Contra 3] |
+| [Pró 4] | [Contra 4, se aplicável] |
+| [Pró 5, se aplicável] | |
+```
 
-[INFO-GAIN: personal experience] This section is critical for E-E-A-T. Be as specific as possible about your real testing conditions. Vague claims like "I tried it out" undermine credibility.
+**Diretrizes:**
+- Seja específico: "Carrega painéis em menos de 2 segundos" vale mais que "Desempenho rápido"
+- Seja honesto: inclua contras relevantes, não só implicância
+- Limite a 4 ou 5 itens por coluna para manter a legibilidade
 
 ---
 
-### Feature Sections (4-6 features, 150-200 words each)
+### Metodologia de teste (100 a 150 palavras)
 
-Each feature gets its own H2 section with a heading form that matches reader
-intent; genuine questions and clear declarative headings are both valid.
+[ANSWER-FIRST] Declare a duração e a metodologia central na primeira frase, para o leitor medir de imediato a profundidade da análise.
 
-**For each feature section, use this structure:**
+**Estrutura:**
+1. **Duração do teste** (1 frase): por quanto tempo usou o produto (por exemplo, "Usei o [Produto] diariamente por 6 semanas")
+2. **Ambiente de teste** (1 a 2 frases): sua configuração: dispositivo, sistema, tamanho da equipe, contexto de trabalho
+3. **O que você testou** (2 a 3 frases): em quais funcionalidades focou e por quê
+4. **Base de comparação** (1 frase): contra o que comparou (ferramenta anterior, concorrente, processo manual)
 
-```
-## How Good Is [Feature Name]?
-```
-
-[ANSWER-FIRST] Open with a 1-sentence verdict on this specific feature before elaborating.
-
-**Structure per section:**
-1. **Feature verdict** (1 sentence): Is this feature good, great, mediocre, or lacking?
-2. **What it does** (1-2 sentences): Brief explanation for readers who may not know the feature
-3. **First-hand observation** (3-5 sentences): Your specific experience using this feature - what worked, what did not, what surprised you
-4. **Comparison point** (1-2 sentences): How this compares to an alternative product's version of the same feature
-5. **Who cares about this** (1 sentence): Which type of user would weigh this feature most heavily?
-
-[INFO-GAIN: personal experience] Every feature section MUST include at least one specific, first-hand observation. "The search feature returned results in under 500ms even with 10,000+ documents" is strong. "The search feature is fast" is weak.
-
-[IMAGE] Include a screenshot or screen recording demonstrating the feature in use. Annotate screenshots to highlight the relevant UI element.
-
-[STAT: performance metric or comparison data point] Quantify your experience wherever possible (load times, error rates, time savings, etc.).
-
-**Repeat this structure for each of the 4-6 feature sections.**
+[INFO-GAIN: experiência própria] Esta seção é crítica para E-E-A-T. Seja o mais específico possível sobre as condições reais de teste. Afirmações vagas como "experimentei" minam a credibilidade.
 
 ---
 
-### Pricing & Value (150-200 words)
+### Seções de funcionalidade (4 a 6 funcionalidades, 150 a 200 palavras cada)
 
-[ANSWER-FIRST] State whether the product is good value for money in the first sentence, then break down the details.
+Cada funcionalidade ganha sua seção H2, com forma de título que acompanhe a
+intenção do leitor; perguntas reais e títulos declarativos claros valem igualmente.
 
-**Structure:**
-1. **Value verdict** (1 sentence): Is it worth the price?
-2. **Plan breakdown** (table or list):
+**Para cada seção, use esta estrutura:**
 
 ```
-| Plan | Price | Key Features | Best For |
-|------|-------|-------------|----------|
-| Free | $0 | [Features] | [Use case] |
-| Pro | $X/mo | [Features] | [Use case] |
-| Enterprise | Custom | [Features] | [Use case] |
+## Quão boa é a [Nome da Funcionalidade]?
 ```
 
-3. **Hidden costs** (1-2 sentences): Are there add-ons, overage charges, or required integrations that increase the real cost?
-4. **Value comparison** (1-2 sentences): How does pricing compare to the closest competitor?
-5. **Recommendation** (1 sentence): Which plan makes the most sense for most users?
+[ANSWER-FIRST] Abra com um veredito de 1 frase sobre essa funcionalidade específica antes de detalhar.
 
-[STAT: cost comparison or ROI data] Include a concrete cost comparison or ROI calculation if possible.
+**Estrutura por seção:**
+1. **Veredito da funcionalidade** (1 frase): ela é boa, ótima, mediana ou deficiente?
+2. **O que ela faz** (1 a 2 frases): explicação breve para quem não conhece
+3. **Observação em primeira mão** (3 a 5 frases): sua experiência específica de uso: o que funcionou, o que não funcionou, o que surpreendeu
+4. **Ponto de comparação** (1 a 2 frases): como se compara à versão equivalente de um produto alternativo
+5. **Para quem isso importa** (1 frase): que tipo de usuário pesaria mais essa funcionalidade?
 
-[INTERNAL-LINK] Link to a dedicated pricing comparison article or alternatives roundup if one exists.
+[INFO-GAIN: experiência própria] Toda seção de funcionalidade PRECISA trazer ao menos uma observação específica de primeira mão. "A busca devolveu resultados em menos de 500ms mesmo com mais de 10.000 documentos" é forte. "A busca é rápida" é fraco.
+
+[IMAGE] Inclua captura ou gravação de tela demonstrando a funcionalidade em uso. Anote as capturas destacando o elemento de interface relevante.
+
+[STAT: métrica de desempenho ou dado comparativo] Quantifique sua experiência sempre que possível (tempos de carga, taxas de erro, tempo economizado).
+
+**Repita esta estrutura em cada uma das 4 a 6 seções.**
 
 ---
 
-### Alternatives (100-150 words)
+### Preço e custo-benefício (150 a 200 palavras)
 
-[ANSWER-FIRST] Name the top alternative in the first sentence along with the primary reason someone might choose it instead.
+[ANSWER-FIRST] Diga na primeira frase se o produto vale o preço e depois destrinche os detalhes.
 
-**Structure:**
-List 2-3 alternatives, each with:
+**Estrutura:**
+1. **Veredito de valor** (1 frase): vale o que custa?
+2. **Detalhamento dos planos** (tabela ou lista):
 
 ```
-### [Alternative 1 Name]
-**Best if you need:** [Specific differentiator, e.g., "better enterprise security features"]
-**Price:** [Starting price]
-**Key difference:** [One sentence on how it compares to the reviewed product]
-
-### [Alternative 2 Name]
-**Best if you need:** [Specific differentiator]
-**Price:** [Starting price]
-**Key difference:** [One sentence comparison]
-
-### [Alternative 3 Name]
-**Best if you need:** [Specific differentiator]
-**Price:** [Starting price]
-**Key difference:** [One sentence comparison]
+| Plano | Preço | Funcionalidades principais | Melhor para |
+|-------|-------|----------------------------|-------------|
+| Gratuito | US$ 0 | [Funcionalidades] | [Caso de uso] |
+| Pro | US$ X/mês | [Funcionalidades] | [Caso de uso] |
+| Corporativo | Sob consulta | [Funcionalidades] | [Caso de uso] |
 ```
 
-[INTERNAL-LINK] Link each alternative to its own dedicated review if one exists. Link to a comparison article (e.g., "[Product] vs [Alternative]") if available.
+3. **Custos ocultos** (1 a 2 frases): há complementos, cobrança por excedente ou integrações obrigatórias que elevam o custo real?
+4. **Comparação de valor** (1 a 2 frases): como o preço se compara ao do concorrente mais próximo?
+5. **Recomendação** (1 frase): qual plano faz mais sentido para a maioria?
+
+[STAT: comparação de custo ou dado de retorno] Inclua uma comparação concreta de custo ou um cálculo de retorno, se possível.
+
+[INTERNAL-LINK] Link para um artigo dedicado de comparação de preços ou uma compilação de alternativas, se existir.
 
 ---
 
-### Final Verdict (100-150 words)
+### Alternativas (100 a 150 palavras)
 
-[ANSWER-FIRST] Restate the overall score and verdict in the opening sentence. Do not make the reader work to find your recommendation.
+[ANSWER-FIRST] Nomeie a principal alternativa na primeira frase, junto com a razão central para alguém preferi-la.
 
-**Structure:**
-1. **Score and one-line verdict** (1 sentence): Repeat the verdict from the TL;DR box for readers who scrolled to the end
-2. **Strengths summary** (1-2 sentences): The 1-2 things this product does exceptionally well
-3. **Weaknesses summary** (1-2 sentences): The 1-2 most significant shortcomings
-4. **Clear recommendation** (2-3 sentences): State exactly who should buy this and who should not. Use conditional language: "If you [specific need], [Product] is [verdict]. If you [different need], consider [Alternative] instead."
+**Estrutura:**
+Liste 2 ou 3 alternativas, cada uma com:
 
-[INFO-GAIN: personal experience] End with a personal note - would YOU continue using this product? Why or why not?
+```
+### [Nome da Alternativa 1]
+**Melhor se você precisa de:** [Diferencial específico, por exemplo "recursos melhores de segurança corporativa"]
+**Preço:** [Preço inicial]
+**Diferença central:** [Uma frase sobre como se compara ao produto analisado]
+
+### [Nome da Alternativa 2]
+**Melhor se você precisa de:** [Diferencial específico]
+**Preço:** [Preço inicial]
+**Diferença central:** [Comparação em uma frase]
+
+### [Nome da Alternativa 3]
+**Melhor se você precisa de:** [Diferencial específico]
+**Preço:** [Preço inicial]
+**Diferença central:** [Comparação em uma frase]
+```
+
+[INTERNAL-LINK] Ligue cada alternativa à sua própria análise dedicada, se houver. Linke também um artigo comparativo (por exemplo, "[Produto] versus [Alternativa]"), quando disponível.
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### Veredito final (100 a 150 palavras)
 
-[FAQ] Source questions from People Also Ask results, product forums, Reddit threads, and common pre-purchase questions.
+[ANSWER-FIRST] Retome a nota geral e o veredito já na frase de abertura. Não faça o leitor caçar sua recomendação.
 
-**Guidelines:**
-- Focus on purchase-decision questions (not general category questions - save those for the pillar page)
-- Each answer should be complete and lead with a direct answer; no fixed word band
-- Include at least one pricing question and one comparison question
+**Estrutura:**
+1. **Nota e veredito em uma linha** (1 frase): repita o veredito da caixa resumida, para quem rolou até o fim
+2. **Resumo dos pontos fortes** (1 a 2 frases): as 1 ou 2 coisas que o produto faz excepcionalmente bem
+3. **Resumo das fraquezas** (1 a 2 frases): as 1 ou 2 limitações mais significativas
+4. **Recomendação clara** (2 a 3 frases): diga exatamente quem deve comprar e quem não deve. Use linguagem condicional: "Se você [necessidade específica], o [Produto] é [veredito]. Se você [outra necessidade], considere a [Alternativa]."
 
-```
-### Is [Product Name] worth the price?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences of supporting detail including your experience.] [STAT: value metric if applicable.]
-
-### How does [Product Name] compare to [Top Competitor]?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences highlighting the key differences.]
-
-### Does [Product Name] offer a free plan/trial?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [Details on limitations of free tier or trial duration.]
-
-### What are the biggest drawbacks of [Product Name]?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences expanding on the limitations you experienced.]
-
-### Who is [Product Name] best for?
-
-[ANSWER-FIRST] [Direct 1-sentence answer.] [2-3 sentences describing ideal user profiles.]
-```
-
-[INTERNAL-LINK] Link FAQ answers to relevant comparison articles, alternatives, or pillar pages.
+[INFO-GAIN: experiência própria] Termine com uma nota pessoal: VOCÊ continuaria usando o produto? Por quê?
 
 ---
 
-## Pre-Publish Checklist
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
 
-- [ ] Coverage is complete for the review intent without padding
-- [ ] All [ANSWER-FIRST] prompts have been fulfilled - every section leads with the answer
-- [ ] All [STAT] markers replaced with real, cited statistics or measured data from testing
-- [ ] All [IMAGE] markers replaced with your own screenshots or product photos (not press images)
-- [ ] All [INFO-GAIN] markers replaced with specific, first-hand observations from real testing
-- [ ] All [INTERNAL-LINK] zones populated with real links to related content
-- [ ] All [FAQ] answers are complete and lead with a direct answer
-- [ ] TL;DR Verdict Box is complete with score, summary, best-for, pricing
-- [ ] Testing methodology is specific enough to establish credibility
-- [ ] Product or Review JSON-LD is used only when the page has visible review
-      content for an eligible reviewed item
-- [ ] `reviewRating` matches the visible score and the rating scale is explained
-- [ ] Affiliate, sponsorship, free-trial, or gifted-access disclosures appear
-      before commercial links
-- [ ] At least one honest, meaningful con is included (not just nitpicking)
-- [ ] Pricing information is current and accurate
-- [ ] Alternatives section includes products you have actual knowledge of
-- [ ] Affiliate disclosures (if applicable) are clearly visible
-- [ ] Meta title includes "[Product Name] Review [Year]"
-- [ ] Meta description accurately summarizes the visible verdict
+[FAQ] Puxe as perguntas de resultados de "As pessoas também perguntam", fóruns do produto, tópicos do Reddit e dúvidas comuns de pré-compra.
+
+**Diretrizes:**
+- Foque em perguntas de decisão de compra, não em dúvidas gerais da categoria (essas ficam na página pilar)
+- Cada resposta deve ser completa e começar por uma resposta direta; sem faixa fixa de palavras
+- Inclua ao menos uma pergunta de preço e uma de comparação
+
+```
+### O [Nome do Produto] vale o preço?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases de detalhe, incluindo sua experiência.] [STAT: métrica de valor, se aplicável.]
+
+### Como o [Nome do Produto] se compara ao [Principal Concorrente]?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases destacando as diferenças centrais.]
+
+### O [Nome do Produto] tem plano gratuito ou período de teste?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [Detalhes sobre as limitações do plano gratuito ou a duração do teste.]
+
+### Quais as maiores desvantagens do [Nome do Produto]?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases ampliando as limitações que você enfrentou.]
+
+### Para quem o [Nome do Produto] é melhor?
+
+[ANSWER-FIRST] [Resposta direta de 1 frase.] [2 a 3 frases descrevendo os perfis ideais de usuário.]
+```
+
+[INTERNAL-LINK] Ligue as respostas a artigos comparativos, alternativas ou páginas pilar relevantes.
+
+---
+
+## Lista de verificação antes de publicar
+
+- [ ] A cobertura atende à intenção da análise sem encher linguiça
+- [ ] Todos os pedidos [ANSWER-FIRST] foram cumpridos: toda seção começa pela resposta
+- [ ] Todos os marcadores [STAT] foram substituídos por estatísticas reais e citadas ou por dados medidos no teste
+- [ ] Todos os marcadores [IMAGE] foram substituídos por capturas ou fotos suas, não por imagens de divulgação
+- [ ] Todos os marcadores [INFO-GAIN] foram substituídos por observações específicas e de primeira mão do teste real
+- [ ] Todas as zonas [INTERNAL-LINK] foram preenchidas com links reais para conteúdo relacionado
+- [ ] Todas as respostas de [FAQ] são completas e começam por uma resposta direta
+- [ ] A caixa de veredito resumido está completa, com nota, resumo, indicação de uso e preço
+- [ ] A metodologia de teste é específica o bastante para estabelecer credibilidade
+- [ ] O JSON-LD de Product ou Review só é usado quando a página tem conteúdo de
+      análise visível sobre um item elegível
+- [ ] O `reviewRating` corresponde à nota visível e a escala está explicada
+- [ ] Avisos de afiliado, patrocínio, teste gratuito ou acesso cortesia aparecem
+      antes dos links comerciais
+- [ ] Há pelo menos um contra honesto e relevante, não só implicância
+- [ ] As informações de preço estão atuais e corretas
+- [ ] A seção de alternativas traz produtos que você de fato conhece
+- [ ] Os avisos de afiliado, quando aplicáveis, estão claramente visíveis
+- [ ] O meta title inclui "Análise do [Nome do Produto] [Ano]"
+- [ ] A meta description resume com precisão o veredito visível

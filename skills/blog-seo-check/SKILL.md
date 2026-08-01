@@ -9,6 +9,7 @@ description: >
   prioritized fix list with specific recommendations. Use when user says "seo check",
   "check seo", "validate seo", "blog seo", "seo validation", "on-page seo",
   "title tag check", "meta description check", "heading check", "link audit".
+  Acionável também em português, quando a pessoa disser "checar seo", "validar seo", "revisão de seo do post".
 user-invokable: true
 argument-hint: "<file-path>"
 license: MIT

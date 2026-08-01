@@ -9,6 +9,7 @@ description: >
   Flags uncited claims as UNVERIFIED. Use when user says "fact check",
   "verify statistics", "check sources", "validate claims", "factcheck",
   "source verification".
+  Acionável também em português, quando a pessoa disser "checar fatos", "verificar estatísticas", "conferir fontes".
 user-invokable: true
 argument-hint: "[file]"
 license: MIT

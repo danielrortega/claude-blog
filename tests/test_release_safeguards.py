@@ -161,7 +161,10 @@ def test_first_hand_and_retrieval_guidance_remains_evidence_conditional() -> Non
     ).read_text(encoding="utf-8")
 
     assert "only when the user supplies supporting methodology" in brief
-    assert "markers alone earn no credit" in reviewer
+    # Localizable prose; the rule is that info-gain markers never score by themselves.
+    assert re.search(
+        r"markers alone earn no credit|marcadores sozinhos n[aã]o pontuam", reviewer
+    ), "blog-reviewer.md must keep info-gain markers non-scoring on their own"
     assert "retrieval notes required by FLOW" not in synthesis
     assert "retrieval notes required by FLOW" not in research
 
@@ -196,7 +199,13 @@ def test_active_templates_do_not_require_faq_counts_or_market_stat_openers() -> 
 
     listicle = (template_dir / "listicle.md").read_text(encoding="utf-8")
     assert "Open with the single most important market statistic" not in listicle
-    assert "a market statistic only when it is material and sourced" in listicle
+    # The guidance is prose and may be localized; what matters is that the
+    # market statistic stays conditional on materiality plus a source.
+    assert re.search(
+        r"a market statistic only when it is material and sourced"
+        r"|estat[ií]stica de mercado apenas quando for relevante e com fonte",
+        listicle,
+    ), "listicle.md must keep the market statistic conditional on materiality and sourcing"
 
 
 def test_length_experience_and_style_diagnostics_are_conditional() -> None:
@@ -219,7 +228,11 @@ def test_length_experience_and_style_diagnostics_are_conditional() -> None:
     for path in instruction_paths:
         instructions = path.read_text(encoding="utf-8")
         assert "with AI detection" not in instructions
-        assert "not authorship detection" in instructions
+        # Localizable prose; the rule is that `/blog analyze` is framed as style
+        # diagnostics and never as an authorship verdict.
+        assert re.search(
+            r"not authorship detection|n[aã]o detec[cç][aã]o de autoria", instructions
+        ), f"{path} must frame analyze as style diagnostics, not authorship detection"
 
 
 def test_evidence_guidance_has_no_placement_or_source_count_quotas() -> None:
@@ -232,7 +245,14 @@ def test_evidence_guidance_has_no_placement_or_source_count_quotas() -> None:
 
     assert "must be in the FIRST paragraph" not in troubleshooting
     assert "**Incorrect pattern** (stat buried)" not in troubleshooting
-    assert "where it best supports\ncomprehension" in troubleshooting
+    # Localizable prose; the rule is that evidence placement stays free rather
+    # than being pinned to a specific paragraph. Whitespace-tolerant so the
+    # sentence may wrap anywhere.
+    assert re.search(
+        r"where it best supports\s+comprehension"
+        r"|onde ela\s+melhor sustenta a compreens[aã]o",
+        troubleshooting,
+    ), "TROUBLESHOOTING.md must keep evidence placement free of a paragraph quota"
     assert "at least three unique tier 1 or tier 2 citations" not in scorer
     assert "source count and diversity only when the topic" in scorer
 
@@ -246,7 +266,13 @@ def test_pillar_and_quality_gate_source_only_material_numeric_claims() -> None:
     )
 
     assert "Include at least one data point per core section" not in pillar
-    assert "only when\nit materially improves the section" in pillar
+    # Localizable prose; the rule is that the per-section data point stays
+    # conditional on materiality rather than being a quota.
+    assert re.search(
+        r"only when\nit materially improves the section"
+        r"|apenas quando\nele melhorar de fato a se[cç][aã]o",
+        pillar,
+    ), "pillar-page.md must keep the per-section data point conditional on materiality"
     assert "Every number must have a named source" not in orchestrator
     assert "Source material factual statistics, measurements" in orchestrator
     assert "do not need redundant inline sourcing" in orchestrator

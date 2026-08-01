@@ -6,6 +6,7 @@ description: >
   against Google requirements and warns about deprecated types. Use when user
   says "schema", "blog schema", "json-ld", "structured data", "schema markup",
   "generate schema".
+  Acionável também em português, quando a pessoa disser "schema do post", "dados estruturados", "json-ld do artigo".
 user-invokable: true
 argument-hint: "<file-path>"
 license: MIT

@@ -1,87 +1,87 @@
-# Troubleshooting
+# Solução de Problemas
 
-Common issues, their causes, and fixes for `claude-blog`. Issues are grouped
-by category and ordered from most to least common.
+Problemas comuns do `claude-blog`, suas causas e correções. Os itens estão
+agrupados por categoria e ordenados do mais ao menos frequente.
 
 ---
 
-## Installation Issues
+## Problemas de instalação
 
-### "Command not found" after installation
+### "Comando não encontrado" depois da instalação
 
-**Symptom**: Running `/blog write` produces no response or a "skill not found"
-error.
+**Sintoma**: rodar `/blog write` não produz resposta, ou aparece um erro de
+skill não encontrada.
 
-**Cause**: Claude Code caches skill definitions at startup. New skills are not
-detected until the CLI is restarted.
+**Causa**: o Claude Code guarda em cache as definições de skill na inicialização.
+Skills novas só são detectadas depois que a CLI é reiniciada.
 
-**Fix**:
-1. Close Claude Code completely (exit the CLI or close the terminal)
-2. Reopen Claude Code
-3. Try `/blog write <topic>` again
+**Correção**:
+1. Feche o Claude Code por completo (saia da CLI ou feche o terminal)
+2. Reabra o Claude Code
+3. Tente `/blog write <tema>` de novo
 
-### Python script errors
+### Erros no script Python
 
-**Symptom**: `/blog analyze` fails when running `analyze_blog.py`, or the
-script exits with an import error.
+**Sintoma**: `/blog analyze` falha ao rodar o `analyze_blog.py`, ou o script sai
+com erro de importação.
 
-**Cause**: Python dependencies are not installed.
+**Causa**: as dependências Python não estão instaladas.
 
-**Fix**:
+**Correção**:
 ```bash
 pip install -r requirements.txt
 ```
 
-Or install the core dependencies individually:
+Ou instale as dependências centrais individualmente:
 ```bash
 pip install textstat beautifulsoup4 lxml jsonschema
 ```
 
-### Missing textstat or beautifulsoup4
+### textstat ou beautifulsoup4 ausentes
 
-**Symptom**: `analyze_blog.py` runs but reports `ModuleNotFoundError: No module
-named 'textstat'` or similar.
+**Sintoma**: o `analyze_blog.py` roda, mas reporta
+`ModuleNotFoundError: No module named 'textstat'` ou semelhante.
 
-**Cause**: The optional Python dependencies are not installed.
+**Causa**: as dependências Python opcionais não estão instaladas.
 
-**Behavior**: The analysis script is designed for **graceful degradation**.
-Without optional dependencies, it falls back to basic mode:
+**Comportamento**: o script de análise foi feito para **degradar com elegância**.
+Sem as dependências opcionais, ele recorre ao modo básico:
 
-| Dependency | When Missing | Fallback |
-|-----------|-------------|----------|
-| textstat | No Flesch/Gunning Fog scores | Sentence length heuristics |
-| beautifulsoup4 | No HTML schema parsing | Regex-based detection |
-| lxml | BeautifulSoup uses html.parser | Slower but functional |
-| spacy | No NER analysis | Skipped (optional feature) |
-| sentence-transformers | No semantic similarity | Skipped (optional feature) |
-| scikit-learn | No topic clustering | Skipped (optional feature) |
-| language-tool-python | No grammar checking | Skipped (optional feature) |
+| Dependência | Quando ausente | Alternativa |
+|-------------|----------------|-------------|
+| textstat | Sem notas de Flesch e Gunning Fog | Heurística de tamanho de frase |
+| beautifulsoup4 | Sem parsing de schema em HTML | Detecção por regex |
+| lxml | O BeautifulSoup usa o html.parser | Mais lento, mas funcional |
+| spacy | Sem análise de entidades nomeadas | Pulado (recurso opcional) |
+| sentence-transformers | Sem similaridade semântica | Pulado (recurso opcional) |
+| scikit-learn | Sem agrupamento de temas | Pulado (recurso opcional) |
+| language-tool-python | Sem checagem gramatical | Pulado (recurso opcional) |
 
-The script will produce results with reduced detail but will not crash.
-Install dependencies for full functionality:
+O script produz resultados com menos detalhe, mas não quebra. Instale as
+dependências para funcionalidade completa:
 
 ```bash
-pip install -r requirements.txt  # Core deps
-# Optional (install individually as needed):
+pip install -r requirements.txt  # Dependências centrais
+# Opcionais (instale individualmente, conforme a necessidade):
 pip install spacy sentence-transformers scikit-learn language-tool-python
 ```
 
-### Permission denied on install.sh
+### Permissão negada no install.sh
 
-**Symptom**: `./install.sh` returns "Permission denied".
+**Sintoma**: `./install.sh` devolve "Permission denied".
 
-**Fix**:
+**Correção**:
 ```bash
 chmod +x install.sh
 ./install.sh
 ```
 
-### Windows: PowerShell execution policy blocks install
+### Windows: a política de execução do PowerShell bloqueia a instalação
 
-**Symptom**: `install.ps1` fails with "running scripts is disabled on this
-system."
+**Sintoma**: o `install.ps1` falha com "running scripts is disabled on this
+system".
 
-**Fix**:
+**Correção**:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-WebRequest `
@@ -91,258 +91,261 @@ Get-FileHash ./install.ps1 -Algorithm SHA256
 pwsh -File ./install.ps1
 ```
 
-Inspect the downloaded file and compare its digest with the release
-documentation before running it.
+Inspecione o arquivo baixado e compare o digest com a documentação da release
+antes de executar.
 
 ---
 
-## Content Quality Issues
+## Problemas de qualidade de conteúdo
 
-### Low quality scores (below 60)
+### Notas baixas (abaixo de 60)
 
-**Symptom**: `/blog analyze` returns a score below 60 ("Poor" rating).
+**Sintoma**: `/blog analyze` devolve nota abaixo de 60 (classificação "Refazer").
 
-**Common Causes and Fixes**:
+**Causas comuns e correções**:
 
-| Issue | Impact | Fix |
-|-------|--------|-----|
-| Important claims lack clarity or support | Readiness and content points vary | State the point early and add verified evidence where needed; no fixed length |
-| Fabricated statistics | Critical integrity issue | Remove or replace with verified support |
-| Missing images | Context-dependent | Add an image only when it improves understanding |
-| Missing charts | Context-dependent | Add a chart only when data relationships need one |
-| No FAQ section | No score penalty | Add Q&A only when genuine reader questions warrant it |
-| Difficult paragraph pacing | Advisory only | Split or combine passages when comprehension improves |
-| Missing `lastUpdated` | No automatic penalty | Add it only after a substantive update and keep it truthful |
-| Excessive self-promotion | Editorial issue | Remove promotion that distracts from the reader task |
+| Problema | Impacto | Correção |
+|----------|---------|----------|
+| Afirmações importantes sem clareza ou respaldo | Pontos de prontidão e de conteúdo variam | Declare o ponto cedo e acrescente evidência verificada onde necessário; sem extensão fixa |
+| Estatística inventada | Problema crítico de integridade | Remova ou substitua por respaldo verificado |
+| Imagens ausentes | Depende do contexto | Acrescente imagem só quando ela melhorar o entendimento |
+| Gráficos ausentes | Depende do contexto | Acrescente gráfico só quando as relações de dados exigirem |
+| Sem seção de perguntas frequentes | Sem penalidade na nota | Acrescente perguntas só quando dúvidas reais justificarem |
+| Ritmo difícil de parágrafo | Apenas consultivo | Divida ou junte trechos quando a compreensão melhorar |
+| `lastUpdated` ausente | Sem penalidade automática | Acrescente só depois de uma atualização substantiva, e mantenha verdadeiro |
+| Autopromoção excessiva | Problema editorial | Remova a promoção que distrai da tarefa do leitor |
 
-**Quick fix workflow**:
+**Fluxo rápido de correção**:
 ```
-1. /blog analyze <file>           # Get the score and issues
-2. /blog rewrite <file>           # Auto-fix most issues
-3. /blog analyze <file>           # Verify improvement
+1. /blog analyze <arquivo>           # Obtém a nota e os problemas
+2. /blog rewrite <arquivo>           # Corrige a maioria automaticamente
+3. /blog analyze <arquivo>           # Verifica a melhora
 ```
 
-### Important section point not detected
+### Ponto de seção importante não detectado
 
-**Symptom**: Score report says an important section lacks a clear, supported
-point even though the section contains data.
+**Sintoma**: o relatório de nota diz que uma seção importante não tem um ponto
+claro e sustentado, mesmo contendo dados.
 
-**Cause**: A material claim needs source support close enough for readers to
-identify what the source substantiates. Put evidence where it best supports
-comprehension; it may appear in the first or a later paragraph.
+**Causa**: uma afirmação relevante precisa de respaldo de fonte perto o bastante
+para o leitor identificar o que a fonte comprova. Coloque a evidência onde ela
+melhor sustenta a compreensão; ela pode aparecer no primeiro parágrafo ou num
+posterior.
 
-**Supported placement example**:
+**Exemplo de posicionamento sustentado**:
 ```markdown
-## How Does AI Search Impact Blog Traffic?
+## Como a busca por IA afeta o tráfego de blog?
 
-AI Overviews initially caused a 61% decline in organic CTR across 3,119 queries
-in a 2025 Seer Interactive study
-([Seer Interactive](https://seerinteractive.com), 2025). Later 2026 reporting
-showed partial CTR rebound in some query sets, so treat this as historical
-context rather than a universal current rate.
+As AI Overviews causaram, inicialmente, queda de 61% no CTR orgânico em 3.119
+consultas, num estudo de 2025 da Seer Interactive
+([Seer Interactive](https://seerinteractive.com), 2025). Relatos posteriores de
+2026 mostraram recuperação parcial do CTR em alguns conjuntos de consulta, então
+trate o número como contexto histórico, não como taxa atual universal.
 ```
 
-**Unsupported attribution example**:
+**Exemplo de atribuição sem sustentação**:
 ```markdown
-## How Does AI Search Impact Blog Traffic?
+## Como a busca por IA afeta o tráfego de blog?
 
-The landscape of search is changing rapidly. Many marketers are concerned
-about the future of organic traffic.
+O cenário da busca está mudando rapidamente. Muitos profissionais de marketing
+estão preocupados com o futuro do tráfego orgânico.
 
-According to Seer Interactive, CTR declined 61%.
+Segundo a Seer Interactive, o CTR caiu 61%.
 ```
 
-The problem in the second example is not paragraph position. The material
-measurement lacks a usable citation and enough study context to verify it.
+O problema do segundo exemplo não é a posição do parágrafo. A medição relevante
+não tem citação utilizável nem contexto suficiente do estudo para ser verificada.
 
-### Statistics flagged as "fabricated"
+### Estatísticas sinalizadas como "inventadas"
 
-**Symptom**: Quality report flags statistics as fabricated or unsourced.
+**Sintoma**: o relatório de qualidade sinaliza estatísticas como inventadas ou
+sem fonte.
 
-**Cause**: The scoring system looks for inline attribution within 200
-characters of a number. Missing or malformed citations trigger this flag.
+**Causa**: o sistema de pontuação procura atribuição inline num raio de 200
+caracteres do número. Citações ausentes ou malformadas disparam esse sinal.
 
-**Correct attribution format**:
+**Formato correto de atribuição**:
 ```markdown
-initial 61% decline in organic CTR ([Seer Interactive](https://seerinteractive.com), 2025)
+queda inicial de 61% no CTR orgânico ([Seer Interactive](https://seerinteractive.com), 2025)
 ```
 
-**Formats that may not be detected**:
+**Formatos que podem não ser detectados**:
 ```markdown
-According to a recent study, CTR declined 61%.     # No source name or link
-CTR declined 61% (source: Seer Interactive)         # No URL
-CTR declined 61%. Source: Seer Interactive [1]       # Footnote style
+Segundo um estudo recente, o CTR caiu 61%.          # Sem nome de fonte nem link
+CTR caiu 61% (fonte: Seer Interactive)              # Sem URL
+CTR caiu 61%. Fonte: Seer Interactive [1]           # Estilo de nota de rodapé
 ```
 
 ---
 
-## Template Issues
+## Problemas de template
 
-### Template not loading
+### Template não carrega
 
-**Symptom**: `/blog write` does not follow the expected template structure
-for the content type.
+**Sintoma**: o `/blog write` não segue a estrutura de template esperada para o
+tipo de conteúdo.
 
-**Causes and fixes**:
+**Causas e correções**:
 
-1. **Templates not installed**: Verify the templates directory exists:
+1. **Templates não instalados**: confirme que o diretório existe:
    ```bash
    ls ~/.claude/skills/blog/templates/
    ```
-   If empty or missing, re-run `./install.sh`.
+   Se estiver vazio ou ausente, rode `./install.sh` de novo.
 
-2. **Wrong install path**: Templates must be in
-   `~/.claude/skills/blog/templates/`, not in the repository's
-   `skills/blog/templates/` directory.
+2. **Caminho de instalação errado**: os templates precisam estar em
+   `~/.claude/skills/blog/templates/`, não no diretório
+   `skills/blog/templates/` do repositório.
 
-3. **Template file corrupted**: Re-copy from the repository:
+3. **Arquivo de template corrompido**: copie de novo do repositório:
    ```bash
    cp skills/blog/templates/*.md ~/.claude/skills/blog/templates/
    ```
 
-### Wrong template selected
+### Template errado escolhido
 
-**Symptom**: `/blog write` picks a how-to template when you wanted a listicle.
+**Sintoma**: o `/blog write` escolhe um template de guia prático quando você
+queria uma lista.
 
-**Fix**: Specify the content type explicitly:
+**Correção**: especifique o tipo de conteúdo explicitamente:
 ```
-/blog write listicle: "10 Best Monitoring Tools for 2026"
-/blog write --type comparison "Datadog vs Grafana"
+/blog write listicle: "10 Melhores Ferramentas de Monitoramento para 2026"
+/blog write --type comparison "Datadog versus Grafana"
 ```
 
-Or state the type in natural language:
+Ou declare o tipo em linguagem natural:
 ```
-/blog write a comparison post about Datadog vs Grafana
+/blog write um post comparativo sobre Datadog versus Grafana
 ```
 
 ---
 
-## Agent Issues
+## Problemas de agente
 
-### Agent not spawning
+### Agente não é disparado
 
-**Symptom**: The sub-skill does not delegate to a subagent (blog-researcher,
-blog-writer, etc.), and instead tries to do everything inline.
+**Sintoma**: a sub-skill não delega para um subagente (blog-researcher,
+blog-writer etc.) e tenta fazer tudo internamente.
 
-**Causes**:
+**Causas**:
 
-1. **Agent file not installed**: Check that agent files exist:
+1. **Arquivo do agente não instalado**: confira se os arquivos existem:
    ```bash
    ls ~/.claude/agents/blog-*.md
    ```
-   Expected: `blog-researcher.md`, `blog-writer.md`, `blog-seo.md`,
+   Esperado: `blog-researcher.md`, `blog-writer.md`, `blog-seo.md`,
    `blog-reviewer.md`, `blog-translator.md`
 
-2. **Unsupported skill frontmatter**: `allowed-tools` is not a valid
-   `SKILL.md` field and does not enable delegation. Check the sub-skill file:
+2. **Frontmatter de skill não suportado**: `allowed-tools` não é campo válido de
+   `SKILL.md` e não habilita delegação. Confira o arquivo da sub-skill:
    ```bash
    head -20 ~/.claude/skills/blog-write/SKILL.md
    ```
-   Valid skill fields include `name`, `description`, `user-invokable`,
-   `argument-hint`, `license`, `compatibility`, `metadata`, and
-   `disable-model-invocation`. Agent tools live in
+   Os campos válidos incluem `name`, `description`, `user-invokable`,
+   `argument-hint`, `license`, `compatibility`, `metadata` e
+   `disable-model-invocation`. As ferramentas do agente ficam em
    `~/.claude/agents/blog-*.md`.
 
-3. **Claude Code version**: Agent spawning via `Task` requires a recent
-   version of Claude Code. Update to the latest version.
+3. **Versão do Claude Code**: o disparo de agente por `Task` exige uma versão
+   recente do Claude Code. Atualize para a mais nova.
 
-### Agent produces low-quality output
+### Agente produz saída de baixa qualidade
 
-**Symptom**: The blog-writer agent produces content that does not follow
-answer-first formatting or other rules.
+**Sintoma**: o agente blog-writer produz conteúdo que não segue a formatação de
+resposta antecipada ou outras regras.
 
-**Fix**: This typically means the agent did not load the relevant reference
-files. Run the command again: the orchestrator should load references
-before spawning the agent. If the issue persists:
+**Correção**: normalmente isso significa que o agente não carregou os arquivos de
+referência pertinentes. Rode o comando de novo: o orquestrador deve carregar as
+referências antes de disparar o agente. Se persistir:
 
-1. Verify reference files exist:
+1. Confirme que os arquivos de referência existem:
    ```bash
    ls ~/.claude/skills/blog/references/
    ```
-2. Re-install references:
+2. Reinstale as referências:
    ```bash
    cp skills/blog/references/*.md ~/.claude/skills/blog/references/
    ```
 
 ---
 
-## Schema and SEO Issues
+## Problemas de schema e SEO
 
-### Schema detection failing
+### Detecção de schema falhando
 
-**Symptom**: `/blog seo-check` or `/blog analyze` reports "No schema detected"
-even though the post has JSON-LD markup.
+**Sintoma**: `/blog seo-check` ou `/blog analyze` reporta "nenhum schema
+detectado", mesmo que o post tenha marcação JSON-LD.
 
-**Causes**:
+**Causas**:
 
-1. **Schema injected via JavaScript**: AI crawlers (GPTBot, ClaudeBot,
-   PerplexityBot) and the analysis script cannot see schema that is
-   injected client-side via JavaScript. Schema must be present in the HTML
-   source (server-rendered).
+1. **Schema injetado por JavaScript**: rastreadores de IA (GPTBot, ClaudeBot,
+   PerplexityBot) e o script de análise não enxergam schema injetado no cliente
+   por JavaScript. O schema precisa estar presente no código-fonte HTML
+   (renderizado no servidor).
 
-   **How to check**: Disable JavaScript in your browser and view source.
-   If the `<script type="application/ld+json">` block is missing, your
-   schema is JS-injected.
+   **Como verificar**: desative o JavaScript no navegador e veja o código-fonte.
+   Se o bloco `<script type="application/ld+json">` sumir, seu schema é injetado
+   por JS.
 
-   **Fix**: Move schema to server-rendered HTML:
-   - Next.js: Use `generateMetadata()` or `<script>` in `layout.tsx`
-   - Hugo: Add to template `<head>` partial
-   - WordPress: Use a plugin that renders in PHP, not JS
+   **Correção**: mova o schema para HTML renderizado no servidor:
+   - Next.js: use `generateMetadata()` ou `<script>` no `layout.tsx`
+   - Hugo: acrescente ao partial `<head>` do template
+   - WordPress: use um plugin que renderize em PHP, não em JS
 
-2. **Schema in wrong format**: The analyzer looks for
-   `<script type="application/ld+json">` blocks. Other formats (Microdata,
-   RDFa) may not be detected.
+2. **Schema em formato errado**: o analisador procura blocos
+   `<script type="application/ld+json">`. Outros formatos (Microdata, RDFa)
+   podem não ser detectados.
 
-3. **MDX FAQSchema component**: If using a React component like
-   `<FAQSchema>`, ensure it renders the JSON-LD in the HTML output, not
-   just the visual FAQ.
+3. **Componente FAQSchema em MDX**: se você usa um componente React como
+   `<FAQSchema>`, garanta que ele renderize o JSON-LD na saída HTML, não apenas
+   as perguntas visuais.
 
-### JSON-LD validation errors
+### Erros de validação de JSON-LD
 
-**Symptom**: `/blog schema` generates markup that fails validation.
+**Sintoma**: o `/blog schema` gera marcação que falha na validação.
 
-**Fix**: Test the generated JSON-LD at:
+**Correção**: teste o JSON-LD gerado em:
 - https://validator.schema.org/
 - https://search.google.com/test/rich-results
 
-Common issues:
-- Missing `@context` or `@type` fields
-- `dateModified` not matching `lastUpdated` in frontmatter
-- Image URL not accessible (returns 404)
-- Author `@type` should be `Person`, not `Organization`
+Problemas comuns:
+- Campos `@context` ou `@type` ausentes
+- `dateModified` não bate com `lastUpdated` no frontmatter
+- URL da imagem inacessível (devolve 404)
+- O `@type` do autor deveria ser `Person`, não `Organization`
 
 ---
 
-## Platform-Specific Issues
+## Problemas específicos de plataforma
 
-### MDX compilation errors after blog write/rewrite
+### Erros de compilação de MDX depois de write ou rewrite
 
-**Symptom**: The generated MDX file fails to compile in Next.js.
+**Sintoma**: o arquivo MDX gerado falha ao compilar no Next.js.
 
-**Common causes**:
+**Causas comuns**:
 
-| Error | Cause | Fix |
-|-------|-------|-----|
-| `stroke-width` is not valid | HTML attributes in JSX | Convert to camelCase: `strokeWidth` |
-| `class` is not valid | HTML `class` in JSX | Use `className` |
-| `style="..."` syntax error | String style in JSX | Use object: `style={{...}}` |
-| Unexpected `{` | Curly braces in markdown text | Escape: `\{` |
-| `<` in text content | Angle brackets in prose | Use `&lt;` or wrap in backticks |
+| Erro | Causa | Correção |
+|------|-------|----------|
+| `stroke-width` não é válido | Atributos HTML dentro de JSX | Converta para camelCase: `strokeWidth` |
+| `class` não é válido | `class` do HTML dentro de JSX | Use `className` |
+| Erro de sintaxe em `style="..."` | Estilo como string em JSX | Use objeto: `style={{...}}` |
+| `{` inesperado | Chaves no texto markdown | Escape: `\{` |
+| `<` no conteúdo de texto | Sinais de menor na prosa | Use `&lt;` ou envolva em crases |
 
-**Prevention**: When the platform is detected as MDX/Next.js, the sub-skills
-automatically use JSX-compatible syntax. If errors persist, specify the
-platform explicitly:
+**Prevenção**: quando a plataforma é detectada como MDX/Next.js, as sub-skills
+usam automaticamente sintaxe compatível com JSX. Se os erros persistirem,
+especifique a plataforma explicitamente:
 
 ```
-/blog write "topic" --format mdx
+/blog write "tema" --format mdx
 ```
 
-### Hugo front matter format mismatch
+### Formato de frontmatter incompatível no Hugo
 
-**Symptom**: Hugo does not recognize the YAML frontmatter fields.
+**Sintoma**: o Hugo não reconhece os campos de frontmatter em YAML.
 
-**Fix**: Hugo uses TOML frontmatter by default (`+++` delimiters). If your
-Hugo site uses YAML (`---` delimiters), add to `hugo.toml`:
+**Correção**: o Hugo usa frontmatter TOML por padrão (delimitadores `+++`). Se o
+seu site Hugo usa YAML (delimitadores `---`), acrescente ao `hugo.toml`:
 ```toml
 [markup.frontmatter]
   date = ["date"]
@@ -351,53 +354,53 @@ Hugo site uses YAML (`---` delimiters), add to `hugo.toml`:
 
 ---
 
-## Performance Issues
+## Problemas de desempenho
 
-### Commands running slowly
+### Comandos rodando devagar
 
-**Symptom**: `/blog write` or `/blog brief` takes a long time to complete.
+**Sintoma**: `/blog write` ou `/blog brief` demora muito para concluir.
 
-**Causes**:
-- **Research phase**: WebSearch calls for statistics and images can take
-  30-60 seconds depending on the topic
-- **Chart generation**: Each `blog-chart` invocation adds 10-20 seconds
-- **Large context**: Loading many reference files increases processing time
+**Causas**:
+- **Fase de pesquisa**: as chamadas de WebSearch por estatísticas e imagens podem
+  levar de 30 a 60 segundos, conforme o tema
+- **Geração de gráfico**: cada invocação do `blog-chart` acrescenta de 10 a 20 segundos
+- **Contexto grande**: carregar muitos arquivos de referência aumenta o tempo de processamento
 
-**Mitigation**:
-- Provide a brief first (`/blog brief`) to pre-do research, then use
-  `/blog write` with the brief (skips research phase)
-- For analysis, use `analyze_blog.py` directly for faster automated metrics
+**Mitigação**:
+- Gere um briefing antes (`/blog brief`) para adiantar a pesquisa e depois use
+  o `/blog write` com o briefing (pula a fase de pesquisa)
+- Para análise, use o `analyze_blog.py` diretamente, para métricas automatizadas mais rápidas
 
-### analyze_blog.py batch mode slow on large directories
+### Modo em lote do analyze_blog.py lento em diretórios grandes
 
-**Symptom**: `--batch` mode takes a long time on directories with many files.
+**Sintoma**: o modo `--batch` demora muito em diretórios com muitos arquivos.
 
-**Fix**: The script processes files sequentially. For large directories,
-analyze subsets:
+**Correção**: o script processa os arquivos em sequência. Para diretórios
+grandes, analise subconjuntos:
 ```bash
-python3 analyze_blog.py posts/2026/ --batch    # Only 2026 posts
-python3 analyze_blog.py posts/drafts/ --batch  # Only drafts
+python3 analyze_blog.py posts/2026/ --batch    # Só os posts de 2026
+python3 analyze_blog.py posts/drafts/ --batch  # Só os rascunhos
 ```
 
 ---
 
-## Getting Help
+## Como obter ajuda
 
-If your issue is not listed here:
+Se o seu problema não está listado aqui:
 
-1. **Check the version**: Ensure you have the latest `claude-blog` installed:
+1. **Cheque a versão**: garanta que você tem o `claude-blog` mais recente:
    ```bash
    cd claude-blog && git pull && ./install.sh
    ```
 
-2. **Verify file integrity**: Compare installed files with the repository:
+2. **Verifique a integridade dos arquivos**: compare os instalados com o repositório:
    ```bash
    diff ~/.claude/skills/blog/SKILL.md skills/blog/SKILL.md
    ```
 
-3. **Reset installation**: Remove and reinstall:
+3. **Reinicie a instalação**: remova e instale de novo:
    ```bash
    ./uninstall.sh && ./install.sh
    ```
 
-4. **Open an issue**: https://github.com/AgriciDaniel/claude-blog/issues
+4. **Abra uma issue**: https://github.com/AgriciDaniel/claude-blog/issues

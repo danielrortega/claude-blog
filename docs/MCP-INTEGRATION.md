@@ -1,170 +1,172 @@
-# MCP Integration Guide
+# Guia de Integração MCP
 
-Optional Model Context Protocol (MCP) server integrations that extend
-`claude-blog` with live data from SEO platforms, analytics services, and
-performance monitoring tools.
+Integrações opcionais de servidor Model Context Protocol (MCP) que estendem o
+`claude-blog` com dados ao vivo de plataformas de SEO, serviços de analytics e
+ferramentas de monitoramento de desempenho.
 
-**Important**: `claude-blog` works fully without any MCP servers. These
-integrations are optional enhancements for teams that already use these
-platforms.
+**Importante**: o `claude-blog` funciona por completo sem nenhum servidor MCP.
+Estas integrações são acréscimos opcionais para equipes que já usam essas
+plataformas.
 
 ---
 
-## Overview
+## Panorama
 
 ```
                     +---------------------------+
                     |      claude-blog          |
-                    |    /blog commands          |
+                    |    comandos /blog          |
                     +------+----+----+----------+
                            |    |    |
               +------------+    |    +------------+
               |                 |                  |
               v                 v                  v
   +-----------------+  +----------------+  +------------------+
-  | DataForSEO MCP  |  | Individual     |  | Custom MCP       |
-  | (Recommended)   |  | MCP Servers    |  | Servers          |
+  | DataForSEO MCP  |  | Servidores MCP |  | Servidores MCP   |
+  | (recomendado)   |  | individuais    |  | próprios         |
   |                 |  |                |  |                  |
-  | - SERP data     |  | - GSC          |  | - Analytics      |
-  | - Keywords      |  | - Ahrefs       |  | - CMS APIs       |
-  | - Backlinks     |  | - Semrush      |  | - Custom data    |
+  | - Dados de SERP |  | - GSC          |  | - Analytics      |
+  | - Palavras-chave|  | - Ahrefs       |  | - APIs de CMS    |
+  | - Backlinks     |  | - Semrush      |  | - Dados próprios |
   | - On-page       |  | - PageSpeed    |  |                  |
-  | - Domain data   |  |                |  |                  |
-  | - Content       |  |                |  |                  |
-  | - AI Optim.     |  |                |  |                  |
+  | - Dados de domínio |              |  |                  |
+  | - Conteúdo      |  |                |  |                  |
+  | - Otimização IA |  |                |  |                  |
   +-----------------+  +----------------+  +------------------+
 ```
 
 ---
 
-## Nano Banana MCP - AI Image Generation
+## Nano Banana MCP - geração de imagem por IA
 
-**The nanobanana-mcp server enables AI image generation** within blog workflows.
-When configured, `/blog write` and `/blog rewrite` can generate custom hero images,
-inline illustrations, and social preview cards via Gemini, in addition to stock
-photo sourcing from Pixabay/Unsplash/Pexels.
+**O servidor nanobanana-mcp habilita geração de imagem por IA** dentro dos fluxos
+de blog. Quando configurado, `/blog write` e `/blog rewrite` podem gerar imagens
+principais próprias, ilustrações inline e cartões de prévia social via Gemini,
+além da curadoria de fotos de banco em Pixabay, Unsplash e Pexels.
 
-### What It Enables
+### O que habilita
 
-| Feature | Without nanobanana-mcp | With nanobanana-mcp |
-|---------|----------------------|---------------------|
-| Hero/cover images | Stock photos only | Stock photos + AI-generated custom images |
-| Inline illustrations | Stock photos only | Stock photos + topic-specific AI illustrations |
-| OG/social cards | Stock photo crop | Custom AI-generated social preview images |
-| Image editing | Not available | Edit existing blog images (crop, enhance, restyle) |
-| Standalone use | Not available | `/blog image generate <idea>` for any image need |
+| Recurso | Sem o nanobanana-mcp | Com o nanobanana-mcp |
+|---------|----------------------|----------------------|
+| Imagens principais e de capa | Só banco de imagens | Banco de imagens mais imagens próprias geradas por IA |
+| Ilustrações inline | Só banco de imagens | Banco de imagens mais ilustrações por IA específicas do tema |
+| Cartões OG e sociais | Recorte de banco de imagens | Prévias sociais próprias geradas por IA |
+| Edição de imagem | Indisponível | Edita imagens existentes do blog (recorte, realce, mudança de estilo) |
+| Uso avulso | Indisponível | `/blog image generate <ideia>` para qualquer necessidade de imagem |
 
-### Configuration
+### Configuração
 
-The setup script writes to Claude Code's user-private global settings by
-default (safer; never reaches git). To use project-local `.mcp.json`, opt in
-with `--project` (the script will refuse to write a literal key into a
-tracked file).
+O script de configuração grava por padrão nas configurações globais privadas do
+usuário no Claude Code (mais seguro; nunca chega ao git). Para usar um
+`.mcp.json` local do projeto, opte explicitamente com `--project` (o script se
+recusa a gravar uma chave literal em arquivo versionado).
 
 ```bash
-# Recommended: writes ~/.claude/settings.json (user-private, mode 0600)
-python3 skills/blog-image/scripts/setup_image_mcp.py --key YOUR_KEY
+# Recomendado: grava ~/.claude/settings.json (privado do usuário, modo 0600)
+python3 skills/blog-image/scripts/setup_image_mcp.py --key SUA_CHAVE
 
-# Project-local (env-expansion only, NEVER stores literal key)
-python3 skills/blog-image/scripts/setup_image_mcp.py --key YOUR_KEY --project
-# Then export the key in your shell so the env-expansion resolves:
-export GOOGLE_AI_API_KEY="your-key-from-aistudio.google.com"
+# Local do projeto (apenas expansão de variável, NUNCA guarda a chave literal)
+python3 skills/blog-image/scripts/setup_image_mcp.py --key SUA_CHAVE --project
+# Depois exporte a chave no shell, para a expansão de variável resolver:
+export GOOGLE_AI_API_KEY="sua-chave-do-aistudio.google.com"
 ```
 
-Get a free API key at: https://aistudio.google.com/apikey
+Obtenha uma chave gratuita em: https://aistudio.google.com/apikey
 
-> **Security**: `.mcp.json` is gitignored as of 2026-04-27. A tracked
-> `.mcp.example.json` template lives alongside. The setup script pins the
-> nanobanana-mcp package version (`@ycse/nanobanana-mcp@1.1.1`) to mitigate
-> supply-chain risk on `npx -y` auto-update.
+> **Segurança**: o `.mcp.json` está no gitignore desde 2026-04-27. Um template
+> versionado `.mcp.example.json` fica ao lado. O script de configuração fixa a
+> versão do pacote nanobanana-mcp (`@ycse/nanobanana-mcp@1.1.1`) para mitigar
+> risco de cadeia de suprimentos na atualização automática do `npx -y`.
 
-### Verify Setup
+### Verificar a configuração
 
 ```bash
 python3 skills/blog-image/scripts/validate_image_setup.py
 ```
 
-### Requirements
+### Requisitos
 
-- Node.js 18+ (for `npx`)
-- Google AI API key (free tier: ~10 RPM / ~500 images per day)
+- Node.js 18+ (para o `npx`)
+- Chave de API do Google AI (camada gratuita: cerca de 10 requisições por minuto, cerca de 500 imagens por dia)
 
 ---
 
-## DataForSEO MCP (Recommended)
+## DataForSEO MCP (recomendado)
 
-**DataForSEO is the recommended MCP integration for `claude-blog`.** It provides
-a single unified API covering SERP data, keyword research, backlink analysis,
-on-page auditing, domain analytics, content analysis, and AI optimization,
-replacing the need for separate Ahrefs, Semrush, GSC, and PageSpeed integrations.
+**O DataForSEO é a integração MCP recomendada para o `claude-blog`.** Ele oferece
+uma API unificada cobrindo dados de resultados de busca, pesquisa de
+palavras-chave, análise de backlinks, auditoria on-page, analytics de domínio,
+análise de conteúdo e otimização para IA, dispensando integrações separadas de
+Ahrefs, Semrush, GSC e PageSpeed.
 
-### What It Enables
+### O que habilita
 
-| Feature | Without DataForSEO MCP | With DataForSEO MCP |
-|---------|----------------------|---------------------|
-| SERP analysis | WebSearch only | Live Google/Bing/Yahoo SERP with all features (AI Overviews, PAA, etc.) |
-| Keyword research | Not available | Search volume, CPC, competition, keyword difficulty, search intent |
-| Backlink analysis | Not available | Referring domains, anchor text, spam score, new/lost links |
-| On-page auditing | Manual review | Automated crawl, meta tags, Core Web Vitals, Lighthouse scores |
-| Domain analytics | Not available | Technology detection, WHOIS data, competitor domain analysis |
-| Content analysis | Quality scoring only | Sentiment analysis, keyword density, content quality scoring |
-| AI optimization | GEO content audit | LLM mention tracking, ChatGPT scraping, AI visibility metrics |
-| Competitor research | WebSearch only | Ranked keywords, traffic estimation, content gap analysis |
+| Recurso | Sem o DataForSEO MCP | Com o DataForSEO MCP |
+|---------|----------------------|----------------------|
+| Análise de resultados de busca | Só WebSearch | Resultados ao vivo de Google, Bing e Yahoo com todos os recursos (AI Overviews, "As pessoas também perguntam" etc.) |
+| Pesquisa de palavras-chave | Indisponível | Volume de busca, CPC, concorrência, dificuldade e intenção |
+| Análise de backlinks | Indisponível | Domínios referenciadores, texto âncora, nota de spam, links novos e perdidos |
+| Auditoria on-page | Revisão manual | Rastreio automatizado, meta tags, Core Web Vitals, notas do Lighthouse |
+| Analytics de domínio | Indisponível | Detecção de tecnologia, dados de WHOIS, análise de domínio de concorrentes |
+| Análise de conteúdo | Só pontuação de qualidade | Análise de sentimento, densidade de palavra-chave, pontuação de qualidade |
+| Otimização para IA | Auditoria de conteúdo GEO | Rastreamento de menções em LLM, coleta no ChatGPT, métricas de visibilidade em IA |
+| Pesquisa de concorrentes | Só WebSearch | Palavras-chave ranqueadas, estimativa de tráfego, análise de lacuna de conteúdo |
 
-### Enhanced Workflows
+### Fluxos ampliados
 
-**`/blog brief` with DataForSEO data**:
+**`/blog brief` com dados do DataForSEO**:
 
-Content briefs include real keyword metrics from DataForSEO Labs:
+Os briefings de conteúdo passam a incluir métricas reais do DataForSEO Labs:
 
 ```
-Target Keywords (DataForSEO Labs)
-- Primary: "kubernetes monitoring" - 2,400/mo, KD 45, Intent: informational
-- Secondary: "k8s observability" - 890/mo, KD 32, Intent: informational
-- Question: "how to monitor kubernetes" - 720/mo, KD 28
+Palavras-chave alvo (DataForSEO Labs)
+- Principal: "kubernetes monitoring" - 2.400/mês, KD 45, intenção: informacional
+- Secundária: "k8s observability" - 890/mês, KD 32, intenção: informacional
+- Pergunta: "how to monitor kubernetes" - 720/mês, KD 28
 
-Competitor SERP Analysis
-| Position | Domain              | Backlinks | Word Count |
+Análise dos resultados de busca dos concorrentes
+| Posição  | Domínio             | Backlinks | Palavras   |
 |----------|---------------------|-----------|------------|
-| #1       | competitor-a.com    | 142       | 3,200      |
-| #2       | competitor-b.com    | 89        | 2,800      |
-| #3       | competitor-c.com    | 67        | 4,100      |
+| #1       | competitor-a.com    | 142       | 3.200      |
+| #2       | competitor-b.com    | 89        | 2.800      |
+| #3       | competitor-c.com    | 67        | 4.100      |
 ```
 
-**`/blog strategy` with DataForSEO data**:
+**`/blog strategy` com dados do DataForSEO**:
 
-Strategy documents gain competitive intelligence:
-
-```
-Domain Comparison (DataForSEO Labs)
-| Domain           | Organic Traffic | Keywords | Backlinks | Rank |
-|------------------|----------------|----------|-----------|------|
-| competitor-a.com | 45,000/mo      | 2,340    | 12,400    | 52   |
-| competitor-b.com | 28,000/mo      | 1,200    | 8,900     | 47   |
-| your-site.com    | 3,200/mo       | 380      | 1,100     | 31   |
-
-Content Gap: 234 keywords where competitors rank but you don't
-```
-
-**`/blog geo` with DataForSEO AI Optimization data**:
-
-AI citation audits include LLM visibility metrics:
+Os documentos de estratégia ganham inteligência competitiva:
 
 ```
-AI Visibility Report (DataForSEO AI Optimization)
-| Metric              | Value | Notes                    |
-|---------------------|-------|--------------------------|
-| LLM mentions        | 12    | Across ChatGPT, Gemini  |
-| AI Overview present | Yes   | For 3/5 target keywords  |
-| Brand sentiment     | 0.72  | Positive                 |
-| Citation URLs       | 4     | Directly cited pages     |
+Comparação de domínios (DataForSEO Labs)
+| Domínio          | Tráfego orgânico | Palavras-chave | Backlinks | Rank |
+|------------------|------------------|----------------|-----------|------|
+| competitor-a.com | 45.000/mês       | 2.340          | 12.400    | 52   |
+| competitor-b.com | 28.000/mês       | 1.200          | 8.900     | 47   |
+| seu-site.com     | 3.200/mês        | 380            | 1.100     | 31   |
+
+Lacuna de conteúdo: 234 palavras-chave em que os concorrentes ranqueiam e você não
 ```
 
-### Configuration
+**`/blog geo` com dados de otimização para IA do DataForSEO**:
 
-**One-command install (recommended):**
+As auditorias de citação por IA passam a incluir métricas de visibilidade em LLM:
 
-Load credentials from a local secret file first so they are not written inline:
+```
+Relatório de visibilidade em IA (DataForSEO AI Optimization)
+| Métrica               | Valor | Observações                |
+|-----------------------|-------|----------------------------|
+| Menções em LLM        | 12    | Em ChatGPT e Gemini        |
+| AI Overview presente  | Sim   | Em 3 de 5 palavras-chave   |
+| Sentimento da marca   | 0,72  | Positivo                   |
+| URLs citadas          | 4     | Páginas citadas diretamente|
+```
+
+### Configuração
+
+**Instalação em um comando (recomendado):**
+
+Carregue as credenciais de um arquivo local de segredos primeiro, para não
+escrevê-las na linha de comando:
 
 ```bash
 set -a
@@ -179,7 +181,7 @@ claude mcp add dataforseo \
   -- npx -y dataforseo-mcp-server
 ```
 
-**Or remote server (no local install needed):**
+**Ou servidor remoto (sem instalação local):**
 
 ```bash
 DATAFORSEO_BASIC_AUTH="$(printf '%s:%s' "$DATAFORSEO_USERNAME" "$DATAFORSEO_PASSWORD" | base64)"
@@ -187,7 +189,7 @@ claude mcp add --transport http dataforseo https://mcp.dataforseo.com/http \
   --header "Authorization: Basic ${DATAFORSEO_BASIC_AUTH}"
 ```
 
-**Or add to `~/.claude/settings.json` manually:**
+**Ou acrescente manualmente ao `~/.claude/settings.json`:**
 
 ```json
 {
@@ -205,105 +207,106 @@ claude mcp add --transport http dataforseo https://mcp.dataforseo.com/http \
 }
 ```
 
-### Best Practices
+### Boas práticas
 
-1. **Store credentials in environment variables** (not in settings.json):
+1. **Guarde as credenciais em variáveis de ambiente** (não no settings.json):
    ```bash
-   # Store DATAFORSEO_USERNAME and DATAFORSEO_PASSWORD in this 0600 file.
+   # Guarde DATAFORSEO_USERNAME e DATAFORSEO_PASSWORD neste arquivo em modo 0600.
    chmod 600 ~/.config/dataforseo.env
    set -a
    . ~/.config/dataforseo.env
    set +a
    ```
 
-2. **Use field filtering** to reduce token usage (~75%):
-   Create a field config JSON file and set `FIELD_CONFIG_PATH`:
+2. **Use filtragem de campos** para reduzir o consumo de tokens (cerca de 75%):
+   Crie um arquivo JSON de configuração de campos e defina `FIELD_CONFIG_PATH`:
    ```json
    {
      "env": {
-       "FIELD_CONFIG_PATH": "/path/to/dataforseo-field-config.json"
+       "FIELD_CONFIG_PATH": "/caminho/para/dataforseo-field-config.json"
      }
    }
    ```
-   A comprehensive field config is available in the repository at
-   `skills/seo/dataforseo-field-config.json` (if using the companion `/seo` skill).
+   Uma configuração de campos abrangente está disponível no repositório em
+   `skills/seo/dataforseo-field-config.json` (se você usa a skill companheira `/seo`).
 
-3. **Enable only the modules you need** via `ENABLED_MODULES` to reduce
-   available tools and improve response relevance.
+3. **Habilite apenas os módulos necessários** via `ENABLED_MODULES`, para reduzir
+   a quantidade de ferramentas disponíveis e melhorar a relevância das respostas.
 
-### Available Modules
+### Módulos disponíveis
 
-| Module | What It Provides |
-|--------|-----------------|
-| `SERP` | Live Google/Bing/Yahoo search results with all SERP features |
-| `KEYWORDS_DATA` | Search volume, CPC, competition from Google Ads |
-| `DATAFORSEO_LABS` | Keyword research, domain analysis, competitor data |
-| `BACKLINKS` | Backlink profiles, referring domains, anchor text |
-| `ONPAGE` | Website crawling, meta analysis, Core Web Vitals, Lighthouse |
-| `DOMAIN_ANALYTICS` | Technology detection, WHOIS records |
-| `BUSINESS_DATA` | Google Maps listings, reviews, business info |
-| `CONTENT_ANALYSIS` | Brand citations, sentiment analysis, phrase trends |
-| `AI_OPTIMIZATION` | LLM mention tracking, ChatGPT scraping, AI keyword discovery |
+| Módulo | O que fornece |
+|--------|---------------|
+| `SERP` | Resultados ao vivo de Google, Bing e Yahoo com todos os recursos de busca |
+| `KEYWORDS_DATA` | Volume de busca, CPC e concorrência do Google Ads |
+| `DATAFORSEO_LABS` | Pesquisa de palavra-chave, análise de domínio, dados de concorrentes |
+| `BACKLINKS` | Perfis de backlink, domínios referenciadores, texto âncora |
+| `ONPAGE` | Rastreio de site, análise de meta, Core Web Vitals, Lighthouse |
+| `DOMAIN_ANALYTICS` | Detecção de tecnologia, registros WHOIS |
+| `BUSINESS_DATA` | Fichas do Google Maps, avaliações, informações de negócio |
+| `CONTENT_ANALYSIS` | Citações de marca, análise de sentimento, tendências de expressão |
+| `AI_OPTIMIZATION` | Rastreamento de menções em LLM, coleta no ChatGPT, descoberta de palavra-chave em IA |
 
-### Setup Requirements
+### Requisitos de configuração
 
-1. [DataForSEO account](https://dataforseo.com/) with API credentials
-2. Node.js 18+ (for `npx dataforseo-mcp-server`)
-3. API username and password from the DataForSEO dashboard
+1. [Conta DataForSEO](https://dataforseo.com/) com credenciais de API
+2. Node.js 18+ (para o `npx dataforseo-mcp-server`)
+3. Usuário e senha de API do painel do DataForSEO
 
 ---
 
-## Alternative Individual MCP Integrations
+## Integrações MCP individuais alternativas
 
-The following individual MCP servers can be used instead of (or alongside)
-DataForSEO for teams that already have accounts with these platforms.
+Os servidores MCP a seguir podem ser usados no lugar do DataForSEO, ou junto com
+ele, por equipes que já têm conta nessas plataformas.
 
 ## Google Search Console MCP
 
-### What It Enables
+### O que habilita
 
-| Feature | Without GSC MCP | With GSC MCP |
-|---------|----------------|--------------|
-| Content decay detection | Manual check | Automated: flags posts with 20%+ QoQ traffic decline |
-| Keyword tracking | Not available | Live keyword rankings and CTR data |
-| Query analysis | Not available | Actual search queries driving traffic |
-| AI Overview impact | Not available | CTR changes when AI Overviews appear |
-| Freshness scheduling | Time-based (30 days) | Data-driven (based on actual performance drops) |
+| Recurso | Sem o GSC MCP | Com o GSC MCP |
+|---------|---------------|---------------|
+| Detecção de decaimento de conteúdo | Checagem manual | Automatizada: sinaliza posts com queda de 20%+ de tráfego no trimestre |
+| Acompanhamento de palavra-chave | Indisponível | Ranqueamento e CTR ao vivo |
+| Análise de consultas | Indisponível | As consultas reais que trazem tráfego |
+| Impacto do AI Overview | Indisponível | Mudanças de CTR quando o AI Overview aparece |
+| Agendamento de atualidade | Por tempo (30 dias) | Guiado por dado (queda real de desempenho) |
 
-### Enhanced Workflows
+### Fluxos ampliados
 
-**`/blog audit` with GSC data**:
+**`/blog audit` com dados do GSC**:
 
-Instead of scoring posts only on content quality, the audit can incorporate
-actual performance data:
-
-```
-Blog Audit: 47 Posts Analyzed
-
-| Post              | Quality | Traffic (QoQ) | CTR    | Action          |
-|-------------------|---------|---------------|--------|-----------------|
-| ai-search-guide   | 85/100  | -35%          | 1.2%   | Content decay!  |
-| kubernetes-setup   | 72/100  | +12%          | 3.1%   | Quality fixes   |
-| react-patterns     | 91/100  | -5%           | 4.2%   | Monitor         |
-```
-
-**`/blog calendar` with GSC data**:
-
-Editorial calendars can prioritize updates based on actual traffic decay
-rather than arbitrary 30-day cycles:
+Em vez de pontuar os posts apenas por qualidade de conteúdo, a auditoria passa a
+incorporar dados reais de desempenho:
 
 ```
-Freshness Update Queue (Data-Driven)
-| Post              | Last Updated | Traffic Change | Priority |
-|-------------------|-------------|----------------|----------|
-| ai-search-guide   | 45 days ago | -35% QoQ       | Critical |
-| seo-strategy      | 60 days ago | -22% QoQ       | High     |
-| blog-writing-tips  | 30 days ago | +5% QoQ        | Low      |
+Auditoria de blog: 47 posts analisados
+
+| Post              | Qualidade | Tráfego (trim.) | CTR    | Ação             |
+|-------------------|-----------|-----------------|--------|------------------|
+| ai-search-guide   | 85/100    | -35%            | 1,2%   | Decaimento!      |
+| kubernetes-setup  | 72/100    | +12%            | 3,1%   | Ajustes de qualidade |
+| react-patterns    | 91/100    | -5%             | 4,2%   | Monitorar        |
 ```
 
-### Configuration
+**`/blog calendar` com dados do GSC**:
 
-Add the GSC MCP server to your Claude Code settings (`~/.claude/settings.json`):
+Os calendários editoriais passam a priorizar atualizações pelo decaimento real de
+tráfego, em vez de ciclos arbitrários de 30 dias:
+
+```
+Fila de atualização por atualidade (guiada por dado)
+| Post              | Atualizado há | Variação de tráfego | Prioridade |
+|-------------------|---------------|---------------------|------------|
+| ai-search-guide   | 45 dias       | -35% no trimestre   | Crítica    |
+| seo-strategy      | 60 dias       | -22% no trimestre   | Alta       |
+| blog-writing-tips | 30 dias       | +5% no trimestre    | Baixa      |
+```
+
+### Configuração
+
+Acrescente o servidor MCP do GSC às configurações do Claude Code
+(`~/.claude/settings.json`):
 
 ```json
 {
@@ -312,68 +315,68 @@ Add the GSC MCP server to your Claude Code settings (`~/.claude/settings.json`):
       "command": "npx",
       "args": ["-y", "@anthropic/gsc-mcp-server"],
       "env": {
-        "GSC_CREDENTIALS_PATH": "/path/to/credentials.json"
+        "GSC_CREDENTIALS_PATH": "/caminho/para/credentials.json"
       }
     }
   }
 }
 ```
 
-**Setup requirements**:
-1. Google Cloud project with Search Console API enabled
-2. OAuth credentials or service account key
-3. Site verified in Google Search Console
+**Requisitos de configuração**:
+1. Projeto no Google Cloud com a API do Search Console habilitada
+2. Credenciais OAuth ou chave de conta de serviço
+3. Site verificado no Google Search Console
 
 ---
 
 ## Ahrefs MCP
 
-### What It Enables
+### O que habilita
 
-| Feature | Without Ahrefs MCP | With Ahrefs MCP |
-|---------|-------------------|-----------------|
-| Backlink analysis | Not available | Referring domains, anchor text distribution |
-| Keyword research | WebSearch only | Search volume, difficulty, SERP features |
-| Competitor monitoring | Manual WebSearch | Automated gap analysis and tracking |
-| Content gap analysis | Not available | Keywords competitors rank for that you don't |
-| Domain Rating | Not available | Live DR tracking |
+| Recurso | Sem o Ahrefs MCP | Com o Ahrefs MCP |
+|---------|------------------|------------------|
+| Análise de backlinks | Indisponível | Domínios referenciadores, distribuição de texto âncora |
+| Pesquisa de palavras-chave | Só WebSearch | Volume de busca, dificuldade, recursos de resultado |
+| Monitoramento de concorrentes | WebSearch manual | Análise de lacuna e acompanhamento automatizados |
+| Análise de lacuna de conteúdo | Indisponível | Palavras-chave em que os concorrentes ranqueiam e você não |
+| Domain Rating | Indisponível | Acompanhamento de DR ao vivo |
 
-### Enhanced Workflows
+### Fluxos ampliados
 
-**`/blog brief` with Ahrefs data**:
+**`/blog brief` com dados do Ahrefs**:
 
-Content briefs can include precise keyword metrics:
-
-```
-Target Keywords
-- Primary: "kubernetes monitoring" (2,400/mo, KD 45)
-- Secondary: "k8s observability" (890/mo, KD 32)
-- Question: "how to monitor kubernetes clusters" (720/mo, KD 28)
-
-Competitor Content Gap
-| Keyword                    | Competitor A | Competitor B | You  |
-|---------------------------|-------------|-------------|------|
-| kubernetes alerting setup  | #3          | #7          |:   |
-| prometheus vs datadog      | #5          | #2          |:   |
-| k8s monitoring best practices | #1       | #4          | #12  |
-```
-
-**`/blog strategy` with Ahrefs data**:
-
-Strategy documents gain competitive intelligence with actual metrics:
+Os briefings de conteúdo podem incluir métricas precisas de palavra-chave:
 
 ```
-Competitive Landscape
-| Competitor      | DR  | Blog Posts | Avg Traffic/Post | Top Keywords |
-|----------------|-----|-----------|-----------------|-------------|
-| competitor-a.com | 72  | 340       | 2,100           | 890         |
-| competitor-b.com | 65  | 180       | 1,400           | 520         |
-| your-site.com    | 45  | 47        | 380             | 120         |
+Palavras-chave alvo
+- Principal: "kubernetes monitoring" (2.400/mês, KD 45)
+- Secundária: "k8s observability" (890/mês, KD 32)
+- Pergunta: "how to monitor kubernetes clusters" (720/mês, KD 28)
 
-Opportunity: 234 keywords where competitors rank but you don't
+Lacuna de conteúdo frente aos concorrentes
+| Palavra-chave                 | Concorrente A | Concorrente B | Você |
+|-------------------------------|---------------|---------------|------|
+| kubernetes alerting setup     | #3            | #7            |  -   |
+| prometheus vs datadog         | #5            | #2            |  -   |
+| k8s monitoring best practices | #1            | #4            | #12  |
 ```
 
-### Configuration
+**`/blog strategy` com dados do Ahrefs**:
+
+Os documentos de estratégia ganham inteligência competitiva com métricas reais:
+
+```
+Cenário competitivo
+| Concorrente      | DR  | Posts | Tráfego médio/post | Palavras-chave |
+|------------------|-----|-------|--------------------|----------------|
+| competitor-a.com | 72  | 340   | 2.100              | 890            |
+| competitor-b.com | 65  | 180   | 1.400              | 520            |
+| seu-site.com     | 45  | 47    | 380                | 120            |
+
+Oportunidade: 234 palavras-chave em que os concorrentes ranqueiam e você não
+```
+
+### Configuração
 
 ```json
 {
@@ -382,47 +385,47 @@ Opportunity: 234 keywords where competitors rank but you don't
       "command": "npx",
       "args": ["-y", "@anthropic/ahrefs-mcp-server"],
       "env": {
-        "AHREFS_API_KEY": "your-api-key"
+        "AHREFS_API_KEY": "sua-chave-de-api"
       }
     }
   }
 }
 ```
 
-**Setup requirements**:
-1. Ahrefs account with API access (Standard plan or higher)
-2. API key from Ahrefs dashboard
+**Requisitos de configuração**:
+1. Conta Ahrefs com acesso à API (plano Standard ou superior)
+2. Chave de API do painel do Ahrefs
 
 ---
 
 ## Semrush MCP
 
-### What It Enables
+### O que habilita
 
-| Feature | Without Semrush MCP | With Semrush MCP |
-|---------|-------------------|-----------------|
-| Keyword gap analysis | Not available | Side-by-side keyword overlap with competitors |
-| Position tracking | Not available | Daily rank tracking for target keywords |
-| Topic research | WebSearch only | Semrush Topic Research data |
-| Content audit | Quality-only scoring | Quality + traffic + keyword data |
+| Recurso | Sem o Semrush MCP | Com o Semrush MCP |
+|---------|-------------------|-------------------|
+| Análise de lacuna de palavra-chave | Indisponível | Sobreposição lado a lado com os concorrentes |
+| Acompanhamento de posição | Indisponível | Rastreamento diário de posição das palavras-chave alvo |
+| Pesquisa de temas | Só WebSearch | Dados do Topic Research do Semrush |
+| Auditoria de conteúdo | Só pontuação de qualidade | Qualidade mais tráfego e dados de palavra-chave |
 
-### Enhanced Workflows
+### Fluxos ampliados
 
-**`/blog strategy` with Semrush data**:
+**`/blog strategy` com dados do Semrush**:
 
-Topic research backed by Semrush's keyword clustering:
+Pesquisa de temas apoiada no agrupamento de palavras-chave do Semrush:
 
 ```
-Content Pillar: Kubernetes Monitoring
-| Topic Cluster      | Keywords | Total Volume | Avg KD | Gap Score |
-|-------------------|----------|-------------|--------|-----------|
-| Setup & Config     | 34       | 12,400      | 38     | High      |
-| Tools Comparison   | 22       | 8,900       | 52     | Medium    |
-| Best Practices     | 18       | 6,200       | 41     | High      |
-| Troubleshooting    | 45       | 15,100      | 29     | Low       |
+Pilar de conteúdo: monitoramento de Kubernetes
+| Cluster de tema        | Palavras-chave | Volume total | KD médio | Nota de lacuna |
+|------------------------|----------------|--------------|----------|----------------|
+| Instalação e config    | 34             | 12.400       | 38       | Alta           |
+| Comparação de ferramentas | 22          | 8.900        | 52       | Média          |
+| Boas práticas          | 18             | 6.200        | 41       | Alta           |
+| Solução de problemas   | 45             | 15.100       | 29       | Baixa          |
 ```
 
-### Configuration
+### Configuração
 
 ```json
 {
@@ -431,7 +434,7 @@ Content Pillar: Kubernetes Monitoring
       "command": "npx",
       "args": ["-y", "@anthropic/semrush-mcp-server"],
       "env": {
-        "SEMRUSH_API_KEY": "your-api-key"
+        "SEMRUSH_API_KEY": "sua-chave-de-api"
       }
     }
   }
@@ -442,34 +445,34 @@ Content Pillar: Kubernetes Monitoring
 
 ## PageSpeed Insights MCP
 
-### What It Enables
+### O que habilita
 
-| Feature | Without PSI MCP | With PSI MCP |
-|---------|----------------|-------------|
-| Core Web Vitals | Not available | LCP, FID, CLS, INP measurements |
-| TTFB monitoring | Not available | Server response time (critical for AI crawlers) |
-| Performance scoring | Not available | Lighthouse performance score |
-| AI crawl readiness | Manual check | Automated TTFB < 200ms verification |
+| Recurso | Sem o PSI MCP | Com o PSI MCP |
+|---------|---------------|---------------|
+| Core Web Vitals | Indisponível | Medições de LCP, FID, CLS e INP |
+| Monitoramento de TTFB | Indisponível | Tempo de resposta do servidor (crítico para rastreadores de IA) |
+| Pontuação de desempenho | Indisponível | Nota de desempenho do Lighthouse |
+| Prontidão para rastreio de IA | Checagem manual | Verificação automatizada de TTFB abaixo de 200ms |
 
-### Enhanced Workflows
+### Fluxos ampliados
 
-**`/blog geo` with PageSpeed data**:
+**`/blog geo` com dados do PageSpeed**:
 
-AI citation audits can include technical performance checks:
+As auditorias de citação por IA podem incluir checagens técnicas de desempenho:
 
 ```
-AI Crawler Readiness
-| Metric   | Value  | Target  | Status |
-|----------|--------|---------|--------|
-| TTFB     | 145ms  | < 200ms | Pass   |
-| LCP      | 2.1s   | < 2.5s  | Pass   |
-| CLS      | 0.08   | < 0.1   | Pass   |
-| JS-only? | No     | No      | Pass   |
+Prontidão para rastreadores de IA
+| Métrica  | Valor  | Alvo         | Situação |
+|----------|--------|--------------|----------|
+| TTFB     | 145ms  | abaixo de 200ms | Passa |
+| LCP      | 2,1s   | abaixo de 2,5s  | Passa |
+| CLS      | 0,08   | abaixo de 0,1   | Passa |
+| Só JS?   | Não    | Não             | Passa |
 
-Your pages are accessible to AI crawlers (GPTBot, ClaudeBot, PerplexityBot).
+Suas páginas estão acessíveis aos rastreadores de IA (GPTBot, ClaudeBot, PerplexityBot).
 ```
 
-### Configuration
+### Configuração
 
 ```json
 {
@@ -478,69 +481,69 @@ Your pages are accessible to AI crawlers (GPTBot, ClaudeBot, PerplexityBot).
       "command": "npx",
       "args": ["-y", "@anthropic/pagespeed-mcp-server"],
       "env": {
-        "PAGESPEED_API_KEY": "your-google-api-key"
+        "PAGESPEED_API_KEY": "sua-chave-de-api-do-google"
       }
     }
   }
 }
 ```
 
-**Setup requirements**:
-1. Google Cloud project with PageSpeed Insights API enabled
-2. API key from Google Cloud Console
+**Requisitos de configuração**:
+1. Projeto no Google Cloud com a API do PageSpeed Insights habilitada
+2. Chave de API do Google Cloud Console
 
 ---
 
-## How to Configure MCP Servers
+## Como configurar servidores MCP
 
-MCP servers are configured in your Claude Code settings file. The location
-depends on your setup:
+Os servidores MCP são configurados no arquivo de configurações do Claude Code. O
+local depende da sua instalação:
 
-### Settings File Location
+### Local do arquivo de configurações
 
-| Platform | Path |
-|----------|------|
+| Plataforma | Caminho |
+|------------|---------|
 | Linux/macOS | `~/.claude/settings.json` |
 | Windows | `%USERPROFILE%\.claude\settings.json` |
 
-### Adding an MCP Server
+### Acrescentar um servidor MCP
 
-Edit `settings.json` to add MCP servers under the `mcpServers` key:
+Edite o `settings.json` para acrescentar servidores sob a chave `mcpServers`:
 
 ```json
 {
   "mcpServers": {
-    "server-name": {
+    "nome-do-servidor": {
       "command": "npx",
-      "args": ["-y", "package-name"],
+      "args": ["-y", "nome-do-pacote"],
       "env": {
-        "API_KEY": "your-key"
+        "API_KEY": "sua-chave"
       }
     }
   }
 }
 ```
 
-### Verifying MCP Connection
+### Verificar a conexão MCP
 
-After adding an MCP server:
-1. Restart Claude Code
-2. The MCP server should appear in available tools
-3. Test with a simple query related to the server's function
+Depois de acrescentar um servidor MCP:
+1. Reinicie o Claude Code
+2. O servidor deve aparecer entre as ferramentas disponíveis
+3. Teste com uma consulta simples relacionada à função dele
 
-### Environment Variables for API Keys
+### Variáveis de ambiente para chaves de API
 
-Never commit API keys to version control. Use environment variables:
+Nunca versione chaves de API. Use variáveis de ambiente:
 
 ```bash
-# Add to ~/.bashrc or ~/.zshrc
-export AHREFS_API_KEY="your-key"
-export SEMRUSH_API_KEY="your-key"
-export GSC_CREDENTIALS_PATH="/path/to/credentials.json"
-export PAGESPEED_API_KEY="your-key"
+# Acrescente ao ~/.bashrc ou ~/.zshrc
+export AHREFS_API_KEY="sua-chave"
+export SEMRUSH_API_KEY="sua-chave"
+export GSC_CREDENTIALS_PATH="/caminho/para/credentials.json"
+export PAGESPEED_API_KEY="sua-chave"
 ```
 
-Then reference them in settings:
+Depois referencie-as nas configurações:
 
 ```json
 {
@@ -558,68 +561,68 @@ Then reference them in settings:
 
 ---
 
-## Example Workflows
+## Fluxos de exemplo
 
-### Content Decay Detection (GSC + Blog Audit)
+### Detecção de decaimento de conteúdo (GSC mais auditoria de blog)
 
-Combine Google Search Console data with `claude-blog`'s quality scoring to
-identify posts that need immediate attention:
-
-```
-1. /blog audit content/blog/        # Quality scores for all posts
-2. GSC MCP provides traffic data    # QoQ traffic changes
-3. Combined report identifies:
-   - High quality but declining traffic  --> needs freshness update
-   - Low quality and declining traffic   --> needs full rewrite
-   - Low quality but stable traffic      --> optimize for AI citations
-4. /blog calendar                    # Auto-prioritized update schedule
-```
-
-### Competitor-Informed Content Strategy (Ahrefs + Strategy)
-
-Use Ahrefs data to ground your content strategy in competitive intelligence:
+Combine dados do Google Search Console com a pontuação de qualidade do
+`claude-blog` para identificar posts que precisam de atenção imediata:
 
 ```
-1. /blog strategy "your-niche"      # Base strategy from analysis
-2. Ahrefs MCP provides:
-   - Competitor keyword rankings
-   - Content gap keywords
-   - Backlink opportunities
-3. Strategy document includes:
-   - Data-backed pillar topics
-   - Specific keyword targets with volume/difficulty
-   - Competitor weakness mapping
-4. /blog calendar                    # Execution plan with keyword targets
+1. /blog audit content/blog/         # Notas de qualidade de todos os posts
+2. O GSC MCP fornece dados de tráfego # Variação de tráfego no trimestre
+3. O relatório combinado identifica:
+   - Alta qualidade com tráfego caindo  --> precisa de atualização
+   - Baixa qualidade com tráfego caindo --> precisa de reescrita completa
+   - Baixa qualidade com tráfego estável --> otimizar para citação por IA
+4. /blog calendar                     # Cronograma de atualização já priorizado
 ```
 
-### Performance-Optimized GEO Audit (PSI + GEO)
+### Estratégia de conteúdo informada pela concorrência (Ahrefs mais strategy)
 
-Validate both content quality and technical readiness for AI crawlers:
+Use dados do Ahrefs para ancorar sua estratégia em inteligência competitiva:
 
 ```
-1. /blog geo content/blog/post.mdx  # Content-level GEO audit
-2. PageSpeed MCP provides:
-   - TTFB measurement (must be < 200ms)
-   - JavaScript rendering check
-   - Core Web Vitals scores
-3. Combined report covers:
-   - Content optimization (answer-first, freshness, FAQ)
-   - Technical optimization (TTFB, SSR, robots.txt)
-   - AI crawler accessibility verification
+1. /blog strategy "seu-nicho"        # Estratégia base a partir da análise
+2. O Ahrefs MCP fornece:
+   - Ranqueamento de palavra-chave dos concorrentes
+   - Palavras-chave de lacuna de conteúdo
+   - Oportunidades de backlink
+3. O documento de estratégia inclui:
+   - Temas pilares apoiados em dados
+   - Alvos específicos de palavra-chave com volume e dificuldade
+   - Mapeamento das fraquezas dos concorrentes
+4. /blog calendar                     # Plano de execução com alvos de palavra-chave
+```
+
+### Auditoria de GEO otimizada por desempenho (PSI mais geo)
+
+Valide ao mesmo tempo a qualidade do conteúdo e a prontidão técnica para
+rastreadores de IA:
+
+```
+1. /blog geo content/blog/post.mdx   # Auditoria de GEO no nível do conteúdo
+2. O PageSpeed MCP fornece:
+   - Medição de TTFB (precisa ficar abaixo de 200ms)
+   - Checagem de renderização por JavaScript
+   - Notas de Core Web Vitals
+3. O relatório combinado cobre:
+   - Otimização de conteúdo (resposta antecipada, atualidade, perguntas)
+   - Otimização técnica (TTFB, renderização no servidor, robots.txt)
+   - Verificação de acessibilidade aos rastreadores de IA
 ```
 
 ---
 
 ## Roadmap
 
-| Integration | Status | Priority |
-|------------|--------|----------|
-| Nano Banana (Gemini) | **Available** | AI image generation for blog content |
-| DataForSEO | **Available** | Recommended: covers SERP, keywords, backlinks, on-page, domain, content, AI optimization |
-| Google Search Console | **Available** (via `/blog google gsc`) | First-party traffic/CTR data |
-| Google Analytics (GA4) | **Available** (via `/blog google ga4`) | Organic traffic reports |
-| WordPress REST API | Future | Low |
-| Contentful / Sanity CMS | Future | Low |
+| Integração | Situação | Prioridade |
+|------------|----------|------------|
+| Nano Banana (Gemini) | **Disponível** | Geração de imagem por IA para conteúdo de blog |
+| DataForSEO | **Disponível** | Recomendada: cobre resultados de busca, palavras-chave, backlinks, on-page, domínio, conteúdo e otimização para IA |
+| Google Search Console | **Disponível** (via `/blog google gsc`) | Dados próprios de tráfego e CTR |
+| Google Analytics (GA4) | **Disponível** (via `/blog google ga4`) | Relatórios de tráfego orgânico |
+| API REST do WordPress | Futuro | Baixa |
+| Contentful / Sanity CMS | Futuro | Baixa |
 
-Community contributions for MCP server implementations are welcome.
-See [CONTRIBUTING.md](../.github/CONTRIBUTING.md) for guidelines.
+Contribuições da comunidade para implementações de servidor MCP são bem-vindas.

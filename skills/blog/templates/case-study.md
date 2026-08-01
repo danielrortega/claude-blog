@@ -1,241 +1,241 @@
-# Template: Case Study
+# Template: Estudo de Caso
 
-**Template Name:** Case Study (Results-Focused Narrative)
-**Target Word Count:** 1,500-2,000 words
-**Description:** A narrative-driven analysis of a specific project, campaign, or initiative that documents the challenge, strategy, execution, and measurable results. Designed to build credibility, demonstrate expertise through real outcomes, and rank for "[topic] case study," "how [company] achieved [result]," and long-tail problem-solution queries.
+**Nome do template:** Estudo de caso (narrativa focada em resultados)
+**Extensão alvo:** 1.500 a 2.000 palavras
+**Descrição:** Análise narrativa de um projeto, campanha ou iniciativa específica, documentando o desafio, a estratégia, a execução e os resultados mensuráveis. Feito para construir credibilidade, demonstrar competência por resultados reais e ranquear para "estudo de caso [tema]", "como a [empresa] conseguiu [resultado]" e consultas de cauda longa do tipo problema-solução.
 
-## When to Use This Template
+## Quando usar este template
 
-- **Content Goals:** Build trust and authority through documented results, generate leads by demonstrating competence, create reference material for sales conversations, attract backlinks from industry publications
-- **Search Intent:** Informational / Commercial investigation: the reader wants proof that a strategy works before committing to it themselves
-- **Best For:** Client success stories, internal project retrospectives, before/after transformations, strategy validation, process documentation
-- **Avoid When:** You lack specific metrics or measurable outcomes (vague "it went well" stories don't qualify), or when the subject hasn't given permission to be referenced
-
----
-
-## Section-by-Section Structure
+- **Objetivos de conteúdo:** construir confiança e autoridade por resultados documentados, gerar oportunidades demonstrando competência, criar material de referência para conversas comerciais, atrair links de publicações do setor
+- **Intenção de busca:** informacional / investigação comercial: o leitor quer prova de que a estratégia funciona antes de se comprometer com ela
+- **Melhor para:** casos de sucesso de clientes, retrospectivas internas de projeto, transformações antes e depois, validação de estratégia, documentação de processo
+- **Evite quando:** você não tem métricas específicas ou resultados mensuráveis (histórias vagas de "deu certo" não servem), ou quando o retratado não autorizou ser citado
 
 ---
 
-### Title (H1)
-
-**Format:** "How [Company/Team] [Achieved Specific Result] in [Timeframe]"
-
-**Examples:**
-- "How Acme Corp Reduced API Latency by 73% in 6 Weeks"
-- "How a 3-Person Team Scaled to 1M Monthly Users in 90 Days"
-- "How We Cut Build Times from 12 Minutes to 45 Seconds"
-
-**Rules:**
-- Include the specific result metric in the title: this is the hook
-- Include the timeframe to create urgency and credibility
-- Use the company/team name if known; use "We" for internal case studies
-- Keep under 70 characters if possible
+## Estrutura seção a seção
 
 ---
 
-### TL;DR Box (concise; length follows the material)
+### Título (H1)
 
-[ANSWER-FIRST] This is the entire case study compressed into a single box. Lead with the headline result number.
+**Formato:** "Como a [Empresa/Equipe] [Conseguiu Resultado Específico] em [Prazo]"
 
-**Format:** A visually distinct callout box (blockquote, colored background, or bordered section) placed immediately after the title.
+**Exemplos:**
+- "Como a Acme Corp Reduziu a Latência da API em 73% em 6 Semanas"
+- "Como uma Equipe de 3 Pessoas Chegou a 1 Milhão de Usuários Mensais em 90 Dias"
+- "Como Cortamos o Tempo de Build de 12 Minutos para 45 Segundos"
 
-**Structure:**
-1. **Headline metric** (1 sentence): The single most impressive result.
-2. **How** (1 sentence): The core strategy in plain language.
-3. **Timeframe** (phrase): How long it took.
-
-**Example:**
-> **TL;DR:** Acme Corp reduced API response times from 1,200ms to 320ms (73% improvement) by migrating from a monolithic REST API to an edge-cached GraphQL gateway. The migration was completed in 6 weeks with zero downtime and a 2-person engineering team.
-
-[STAT: The headline metric that anchors the entire case study]
-
----
-
-### Introduction (100-150 words)
-
-[ANSWER-FIRST] Open with the key result metric in the very first sentence. Don't build up to it. Lead with it.
-
-**Structure:**
-1. **Result lead** (1 sentence): State the primary outcome with specific numbers.
-2. **Context** (2-3 sentences): Who is the subject? What's their scale? Why does this matter to the reader?
-3. **Stakes framing** (1 sentence): What was at risk if the problem wasn't solved?
-4. **Promise** (1 sentence): What the reader will learn from this case study.
-
-[STAT: Secondary metric that adds dimension to the headline result (e.g., cost savings, time saved, user satisfaction improvement)]
-
-[INFO-GAIN: context detail] Share a specific detail about the company or project that makes this relatable to the reader: team size, budget constraints, tech stack, industry, etc.
-
-[INTERNAL-LINK] Link to a related foundational post: "For background on [strategy/technology], see our [Guide to X]."
+**Regras:**
+- Inclua a métrica específica do resultado no título: é ela que fisga
+- Inclua o prazo para criar urgência e credibilidade
+- Use o nome da empresa ou equipe se for conhecido; use "Nós" em casos internos
+- Fique abaixo de 70 caracteres sempre que possível
 
 ---
 
-### The Challenge (200-250 words)
+### Caixa de resumo (concisa; a extensão acompanha o material)
 
-[ANSWER-FIRST] Open with the single most painful symptom of the problem: the thing that made someone say "we have to fix this."
+[ANSWER-FIRST] Este é o estudo de caso inteiro comprimido numa caixa só. Comece pelo número do resultado principal.
 
-**Structure:**
-1. **Pain point** (1-2 sentences): The specific, felt problem. Use concrete details: error rates, customer complaints, revenue impact.
-2. **Root cause** (2-3 sentences): What was actually causing the problem at a technical or strategic level?
-3. **Scale of impact** (1-2 sentences): Quantify the damage: how many users affected, how much revenue at risk, how many engineering hours wasted.
-4. **Failed attempts** (2-3 sentences): What had already been tried and why it didn't work. This builds narrative tension and demonstrates that the eventual solution wasn't the obvious first choice.
-5. **Decision point** (1 sentence): What triggered the decision to try a different approach?
+**Formato:** uma caixa de destaque visualmente distinta (citação, fundo colorido ou seção com borda), colocada logo depois do título.
 
-[STAT: Metric quantifying the severity of the problem before the solution]
+**Estrutura:**
+1. **Métrica principal** (1 frase): o resultado mais impressionante.
+2. **Como** (1 frase): a estratégia central em linguagem simples.
+3. **Prazo** (expressão): quanto tempo levou.
 
-[INFO-GAIN: failed approach detail] Document a specific failed attempt with enough detail that the reader can learn from it. What was tried, what happened, why it failed.
+**Exemplo:**
+> **Em resumo:** a Acme Corp reduziu o tempo de resposta da API de 1.200ms para 320ms (melhora de 73%) migrando de uma API REST monolítica para um gateway GraphQL com cache de borda. A migração foi concluída em 6 semanas, sem indisponibilidade, com uma equipe de 2 pessoas.
 
-[IMAGE] Diagram or screenshot showing the "before" state: the broken architecture, the poor metrics dashboard, the error logs.
-
-**Example opening:**
-> "At peak traffic, Acme's API was returning 500 errors on 12% of requests, and their largest enterprise client had set a 30-day deadline to fix it or cancel their $2M annual contract."
+[STAT: a métrica principal que ancora o estudo de caso inteiro]
 
 ---
 
-### The Strategy (300-400 words)
+### Introdução (100 a 150 palavras)
 
-[ANSWER-FIRST] Open with the core strategic decision in one sentence: what approach was chosen and the single most important reason why.
+[ANSWER-FIRST] Abra com a métrica do resultado já na primeira frase. Não construa até chegar nela. Comece por ela.
 
-**Structure:**
-1. **Strategic choice** (1-2 sentences): What approach was selected? Name the methodology, technology, or framework.
-2. **Why this approach** (3-4 sentences): What made this the right choice over alternatives? Reference the failed attempts from the Challenge section. Include specific criteria used in the decision.
-3. **Key decisions** (3-5 bullets or sub-sections): Break down the 3-5 most important decisions made during strategy formulation. Each should include the decision, the alternatives considered, and the reasoning.
-4. **Risk assessment** (1-2 sentences): What were the known risks and how were they mitigated?
+**Estrutura:**
+1. **Abertura pelo resultado** (1 frase): declare o desfecho principal com números específicos.
+2. **Contexto** (2 a 3 frases): quem é o retratado? Qual a escala? Por que isso importa para o leitor?
+3. **Enquadramento do risco** (1 frase): o que estava em jogo se o problema não fosse resolvido?
+4. **Promessa** (1 frase): o que o leitor vai aprender com este estudo de caso.
 
-[INFO-GAIN: process documentation] This is the highest-value section. Document the decision-making process with enough specificity that another team could replicate the thinking. Include:
-- Selection criteria used to evaluate options
-- Trade-offs explicitly discussed and weighed
-- Any frameworks, scorecards, or evaluation tools used
-- Who was involved in the decision and what perspectives they brought
+[STAT: métrica secundária que dá dimensão ao resultado principal, por exemplo economia de custo, tempo economizado, melhora na satisfação]
 
-[VISUAL: decision-matrix] If applicable, include a table showing the options evaluated, the criteria, and the scores that led to the final choice.
+[INFO-GAIN: detalhe de contexto] Compartilhe um detalhe específico da empresa ou do projeto que torne o caso próximo do leitor: tamanho da equipe, restrição de orçamento, pilha tecnológica, setor.
 
-[STAT: Supporting data point that justified the strategic choice (e.g., benchmark, industry data, competitor analysis)]
-
-[INTERNAL-LINK] Link to a detailed guide on the strategy or technology chosen: "We wrote a comprehensive guide on [strategy/technology]: read it here."
-
-**Example:**
-> "The team chose to migrate from REST to GraphQL: not because of hype, but because their analysis showed that 78% of API calls were over-fetching data by 3-10x, and the client-specific BFF (Backend for Frontend) pattern they'd tried first added latency instead of reducing it."
+[INTERNAL-LINK] Link para um post base relacionado: "Para entender o funcionamento de [estratégia/tecnologia], veja nosso [Guia sobre X]."
 
 ---
 
-### The Implementation (200-300 words)
+### O desafio (200 a 250 palavras)
 
-[ANSWER-FIRST] Open with the total timeline and team size: "A [N]-person team completed the implementation in [timeframe]."
+[ANSWER-FIRST] Abra com o sintoma mais doloroso do problema: aquilo que fez alguém dizer "precisamos resolver isso".
 
-**Structure:**
-1. **Team and timeline** (1-2 sentences): Who did the work, how long it took, and any phasing.
-2. **Step-by-step execution** (numbered list): 4-6 key implementation steps in chronological order. Each step should include what was done, any tools used, and any unexpected challenges.
-3. **Tools and technology** (bulleted list): Specific tools, services, and technologies used.
-4. **Critical moment** (1-2 sentences): One specific moment where things almost went wrong or an unexpected insight changed the plan.
+**Estrutura:**
+1. **Dor** (1 a 2 frases): o problema concreto e sentido. Use detalhes específicos: taxa de erro, reclamações, impacto na receita.
+2. **Causa raiz** (2 a 3 frases): o que de fato causava o problema, no nível técnico ou estratégico?
+3. **Dimensão do impacto** (1 a 2 frases): quantifique o estrago: quantos usuários afetados, quanta receita em risco, quantas horas de engenharia desperdiçadas.
+4. **Tentativas frustradas** (2 a 3 frases): o que já tinha sido tentado e por que não funcionou. Isso cria tensão narrativa e mostra que a solução final não era a escolha óbvia.
+5. **Ponto de virada** (1 frase): o que disparou a decisão de tentar outro caminho?
 
-[IMAGE] Architecture diagram, timeline visualization, or screenshot of the implementation in progress.
+[STAT: métrica que quantifica a gravidade do problema antes da solução]
 
-[INFO-GAIN: implementation detail] Share a specific technical or operational detail that made a material difference: a configuration setting, a migration trick, a coordination process. The kind of detail that saves someone else hours.
+[INFO-GAIN: detalhe da tentativa frustrada] Documente uma tentativa que falhou com detalhe suficiente para o leitor aprender com ela. O que foi tentado, o que aconteceu, por que falhou.
 
-[STAT: Implementation efficiency metric (time spent, cost, iterations required)]
+[IMAGE] Diagrama ou captura de tela do estado "antes": a arquitetura quebrada, o painel de métricas ruim, os logs de erro.
 
-**Example step:**
-> 3. **Deployed edge caching layer** (Week 3-4): Set up Cloudflare Workers as a caching layer between the GraphQL gateway and origin servers. Used stale-while-revalidate with a 60s TTL: this single change accounted for 40% of the total latency reduction.
-
----
-
-### The Results (200-300 words)
-
-[ANSWER-FIRST] Open by restating the headline metric, then immediately expand with 2-3 supporting metrics. Use before/after format.
-
-**Structure:**
-1. **Headline result** (1 sentence): The primary metric, stated as before -> after with percentage change.
-2. **Supporting metrics** (bulleted list): 3-5 additional measurable outcomes, each with before/after values.
-3. **Business impact** (1-2 sentences): Translate technical metrics into business outcomes (revenue retained, customers saved, team hours freed, etc.).
-4. **Timeline** (1 sentence): When results were measured relative to implementation completion.
-5. **Unexpected benefits** (1-2 sentences): Any positive outcomes that weren't part of the original goals.
-
-[VISUAL: grouped-bar chart] Before/after comparison of 3-5 key metrics. Use a grouped bar chart with clear labels showing the "before" and "after" values side by side.
-
-[STAT: All results metrics with specific before/after numbers]
-
-[IMAGE] Screenshot of the "after" state: the improved dashboard, the clean error logs, the performance graph.
-
-**Example:**
-> | Metric | Before | After | Change |
-> |--------|--------|-------|--------|
-> | API response time (p95) | 1,200ms | 320ms | -73% |
-> | Error rate (5xx) | 12% | 0.3% | -97.5% |
-> | Infrastructure cost | $8,400/mo | $3,200/mo | -62% |
-> | Client satisfaction (NPS) | 24 | 67 | +179% |
+**Exemplo de abertura:**
+> "No pico de tráfego, a API da Acme devolvia erro 500 em 12% das requisições, e o maior cliente corporativo tinha dado 30 dias de prazo para resolver ou cancelaria o contrato anual de US$ 2 milhões."
 
 ---
 
-### Key Takeaways (150-200 words)
+### A estratégia (300 a 400 palavras)
 
-[ANSWER-FIRST] Open with the single most transferable lesson: "The biggest lesson from this project is [X]."
+[ANSWER-FIRST] Abra com a decisão estratégica central em uma frase: qual caminho foi escolhido e a razão mais importante para isso.
 
-**Format:** 3-5 numbered takeaways, each as a bolded insight followed by 1-2 sentences of explanation.
+**Estrutura:**
+1. **Escolha estratégica** (1 a 2 frases): que abordagem foi selecionada? Nomeie a metodologia, tecnologia ou framework.
+2. **Por que essa abordagem** (3 a 4 frases): o que a tornou a escolha certa frente às alternativas? Retome as tentativas frustradas da seção anterior. Inclua os critérios específicos usados na decisão.
+3. **Decisões-chave** (3 a 5 marcadores ou subseções): destrinche as 3 a 5 decisões mais importantes da formulação da estratégia. Cada uma deve trazer a decisão, as alternativas consideradas e o raciocínio.
+4. **Avaliação de risco** (1 a 2 frases): quais eram os riscos conhecidos e como foram mitigados?
 
-**Criteria for each takeaway:**
-- It must be **transferable**: applicable to the reader's own situation, not just this specific case
-- It must be **specific**: actionable advice, not a platitude
-- It must be **earned**: grounded in what actually happened in this case study
+[INFO-GAIN: documentação de processo] Esta é a seção de maior valor. Documente o processo de decisão com especificidade suficiente para outra equipe reproduzir o raciocínio. Inclua:
+- Critérios de seleção usados para avaliar as opções
+- Trade-offs discutidos e ponderados explicitamente
+- Frameworks, planilhas de pontuação ou ferramentas de avaliação usados
+- Quem participou da decisão e que perspectivas trouxe
 
-[INFO-GAIN: contrarian or surprising lesson] Include at least one takeaway that challenges conventional wisdom or contradicts common advice in the space.
+[VISUAL: decision-matrix] Se couber, inclua uma tabela com as opções avaliadas, os critérios e as notas que levaram à escolha final.
 
-**Example:**
-> **1. Measure the problem before designing the solution.**
-> The team spent the first week purely on instrumentation: adding detailed logging and tracing before writing a single line of migration code. This investment paid for itself by revealing that the real bottleneck wasn't where they assumed (database queries) but in serialization overhead.
+[STAT: dado de apoio que justificou a escolha estratégica, por exemplo benchmark, dado do setor, análise de concorrente]
 
-[INTERNAL-LINK] Link each takeaway to a related deep-dive post where the reader can learn more about that specific principle.
+[INTERNAL-LINK] Link para um guia detalhado sobre a estratégia ou tecnologia escolhida: "Escrevemos um guia completo sobre [estratégia/tecnologia]: leia aqui."
+
+**Exemplo:**
+> "A equipe optou por migrar de REST para GraphQL, não por modismo, mas porque a análise mostrou que 78% das chamadas de API buscavam de 3 a 10 vezes mais dados do que o necessário, e o padrão BFF (Backend for Frontend) que tinham tentado antes acrescentava latência em vez de reduzir."
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### A implementação (200 a 300 palavras)
+
+[ANSWER-FIRST] Abra com o prazo total e o tamanho da equipe: "Uma equipe de [N] pessoas concluiu a implementação em [prazo]."
+
+**Estrutura:**
+1. **Equipe e prazo** (1 a 2 frases): quem fez o trabalho, quanto tempo levou e como foi faseado.
+2. **Execução passo a passo** (lista numerada): 4 a 6 passos-chave em ordem cronológica. Cada passo traz o que foi feito, as ferramentas usadas e os imprevistos.
+3. **Ferramentas e tecnologia** (lista com marcadores): ferramentas, serviços e tecnologias específicos.
+4. **Momento crítico** (1 a 2 frases): um momento em que quase deu errado ou em que uma percepção inesperada mudou o plano.
+
+[IMAGE] Diagrama de arquitetura, linha do tempo ou captura da implementação em andamento.
+
+[INFO-GAIN: detalhe de implementação] Compartilhe um detalhe técnico ou operacional que fez diferença material: uma configuração, um truque de migração, um processo de coordenação. O tipo de detalhe que economiza horas de outra pessoa.
+
+[STAT: métrica de eficiência da implementação: tempo gasto, custo, iterações necessárias]
+
+**Exemplo de passo:**
+> 3. **Camada de cache de borda no ar** (semanas 3 e 4): configuramos Cloudflare Workers como camada de cache entre o gateway GraphQL e os servidores de origem. Usamos stale-while-revalidate com TTL de 60s: essa mudança sozinha respondeu por 40% da redução total de latência.
+
+---
+
+### Os resultados (200 a 300 palavras)
+
+[ANSWER-FIRST] Abra retomando a métrica principal e expanda imediatamente com 2 a 3 métricas de apoio. Use o formato antes e depois.
+
+**Estrutura:**
+1. **Resultado principal** (1 frase): a métrica primária, no formato antes -> depois, com variação percentual.
+2. **Métricas de apoio** (lista com marcadores): 3 a 5 desfechos mensuráveis adicionais, cada um com valores de antes e depois.
+3. **Impacto no negócio** (1 a 2 frases): traduza as métricas técnicas em resultados de negócio (receita retida, clientes preservados, horas liberadas).
+4. **Prazo** (1 frase): quando os resultados foram medidos em relação ao fim da implementação.
+5. **Benefícios inesperados** (1 a 2 frases): ganhos que não estavam nos objetivos originais.
+
+[VISUAL: grouped-bar chart] Comparação antes e depois de 3 a 5 métricas-chave. Use um gráfico de barras agrupadas com rótulos claros, mostrando os valores lado a lado.
+
+[STAT: todas as métricas de resultado com números específicos de antes e depois]
+
+[IMAGE] Captura do estado "depois": o painel melhorado, os logs limpos, o gráfico de desempenho.
+
+**Exemplo:**
+> | Métrica | Antes | Depois | Variação |
+> |---------|-------|--------|----------|
+> | Tempo de resposta da API (p95) | 1.200ms | 320ms | -73% |
+> | Taxa de erro (5xx) | 12% | 0,3% | -97,5% |
+> | Custo de infraestrutura | US$ 8.400/mês | US$ 3.200/mês | -62% |
+> | Satisfação do cliente (NPS) | 24 | 67 | +179% |
+
+---
+
+### Principais conclusões (150 a 200 palavras)
+
+[ANSWER-FIRST] Abra com a lição mais transferível: "A maior lição deste projeto é [X]."
+
+**Formato:** 3 a 5 conclusões numeradas, cada uma como uma percepção em negrito seguida de 1 a 2 frases de explicação.
+
+**Critérios para cada conclusão:**
+- Precisa ser **transferível**: aplicável à situação do leitor, não só a este caso
+- Precisa ser **específica**: conselho acionável, não lugar-comum
+- Precisa ser **conquistada**: ancorada no que de fato aconteceu neste caso
+
+[INFO-GAIN: lição contraintuitiva ou surpreendente] Inclua pelo menos uma conclusão que contrarie o senso comum ou o conselho corrente da área.
+
+**Exemplo:**
+> **1. Meça o problema antes de desenhar a solução.**
+> A equipe passou a primeira semana só instrumentando: acrescentou log e tracing detalhados antes de escrever uma linha de código de migração. O investimento se pagou ao revelar que o gargalo real não estava onde imaginavam (consultas ao banco), e sim no custo de serialização.
+
+[INTERNAL-LINK] Ligue cada conclusão a um post aprofundado onde o leitor possa se aprofundar naquele princípio.
+
+---
+
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
 
 [FAQ]
 
-**Format:** Each question as an H3, answer in 2-4 sentences.
+**Formato:** cada pergunta como H3, resposta em 2 a 4 frases.
 
-**Question selection criteria:**
-1. **Applicability question:** "Would this approach work for [different context]?" (Address transferability)
-2. **Resource question:** "What was the budget/team size for this project?" (Address feasibility)
-3. **Alternative question:** "What would you do differently if you started over?" (Demonstrate honest reflection)
+**Critérios de seleção das perguntas:**
+1. **Pergunta de aplicabilidade:** "Essa abordagem funcionaria em [outro contexto]?" (trata a transferibilidade)
+2. **Pergunta de recursos:** "Qual foi o orçamento e o tamanho da equipe?" (trata a viabilidade)
+3. **Pergunta de alternativa:** "O que você faria diferente se começasse de novo?" (demonstra reflexão honesta)
 
-[STAT when useful: a verified metric that materially improves an FAQ answer]
+[STAT quando útil: uma métrica verificada que melhore de fato a resposta]
 
-**Example:**
+**Exemplo:**
 
-#### Would this approach work for a smaller team?
+#### Essa abordagem funcionaria para uma equipe menor?
 
-[2-4 sentence answer addressing how the strategy scales down, with specific modifications for smaller teams.]
+[Resposta de 2 a 4 frases sobre como a estratégia se adapta a escalas menores, com modificações específicas.]
 
-#### What was the total cost of this project?
+#### Qual foi o custo total do projeto?
 
-[2-4 sentence answer with transparent cost breakdown: team time, tools, infrastructure, opportunity cost.]
+[Resposta de 2 a 4 frases com abertura transparente de custo: horas da equipe, ferramentas, infraestrutura, custo de oportunidade.]
 
-#### What would you do differently?
+#### O que você faria diferente?
 
-[2-4 sentence answer with honest reflection: this builds trust and demonstrates real expertise.]
+[Resposta de 2 a 4 frases com reflexão honesta: isso constrói confiança e demonstra competência real.]
 
 ---
 
-## Template Checklist
+## Lista de verificação do template
 
-Before publishing, verify:
+Antes de publicar, confirme:
 
-- [ ] Title includes a specific metric, timeframe, and subject
-- [ ] TL;DR box is present and contains the headline result in under 60 words
-- [ ] Introduction opens with the result metric, not background context
-- [ ] The Challenge section quantifies the problem with specific numbers
-- [ ] The Challenge section documents at least one failed prior attempt
-- [ ] The Strategy section explains *why* this approach was chosen over alternatives
-- [ ] The Strategy section includes enough process detail for replication [INFO-GAIN: process documentation]
-- [ ] The Implementation section includes specific tools, timeline, and team size
-- [ ] The Results section has before/after metrics for at least 3 KPIs
-- [ ] Results include a [VISUAL: grouped-bar chart] for before/after comparison
-- [ ] Key Takeaways are transferable, specific, and grounded in the case
-- [ ] At least 3 [INFO-GAIN] elements with original process or observational data
-- [ ] Statistics are optional, material to the case, and verified when used
-- [ ] FAQ addresses applicability, feasibility, and honest reflection
-- [ ] All [INTERNAL-LINK] zones have contextual links to related content
-- [ ] Coverage is complete for the case-study intent without padding
-- [ ] Subject has given permission to be referenced (or case is anonymized)
-- [ ] Meta description accurately summarizes the visible case and result
+- [ ] O título traz métrica específica, prazo e sujeito
+- [ ] A caixa de resumo está presente e traz o resultado principal em menos de 60 palavras
+- [ ] A introdução abre com a métrica do resultado, não com contexto de fundo
+- [ ] A seção do desafio quantifica o problema com números específicos
+- [ ] A seção do desafio documenta pelo menos uma tentativa anterior frustrada
+- [ ] A seção da estratégia explica *por que* essa abordagem foi escolhida em vez das alternativas
+- [ ] A seção da estratégia traz detalhe de processo suficiente para replicação [INFO-GAIN: documentação de processo]
+- [ ] A seção de implementação traz ferramentas, prazo e tamanho da equipe específicos
+- [ ] A seção de resultados tem métricas de antes e depois para pelo menos 3 indicadores
+- [ ] Os resultados incluem um [VISUAL: grouped-bar chart] para a comparação antes e depois
+- [ ] As conclusões são transferíveis, específicas e ancoradas no caso
+- [ ] Pelo menos 3 elementos [INFO-GAIN] com processo original ou dado observacional
+- [ ] As estatísticas são opcionais, relevantes ao caso e verificadas quando usadas
+- [ ] As perguntas frequentes tratam aplicabilidade, viabilidade e reflexão honesta
+- [ ] Todas as zonas [INTERNAL-LINK] têm links contextuais para conteúdo relacionado
+- [ ] A cobertura atende à intenção de estudo de caso sem encher linguiça
+- [ ] O retratado autorizou ser citado (ou o caso foi anonimizado)
+- [ ] A meta description resume com precisão o caso e o resultado visíveis

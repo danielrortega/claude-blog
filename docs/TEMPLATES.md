@@ -1,435 +1,437 @@
-# Content Templates
+# Templates de Conteúdo
 
-Reference guide for the 12 content type templates included with `claude-blog`.
-Templates provide structural blueprints for different article types, ensuring
-consistent quality and optimization across all content.
-
----
-
-## Template Overview
-
-| Template | Content Type | Word Count Target | Best For |
-|----------|-------------|-------------------|----------|
-| how-to-guide.md | How-To Guide | 2,000-2,500 | Step-by-step tutorials, process guides |
-| listicle.md | Listicle | 1,500-2,000 | Ranked lists, curated collections |
-| case-study.md | Case Study | 2,000-3,000 | Client results, project retrospectives |
-| comparison.md | Comparison | 1,500-2,000 | X vs Y, tool evaluations |
-| pillar-page.md | Pillar Page | 3,000-4,000 | Comprehensive topic guides |
-| product-review.md | Product Review | 1,500-2,500 | Tool reviews, software evaluations |
-| thought-leadership.md | Thought Leadership | 2,000-3,000 | Industry analysis, opinion pieces |
-| roundup.md | Expert Roundup | 2,000-2,500 | Multi-source collections, trend reports |
-| tutorial.md | Tutorial | 2,500-3,500 | Code walkthroughs, technical demos |
-| news-analysis.md | News Analysis | 800-1,500 | Industry updates, algorithm changes |
-| data-research.md | Data/Research | 2,500-3,500 | Original research, survey results |
-| faq-knowledge.md | FAQ / Knowledge Base | 1,500-2,000 | Reference content, Q&A collections |
+Guia de referência dos 12 templates por tipo de conteúdo incluídos no
+`claude-blog`. Os templates dão a planta estrutural de cada tipo de artigo,
+garantindo qualidade e otimização consistentes em todo o conteúdo.
 
 ---
 
-## How Templates Work
+## Visão geral dos templates
 
-Templates are structural blueprints, not fill-in-the-blank forms. Each template
-defines:
-
-1. **Section structure**: The H2/H3 skeleton for the content type
-2. **Answer-first prompts**: Guidance for opening each section with data
-3. **Coverage prompts**: Intent-dependent completeness without padding
-4. **Info gain markers**: Where original data or unique perspective is needed
-5. **Visual element placement**: Where charts and images should appear
-6. **Optional Q&A zone**: Where genuine unanswered reader questions fit
-7. **Linking zones**: Where internal and external links are most natural
+| Template | Tipo de conteúdo | Extensão alvo | Melhor para |
+|----------|------------------|---------------|-------------|
+| how-to-guide.md | Guia prático | 2.000-2.500 | Tutoriais passo a passo, guias de processo |
+| listicle.md | Lista | 1.500-2.000 | Listas ranqueadas, coleções curadas |
+| case-study.md | Estudo de caso | 2.000-3.000 | Resultados de cliente, retrospectivas de projeto |
+| comparison.md | Comparação | 1.500-2.000 | X versus Y, avaliação de ferramentas |
+| pillar-page.md | Página pilar | 3.000-4.000 | Guias abrangentes de tema |
+| product-review.md | Análise de produto | 1.500-2.500 | Análises de ferramenta, avaliação de software |
+| thought-leadership.md | Artigo de opinião | 2.000-3.000 | Análise de setor, peças opinativas |
+| roundup.md | Compilação de especialistas | 2.000-2.500 | Coleções multifonte, relatórios de tendência |
+| tutorial.md | Tutorial | 2.500-3.500 | Passo a passo de código, demonstrações técnicas |
+| news-analysis.md | Análise de notícia | 800-1.500 | Atualizações do setor, mudanças de algoritmo |
+| data-research.md | Dados e pesquisa | 2.500-3.500 | Pesquisa própria, resultados de enquete |
+| faq-knowledge.md | Perguntas frequentes / base de conhecimento | 1.500-2.000 | Conteúdo de referência, coleções de perguntas |
 
 ---
 
-## Template Structure Anatomy
+## Como os templates funcionam
 
-Every template follows a consistent internal structure:
+Templates são plantas estruturais, não formulários de preencher lacunas. Cada um
+define:
+
+1. **Estrutura de seções**: o esqueleto de H2 e H3 do tipo de conteúdo
+2. **Pedidos de resposta antecipada**: orientação para abrir cada seção com dado
+3. **Pedidos de cobertura**: completude dependente da intenção, sem enchimento
+4. **Marcadores de ganho de informação**: onde dado próprio ou perspectiva singular é necessário
+5. **Posicionamento de elementos visuais**: onde gráficos e imagens devem aparecer
+6. **Zona opcional de perguntas**: onde cabem dúvidas reais ainda não respondidas
+7. **Zonas de link**: onde links internos e externos ficam mais naturais
+
+---
+
+## Anatomia da estrutura de um template
+
+Todo template segue uma estrutura interna consistente:
 
 ```
-# [Template Name]
+# [Nome do template]
 
-## Metadata
-- Content type: [type]
-- Word count: [range]
-- H2 sections: [count]
-- Charts: [count]
-- Images: [count]
-- Optional Q&A items: [count by reader need]
+## Metadados
+- Tipo de conteúdo: [tipo]
+- Extensão: [faixa]
+- Seções H2: [quantidade]
+- Gráficos: [quantidade]
+- Imagens: [quantidade]
+- Perguntas opcionais: [quantidade conforme a necessidade do leitor]
 
-## Section Structure
+## Estrutura de seções
 
 ### Frontmatter
-[Required fields for this content type]
+[Campos obrigatórios para este tipo de conteúdo]
 
-### Introduction (100-150 words)
-- Hook: [Type of hook that works best]
-- Problem/opportunity: [Framing guidance]
-- Promise: [What reader learns]
+### Introdução (100 a 150 palavras)
+- Gancho: [tipo de gancho que funciona melhor]
+- Problema ou oportunidade: [orientação de enquadramento]
+- Promessa: [o que o leitor aprende]
 
-### H2: [Section Pattern] (word count)
-ANSWER-FIRST: [Guidance for the opening stat paragraph]
-CONTENT: [What to cover in the body]
-INFO-GAIN: [Where unique perspective is needed]
-VISUAL: [Chart type or image suggestion]
+### H2: [Padrão da seção] (extensão)
+ANSWER-FIRST: [orientação para o parágrafo de abertura com dado]
+CONTENT: [o que cobrir no corpo]
+INFO-GAIN: [onde a perspectiva singular é necessária]
+VISUAL: [tipo de gráfico ou sugestão de imagem]
 
-[... additional H2 sections ...]
+[... seções H2 adicionais ...]
 
-### Optional Q&A Zone (count by reader need)
-[Visible Q&A guidance specific to this content type; omit when it would repeat
-the article. Q&A presence earns no score.]
+### Zona opcional de perguntas (quantidade conforme a necessidade)
+[Orientação de perguntas visíveis específica deste tipo de conteúdo; omita quando
+for repetir o artigo. A presença de perguntas não rende pontuação.]
 
-### Conclusion (100-150 words)
-[Closing pattern for this content type]
+### Conclusão (100 a 150 palavras)
+[Padrão de fechamento deste tipo de conteúdo]
 
-## Optimization Notes
-[Content-type-specific SEO and GEO tips]
+## Notas de otimização
+[Dicas de SEO e GEO específicas do tipo de conteúdo]
 ```
 
-### Section Markers
+### Marcadores de seção
 
-| Marker | Purpose |
-|--------|---------|
-| `ANSWER-FIRST:` | Guidance to state the section point early and support material claims; no fixed length or statistic quota |
-| `CONTENT:` | What topics and subtopics to cover in the section body |
-| `INFO-GAIN:` | Where original data, first-hand experience, or unique perspective is needed |
-| `VISUAL:` | Recommended chart type or image placement |
-| `FAQ-ZONE:` | Where an optional visible Q&A section may appear when reader need warrants it |
-| `LINK-ZONE:` | Natural places for internal or external links |
+Os marcadores permanecem em inglês: são lidos pelo `blog-writer`, não são prosa.
+
+| Marcador | Finalidade |
+|----------|------------|
+| `ANSWER-FIRST:` | Orientação para declarar o ponto da seção cedo e sustentar as afirmações relevantes; sem extensão fixa nem cota de estatística |
+| `CONTENT:` | Que temas e subtemas cobrir no corpo da seção |
+| `INFO-GAIN:` | Onde dado próprio, experiência direta ou perspectiva singular é necessário |
+| `VISUAL:` | Tipo de gráfico recomendado ou posicionamento de imagem |
+| `FAQ-ZONE:` | Onde uma seção opcional de perguntas visíveis pode entrar, quando a necessidade do leitor justificar |
+| `LINK-ZONE:` | Lugares naturais para links internos ou externos |
 
 ---
 
-## How /blog write Selects Templates
+## Como o /blog write escolhe o template
 
-When `/blog write` is invoked, the orchestrator selects a template based on:
+Quando o `/blog write` é invocado, o orquestrador escolhe um template com base em:
 
-### 1. Explicit User Request
+### 1. Pedido explícito do usuário
 
-If the user specifies a content type, that template is used directly:
+Se a pessoa especifica um tipo de conteúdo, aquele template é usado diretamente:
 
 ```
-/blog write "10 Best CI/CD Tools for 2026"      --> listicle.md
-/blog write "How to Set Up Kubernetes Monitoring" --> how-to-guide.md
-/blog write case study: Acme Corp migration       --> case-study.md
+/blog write "10 Melhores Ferramentas de CI/CD para 2026"   --> listicle.md
+/blog write "Como Configurar Monitoramento no Kubernetes"  --> how-to-guide.md
+/blog write estudo de caso: migração da Acme Corp          --> case-study.md
 ```
 
-### 2. Topic Analysis
+### 2. Análise do tema
 
-If no type is specified, the orchestrator analyzes the topic:
+Se nenhum tipo for especificado, o orquestrador analisa o tema:
 
-| Topic Signal | Template Selected |
-|-------------|-------------------|
-| "How to...", "Guide to..." | how-to-guide.md |
-| Numbers in title ("10 Best...", "7 Ways...") | listicle.md |
-| "X vs Y", "compared", "alternative" | comparison.md |
-| "Review", "tested", "hands-on" | product-review.md |
-| Company/project name + "results" | case-study.md |
-| Broad topic, "complete guide", "everything" | pillar-page.md |
-| "Tutorial", "walkthrough", "step by step" | tutorial.md |
-| News event, update, announcement | news-analysis.md |
-| Survey, study, data, research | data-research.md |
-| "FAQ", "questions about" | faq-knowledge.md |
-| Industry trend, prediction, opinion | thought-leadership.md |
-| Expert quotes, collection, roundup | roundup.md |
+| Sinal do tema | Template escolhido |
+|---------------|--------------------|
+| "Como fazer...", "Guia de..." | how-to-guide.md |
+| Números no título ("10 Melhores...", "7 Formas...") | listicle.md |
+| "X versus Y", "comparado", "alternativa" | comparison.md |
+| "Análise", "testado", "na prática" | product-review.md |
+| Nome de empresa ou projeto mais "resultados" | case-study.md |
+| Tema amplo, "guia completo", "tudo sobre" | pillar-page.md |
+| "Tutorial", "passo a passo" | tutorial.md |
+| Evento de notícia, atualização, anúncio | news-analysis.md |
+| Enquete, estudo, dados, pesquisa | data-research.md |
+| "Perguntas frequentes", "dúvidas sobre" | faq-knowledge.md |
+| Tendência do setor, previsão, opinião | thought-leadership.md |
+| Citações de especialistas, coleção, compilação | roundup.md |
 
-### 3. Default
+### 3. Padrão
 
-If the topic is ambiguous, the orchestrator defaults to `how-to-guide.md` as the
-most versatile template and confirms with the user.
+Se o tema for ambíguo, o orquestrador recorre ao `how-to-guide.md`, o template
+mais versátil, e confirma com o usuário.
 
 ---
 
-## Template Details
+## Detalhes de cada template
 
 ### how-to-guide.md
 
-Best for step-by-step guides where the reader wants to accomplish something.
+Melhor para guias passo a passo em que o leitor quer realizar algo.
 
 ```
-Structure:
-  Introduction (hook with difficulty/time stat)
-  H2: Why This Matters (context + data)
-  H2: Prerequisites / What You Need
-  H2: Step 1 - [Action] (answer-first with success rate)
-  H2: Step 2 - [Action]
-  H2: Step 3 - [Action]
-  H2: Common Mistakes to Avoid
-  H2: Optional Q&A (count by reader need)
-  Conclusion (key takeaways + next step)
+Estrutura:
+  Introdução (gancho com dado de dificuldade ou tempo)
+  H2: Por que isso importa (contexto e dados)
+  H2: Pré-requisitos / o que você precisa
+  H2: Passo 1 - [Ação] (resposta antecipada com taxa de sucesso)
+  H2: Passo 2 - [Ação]
+  H2: Passo 3 - [Ação]
+  H2: Erros comuns a evitar
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (principais conclusões e próximo passo)
 
-Visuals: Process flow chart, before/after comparison chart
-Images: Screenshots or relevant stock for each major step
+Visuais: fluxograma de processo, gráfico comparativo antes e depois
+Imagens: capturas de tela ou banco de imagens para cada passo importante
 ```
 
 ### listicle.md
 
-Best for ranked lists, tool collections, and curated recommendations.
+Melhor para listas ranqueadas, coleções de ferramentas e recomendações curadas.
 
 ```
-Structure:
-  Introduction (hook with total count stat)
-  H2: [Item 1] - [Key Differentiator]
-  H2: [Item 2] - [Key Differentiator]
-  ... (5-15 items depending on depth)
-  H2: How We Evaluated [Category]
-  H2: Optional Q&A (count by reader need)
-  Conclusion (top pick + comparison table)
+Estrutura:
+  Introdução (gancho com o total de itens)
+  H2: [Item 1] - [Diferencial central]
+  H2: [Item 2] - [Diferencial central]
+  ... (5 a 15 itens, conforme a profundidade)
+  H2: Como avaliamos [categoria]
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (escolha principal e tabela comparativa)
 
-Visuals: Comparison bar chart, market share donut chart
-Images: Logo/screenshot per item, or grouped comparison image
+Visuais: gráfico de barras comparativo, gráfico de rosca de participação
+Imagens: logo ou captura por item, ou imagem comparativa agrupada
 ```
 
 ### case-study.md
 
-Best for showcasing real results with specific metrics.
+Melhor para mostrar resultados reais com métricas específicas.
 
 ```
-Structure:
-  Introduction (headline result stat)
-  H2: The Challenge
-  H2: The Approach / Solution
-  H2: Implementation Details
-  H2: Results (metrics + timeline)
-  H2: Key Takeaways
-  H2: Optional Q&A (count by reader need)
-  Conclusion (CTA to learn more)
+Estrutura:
+  Introdução (dado do resultado principal)
+  H2: O desafio
+  H2: A abordagem / solução
+  H2: Detalhes da implementação
+  H2: Resultados (métricas e linha do tempo)
+  H2: Principais conclusões
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (chamada para saber mais)
 
-Visuals: Before/after bar chart, timeline or results line chart
-Images: Screenshots, dashboards, team/process photos
-Info-Gain: Real metrics from the actual project (critical)
+Visuais: gráfico de barras antes e depois, linha do tempo ou gráfico de linhas
+Imagens: capturas de tela, painéis, fotos de equipe ou processo
+Ganho de informação: métricas reais do projeto (crítico)
 ```
 
 ### comparison.md
 
-Best for X vs Y evaluations and tool comparisons.
+Melhor para avaliações X versus Y e comparação de ferramentas.
 
 ```
-Structure:
-  Introduction (market context stat)
-  H2: Quick Comparison Table
-  H2: [Product A] Overview
-  H2: [Product B] Overview
-  H2: Feature-by-Feature Comparison
-  H2: Pricing Comparison
-  H2: Which Should You Choose?
-  H2: Optional Q&A (count by reader need)
-  Conclusion (recommendation matrix)
+Estrutura:
+  Introdução (dado de contexto de mercado)
+  H2: Tabela comparativa rápida
+  H2: Panorama do [Produto A]
+  H2: Panorama do [Produto B]
+  H2: Comparação funcionalidade a funcionalidade
+  H2: Comparação de preços
+  H2: Qual você deve escolher?
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (matriz de recomendação)
 
-Visuals: Feature comparison radar chart, pricing bar chart
-Images: Product screenshots, UI comparisons
+Visuais: gráfico radar de funcionalidades, gráfico de barras de preço
+Imagens: capturas do produto, comparações de interface
 ```
 
 ### pillar-page.md
 
-Best for comprehensive guides that serve as hub pages for topic clusters.
+Melhor para guias abrangentes que servem de eixo para clusters de temas.
 
 ```
-Structure:
-  Introduction (scope + authority stat)
-  H2: What Is [Topic]? (definition + context)
-  H2: Why [Topic] Matters in 2026
-  H2: [Core Subtopic 1] (detailed coverage)
-  H2: [Core Subtopic 2]
-  H2: [Core Subtopic 3]
-  H2: [Core Subtopic 4]
-  H2: [Advanced Topic]
-  H2: Tools and Resources
-  H2: Optional Q&A (count by reader need)
-  Conclusion (learning path + next steps)
+Estrutura:
+  Introdução (escopo e dado de autoridade)
+  H2: O que é [Tema]? (definição e contexto)
+  H2: Por que [Tema] importa em 2026
+  H2: [Subtema central 1] (cobertura detalhada)
+  H2: [Subtema central 2]
+  H2: [Subtema central 3]
+  H2: [Subtema central 4]
+  H2: [Tema avançado]
+  H2: Ferramentas e recursos
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (trilha de aprendizado e próximos passos)
 
-Visuals: 3-4 charts (diverse types), topic overview diagram
-Images: 5+ images distributed throughout
-Linking: Heavy internal linking to supporting cluster pages
+Visuais: 3 a 4 gráficos (tipos variados), diagrama panorâmico do tema
+Imagens: 5 ou mais distribuídas ao longo do texto
+Links: link building interno pesado para as páginas de apoio do cluster
 ```
 
 ### product-review.md
 
-Best for hands-on tool reviews with real testing results.
+Melhor para análises práticas de ferramenta com resultados reais de teste.
 
 ```
-Structure:
-  Introduction (verdict stat, e.g., performance score)
-  H2: Quick Verdict
-  H2: What Is [Product]?
-  H2: Setup and First Impressions
-  H2: Key Features Tested
-  H2: Performance Results
-  H2: Pricing and Value
-  H2: Pros and Cons
-  H2: Who Is This For?
-  H2: Optional Q&A (count by reader need)
-  Conclusion (final rating + recommendation)
+Estrutura:
+  Introdução (dado do veredito, por exemplo nota de desempenho)
+  H2: Veredito rápido
+  H2: O que é o [Produto]?
+  H2: Instalação e primeiras impressões
+  H2: Funcionalidades testadas
+  H2: Resultados de desempenho
+  H2: Preço e custo-benefício
+  H2: Prós e contras
+  H2: Para quem serve?
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (nota final e recomendação)
 
-Visuals: Performance benchmark chart, pricing comparison
-Images: Screenshots from actual testing (critical for E-E-A-T)
-Info-Gain: First-hand testing data (must demonstrate Experience)
+Visuais: gráfico de benchmark de desempenho, comparação de preços
+Imagens: capturas do teste real (crítico para E-E-A-T)
+Ganho de informação: dados de teste em primeira mão (precisa demonstrar experiência)
 ```
 
 ### thought-leadership.md
 
-Best for industry analysis and forward-looking opinion pieces.
+Melhor para análise de setor e peças opinativas voltadas ao futuro.
 
 ```
-Structure:
-  Introduction (trend stat that sets the stage)
-  H2: The Current Landscape
-  H2: What's Changing (analysis + data)
-  H2: Why This Matters
-  H2: Evidence and Interpretation (supported first-hand perspective when
-      supplied, otherwise differentiated sourced analysis)
-  H2: What to Do About It (actionable advice)
-  H2: Looking Ahead (predictions)
-  H2: Optional Q&A (count by reader need)
-  Conclusion (key thesis + call to action)
+Estrutura:
+  Introdução (dado de tendência que monta o palco)
+  H2: O cenário atual
+  H2: O que está mudando (análise e dados)
+  H2: Por que isso importa
+  H2: Evidência e interpretação (perspectiva própria comprovada quando
+      fornecida, senão análise diferenciada com fonte)
+  H2: O que fazer a respeito (conselho acionável)
+  H2: Olhando adiante (previsões)
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (tese central e chamada para ação)
 
-Visuals: Trend line chart, market shift chart
-Info-Gain: Supported personal perspective when available, or differentiated
-sourced synthesis and clearly framed analysis
+Visuais: gráfico de linha de tendência, gráfico de virada de mercado
+Ganho de informação: perspectiva pessoal comprovada quando disponível, ou
+síntese diferenciada com fonte e análise claramente enquadrada
 ```
 
 ### roundup.md
 
-Best for collecting insights from multiple sources or experts.
+Melhor para reunir percepções de várias fontes ou especialistas.
 
 ```
-Structure:
-  Introduction (theme + number of sources stat)
-  H2: Key Finding 1 (synthesis from multiple sources)
-  H2: Key Finding 2
-  H2: Key Finding 3
-  H2: Expert Perspectives
-  H2: What This Means for [Audience]
-  H2: Optional Q&A (count by reader need)
-  Conclusion (synthesis + action items)
+Estrutura:
+  Introdução (tema e dado da quantidade de fontes)
+  H2: Achado principal 1 (síntese de várias fontes)
+  H2: Achado principal 2
+  H2: Achado principal 3
+  H2: Perspectivas dos especialistas
+  H2: O que isso significa para [público]
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (síntese e itens de ação)
 
-Visuals: Multi-source comparison chart, trend aggregation
+Visuais: gráfico comparativo multifonte, agregação de tendência
 ```
 
 ### tutorial.md
 
-Best for technical walkthroughs with code examples.
+Melhor para passo a passo técnico com exemplos de código.
 
 ```
-Structure:
-  Introduction (what you'll build + tech stack)
-  H2: Prerequisites and Setup
-  H2: Step 1 - [Foundation]
-  H2: Step 2 - [Core Feature]
-  H2: Step 3 - [Integration]
-  H2: Step 4 - [Testing/Deployment]
-  H2: Troubleshooting Common Issues
-  H2: Optional Q&A (count by reader need)
-  Conclusion (complete code repo link + extensions)
+Estrutura:
+  Introdução (o que você vai construir e a pilha tecnológica)
+  H2: Pré-requisitos e configuração
+  H2: Passo 1 - [Fundação]
+  H2: Passo 2 - [Funcionalidade central]
+  H2: Passo 3 - [Integração]
+  H2: Passo 4 - [Teste e publicação]
+  H2: Solução de problemas comuns
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (link do repositório completo e extensões)
 
-Visuals: Architecture diagram (SVG), performance chart
-Images: Terminal screenshots, UI results
-Special: Code blocks with syntax highlighting throughout
+Visuais: diagrama de arquitetura (SVG), gráfico de desempenho
+Imagens: capturas de terminal, resultados na interface
+Especial: blocos de código com destaque de sintaxe ao longo de todo o texto
 ```
 
 ### news-analysis.md
 
-Best for timely commentary on industry events and updates.
+Melhor para comentário oportuno sobre eventos e atualizações do setor.
 
 ```
-Structure:
-  Introduction (the news + impact stat)
-  H2: What Happened
-  H2: Why It Matters
-  H2: Who's Affected
-  H2: What to Do Now (immediate actions)
-  H2: Optional Q&A (count by reader need)
-  Conclusion (outlook)
+Estrutura:
+  Introdução (a notícia e o dado de impacto)
+  H2: O que aconteceu
+  H2: Por que importa
+  H2: Quem é afetado
+  H2: O que fazer agora (ações imediatas)
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (perspectiva)
 
-Visuals: 1-2 charts (impact visualization)
-Note: Shorter format (800-1,500 words), speed matters
+Visuais: 1 a 2 gráficos (visualização de impacto)
+Observação: formato mais curto (800 a 1.500 palavras), velocidade importa
 ```
 
 ### data-research.md
 
-Best for original research, surveys, and data analysis.
+Melhor para pesquisa própria, enquetes e análise de dados.
 
 ```
-Structure:
-  Introduction (headline finding)
-  H2: Methodology
-  H2: Key Finding 1 (data + analysis)
-  H2: Key Finding 2
-  H2: Key Finding 3
-  H2: Implications
-  H2: Limitations
-  H2: Optional Q&A (count by reader need)
-  Conclusion (summary of findings + data access)
+Estrutura:
+  Introdução (achado principal)
+  H2: Metodologia
+  H2: Achado principal 1 (dados e análise)
+  H2: Achado principal 2
+  H2: Achado principal 3
+  H2: Implicações
+  H2: Limitações
+  H2: Perguntas opcionais (quantidade conforme a necessidade)
+  Conclusão (resumo dos achados e acesso aos dados)
 
-Visuals: 3-4 charts (data visualizations are central)
-Info-Gain: Original data is the entire value proposition
+Visuais: 3 a 4 gráficos (as visualizações são o centro)
+Ganho de informação: o dado próprio é toda a proposta de valor
 ```
 
 ### faq-knowledge.md
 
-Best for comprehensive Q&A reference content.
+Melhor para conteúdo abrangente de referência em perguntas e respostas.
 
 ```
-Structure:
-  Introduction (topic scope + common questions stat)
-  H2: [Category 1] Questions
-    H3: Question 1? (concise, complete answer with support where needed)
-    H3: Question 2?
-  H2: [Category 2] Questions
-    H3: Question 3?
-    H3: Question 4?
-  H2: [Category 3] Questions
-  Conclusion (additional resources)
+Estrutura:
+  Introdução (escopo do tema e dado sobre as dúvidas comuns)
+  H2: Perguntas de [Categoria 1]
+    H3: Pergunta 1? (resposta concisa e completa, com respaldo onde necessário)
+    H3: Pergunta 2?
+  H2: Perguntas de [Categoria 2]
+    H3: Pergunta 3?
+    H3: Pergunta 4?
+  H2: Perguntas de [Categoria 3]
+  Conclusão (recursos adicionais)
 
-Visuals: 1-2 summary charts
-Special: Use statistics only when relevant, verified, and useful
-Schema: FAQPage is optional visible-content markup with no readiness-score benefit
+Visuais: 1 a 2 gráficos de resumo
+Especial: use estatísticas apenas quando relevantes, verificadas e úteis
+Schema: FAQPage é marcação opcional de conteúdo visível, sem ganho na nota de prontidão
 ```
 
 ---
 
-## How to Customize Templates
+## Como personalizar templates
 
-### Modifying an Existing Template
+### Modificar um template existente
 
-1. Navigate to `~/.claude/skills/blog/templates/`
-2. Open the template file you want to modify
-3. Adjust section structure, word counts, or guidance
-4. Changes take effect immediately (no restart needed)
+1. Vá até `~/.claude/skills/blog/templates/`
+2. Abra o arquivo de template que quer alterar
+3. Ajuste a estrutura de seções, as extensões ou a orientação
+4. As mudanças valem de imediato (não precisa reiniciar)
 
-### Creating a New Template
+### Criar um template novo
 
-1. Copy an existing template as a starting point:
+1. Copie um template existente como ponto de partida:
    ```bash
    cp ~/.claude/skills/blog/templates/how-to-guide.md \
-      ~/.claude/skills/blog/templates/my-custom-type.md
+      ~/.claude/skills/blog/templates/meu-tipo-personalizado.md
    ```
-2. Define the section structure for your content type
-3. Add `ANSWER-FIRST:`, `VISUAL:`, and `INFO-GAIN:` markers
-4. Set appropriate word count targets
-5. Add a topic signal entry in the template selection logic
+2. Defina a estrutura de seções do seu tipo de conteúdo
+3. Acrescente os marcadores `ANSWER-FIRST:`, `VISUAL:` e `INFO-GAIN:`
+4. Defina metas de extensão adequadas
+5. Acrescente uma entrada de sinal de tema na lógica de seleção de template
 
-### Template Best Practices
+### Boas práticas de template
 
-- Keep sections focused on one topic each
-- Place `VISUAL:` markers where data naturally supports a chart
-- Use `INFO-GAIN:` markers liberally: these are the sections that
-  differentiate your content from AI-generated consensus
-- Set realistic word counts that match the content type's natural depth
-- Include an FAQ zone only when genuine reader questions warrant it; keep a conclusion when the content type benefits from one
+- Mantenha cada seção focada em um único assunto
+- Coloque os marcadores `VISUAL:` onde os dados naturalmente sustentam um gráfico
+- Use os marcadores `INFO-GAIN:` com generosidade: são essas as seções que
+  diferenciam seu conteúdo do consenso gerado por IA
+- Defina extensões realistas, compatíveis com a profundidade natural do tipo de conteúdo
+- Inclua uma zona de perguntas só quando dúvidas reais de leitor justificarem; mantenha uma conclusão quando o tipo de conteúdo se beneficiar dela
 
 ---
 
-## Template and Scoring Integration
+## Integração entre template e pontuação
 
-Templates guide content creation; the scoring system validates the result.
-The mapping between template features and scoring categories:
+Os templates guiam a criação; o sistema de pontuação valida o resultado.
+O mapeamento entre recursos do template e categorias de pontuação:
 
-| Template Feature | Scoring Category | Points At Stake |
-|-----------------|------------------|-----------------|
-| Section structure | Schema & Structure | 10 |
-| Purpose-first markers | Purpose Fit and Reader Utility | 20 |
-| Visual placement | Visual Elements | 15 |
-| Optional FAQ zone | Reader utility only; no Google/AI score effect | 0 |
-| Info-gain markers | Content Quality | 25 |
-| Citation guidance | Statistics & Citations | 20 |
+| Recurso do template | Categoria de pontuação | Pontos em jogo |
+|---------------------|------------------------|----------------|
+| Estrutura de seções | Schema e estrutura | 10 |
+| Marcadores orientados ao propósito | Aderência ao propósito e utilidade ao leitor | 20 |
+| Posicionamento visual | Elementos visuais | 15 |
+| Zona opcional de perguntas | Só utilidade ao leitor; sem efeito na nota de Google ou IA | 0 |
+| Marcadores de ganho de informação | Qualidade de conteúdo | 25 |
+| Orientação de citação | Estatísticas e citações | 20 |
 
-A well-followed template naturally produces content scoring 75+ without
-additional optimization passes.
+Um template bem seguido produz naturalmente conteúdo com nota 75 ou mais, sem
+passagens adicionais de otimização.

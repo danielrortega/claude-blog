@@ -1,48 +1,48 @@
-# Core Web Vitals Audit
+# Auditoria de Core Web Vitals
 
-**URL/Origin:** {target}
-**Strategy:** {strategy}
+**URL/Origem:** {target}
+**Estratégia:** {strategy}
 
-## CrUX Field Data (28-day rolling average)
+## Dados de campo do CrUX (média móvel de 28 dias)
 
-Real Chrome user experience data from the Chrome UX Report.
+Dados reais de experiência de usuários do Chrome, vindos do Chrome UX Report.
 
-| Metric | p75 Value | Rating | Good Threshold | Distribution |
-|--------|-----------|--------|----------------|-------------|
-| LCP | {lcp_value} | {lcp_rating} | ≤ 2,500ms | Good: {lcp_good}% / NI: {lcp_ni}% / Poor: {lcp_poor}% |
-| INP | {inp_value} | {inp_rating} | ≤ 200ms | Good: {inp_good}% / NI: {inp_ni}% / Poor: {inp_poor}% |
-| CLS | {cls_value} | {cls_rating} | ≤ 0.1 | Good: {cls_good}% / NI: {cls_ni}% / Poor: {cls_poor}% |
-| FCP | {fcp_value} | {fcp_rating} | ≤ 1,800ms | Good: {fcp_good}% / NI: {fcp_ni}% / Poor: {fcp_poor}% |
-| TTFB | {ttfb_value} | {ttfb_rating} | ≤ 800ms | Good: {ttfb_good}% / NI: {ttfb_ni}% / Poor: {ttfb_poor}% |
+| Métrica | Valor p75 | Classificação | Limite "bom" | Distribuição |
+|---------|-----------|---------------|--------------|--------------|
+| LCP | {lcp_value} | {lcp_rating} | ≤ 2.500ms | Bom: {lcp_good}% / Precisa melhorar: {lcp_ni}% / Ruim: {lcp_poor}% |
+| INP | {inp_value} | {inp_rating} | ≤ 200ms | Bom: {inp_good}% / Precisa melhorar: {inp_ni}% / Ruim: {inp_poor}% |
+| CLS | {cls_value} | {cls_rating} | ≤ 0,1 | Bom: {cls_good}% / Precisa melhorar: {cls_ni}% / Ruim: {cls_poor}% |
+| FCP | {fcp_value} | {fcp_rating} | ≤ 1.800ms | Bom: {fcp_good}% / Precisa melhorar: {fcp_ni}% / Ruim: {fcp_poor}% |
+| TTFB | {ttfb_value} | {ttfb_rating} | ≤ 800ms | Bom: {ttfb_good}% / Precisa melhorar: {ttfb_ni}% / Ruim: {ttfb_poor}% |
 
-**Collection Period:** {collection_start} to {collection_end}
+**Período de coleta:** {collection_start} a {collection_end}
 
-## Lighthouse Lab Scores
+## Notas de laboratório do Lighthouse
 
-| Category | Score |
-|----------|-------|
-| Performance | {perf_score}/100 |
-| Accessibility | {a11y_score}/100 |
-| Best Practices | {bp_score}/100 |
+| Categoria | Nota |
+|-----------|------|
+| Desempenho | {perf_score}/100 |
+| Acessibilidade | {a11y_score}/100 |
+| Boas práticas | {bp_score}/100 |
 | SEO | {seo_score}/100 |
 
-## CrUX History Trends (25-week)
+## Tendências do histórico CrUX (25 semanas)
 
-| Metric | Direction | Change | Earliest → Latest |
-|--------|-----------|--------|-------------------|
+| Métrica | Direção | Variação | Mais antigo → Mais recente |
+|---------|---------|----------|----------------------------|
 {trends_table}
 
-## Top Opportunities
+## Principais oportunidades
 
-| Opportunity | Estimated Savings |
-|-------------|-------------------|
+| Oportunidade | Economia estimada |
+|--------------|-------------------|
 {opportunities_table}
 
-## Recommendations
+## Recomendações
 
 {recommendations}
 
 ---
-*CrUX data updated daily ~04:00 UTC. 28-day rolling average.*
-*INP replaced FID as the responsiveness Core Web Vital on March 12, 2024.*
-*Generated {timestamp}.*
+*Os dados do CrUX são atualizados diariamente por volta das 04:00 UTC. Média móvel de 28 dias.*
+*O INP substituiu o FID como Core Web Vital de responsividade em 12 de março de 2024.*
+*Gerado em {timestamp}.*
