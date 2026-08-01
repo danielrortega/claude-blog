@@ -1,385 +1,385 @@
-# Template: Data Research (Original Data Study)
+# Template: Pesquisa de Dados (estudo com dados próprios)
 
-**Template ID:** data-research
-**Target Length:** 2,000-3,000 words
-**Content Type:** Original data study with visualizations and actionable findings
-**Primary Search Intent:** Informational ("study," "data," "statistics," "research," "benchmark")
+**ID do template:** data-research
+**Extensão alvo:** 2.000 a 3.000 palavras
+**Tipo de conteúdo:** estudo com dados próprios, visualizações e achados acionáveis
+**Intenção de busca principal:** informacional ("estudo", "dados", "estatísticas", "pesquisa", "benchmark")
 
-## When to Use This Template
+## Quando usar este template
 
-Use this template when:
-- You have original data from surveys, experiments, tool analysis, or proprietary sources
-- The study reveals findings that challenge assumptions or fill knowledge gaps
-- You can present specific numbers, percentages, and comparisons
-- Search queries include "statistics," "data," "study," "research," "benchmark," "how many"
-- The data is unique enough that other sites will want to cite it (link-building potential)
+Use quando:
+- Você tem dados próprios de pesquisas, experimentos, análise de ferramentas ou fontes proprietárias
+- O estudo revela achados que confrontam suposições ou preenchem lacunas de conhecimento
+- Você consegue apresentar números, percentuais e comparações específicos
+- As consultas de busca incluem "estatísticas", "dados", "estudo", "pesquisa", "benchmark", "quantos"
+- Os dados são singulares o bastante para outros sites quererem citá-los (potencial de links)
 
-Do NOT use this template for:
-- Step-by-step instructions (use tutorial)
-- Timely event commentary (use news-analysis)
-- Reference/FAQ content (use faq-knowledge)
-- Analysis based entirely on someone else's data (write a news-analysis instead)
+NÃO use para:
+- Instruções passo a passo (use tutorial)
+- Comentário de evento recente (use news-analysis)
+- Conteúdo de referência ou perguntas frequentes (use faq-knowledge)
+- Análise inteiramente baseada em dados de terceiros (escreva um news-analysis)
 
-**Value Note:** Original research can be useful when the methodology, evidence,
-limitations, and results are transparent. The template itself carries no
-ranking, backlink, or AI-citation guarantee.
+**Nota sobre valor:** pesquisa própria pode ser útil quando metodologia, evidência,
+limitações e resultados são transparentes. O template em si não garante
+ranqueamento, links nem citação por IA.
 
 ---
 
-## Title Format
+## Formato do título
 
 ```
-[Study Title]: We Analyzed [N] [Things] - Key Findings
+[Título do Estudo]: Analisamos [N] [Coisas] - Principais Achados
 ```
 
-**Examples:**
-- "AI Code Review Study: 10,000 Pull Request Findings"
-- "Blog SEO Benchmark: Lessons From 500 Technical Blogs"
-- "Developer Tooling Survey: What 2,000 Engineers Reported"
+**Exemplos:**
+- "Estudo de Revisão de Código por IA: Achados de 10.000 Pull Requests"
+- "Benchmark de SEO para Blogs: Lições de 500 Blogs Técnicos"
+- "Pesquisa de Ferramentas de Desenvolvimento: O Que 2.000 Engenheiros Relataram"
 
-**Title Rules:**
-- Include the specific sample size (N) - this is your credibility signal
-- Name what was analyzed (pull requests, blogs, engineers, etc.)
-- "We Analyzed/Studied/Surveyed" establishes original research
-- Use a specific finding-led promise instead of generic reveal phrasing
-- Keep under 70 characters for SERP display when possible
+**Regras do título:**
+- Inclua o tamanho específico da amostra (N): é o seu sinal de credibilidade
+- Nomeie o que foi analisado (pull requests, blogs, engenheiros)
+- "Analisamos/Estudamos/Pesquisamos" estabelece pesquisa própria
+- Use uma promessa específica de achado em vez de formulação genérica de revelação
+- Fique abaixo de 70 caracteres para exibição no resultado de busca, quando possível
 
-**Alternative Title Formats:**
-- "[N] [Things] Analyzed: [Key Finding] ([Year] Study)"
-- "The State of [Topic]: [N]-[Unit] Analysis"
-- "[Topic] by the Numbers: Insights from [N] [Things]"
-
----
-
-## Section-by-Section Structure
+**Formatos alternativos de título:**
+- "[N] [Coisas] Analisadas: [Achado Central] (Estudo [Ano])"
+- "O Estado de [Tema]: Análise de [N] [Unidades]"
+- "[Tema] em Números: O Que Revelam [N] [Coisas]"
 
 ---
 
-### Optional TL;DR Box
+## Estrutura seção a seção
 
-[ANSWER-FIRST] Summarize the findings most important to the reader. Include
-numbers only where they are verified and necessary to understand the result.
-Use as much space as completeness requires without padding.
+---
+
+### Caixa de resumo, opcional
+
+[ANSWER-FIRST] Resuma os achados mais importantes para o leitor. Inclua números
+apenas onde estiverem verificados e forem necessários para entender o resultado.
+Use o espaço que a completude exigir, sem encher linguiça.
 
 ```markdown
-> **TL;DR:** We analyzed [N] [things] and found [Finding 1 with specific number].
-> [Finding 2 with specific number]. Most surprisingly, [Finding 3 with specific number].
-> [One-sentence implication for the reader].
+> **Em resumo:** analisamos [N] [coisas] e encontramos [Achado 1 com número específico].
+> [Achado 2 com número específico]. O mais surpreendente: [Achado 3 com número específico].
+> [Implicação para o leitor em uma frase].
 ```
 
-**Rules:**
-- State the primary result and practical implication clearly.
-- Keep methodology or limitation context when omission would mislead.
-- Do not force a number, surprise framing, or fixed finding count.
-- Do not predict citation performance.
+**Regras:**
+- Declare com clareza o resultado principal e a implicação prática.
+- Mantenha o contexto de metodologia ou limitação quando a omissão puder enganar.
+- Não force número, enquadramento de surpresa nem quantidade fixa de achados.
+- Não faça previsão de desempenho de citação.
 
 ---
 
-### Key Findings (200-300 words)
+### Principais achados (200 a 300 palavras)
 
-[ANSWER-FIRST] Present the supported headline findings as useful bullet points.
-Each bullet should retain enough context to avoid misleading reuse; no fixed
-count or citation prediction applies.
+[ANSWER-FIRST] Apresente os achados de destaque comprovados como marcadores úteis.
+Cada marcador precisa manter contexto suficiente para não induzir a erro quando
+reaproveitado; não vale quantidade fixa nem previsão de citação.
 
 ```markdown
-## Key Findings
+## Principais achados
 
-[ANSWER-FIRST] Our analysis of [N] [things] over [time period] revealed [N] key patterns.
+[ANSWER-FIRST] Nossa análise de [N] [coisas] ao longo de [período] revelou [N] padrões centrais.
 
-[VISUAL: horizontal-bar chart showing the top 5-7 findings ranked by magnitude or importance]
+[VISUAL: horizontal-bar chart com os 5 a 7 principais achados ordenados por magnitude ou importância]
 
-1. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
-2. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
-3. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
-4. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
-5. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
-6. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
-7. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
+1. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
+2. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
+3. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
+4. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
+5. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
+6. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
+7. **[Achado como estatística]:** [Uma frase de contexto]. ([N]% da [amostra])
 ```
 
-**Rules:**
-- Each bullet must be self-contained - citable without context
-- Bold the data point, follow with one sentence of context
-- Order by magnitude of impact or surprise, not by study order
-- Include the visual chart immediately - readers want the overview first
+**Regras:**
+- Cada marcador precisa ser autossuficiente, citável fora de contexto
+- Destaque o dado em negrito e siga com uma frase de contexto
+- Ordene por magnitude de impacto ou surpresa, não pela ordem do estudo
+- Coloque o gráfico logo de início: o leitor quer primeiro o panorama
 
 ---
 
-### Methodology (200-300 words)
+### Metodologia (200 a 300 palavras)
 
-[ANSWER-FIRST] State exactly what you studied, how you studied it, and why the reader should trust the results.
+[ANSWER-FIRST] Declare exatamente o que você estudou, como estudou e por que o leitor deve confiar nos resultados.
 
 ```markdown
-## Methodology
+## Metodologia
 
-[ANSWER-FIRST] We analyzed [N] [things] collected from [source] between [start date] and [end date] using [analysis approach].
+[ANSWER-FIRST] Analisamos [N] [coisas] coletadas de [fonte] entre [data inicial] e [data final] usando [abordagem de análise].
 
-### Data Source
+### Fonte dos dados
 
-[Where the data came from, how it was collected, any selection criteria]
+[De onde vieram os dados, como foram coletados, critérios de seleção]
 
-[INFO-GAIN: proprietary data source or unique collection method, documented
-well enough for readers to evaluate and, where possible, reproduce the work]
+[INFO-GAIN: fonte de dados proprietária ou método de coleta singular, documentado
+o bastante para o leitor avaliar e, quando possível, reproduzir o trabalho]
 
-### Sample
+### Amostra
 
-| Parameter | Value |
+| Parâmetro | Valor |
 |-----------|-------|
-| Sample size | [N] |
-| Time period | [Start] to [End] |
-| Source | [Where from] |
-| Selection criteria | [How items were chosen] |
-| Exclusions | [What was filtered out and why] |
+| Tamanho da amostra | [N] |
+| Período | [Início] a [Fim] |
+| Fonte | [Origem] |
+| Critério de seleção | [Como os itens foram escolhidos] |
+| Exclusões | [O que foi filtrado e por quê] |
 
-### Analysis Approach
+### Abordagem de análise
 
-[1-2 paragraphs on how the data was analyzed - tools used, statistical methods, categorization approach]
+[1 a 2 parágrafos sobre como os dados foram analisados: ferramentas usadas, métodos estatísticos, abordagem de categorização]
 
-### Limitations
+### Limitações
 
-- [Limitation 1]: [How it might affect findings]
-- [Limitation 2]: [How it might affect findings]
-- [Limitation 3]: [How it might affect findings]
+- [Limitação 1]: [Como pode afetar os achados]
+- [Limitação 2]: [Como pode afetar os achados]
+- [Limitação 3]: [Como pode afetar os achados]
 ```
 
-**Rules:**
-- Be transparent about limitations - this builds credibility
-- The [INFO-GAIN] here is your unique data source or method
-- Include enough detail that another researcher could evaluate (not necessarily reproduce) the study
-- State exclusion criteria explicitly - readers will ask about selection bias
+**Regras:**
+- Seja transparente sobre as limitações: isso constrói credibilidade
+- O [INFO-GAIN] aqui é sua fonte ou método singular de dados
+- Inclua detalhe suficiente para outro pesquisador avaliar (não necessariamente reproduzir) o estudo
+- Declare os critérios de exclusão explicitamente: o leitor vai perguntar sobre viés de seleção
 
-**Claim provenance:**
+**Procedência das afirmações:**
 
-Give every statistic enough context and source detail to identify, verify, and
-interpret it. Relevant details may include the publisher or report title,
-publication date or study period, methodology and limitations, a stable URL,
-and a retrieval date for changeable or undated material. No fixed citation form
-is required. Drop unverifiable statistics and replace contradicted statistics
-with verified alternatives. Reference:
+Dê a cada estatística contexto e detalhe de fonte suficientes para identificá-la,
+verificá-la e interpretá-la. Detalhes relevantes podem incluir o publicador ou
+título do relatório, data de publicação ou período do estudo, metodologia e
+limitações, uma URL estável e a data de consulta para material mutável ou sem
+data. Não se exige um formato fixo de citação. Descarte estatísticas não
+verificáveis e substitua as contraditas por alternativas verificadas. Referência:
 `skills/blog/references/flow-alignment.md`.
 
 ---
 
-### Finding Sections (300-400 words each, 4 findings)
+### Seções de achado (300 a 400 palavras cada, 4 achados)
 
-Each finding uses an intent-matched H2. Questions and declarative findings are
-both valid. Follow this structure for each:
+Cada achado usa um H2 alinhado à intenção. Perguntas e achados declarativos são
+igualmente válidos. Siga esta estrutura em cada um:
 
 ```markdown
-## [Finding as a Question]?
+## [Achado como pergunta]?
 
-[ANSWER-FIRST] [State the finding as a specific statistic in the opening sentence. E.g., "78% of technical blogs that rank on page one use..."]
+[ANSWER-FIRST] [Declare o achado como estatística específica já na frase de abertura. Por exemplo, "78% dos blogs técnicos que ranqueiam na primeira página usam..."]
 
-[2-3 paragraphs of detailed analysis:]
+[2 a 3 parágrafos de análise detalhada:]
 
-**The data:**
+**Os dados:**
 
-[VISUAL: chart appropriate to the finding - vary chart types across findings]
+[VISUAL: gráfico adequado ao achado; varie os tipos entre os achados]
 
-Suggested chart types per finding:
-- Finding 1: Horizontal bar chart (comparison)
-- Finding 2: Line chart (trend over time)
-- Finding 3: Scatter plot (correlation)
-- Finding 4: Stacked bar chart (composition)
+Tipos de gráfico sugeridos por achado:
+- Achado 1: barras horizontais (comparação)
+- Achado 2: linhas (tendência ao longo do tempo)
+- Achado 3: dispersão (correlação)
+- Achado 4: barras empilhadas (composição)
 
-**What this means:** [Interpretation of the data - what pattern does this reveal?]
+**O que isso significa:** [Interpretação dos dados: que padrão isso revela?]
 
-**How this compares:** [Comparison to industry benchmarks, prior research, or conventional wisdom]
+**Como se compara:** [Comparação com benchmarks do setor, pesquisas anteriores ou senso comum]
 
-| This Study | Industry Benchmark | Difference |
-|------------|--------------------|------------|
-| [Our finding] | [Benchmark] | [Delta] |
+| Este estudo | Benchmark do setor | Diferença |
+|-------------|--------------------|-----------|
+| [Nosso achado] | [Benchmark] | [Variação] |
 
-[STAT: supporting data point from an external source that validates or contrasts with the finding]
+[STAT: dado de apoio de fonte externa que valide ou contraste com o achado]
 
-**Practical implication:** [What should the reader do differently based on this finding?]
+**Implicação prática:** [O que o leitor deve fazer diferente a partir deste achado?]
 
-[INTERNAL-LINK: link to content that helps the reader act on this finding]
+[INTERNAL-LINK: link para conteúdo que ajude o leitor a agir sobre este achado]
 ```
 
-**Rules for finding sections:**
-- Always open with the data point - never bury the lead
-- Each finding must have its own visualization (vary chart types)
-- Compare to a benchmark or prior research for context
-- End with a practical implication - "so what?" for the reader
-- Vary chart types across findings - don't use the same chart 4 times
+**Regras das seções de achado:**
+- Comece sempre pelo dado: nunca enterre a informação principal
+- Cada achado precisa da própria visualização (varie os tipos de gráfico)
+- Compare a um benchmark ou pesquisa anterior para dar contexto
+- Termine com a implicação prática: o "e daí?" para o leitor
+- Varie os tipos de gráfico entre os achados: não use o mesmo 4 vezes
 
 ---
 
-### Surprises & Outliers (150-200 words)
+### Surpresas e pontos fora da curva (150 a 200 palavras)
 
-[ANSWER-FIRST] Highlight findings that were unexpected or that challenge common assumptions. This section builds credibility - it shows you followed the data rather than confirming a narrative.
+[ANSWER-FIRST] Destaque achados inesperados ou que confrontem suposições comuns. Esta seção constrói credibilidade: mostra que você seguiu os dados em vez de confirmar uma narrativa.
 
 ```markdown
-## Surprises & Outliers
+## Surpresas e pontos fora da curva
 
-[ANSWER-FIRST] [N] findings contradicted our initial hypotheses or conventional wisdom.
+[ANSWER-FIRST] [N] achados contrariaram nossas hipóteses iniciais ou o senso comum.
 
-**Surprise 1: [Counter-intuitive finding]**
-We expected [expected result], but the data showed [actual result]. [Brief explanation of why this might be the case].
+**Surpresa 1: [Achado contraintuitivo]**
+Esperávamos [resultado esperado], mas os dados mostraram [resultado real]. [Explicação breve de por que isso pode ocorrer].
 
-**Surprise 2: [Outlier or anomaly]**
-[Description of the outlier and what it might indicate]
+**Surpresa 2: [Ponto fora da curva ou anomalia]**
+[Descrição do ponto fora da curva e do que ele pode indicar]
 
-[INFO-GAIN: honest reflection on what was unexpected - this demonstrates intellectual rigor and makes the study more trustworthy]
+[INFO-GAIN: reflexão honesta sobre o que foi inesperado; isso demonstra rigor intelectual e torna o estudo mais confiável]
 
-> **What this tells us:** [1-2 sentence meta-insight about what the surprises reveal]
+> **O que isso nos diz:** [Meta-percepção de 1 a 2 frases sobre o que as surpresas revelam]
 ```
 
-**Rules:**
-- Include at least 2 surprises or outliers
-- Be honest about what contradicted expectations
-- Offer a hypothesis for the surprise, but flag it as speculation
-- This section is often the most-shared part of a data study
+**Regras:**
+- Inclua ao menos 2 surpresas ou pontos fora da curva
+- Seja honesto sobre o que contrariou as expectativas
+- Ofereça uma hipótese para a surpresa, mas sinalize que é especulação
+- Esta seção costuma ser a parte mais compartilhada de um estudo de dados
 
 ---
 
-### Limitations & Future Research (100-150 words)
+### Limitações e pesquisa futura (100 a 150 palavras)
 
-[ANSWER-FIRST] Acknowledge what this study does not cover and what questions remain open.
+[ANSWER-FIRST] Reconheça o que o estudo não cobre e que perguntas seguem abertas.
 
 ```markdown
-## Limitations & Future Research
+## Limitações e pesquisa futura
 
-[ANSWER-FIRST] This study has [N] key limitations that readers should consider when applying these findings.
+[ANSWER-FIRST] Este estudo tem [N] limitações centrais que o leitor deve considerar ao aplicar os achados.
 
-**What this study doesn't cover:**
-- [Limitation 1]: [Brief explanation]
-- [Limitation 2]: [Brief explanation]
+**O que este estudo não cobre:**
+- [Limitação 1]: [Explicação breve]
+- [Limitação 2]: [Explicação breve]
 
-**Open questions for future research:**
-- [Question 1]
-- [Question 2]
-- [Question 3]
+**Perguntas abertas para pesquisa futura:**
+- [Pergunta 1]
+- [Pergunta 2]
+- [Pergunta 3]
 
-[STAT: if applicable, reference a related study that addresses one of these gaps]
+[STAT: se aplicável, cite um estudo relacionado que trate uma dessas lacunas]
 ```
 
-**Rules:**
-- This section builds trust - be genuinely transparent
-- Distinguish between limitations (things that weaken the findings) and scope boundaries (things outside the study's intent)
-- Suggest specific future research directions (you may write those follow-ups)
+**Regras:**
+- Esta seção constrói confiança: seja genuinamente transparente
+- Separe limitações (o que enfraquece os achados) de fronteiras de escopo (o que estava fora da intenção do estudo)
+- Sugira direções específicas de pesquisa futura (talvez você escreva esses desdobramentos)
 
 ---
 
-### Implications & Recommendations (200-300 words)
+### Implicações e recomendações (200 a 300 palavras)
 
-[ANSWER-FIRST] Translate findings into specific, actionable recommendations for the reader.
+[ANSWER-FIRST] Traduza os achados em recomendações específicas e acionáveis.
 
 ```markdown
-## Implications & Recommendations
+## Implicações e recomendações
 
-[ANSWER-FIRST] Based on our findings, [audience] should [highest-priority recommendation].
+[ANSWER-FIRST] Com base nos nossos achados, [público] deveria [recomendação de maior prioridade].
 
-### For [Audience Segment 1]:
+### Para [Segmento de público 1]:
 
-1. **[Recommendation]:** Based on [Finding], [specific action]. [Expected impact].
-2. **[Recommendation]:** Based on [Finding], [specific action]. [Expected impact].
+1. **[Recomendação]:** com base em [Achado], [ação específica]. [Impacto esperado].
+2. **[Recomendação]:** com base em [Achado], [ação específica]. [Impacto esperado].
 
-### For [Audience Segment 2]:
+### Para [Segmento de público 2]:
 
-1. **[Recommendation]:** Based on [Finding], [specific action]. [Expected impact].
-2. **[Recommendation]:** Based on [Finding], [specific action]. [Expected impact].
+1. **[Recomendação]:** com base em [Achado], [ação específica]. [Impacto esperado].
+2. **[Recomendação]:** com base em [Achado], [ação específica]. [Impacto esperado].
 
-[INTERNAL-LINK: link to tutorial or guide content that helps implement these recommendations]
+[INTERNAL-LINK: link para tutorial ou guia que ajude a implementar estas recomendações]
 
-[VISUAL: summary infographic or decision matrix if applicable]
+[VISUAL: infográfico de resumo ou matriz de decisão, se aplicável]
 ```
 
-**Rules:**
-- Tie every recommendation directly to a specific finding (cite it)
-- Be specific enough that the reader can take action
-- Segment recommendations by audience if the study has broad appeal
-- Include expected impact where possible
+**Regras:**
+- Amarre cada recomendação diretamente a um achado específico (cite-o)
+- Seja específico o bastante para o leitor agir
+- Segmente as recomendações por público, se o estudo tiver alcance amplo
+- Inclua o impacto esperado quando possível
 
 ---
 
-### Optional Reader Questions (count by reader need)
+### Perguntas do leitor, opcionais (quantidade conforme a necessidade)
 
-[ANSWER-FIRST] for each question. Anticipate questions about methodology, applicability, and specific findings.
+[ANSWER-FIRST] em cada pergunta. Antecipe dúvidas sobre metodologia, aplicabilidade e achados específicos.
 
 ```markdown
-## Frequently Asked Questions
+## Perguntas frequentes
 
-### How was this data collected?
+### Como estes dados foram coletados?
 
-[ANSWER-FIRST] [Direct answer in 1-2 sentences]. See our [Methodology](#methodology) section for full details.
+[ANSWER-FIRST] [Resposta direta em 1 a 2 frases]. Veja a seção [Metodologia](#metodologia) para os detalhes completos.
 
-### Does this apply to [specific audience/context]?
+### Isso se aplica a [público/contexto específico]?
 
-[ANSWER-FIRST] [Direct answer with scope clarification]. [Any caveats].
+[ANSWER-FIRST] [Resposta direta com esclarecimento de escopo]. [Ressalvas].
 
-### How does this compare to [previous study/industry benchmark]?
+### Como isso se compara a [estudo anterior/benchmark do setor]?
 
-[ANSWER-FIRST] [Direct comparison with specific numbers]. [Key difference explained].
+[ANSWER-FIRST] [Comparação direta com números específicos]. [Diferença central explicada].
 
-[STAT: comparative data point]
+[STAT: dado comparativo]
 
-### Can I cite this research?
+### Posso citar esta pesquisa?
 
-[ANSWER-FIRST] Yes. Please cite as: [Your name/org], "[Study Title]," [Publication name], [Date]. [Link to this page].
+[ANSWER-FIRST] Sim. Cite como: [Seu nome/organização], "[Título do estudo]", [Nome da publicação], [Data]. [Link para esta página].
 
-### When will this data be updated?
+### Quando estes dados serão atualizados?
 
-[ANSWER-FIRST] [Direct answer with timeline or conditions for update].
+[ANSWER-FIRST] [Resposta direta com prazo ou condições de atualização].
 ```
 
-**FAQ Rules:**
-- Include a methodology question (most common reader concern)
-- Include a scope/applicability question
-- Include a citation question (encourage backlinks)
-- Answers should be concise and complete; Google has no required answer length
+**Regras das perguntas frequentes:**
+- Inclua uma pergunta de metodologia (a dúvida mais comum do leitor)
+- Inclua uma pergunta de escopo e aplicabilidade
+- Inclua uma pergunta sobre citação (incentiva links de volta)
+- As respostas devem ser concisas e completas; o Google não exige extensão mínima
 
 ---
 
-### Data Appendix
+### Apêndice de dados
 
 ```markdown
-## Data Appendix
+## Apêndice de dados
 
-### Summary Data Table
+### Tabela-resumo dos dados
 
-| [Category] | [Metric 1] | [Metric 2] | [Metric 3] |
-|------------|-------------|-------------|-------------|
-| [Row 1] | [Value] | [Value] | [Value] |
-| [Row 2] | [Value] | [Value] | [Value] |
-| [Row 3] | [Value] | [Value] | [Value] |
+| [Categoria] | [Métrica 1] | [Métrica 2] | [Métrica 3] |
+|-------------|-------------|-------------|-------------|
+| [Linha 1] | [Valor] | [Valor] | [Valor] |
+| [Linha 2] | [Valor] | [Valor] | [Valor] |
+| [Linha 3] | [Valor] | [Valor] | [Valor] |
 | ... | ... | ... | ... |
 
-**Download raw data:** [Link to CSV/spreadsheet if applicable]
+**Baixar os dados brutos:** [Link para CSV ou planilha, se aplicável]
 
-**Citation format:**
-> [Your name/org]. "[Study Title]." [Publication name], [Date]. [URL].
+**Formato de citação:**
+> [Seu nome/organização]. "[Título do estudo]." [Nome da publicação], [Data]. [URL].
 ```
 
-**Rules:**
-- Include a summary data table at minimum
-- Offer raw data download if possible (increases backlink potential)
-- Provide a citation format (makes it easy for others to reference)
-- Include the date prominently (data studies have a shelf life)
+**Regras:**
+- Inclua no mínimo uma tabela-resumo
+- Ofereça download dos dados brutos, se possível (aumenta o potencial de links)
+- Forneça um formato de citação (facilita a referência por terceiros)
+- Coloque a data em destaque (estudos de dados têm prazo de validade)
 
 ---
 
-## Content Checklist
+## Lista de verificação de conteúdo
 
-Before publishing, verify:
+Antes de publicar, confirme:
 
-- [ ] Title includes specific sample size (N)
-- [ ] Optional TL;DR accurately summarizes the result and material limitations
-- [ ] Key Findings contains the supported findings needed by the reader
-- [ ] Methodology section includes sample size, time period, source, and limitations
-- [ ] At least 1 [INFO-GAIN] in methodology (proprietary data/method)
-- [ ] 4 Finding sections, each with a unique chart type
-- [ ] Every finding opens with a specific data point (answer-first)
-- [ ] Every finding includes a benchmark comparison
-- [ ] Every finding ends with a practical implication
-- [ ] At least 4 [VISUAL] markers with varied chart types
-- [ ] External statistics are included only when material and verified; no
-      minimum applies
-- [ ] Surprises section includes 2+ counter-intuitive findings
-- [ ] Limitations are honestly stated
-- [ ] Recommendations are tied to specific findings
-- [ ] At least 3 [INTERNAL-LINK] zones
-- [ ] FAQ includes methodology and citation questions
-- [ ] Data appendix with summary table and citation format
-- [ ] All data verified and calculations double-checked
+- [ ] O título traz o tamanho específico da amostra (N)
+- [ ] O resumo opcional descreve com precisão o resultado e as limitações relevantes
+- [ ] Os principais achados trazem o que o leitor precisa, com respaldo
+- [ ] A metodologia inclui tamanho da amostra, período, fonte e limitações
+- [ ] Ao menos 1 [INFO-GAIN] na metodologia (dado ou método proprietário)
+- [ ] 4 seções de achado, cada uma com um tipo de gráfico diferente
+- [ ] Todo achado abre com um dado específico (resposta antecipada)
+- [ ] Todo achado inclui comparação com benchmark
+- [ ] Todo achado termina com uma implicação prática
+- [ ] Ao menos 4 marcadores [VISUAL] com tipos variados de gráfico
+- [ ] Estatísticas externas aparecem apenas quando relevantes e verificadas; não
+      há mínimo aplicável
+- [ ] A seção de surpresas traz 2 ou mais achados contraintuitivos
+- [ ] As limitações estão declaradas com honestidade
+- [ ] As recomendações estão amarradas a achados específicos
+- [ ] Ao menos 3 zonas [INTERNAL-LINK]
+- [ ] As perguntas frequentes incluem metodologia e citação
+- [ ] Apêndice de dados com tabela-resumo e formato de citação
+- [ ] Todos os dados verificados e cálculos conferidos duas vezes
