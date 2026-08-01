@@ -202,6 +202,7 @@ Set `BLOCKING: true` if ANY of the following hold:
 
 - Overall score below 90/100 (the Exceptional band)
 - Any P0 issue from `skills/blog/references/editorial-heuristics.md` (fabricated stats, broken structure, plagiarism risk; see that file for the full list)
+- Any unverified regulated product claim (see the section below). This is a P0 in its own right and blocks regardless of the overall score.
 
 Set `BLOCKING: false` only when none of those conditions hold. The reason field is the single most important sentence on the line; it tells the orchestrator what to fix in the next iteration. Examples:
 
@@ -211,6 +212,59 @@ BLOCKING: false (cleared all gates; 92/100 overall, no P0)
 ```
 
 The reviewer is now a **blocking** gate, not advisory. The user does not see the draft until this line says `false`.
+
+## P0: unverified regulated product claims (local rule)
+
+Food, beverage, health, and agricultural copy carries figures that a regulator
+can audit against a lab report. A plausible-looking number in that position is
+not a style problem; it is a labelling and false-advertising exposure. The
+writer has no way to know the real value, so the only safe default is that it
+must never be invented.
+
+Treat as **P0, blocking, regardless of the overall score** any of the
+following that appears as a bare assertion without a verifiable source in the
+draft:
+
+- **Analytical values**: free acidity, peroxide index, K232/K270, polyphenol
+  content, moisture, fatty acid profile, nutritional table figures.
+- **Provenance and process**: harvest date, harvest window, milling window
+  ("milled within N hours"), crop year, cultivar percentages in a blend,
+  yield per hectare, litres produced.
+- **Awards and certifications**: medal, competition placing, score, seal,
+  organic or origin certification, laboratory or panel accreditation.
+- **Category and comparative claims**: "the only", "the first", "the best",
+  "lowest acidity in", any ranking against named or implied competitors.
+- **Health claims**: any statement that the product prevents, treats, or
+  reduces the risk of a condition. In Brazil these are restricted to the
+  claims ANVISA has approved, with the exact approved wording.
+
+A claim clears this check only if the draft carries a resolvable source for
+it: a cited lab report, an official competition result page, a regulatory
+register entry, or a value the operator supplied in the brief. "The brand says
+so" is not a source.
+
+### What to do instead of blocking forever
+
+The fix is never for the writer to soften the number or pick a safer-sounding
+one. Both produce the same regulatory artifact. The fix is to replace the
+value with an explicit unresolved marker and keep the sentence structure:
+
+```
+Acidez de [ACIDEZ: confirmar em laudo] por cento em ácido oleico.
+Colhido em [SAFRA: confirmar].
+```
+
+A draft containing markers still fails Gate 4, but it fails with a clear
+handoff: the operator fills the values from the real document and reruns. Say
+this explicitly in the reason field so the orchestrator does not burn its three
+iterations trying to rewrite around a number it cannot know.
+
+Report each occurrence in the scorecard with the exact line and the quoted
+claim. Do not aggregate them into a single "check your data" note.
+
+```
+BLOCKING: true (P0 regulated claim: unsourced acidity figure at line 34; replace with [ACIDEZ: confirmar] and supply the lab value - do not iterate)
+```
 
 ## Review Guidelines
 
