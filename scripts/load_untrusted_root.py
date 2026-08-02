@@ -108,7 +108,10 @@ def _read_safely(path: Path, max_bytes: int) -> str:
             raise ValueError(
                 f"exceeds size cap ({st.st_size} > {max_bytes}): {path}"
             )
-        with os.fdopen(fd, "r", encoding="utf-8") as f:
+        # utf-8-sig: BRAND.md, VOICE.md and DISCOURSE.md are hand-authored, so
+        # on Windows they frequently carry a BOM. It must not reach the fenced
+        # payload handed to the model.
+        with os.fdopen(fd, "r", encoding="utf-8-sig") as f:
             fd = -1
             data = f.read(max_bytes + 1)
     finally:

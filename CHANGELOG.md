@@ -74,6 +74,25 @@ regulado. A documentação passou a ser mantida em português.
   `install.sh` nunca teve o problema, porque `${BASH_SOURCE[0]}` já tem escopo
   de script. Acompanha teste de regressão em `tests/test_installer_sync.py`, e o
   digest SHA-256 do `install.ps1` no README foi recalculado.
+- Um BOM de UTF-8 no início do arquivo escondia o frontmatter inteiro. Editores
+  no Windows e o `Set-Content -Encoding utf8` do Windows PowerShell 5.1 gravam
+  UTF-8 com BOM; o U+FEFF fica antes do `---` de abertura e a âncora `^---` de
+  `extract_frontmatter` deixa de casar. Título, meta description, tags, autor e
+  `lang` sumiam de uma vez, em silêncio. Num post curto em português o custo
+  medido foi de 50 para 36 pontos, com SEO de 17 para 7 e E-E-A-T de 4 para 0,
+  além de o idioma cair para detecção automática. A leitura passa a usar
+  `utf-8-sig` em nove scripts: `analyze_blog.py` (que cobre também o
+  `style_learn.py` e o `ai_citation_score.py`, que reusam o mesmo leitor),
+  `blog_preflight.py`, `blog_hygiene.py`, `blog_render.py`, `cognitive_load.py`,
+  `content_decay.py`, `discourse_research.py`, `load_untrusted_root.py` e
+  `quality_gate.py`. Os casos fora de markdown importam pelo mesmo motivo: o
+  Search Console exporta CSV com BOM, e um BOM antes da chave de abertura faz o
+  `json.loads` falhar com "Expecting value" na coluna 1.
+- O aviso de dependência opcional acusava "não encontrado, instale com pip"
+  também quando o pacote estava instalado e a importação falhava por outro
+  motivo. O guarda passa a separar `ModuleNotFoundError`, que é ausência real,
+  de um `ImportError` vindo de dentro do pacote, e nesse segundo caso mostra o
+  erro original em vez de mandar reinstalar.
 
 ### Notes
 

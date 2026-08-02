@@ -178,7 +178,9 @@ def _read_safely(path: Path, max_bytes: int, label: str) -> str:
             raise ValueError(
                 f"{label} exceeds size cap ({st.st_size} bytes > {max_bytes}): {path}"
             )
-        with os.fdopen(fd, "r", encoding="utf-8") as f:
+        # utf-8-sig: a BOM ahead of the opening brace makes json.loads fail
+        # with a confusing "Expecting value" at column 1.
+        with os.fdopen(fd, "r", encoding="utf-8-sig") as f:
             fd = -1  # ownership transferred to file object
             data = f.read(max_bytes + 1)
     finally:

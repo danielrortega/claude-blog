@@ -431,7 +431,9 @@ def _read_safely(path: Path, max_bytes: int, label: str) -> str:
             raise ValueError(
                 f"{label} exceeds size cap ({st.st_size} bytes > {max_bytes}): {path}"
             )
-        with os.fdopen(fd, "r", encoding="utf-8") as f:
+        # utf-8-sig: strips a Windows editor BOM so the frontmatter block and
+        # the first heading are still recognised.
+        with os.fdopen(fd, "r", encoding="utf-8-sig") as f:
             fd = -1
             data = f.read(max_bytes + 1)
     finally:

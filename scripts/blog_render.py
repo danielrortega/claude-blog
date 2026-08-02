@@ -464,7 +464,9 @@ def _read_md_safely(path: Path) -> str:
         os.close(fd)
     if len(data) > MAX_MD_BYTES:
         raise ValueError(f"source markdown exceeds {MAX_MD_BYTES} bytes")
-    return data.decode("utf-8")
+    # utf-8-sig: a BOM would otherwise be rendered into the HTML body and hide
+    # the frontmatter that feeds the page title and JSON-LD.
+    return data.decode("utf-8-sig")
 
 
 def _validate_frontmatter(fm: dict, body: str) -> None:

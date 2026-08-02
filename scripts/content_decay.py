@@ -84,7 +84,10 @@ def _read_safely(path: Path, max_bytes: int) -> str:
         os.close(fd)
     if len(data) > max_bytes:
         raise ContentDecayError(f"{path} exceeds size cap after read ({max_bytes}).")
-    return data.decode("utf-8")
+    # utf-8-sig, not utf-8: Search Console and Excel both export CSV as UTF-8
+    # with a BOM, which would land inside the first column header and stop it
+    # from matching the expected field name.
+    return data.decode("utf-8-sig")
 
 
 def _row_page(row: dict[str, Any]) -> str | None:

@@ -46,7 +46,9 @@ def is_excluded_path(file_path: str | Path, root: Path | None = None) -> bool:
 def has_blog_frontmatter(file_path: str | Path) -> bool:
     """Return True when a Markdown file has blog post frontmatter keys."""
     path = Path(file_path)
-    content = path.read_text(encoding="utf-8")
+    # utf-8-sig: without it a BOM hides the frontmatter and the pre-commit gate
+    # waves the file through as "not a blog post".
+    content = path.read_text(encoding="utf-8-sig")
 
     frontmatter = analyze_blog.extract_frontmatter(content)
     normalized = {key.lower(): value for key, value in frontmatter.items()}
