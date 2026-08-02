@@ -1,6 +1,7 @@
 """Tests for the blog quality analyzer script."""
 
 import copy
+import re
 import sys
 from pathlib import Path
 
@@ -578,3 +579,83 @@ guidance and explain the reader's next decision.
             assert seo["breakdown"]["meta_description"] == base_seo["breakdown"][
                 "meta_description"
             ]
+
+
+# ---------------------------------------------------------------------------
+# Language-specific structural cues
+#
+# Every regex below was English-only at some point, so a Portuguese post using
+# the same rhetorical structure matched nothing and silently lost the points.
+# These tests pin both directions: Portuguese is detected, English is unchanged.
+# ---------------------------------------------------------------------------
+
+
+class TestPortugueseStructuralCues:
+    @pytest.fixture(autouse=True)
+    def _restore_language(self):
+        yield
+        analyze_blog.configure_language("en")
+
+    def test_faq_heading_detected_in_portuguese(self):
+        analyze_blog.configure_language("pt")
+        for heading in ("## Perguntas Frequentes", "## Dúvidas Comuns", "## FAQ"):
+            result = analyze_blog.analyze_faq(f"{heading}\n\n### Isso funciona?\n")
+            assert result["has_faq_section"], heading
+
+    def test_english_faq_heading_still_detected(self):
+        analyze_blog.configure_language("en")
+        result = analyze_blog.analyze_faq("## Frequently Asked Questions\n\n### Does it?\n")
+        assert result["has_faq_section"]
+
+    def test_example_markers_counted_in_portuguese(self):
+        analyze_blog.configure_language("pt")
+        text = "Por exemplo, o azeite oxida. Considere o caso do calor. Suponha 40 graus."
+        assert analyze_blog.analyze_engagement(text)["example_count"] >= 3
+
+    def test_english_example_markers_unchanged(self):
+        analyze_blog.configure_language("en")
+        text = "For example, oil oxidizes. Consider heat. Such as at 40 degrees."
+        assert analyze_blog.analyze_engagement(text)["example_count"] >= 3
+
+    def test_entity_definition_matches_portuguese_copula(self):
+        analyze_blog.configure_language("pt")
+        content = (
+            "**Acidez livre** é a proporção de ácidos graxos soltos.\n"
+            "**Peróxidos** significam oxidação.\n"
+            "**Cultivar** se refere a variedade botânica.\n"
+        )
+        found = len(re.findall(f"(?i){analyze_blog.ENTITY_DEFINITION}", content))
+        assert found >= 3, f"expected 3 pt definitions, found {found}"
+
+    def test_entity_definition_still_matches_english(self):
+        analyze_blog.configure_language("en")
+        content = "**Free acidity** is the share of loose fatty acids.\n"
+        assert re.search(f"(?i){analyze_blog.ENTITY_DEFINITION}", content)
+
+    def test_trust_patterns_match_portuguese(self):
+        analyze_blog.configure_language("pt")
+        body = "Sobre nós: somos produtores. Fale conosco. Revisado por um engenheiro."
+        for key in ("about", "contact", "editorial"):
+            assert re.search(
+                f"(?i){analyze_blog.TRUST_PATTERNS[key]}", body
+            ), f"pt trust pattern '{key}' did not match"
+
+    def test_topic_terms_keep_accented_words_whole(self):
+        analyze_blog.configure_language("pt")
+        terms = analyze_blog._topic_terms("Otimização e manutenção da produção")
+        assert "otimização" in terms
+        assert "manutenção" in terms
+        # The old ASCII-only tokenizer fragmented these into "otimiza"/"o".
+        assert not any(t in {"otimiza", "manuten", "produ"} for t in terms)
+
+    def test_portuguese_function_words_are_not_topic_terms(self):
+        analyze_blog.configure_language("pt")
+        terms = analyze_blog._topic_terms("O guia de azeite para quem não sabe")
+        assert "azeite" in terms
+        assert not ({"de", "para", "que", "não", "o"} & terms)
+
+    def test_english_topic_terms_unchanged(self):
+        analyze_blog.configure_language("en")
+        terms = analyze_blog._topic_terms("The guide to olive oil for beginners")
+        assert "olive" in terms and "beginners" in terms
+        assert not ({"the", "for"} & terms)
