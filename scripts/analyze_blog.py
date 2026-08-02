@@ -60,30 +60,48 @@ def _project_version() -> str:
 # Optional dependency detection
 # ---------------------------------------------------------------------------
 
+# A broken install and an absent one both raise ImportError, and reporting
+# both as "not found" sends the operator to `pip install` for a package that
+# is already there. ModuleNotFoundError means absent; any other ImportError
+# comes from inside the package, so keep the message and show it.
+_IMPORT_ERRORS: dict[str, str] = {}
+
 try:
     import textstat
     HAS_TEXTSTAT = True
-except ImportError:
+except ModuleNotFoundError:
     HAS_TEXTSTAT = False
+except ImportError as exc:
+    HAS_TEXTSTAT = False
+    _IMPORT_ERRORS['textstat'] = str(exc)
 
 try:
     from bs4 import BeautifulSoup
     HAS_BS4 = True
-except ImportError:
+except ModuleNotFoundError:
     HAS_BS4 = False
+except ImportError as exc:
+    HAS_BS4 = False
+    _IMPORT_ERRORS['beautifulsoup4'] = str(exc)
 
 
 def _print_dependency_notice() -> None:
     """Print missing-dependency notice to stderr so JSON output stays clean."""
-    missing: list[str] = []
-    if not HAS_TEXTSTAT:
-        missing.append('textstat')
-    if not HAS_BS4:
-        missing.append('beautifulsoup4')
-    if missing:
+    absent: list[str] = []
+    if not HAS_TEXTSTAT and 'textstat' not in _IMPORT_ERRORS:
+        absent.append('textstat')
+    if not HAS_BS4 and 'beautifulsoup4' not in _IMPORT_ERRORS:
+        absent.append('beautifulsoup4')
+    if absent:
         print(
-            f"Note: Optional dependencies not found: {', '.join(missing)}. "
-            f"Install with: pip install {' '.join(missing)}",
+            f"Note: Optional dependencies not found: {', '.join(absent)}. "
+            f"Install with: pip install {' '.join(absent)}",
+            file=sys.stderr,
+        )
+    for name, detail in _IMPORT_ERRORS.items():
+        print(
+            f"Note: {name} is installed but failed to import: {detail} "
+            f"Reinstalling will not help; fix the error above.",
             file=sys.stderr,
         )
 
@@ -455,7 +473,14 @@ def _read_safely(path: Path, max_bytes: int = MAX_INPUT_BYTES) -> str:
         os.close(fd)
     if len(data) > max_bytes:
         raise ValueError(f"input exceeds size cap after read ({max_bytes}): {path}")
-    return data.decode("utf-8")
+    # utf-8-sig, not utf-8: editors on Windows routinely save markdown as UTF-8
+    # with a BOM. A leading U+FEFF sits in front of the opening `---`, so the
+    # frontmatter regex in extract_frontmatter() stops matching and the whole
+    # block is silently treated as body text. Title, description, tags, author
+    # and lang all vanish at once, costing SEO and E-E-A-T points and flipping
+    # the language to auto-detection. utf-8-sig strips the BOM when present and
+    # is byte-identical to utf-8 otherwise.
+    return data.decode("utf-8-sig")
 
 
 def _safe_write_text(path: str | Path, text: str) -> None:

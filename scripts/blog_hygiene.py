@@ -152,7 +152,9 @@ def _read_safely(path: Path) -> str:
         raise OSError(f"not a regular file: {path}")
     fd = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0))
     try:
-        fh = os.fdopen(fd, "r", encoding="utf-8")
+        # utf-8-sig: a BOM from a Windows editor would otherwise be treated as
+        # body text and hide the frontmatter block.
+        fh = os.fdopen(fd, "r", encoding="utf-8-sig")
     except Exception:
         os.close(fd)
         raise

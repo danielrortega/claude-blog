@@ -659,3 +659,73 @@ class TestPortugueseStructuralCues:
         terms = analyze_blog._topic_terms("The guide to olive oil for beginners")
         assert "olive" in terms and "beginners" in terms
         assert not ({"the", "for"} & terms)
+
+
+class TestByteOrderMarkHandling:
+    """A UTF-8 BOM must never hide the frontmatter block.
+
+    Windows editors and `Set-Content -Encoding utf8` under Windows PowerShell
+    5.1 write UTF-8 with a BOM. The U+FEFF lands in front of the opening
+    `---`, so the `^---` anchor in extract_frontmatter() stops matching and
+    title, description, tags, author and lang are all silently lost at once.
+    Measured cost on a short pt-BR post before the fix: 50 -> 36 of 100, with
+    SEO 17 -> 7 and E-E-A-T 4 -> 0.
+    """
+
+    POST = (
+        "---\n"
+        "title: Como escolher azeite extra virgem\n"
+        "description: Guia para escolher azeite de oliva no Brasil.\n"
+        "lang: pt\n"
+        "---\n"
+        "\n"
+        "## Resumo rápido\n"
+        "\n"
+        "O azeite extra virgem é um produto regulado. Por exemplo, a acidez\n"
+        "precisa constar em laudo assinado pelo laboratório.\n"
+    )
+
+    def _read(self, tmp_path, encoding):
+        path = tmp_path / f"post-{encoding}.md"
+        path.write_text(self.POST, encoding=encoding)
+        return analyze_blog._read_safely(path)
+
+    def test_bom_is_stripped_on_read(self, tmp_path):
+        content = self._read(tmp_path, "utf-8-sig")
+        assert not content.startswith("﻿")
+        assert content.startswith("---")
+
+    def test_frontmatter_survives_a_bom(self, tmp_path):
+        fm = analyze_blog.extract_frontmatter(self._read(tmp_path, "utf-8-sig"))
+        assert fm.get("lang") == "pt"
+        assert fm.get("title") == "Como escolher azeite extra virgem"
+
+    def test_bom_and_bomless_reads_are_identical(self, tmp_path):
+        assert self._read(tmp_path, "utf-8-sig") == self._read(tmp_path, "utf-8")
+
+
+class TestDependencyNotice:
+    """A package that is present but fails to import must not be reported as
+    missing. Saying "pip install textstat" when textstat is installed sends
+    the operator down the wrong path; the real cause was an ImportError raised
+    from inside the package."""
+
+    def test_broken_import_is_reported_with_its_own_error(self, monkeypatch, capsys):
+        monkeypatch.setattr(analyze_blog, "HAS_TEXTSTAT", False)
+        monkeypatch.setattr(
+            analyze_blog,
+            "_IMPORT_ERRORS",
+            {"textstat": "Blocked import of regex from current working directory"},
+        )
+        analyze_blog._print_dependency_notice()
+        err = capsys.readouterr().err
+        assert "installed but failed to import" in err
+        assert "Blocked import of regex" in err
+        assert "pip install textstat" not in err
+
+    def test_absent_package_still_suggests_pip(self, monkeypatch, capsys):
+        monkeypatch.setattr(analyze_blog, "HAS_TEXTSTAT", False)
+        monkeypatch.setattr(analyze_blog, "_IMPORT_ERRORS", {})
+        analyze_blog._print_dependency_notice()
+        err = capsys.readouterr().err
+        assert "pip install textstat" in err

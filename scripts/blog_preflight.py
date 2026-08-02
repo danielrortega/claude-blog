@@ -112,7 +112,9 @@ def _read_text_no_follow(path: Path) -> str:
         flags |= os.O_NOFOLLOW
     fd = os.open(path, flags)
     try:
-        with os.fdopen(fd, "r", encoding="utf-8") as f:
+        # utf-8-sig: strips the BOM that Windows editors put in front of the
+        # opening `---`, which otherwise hides the frontmatter from every gate.
+        with os.fdopen(fd, "r", encoding="utf-8-sig") as f:
             return f.read()
     except Exception:
         try:
