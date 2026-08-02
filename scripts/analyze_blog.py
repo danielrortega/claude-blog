@@ -160,6 +160,89 @@ _PT_TRANSITION_WORDS = [
     "sobretudo", "principalmente", "enquanto isso", "em resumo",
 ]
 
+# Structural cue patterns
+# ---------------------------------------------------------------------------
+#
+# These detect rhetorical structures that carry score: examples, defined
+# entities, an FAQ heading, trust links, and self-promotion. They were all
+# English-only literals, so a Portuguese post using the exact same structures
+# matched nothing and silently lost the points. That is the same defect class
+# the phrase lists and the readability offset above already fix, applied to
+# the remaining regex sites.
+
+_EN_EXAMPLE_MARKERS = [
+    r'\bfor example\b', r'\bfor instance\b', r'\bsuch as\b',
+    r'\bconsider\b', r"\blet's say\b", r'\bimagine\b',
+    r"\bhere's (?:an|a) example\b",
+]
+
+_PT_EXAMPLE_MARKERS = [
+    r'\bpor exemplo\b', r'\bcomo exemplo\b', r'\bpor instância\b',
+    r'\btais como\b', r'\bcomo (?:o|a|os|as)?\s*caso de\b', r'\bveja o caso\b',
+    r'\bconsidere\b', r'\bimagine\b', r'\bsuponha\b', r'\bdigamos que\b',
+    r'\bum exemplo\b', r'\bpor exemplo:\b', r'\bna prática\b',
+]
+
+# Bold term followed by a copula or defining verb: `**termo** é ...`.
+# Portuguese needs the accented forms plus the reflexive "se refere a".
+_EN_ENTITY_DEFINITION = r'\*\*[^*]+\*\*\s*(?:is|are|refers to|means)'
+_PT_ENTITY_DEFINITION = (
+    r'\*\*[^*]+\*\*\s*(?:é|e|são|sao|significa|significam'
+    r'|se refere a|refere-se a|consiste em|designa|quer dizer)\b'
+)
+
+_EN_FAQ_HEADING = r'#{1,3}\s*(?:FAQ|Frequently Asked)'
+_PT_FAQ_HEADING = (
+    r'#{1,3}\s*(?:FAQ|Perguntas?\s+(?:Frequentes|Comuns)'
+    r'|D[uú]vidas?\s+(?:Frequentes|Comuns))'
+)
+
+_EN_TRUST_PATTERNS = {
+    'about': r'\babout\s+(?:us|the author|me)\b',
+    'contact': r'\bcontact\b',
+    'editorial': r'\b(?:editorial|reviewed by|fact.?check|editor)\b',
+}
+
+_PT_TRUST_PATTERNS = {
+    'about': r'\b(?:sobre\s+(?:n[oó]s|o autor|a autora|mim)|quem somos)\b',
+    'contact': r'\b(?:contato|fale conosco|entre em contato)\b',
+    'editorial': (
+        r'\b(?:editorial|revisado por|revisão t[eé]cnica'
+        r'|checagem de fatos|verifica[cç][aã]o de fatos|editor[ae]?)\b'
+    ),
+}
+
+_EN_PROMO_PATTERNS = [
+    r'at \w+,\s+we',
+    r'our (?:team|company|product|platform|solution)',
+    r'we (?:offer|provide|deliver|help|specialize)',
+]
+
+_PT_PROMO_PATTERNS = [
+    r'\b(?:na|no|aqui na|aqui no)\s+\w+,\s+(?:n[oó]s\s+)?',
+    r'\bnoss[ao]\s+(?:time|equipe|empresa|produto|plataforma|solu[cç][aã]o)\b',
+    r'\bn[oó]s\s+(?:oferecemos|fornecemos|entregamos|ajudamos|somos especialistas)\b',
+    r'\b(?:oferecemos|fornecemos|entregamos|desenvolvemos)\b',
+]
+
+# Function words excluded from topic-term comparison. An English-only set
+# leaves "de", "que", "para" counting as topic terms in a Portuguese post,
+# which inflates apparent topic overlap between title, headings, and body.
+_EN_TOPIC_STOPWORDS = {
+    'about', 'after', 'also', 'and', 'are', 'but', 'for', 'from', 'have',
+    'how', 'into', 'its', 'not', 'that', 'the', 'their', 'this', 'with',
+    'what', 'when', 'where', 'which', 'why', 'your',
+}
+
+_PT_TOPIC_STOPWORDS = {
+    'a', 'ao', 'aos', 'as', 'às', 'com', 'como', 'da', 'das', 'de', 'do',
+    'dos', 'e', 'em', 'entre', 'era', 'essa', 'esse', 'esta', 'este', 'eu',
+    'foi', 'há', 'isso', 'já', 'mais', 'mas', 'na', 'nas', 'no', 'nos',
+    'não', 'nao', 'o', 'os', 'ou', 'para', 'pela', 'pelo', 'por', 'porque',
+    'qual', 'quando', 'que', 'quem', 'se', 'sem', 'ser', 'seu', 'sua',
+    'são', 'sao', 'sobre', 'também', 'tambem', 'um', 'uma', 'você', 'voce',
+}
+
 # Readability: why a plain set_lang() is not enough
 # ---------------------------------------------------------------------------
 #
@@ -211,6 +294,12 @@ LANGUAGE_PROFILES: dict[str, dict[str, Any]] = {
         'ai_phrases': _EN_AI_PHRASES,
         'ai_trigger_words': _EN_AI_TRIGGER_WORDS,
         'transition_words': _EN_TRANSITION_WORDS,
+        'example_markers': _EN_EXAMPLE_MARKERS,
+        'entity_definition': _EN_ENTITY_DEFINITION,
+        'faq_heading': _EN_FAQ_HEADING,
+        'trust_patterns': _EN_TRUST_PATTERNS,
+        'promo_patterns': _EN_PROMO_PATTERNS,
+        'topic_stopwords': _EN_TOPIC_STOPWORDS,
     },
     'pt': {
         'textstat_lang': 'pt',
@@ -218,6 +307,18 @@ LANGUAGE_PROFILES: dict[str, dict[str, Any]] = {
         'ai_phrases': _PT_AI_PHRASES,
         'ai_trigger_words': _PT_AI_TRIGGER_WORDS,
         'transition_words': _PT_TRANSITION_WORDS,
+        # Portuguese keeps the English cues alongside its own: loanwords and
+        # English headings appear in pt-BR technical posts, and matching them
+        # never costs the author anything.
+        'example_markers': _PT_EXAMPLE_MARKERS + _EN_EXAMPLE_MARKERS,
+        'entity_definition': f'(?:{_PT_ENTITY_DEFINITION}|{_EN_ENTITY_DEFINITION})',
+        'faq_heading': _PT_FAQ_HEADING,
+        'trust_patterns': {
+            key: f'(?:{_PT_TRUST_PATTERNS[key]}|{_EN_TRUST_PATTERNS[key]})'
+            for key in _EN_TRUST_PATTERNS
+        },
+        'promo_patterns': _PT_PROMO_PATTERNS + _EN_PROMO_PATTERNS,
+        'topic_stopwords': _PT_TOPIC_STOPWORDS | _EN_TOPIC_STOPWORDS,
     },
 }
 
@@ -229,6 +330,12 @@ ACTIVE_LANG = 'en'
 AI_PHRASES = _EN_AI_PHRASES
 AI_TRIGGER_WORDS = _EN_AI_TRIGGER_WORDS
 TRANSITION_WORDS = _EN_TRANSITION_WORDS
+EXAMPLE_MARKERS = _EN_EXAMPLE_MARKERS
+ENTITY_DEFINITION = _EN_ENTITY_DEFINITION
+FAQ_HEADING = _EN_FAQ_HEADING
+TRUST_PATTERNS = _EN_TRUST_PATTERNS
+PROMO_PATTERNS = _EN_PROMO_PATTERNS
+TOPIC_STOPWORDS = _EN_TOPIC_STOPWORDS
 
 # When True, each analysed file resolves its own language. Set to False by
 # an explicit --lang so the operator's choice is never silently overridden.
@@ -266,6 +373,8 @@ def configure_language(lang: str) -> str:
     with a stderr notice rather than failing the run.
     """
     global ACTIVE_LANG, AI_PHRASES, AI_TRIGGER_WORDS, TRANSITION_WORDS
+    global EXAMPLE_MARKERS, ENTITY_DEFINITION, FAQ_HEADING
+    global TRUST_PATTERNS, PROMO_PATTERNS, TOPIC_STOPWORDS
 
     if lang not in LANGUAGE_PROFILES:
         print(
@@ -280,6 +389,12 @@ def configure_language(lang: str) -> str:
     AI_PHRASES = profile['ai_phrases']
     AI_TRIGGER_WORDS = profile['ai_trigger_words']
     TRANSITION_WORDS = profile['transition_words']
+    EXAMPLE_MARKERS = profile['example_markers']
+    ENTITY_DEFINITION = profile['entity_definition']
+    FAQ_HEADING = profile['faq_heading']
+    TRUST_PATTERNS = profile['trust_patterns']
+    PROMO_PATTERNS = profile['promo_patterns']
+    TOPIC_STOPWORDS = profile['topic_stopwords']
     return lang
 
 # ---------------------------------------------------------------------------
@@ -630,12 +745,12 @@ def analyze_citations(content: str) -> dict[str, Any]:
 
 def analyze_faq(content: str) -> dict[str, Any]:
     """Check for FAQ section and schema."""
-    has_faq_section = bool(re.search(r'(?i)#{1,3}\s*(?:FAQ|Frequently Asked)', content))
+    has_faq_section = bool(re.search(f'(?i){FAQ_HEADING}', content))
     has_faq_schema = bool(re.search(r'(?i)FAQSchema|FAQPage|faqpage', content))
 
     faq_items = 0
     if has_faq_section:
-        faq_match = re.search(r'(?i)#{1,3}\s*(?:FAQ|Frequently Asked).*', content, re.DOTALL)
+        faq_match = re.search(f'(?i){FAQ_HEADING}.*', content, re.DOTALL)
         if faq_match:
             faq_text = faq_match.group()
             faq_items = len(re.findall(r'^#{3,4}\s+.+\?', faq_text, re.MULTILINE))
@@ -669,13 +784,9 @@ def analyze_freshness(frontmatter: dict[str, Any]) -> dict[str, Any]:
 
 def analyze_self_promotion(content: str, brand_name: str = '') -> dict[str, Any]:
     """Check self-promotion levels."""
-    promo_patterns = [
-        r'(?i)at \w+,\s+we',
-        r'(?i)our (?:team|company|product|platform|solution)',
-        r'(?i)we (?:offer|provide|deliver|help|specialize)',
-    ]
-
-    promo_count = sum(len(re.findall(p, content)) for p in promo_patterns)
+    promo_count = sum(
+        len(re.findall(f'(?i){p}', content)) for p in PROMO_PATTERNS
+    )
 
     return {
         'self_promotion_patterns': promo_count,
@@ -1055,13 +1166,10 @@ def analyze_engagement(content: str) -> dict[str, Any]:
     body_text = '\n'.join(body_lines)
     questions_in_text = len(re.findall(r'[^#]\?', body_text))
 
-    # Example markers
-    example_patterns = [
-        r'(?i)\bfor example\b', r'(?i)\bfor instance\b', r'(?i)\bsuch as\b',
-        r'(?i)\bconsider\b', r'(?i)\blet\'s say\b', r'(?i)\bimagine\b',
-        r'(?i)\bhere\'s (?:an|a) example\b',
-    ]
-    example_count = sum(len(re.findall(p, content)) for p in example_patterns)
+    # Example markers, resolved from the active language profile.
+    example_count = sum(
+        len(re.findall(f'(?i){p}', content)) for p in EXAMPLE_MARKERS
+    )
 
     return {
         'questions_in_text': questions_in_text,
@@ -1117,7 +1225,7 @@ def analyze_ai_citation_readiness(content: str, headings_info: dict[str, Any],
                     break
 
     # Entity clarity: detect defined terms (bold terms followed by explanations)
-    entity_definitions = len(re.findall(r'\*\*[^*]+\*\*\s*(?:is|are|refers to|means)', content))
+    entity_definitions = len(re.findall(f'(?i){ENTITY_DEFINITION}', content))
 
     # Extraction-friendly structures.
     # The label list is language specific: the pt-BR templates and blog-writer
@@ -1214,19 +1322,23 @@ def analyze_structured_data(content: str) -> dict[str, Any]:
 # Scoring: 5-category, 100-point system
 # ---------------------------------------------------------------------------
 
-_TOPIC_STOPWORDS = {
-    'about', 'after', 'also', 'and', 'are', 'but', 'for', 'from', 'have',
-    'how', 'into', 'its', 'not', 'that', 'the', 'their', 'this', 'with',
-    'what', 'when', 'where', 'which', 'why', 'your',
-}
+# Unicode-aware word token. The former `[A-Za-z0-9][A-Za-z0-9'-]*` split every
+# accented word ("otimizacao" survived, "otimizacao" with the cedilla did not),
+# so Portuguese titles and headings were compared as fragments and never
+# matched the body. ASCII is a subset of this class, so English is unchanged.
+_WORD_TOKEN = re.compile(r"[^\W\d_][\w'\-]*", re.UNICODE)
 
 
 def _topic_terms(value: str) -> set[str]:
-    """Return normalized topic terms for purpose-consistency checks."""
+    """Return normalized topic terms for purpose-consistency checks.
+
+    Stopwords come from the active language profile; an English-only set
+    leaves "de", "que", and "para" counting as topic terms in Portuguese.
+    """
     return {
         token
-        for token in re.findall(r"[A-Za-z0-9][A-Za-z0-9'-]*", value.lower())
-        if token not in _TOPIC_STOPWORDS and not token.isdigit()
+        for token in _WORD_TOKEN.findall(value.lower())
+        if token not in TOPIC_STOPWORDS and not token.isdigit()
     }
 
 
@@ -1578,11 +1690,11 @@ def calculate_score(analysis: dict[str, Any]) -> dict[str, Any]:
     # Trust indicators: 4 pts (about/contact links, editorial mentions)
     trust_score = 0
     body = analysis.get('_body_text', '')
-    if re.search(r'(?i)\babout\s+(?:us|the author|me)\b', body) or re.search(r'/about', body):
+    if re.search(f"(?i){TRUST_PATTERNS['about']}", body) or re.search(r'/(?:about|sobre)', body):
         trust_score += 2
-    if re.search(r'(?i)\bcontact\b', body) or re.search(r'/contact', body):
+    if re.search(f"(?i){TRUST_PATTERNS['contact']}", body) or re.search(r'/(?:contact|contato)', body):
         trust_score += 1
-    if re.search(r'(?i)\b(?:editorial|reviewed by|fact.?check|editor)\b', body):
+    if re.search(f"(?i){TRUST_PATTERNS['editorial']}", body):
         trust_score += 1
     trust_score = min(trust_score, 4)
     eeat += trust_score
