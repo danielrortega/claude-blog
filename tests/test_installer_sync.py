@@ -83,5 +83,33 @@ def test_uninstall_ps1_removes_all_root_scripts() -> None:
     )
 
 
+def test_install_ps1_detects_local_clone_with_script_scope() -> None:
+    """install.ps1 must resolve its own directory with $PSScriptRoot.
+
+    The source-directory branch lives inside `function Main`. PowerShell scopes
+    $MyInvocation to the *call being made*, so inside a function
+    $MyInvocation.MyCommand.Path is $null and the local-clone branch was
+    unreachable: every Windows run cloned the upstream repo instead, silently
+    discarding the checkout the operator ran the installer from. The bash
+    installer never had this bug because ${BASH_SOURCE[0]} is script-scoped.
+    """
+    ps1 = INSTALL_PS1.read_text(encoding="utf-8")
+    # Comment lines are exempt: the fix documents the trap by name.
+    code = "\n".join(
+        line
+        for line in ps1.splitlines()
+        if not line.lstrip().startswith("#")
+    )
+    assert "$PSScriptRoot" in code, (
+        "install.ps1 must use $PSScriptRoot to find its own directory."
+    )
+    assert "$MyInvocation.MyCommand.Path" not in code, (
+        "install.ps1 uses $MyInvocation.MyCommand.Path, which is $null inside "
+        "a function. The local-clone branch becomes unreachable and every "
+        "install silently pulls from the remote repository instead. Use "
+        "$PSScriptRoot."
+    )
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
