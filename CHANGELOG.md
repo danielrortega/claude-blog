@@ -10,7 +10,71 @@ permanece em inglês, por ser registro de releases já publicadas.
 
 ## [Unreleased]
 
-_Nenhuma mudança não lançada._
+Suporte de primeira classe ao português do Brasil e um portão novo de dado
+regulado. A documentação passou a ser mantida em português.
+
+### Added
+
+- Perfis de idioma em `scripts/analyze_blog.py`: `LANGUAGE_PROFILES` com listas
+  próprias de expressões, palavras-marcador e conectivos por idioma, faixa de
+  legibilidade por idioma em `READABILITY_BANDS` e a flag `--lang {auto,en,pt}`.
+  A resolução é por arquivo: flag explícita, depois `lang`/`language` no
+  frontmatter, depois detecção por palavras funcionais.
+- Regra P0 de alegação regulada em `agents/blog-reviewer.md`, cobrindo valores
+  analíticos, procedência e processo, prêmios e certificações, alegações de
+  categoria e alegações de saúde sujeitas à ANVISA.
+- Gatilhos de acionamento em português no campo `description` das 32 skills,
+  preservando o texto em inglês palavra por palavra.
+- Tutorial passo a passo em `docs/TUTORIAL.md`, cobrindo as 5 fases do fluxo,
+  os 30 comandos, as 22 referências e os 12 templates.
+- Dez testes de regressão para as pistas estruturais por idioma, fixando as
+  duas direções: português passa a ser detectado e o inglês não muda.
+
+### Changed
+
+- O `blog-reviewer` ganha uma quarta condição de `BLOCKING: true`, independente
+  da nota: dado de produto regulado afirmado sem fonte resolvível. Rascunhos que
+  antes passavam podem agora ser bloqueados no Gate 4. A correção prescrita é
+  trocar o valor por marcador explícito, preservando a frase, e não suavizar o
+  número.
+- A pontuação de legibilidade em português passa a usar a adaptação de Martins
+  et al. (1996), com `FRE_PT_OFFSET` elevando a base de 206,835 para 248,835.
+  O `textstat.set_lang("pt")` sozinho não resolve: no textstat 0.7.x a
+  configuração de pt carrega os coeficientes ingleses literalmente.
+- As métricas de escolaridade (`flesch_kincaid_grade`, `gunning_fog`) deixam de
+  ser reportadas fora do inglês, por não existir adaptação e por não alimentarem
+  a nota.
+- Documentação traduzida para o português: os 5 prompts de subagente, os 15
+  templates, os 14 arquivos de `docs/`, `README.md`, `CLAUDE.md` e as entradas
+  do CHANGELOG da v2.0.0 em diante.
+- Sete asserções de teste que fixavam frase inglesa literal dentro de arquivos
+  traduzidos passam a aceitar as duas formas. Todas verificam regra editorial,
+  não idioma.
+
+### Fixed
+
+- Cinco regexes que davam pontuação eram literais em inglês, então um post em
+  português com a mesma estrutura retórica não casava nada e perdia os pontos em
+  silêncio: título de perguntas frequentes, marcadores de exemplo, definição de
+  entidade em negrito, indicadores de confiança e autopromoção.
+- A detecção da caixa de resumo em `ai_citation_readiness` reconhecia apenas
+  rótulos em inglês, de modo que "Principais Conclusões" e suas variantes não
+  pontuavam.
+- O tokenizador de termos de tema usava `[A-Za-z0-9]`, que fragmentava toda
+  palavra acentuada, e as stopwords eram só inglesas, deixando "de", "que" e
+  "para" contarem como termo de tema. Agora é Unicode-aware; ASCII segue sendo
+  subconjunto da classe, então o inglês não muda.
+
+### Notes
+
+O comportamento em inglês é idêntico ao anterior em todos os pontos acima,
+verificado com post equivalente antes e depois. Medição num post pt-BR com essas
+estruturas: 43 para 52.
+
+A faixa `READABILITY_BANDS['pt']` é calibração fundamentada, ainda não validada
+contra posts publicados. Rode o analisador sobre uma dúzia de posts próprios,
+leia os valores crus de `flesch_reading_ease` e aperte a faixa antes de tratar os
+7 pontos de legibilidade como definitivos.
 
 ## [2.1.1] - 2026-07-23
 
