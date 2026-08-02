@@ -44,6 +44,12 @@ pip install textstat beautifulsoup4 lxml jsonschema
 
 **Causa**: as dependências Python opcionais não estão instaladas.
 
+Se o `pip install` responder `Requirement already satisfied`, o pacote está
+presente e a importação está falhando por outro motivo. O aviso do script
+distingue os dois casos: ausência real manda instalar, enquanto falha interna
+mostra o erro original e diz que reinstalar não resolve. Veja a seção sobre o
+bloqueio de importação no Windows mais abaixo.
+
 **Comportamento**: o script de análise foi feito para **degradar com elegância**.
 Sem as dependências opcionais, ele recorre ao modo básico:
 
@@ -93,6 +99,50 @@ pwsh -File ./install.ps1
 
 Inspecione o arquivo baixado e compare o digest com a documentação da release
 antes de executar.
+
+### Windows: "Blocked import of regex from current working directory"
+
+**Sintoma**: o `analyze_blog.py` avisa que o `textstat` não foi encontrado,
+mas o `pip install` responde `Requirement already satisfied`. Importando o
+pacote na mão, aparece:
+
+```
+ImportError: Blocked import of regex from current working directory for
+security reasons. Use '-P' or set PYTHONSAFEPATH to prevent Python from
+searching the current working directory.
+```
+
+**Causa**: é um falso positivo, e não um pacote ausente. O `nltk` (dependência
+do `textstat`) instala um verificador de importação em `nltk/inisec.py` que
+recusa módulos vindos do diretório de trabalho atual. A checagem usa
+`Path(origem).relative_to(cwd)`, que aceita o diretório atual **e qualquer
+subpasta dele**. O Python instalado pela Microsoft Store guarda os pacotes do
+usuário em `%USERPROFILE%\AppData\Local\Packages\PythonSoftwareFoundation...`,
+ou seja, dentro do perfil. Rodando com o perfil como diretório atual, o
+`site-packages` inteiro passa a parecer conteúdo do diretório atual, e a
+importação é bloqueada.
+
+**Correção**: rode de qualquer diretório que não seja ancestral do
+`site-packages`. Na prática, use a pasta do projeto do blog ou a do
+repositório.
+
+| Diretório atual | Resultado |
+|-----------------|-----------|
+| `C:\Users\<voce>` | bloqueia |
+| `C:\Users\<voce>\AppData\Local` | bloqueia |
+| `C:\Users\<voce>\OneDrive\meu-blog` | funciona |
+| `D:\projetos\meu-blog` | funciona |
+
+Uma subpasta do perfil funciona porque não contém o `AppData`. Só o próprio
+perfil e a cadeia do `AppData` disparam o bloqueio, então o uso normal pelo
+Claude Code não é afetado: o diretório atual é o do projeto.
+
+Evite o `PYTHONSAFEPATH=1` que a mensagem sugere como ajuste permanente. Ele
+também remove o diretório do script do `sys.path`, o que quebra qualquer script
+Python que importe módulos vizinhos.
+
+O mesmo vale para outras instalações de Python cujo `site-packages` fique
+dentro do perfil do usuário; a Microsoft Store é só o caso mais comum.
 
 ---
 
