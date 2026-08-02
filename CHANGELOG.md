@@ -64,6 +64,16 @@ regulado. A documentação passou a ser mantida em português.
   palavra acentuada, e as stopwords eram só inglesas, deixando "de", "que" e
   "para" contarem como termo de tema. Agora é Unicode-aware; ASCII segue sendo
   subconjunto da classe, então o inglês não muda.
+- O `install.ps1` nunca conseguia instalar a partir de um clone local. A decisão
+  entre clone local e clone remoto usava `$MyInvocation.MyCommand.Path` dentro
+  de `function Main`, onde o PowerShell resolve `$MyInvocation` para a chamada
+  da função e não para o script, retornando `$null`. Todo uso no Windows caía no
+  ramo remoto e instalava o upstream, descartando em silêncio o checkout de onde
+  o instalador foi chamado. Passa a usar `$PSScriptRoot`, que mantém escopo de
+  script dentro de funções e fica vazio quando o script chega por pipe. O
+  `install.sh` nunca teve o problema, porque `${BASH_SOURCE[0]}` já tem escopo
+  de script. Acompanha teste de regressão em `tests/test_installer_sync.py`, e o
+  digest SHA-256 do `install.ps1` no README foi recalculado.
 
 ### Notes
 

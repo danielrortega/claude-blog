@@ -85,9 +85,16 @@ function Main {
     $AgentDir = Join-Path (Join-Path $env:USERPROFILE ".claude") "agents"
     $TempDir = $null
 
-    # Determine source directory (local clone or piped from irm)
-    if ($MyInvocation.MyCommand.Path -and (Test-Path (Join-Path (Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) "skills") "blog"))) {
-        $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+    # Determine source directory (local clone or piped from irm).
+    # $PSScriptRoot, not $MyInvocation: inside a function $MyInvocation
+    # describes the call to that function, so $MyInvocation.MyCommand.Path is
+    # $null here and the local-clone branch was unreachable. Every Windows run
+    # fell through to the remote clone, silently ignoring the checkout the
+    # operator was standing in. $PSScriptRoot keeps script scope inside
+    # functions and is empty when the script is piped, which is exactly the
+    # distinction this branch needs.
+    if ($PSScriptRoot -and (Test-Path (Join-Path (Join-Path $PSScriptRoot "skills") "blog"))) {
+        $ScriptDir = $PSScriptRoot
     } else {
         $Repo = if ($env:CLAUDE_BLOG_REPO) { $env:CLAUDE_BLOG_REPO } else { "AgriciDaniel/claude-blog" }
         $Ref = if ($env:CLAUDE_BLOG_REF) { $env:CLAUDE_BLOG_REF } else { "main" }
