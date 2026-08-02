@@ -396,6 +396,7 @@ O fluxo recomendado baixa o instalador como arquivo, para você inspecioná-lo a
 
 ## Índice da documentação
 
+- [Tutorial passo a passo](docs/TUTORIAL.md): do zero ao blog publicado, com a ordem em que os comandos entram.
 - [Guia de instalação](docs/INSTALLATION.md): Unix, macOS, Windows, instalação manual e configuração reproduzível com `uv`.
 - [Referência de comandos](docs/COMMANDS.md): referência completa com exemplos.
 - [Arquitetura](docs/ARCHITECTURE.md): desenho do sistema e visão geral dos componentes.
