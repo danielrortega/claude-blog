@@ -24,6 +24,7 @@ main() {
         "lint_prose.py" "sync_flow.py"
         "ai_citation_score.py" "content_decay.py" "quality_gate.py" "style_learn.py"
         "consistency_check.py" "dependency_smoke.py" "validate_public_release.py"
+        "check_upstream.py"
     )
     local agent_files=(
         "blog-researcher.md" "blog-reviewer.md" "blog-seo.md"

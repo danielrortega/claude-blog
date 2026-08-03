@@ -29,6 +29,17 @@ regulado. A documentação passou a ser mantida em português.
   os 30 comandos, as 22 referências e os 12 templates.
 - Dez testes de regressão para as pistas estruturais por idioma, fixando as
   duas direções: português passa a ser detectado e o inglês não muda.
+- `scripts/check_upstream.py`, que compara este fork com o repositório original
+  e classifica cada arquivo alterado em `seguro`, `revisar`, `novo` ou
+  `removido`. O `--apply-safe` traz para a árvore de trabalho apenas o que não
+  reverte trabalho daqui. Existe por um motivo concreto: como 83 arquivos deste
+  fork carregam tradução ou correção própria, um merge cego do upstream aceita
+  a versão em inglês de arquivos reescritos por inteiro, sem marcar conflito, e
+  a tradução some sem rastro. O ponto já revisado fica em `.upstream-sync.json`,
+  versionado.
+- `docs/UPSTREAM-SYNC.md` com o procedimento de cinco passos, e uma rotina
+  semanal que roda a verificação, aplica o que é seguro e abre pull request
+  apenas quando há novidade.
 
 ### Changed
 
