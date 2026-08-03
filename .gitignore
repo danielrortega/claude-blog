@@ -102,3 +102,19 @@ definitive-resesarch-blueprint-for-claude-blog.md
 
 # Local Claude Code settings (never commit)
 .claude/settings.local.json
+
+# Project-root context files, at repo root only (this is a public fork).
+# /blog brand and /blog discourse write these to the project root, so running
+# them with this repository as the working directory drops them here, where a
+# `git add -A` sweeps them in without asking. They hold positioning,
+# competitive read and voice of customer: the material a public repository is
+# the worst place for. Anchored to the root so a template or reference
+# carrying the same basename inside skills/ stays tracked.
+/BRAND.md
+/VOICE.md
+/DISCOURSE.md
+
+# Calibration corpus: third-party article bodies pulled for readability
+# calibration. Bulky, and republishing someone else's text from a public
+# repository is not a fight worth having.
+/corpus/

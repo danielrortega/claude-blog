@@ -105,6 +105,22 @@ regulado. A documentação passou a ser mantida em português.
   de um `ImportError` vindo de dentro do pacote, e nesse segundo caso mostra o
   erro original em vez de mandar reinstalar.
 
+### Security
+
+- O `.gitignore` passa a barrar, na raiz, `BRAND.md`, `VOICE.md`, `DISCOURSE.md`
+  e `corpus/`. Os três primeiros são escritos na raiz do projeto pelo
+  `/blog brand` e pelo `/blog discourse`, então rodar esses comandos com o
+  repositório como diretório de trabalho os deposita aqui, onde um `git add -A`
+  os recolhe sem perguntar. Guardam posicionamento, leitura competitiva e voz do
+  cliente, que é o material que menos se quer num repositório público. As regras
+  são ancoradas na raiz, de modo que um template ou referência com o mesmo nome
+  dentro de `skills/` continua versionado.
+- Auditoria de exposição do repositório: varredura dos 4172 objetos do
+  histórico completo por chaves de API do Google, tokens OAuth, PAT do GitHub,
+  credenciais AWS e Slack e chaves privadas, sem nenhuma ocorrência. O
+  `.mcp.json` versionado até a v1.x usava expansão de variável de ambiente, sem
+  valor literal.
+
 ### Notes
 
 O comportamento em inglês é idêntico ao anterior em todos os pontos acima,
